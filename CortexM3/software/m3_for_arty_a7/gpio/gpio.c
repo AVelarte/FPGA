@@ -18,11 +18,12 @@
 /*
  * --------Included Headers--------
  */
-
+#include <stdio.h>
 #include "gpio.h"
 #include "xparameters.h"        // Project memory and device map
 #include "xgpio.h"              // Xilinx GPIO routines
 #include "peripherallink.h"     // IRQ definitions
+
 
 /************************** Variable Definitions **************************/
 /*
@@ -36,6 +37,7 @@ static XGpio Gpio_Led_DIPSw;   /* The driver instance for GPIO Device 0 */
 static XGpio Gpio_RGBLed_PB;   /* The driver instance for GPIO Device 1 */
 static XGpio Gpio_DAPLink;     /* The driver instance for the DAPLink GPIO */
 extern XGpio Gpio_Trigger;
+extern uint32_t valor;
 
 /*****************************************************************************/
 
@@ -152,9 +154,13 @@ void GPIO1_Handler ( void )
         if ( gpio_push_buttons & 0x1 ) {
                 mask = 0x7;
                 incr = 0x1;
+								valor++;
         } else if ( gpio_push_buttons & 0x2 ) {
                 mask = (0x7 << 3);
                 incr = (0x1 << 3);
+								if(valor>0){			
+									valor--;
+								}
         } else if ( gpio_push_buttons & 0x4 ) {
                 mask = (0x7 << 6);
                 incr = (0x1 << 6);
@@ -174,6 +180,9 @@ void GPIO1_Handler ( void )
     XGpio_InterruptClear(&Gpio_RGBLed_PB, XGPIO_IR_MASK);
     // Clear interrupt in NVIC
     NVIC_ClearPendingIRQ(GPIO1_IRQn);
+		char msg[24];
+						sprintf(msg,"Valor: %d\r\n", valor);  
+						print(msg);
 }
 
 /* Note : No interrupt handler for DAPLink GPIO, it does not have the IRQ line connected

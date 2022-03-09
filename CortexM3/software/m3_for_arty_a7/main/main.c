@@ -36,8 +36,8 @@
 
 /*******************************************************************/
 volatile uint32_t msTicks = 0;
-uint32_t returnCode;
 XGpio Gpio_Trigger;
+uint32_t valor = 0; 
 
 void SysTick_Handler(void){
 	msTicks++;
@@ -229,7 +229,7 @@ int main (void)
 */
     // print( "Startup complete, entering main interrupt loop\r\n" );
 
-		
+		uint32_t returnCode;
 		returnCode = SysTick_Config(SystemCoreClock/500);
 		if (returnCode != 0){
 			print("Error al configurar el SysTick \r\n");
@@ -252,8 +252,7 @@ int main (void)
 				print("A 0\r\n");
 				msTicks=0;
 				XGpio_DiscreteWrite(&Gpio_Trigger, ARTY_A7_GPIO_TRIGGER, 0x0);
-			}
-			
+			}	
     
     }
 }
