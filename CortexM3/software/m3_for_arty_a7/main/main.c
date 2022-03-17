@@ -23,6 +23,7 @@
 #include <ctype.h>
 #include <string.h>
 #include <stdlib.h>
+#include<stdbool.h>
 #include <time.h>
 
 // Xilinx specific headers
@@ -37,10 +38,43 @@
 /*******************************************************************/
 volatile uint32_t msTicks = 0;
 XGpio Gpio_Trigger;
-uint32_t valor = 0; 
+uint32_t valor = 20;
+bool abiertos = FALSE;
 
 void SysTick_Handler(void){
-	msTicks++;
+	//print("DONE");
+//	msTicks++;
+//	if(msTicks>20){
+	if(abiertos){
+//		XGpio_DiscreteWrite(&Gpio_Trigger, ARTY_A7_TrgOUT_CHANNEL, 0x0);
+		//print("Llega el fin de conteo del Systick, cierro los interruptores y apago el Systick.\r\n");		
+////		if(msTicks == 50){ //Pasan los 500ms
+////			msTicks = 0;
+			XGpio_DiscreteWrite(&Gpio_Trigger, ARTY_A7_TrgOUT_CHANNEL, 0x0);
+			SysTick->CTRL  = 0UL;
+			abiertos = FALSE;
+////		}else{
+////			msTicks++;
+////		}
+	}else{
+//		XGpio_DiscreteWrite(&Gpio_Trigger, ARTY_A7_TrgOUT_CHANNEL, 0xF);
+		//SysTick->CTRL  = 0UL;
+		XGpio_DiscreteWrite(&Gpio_Trigger, ARTY_A7_TrgOUT_CHANNEL, 0x4);
+		
+		//print("Llega el fin de conteo del Systick, abro los interruptores y cambio el periodo del Systick.\r\n");
+		
+		SysTick->CTRL  = 1UL;
+		SysTick_Config(5000000 * 3); //Salta una int. cada 100ms * valor_indicado (en este caso son 300 ms)
+		XGpio_DiscreteWrite(&Gpio_Trigger, ARTY_A7_TrgOUT_CHANNEL, 0xF);
+		abiertos = TRUE;
+	}
+//		//	uint32_t gpio_dip_switches3;
+//			//gpio_dip_switches3 = (XGpio_DiscreteRead(&Gpio_Trigger, ARTY_A7_TrgIN_CHANNEL) & 0x1);
+//			//	char msg3[24];
+//	//sprintf(msg3,"Valor 2: %d, bool: %d \r\n", gpio_dip_switches3, abiertos);  
+//			//	print(msg3);
+//	msTicks=0;
+//}
 }
 
 int main (void)
@@ -97,12 +131,15 @@ int main (void)
     if (status != XST_SUCCESS)  {
         print("Error - Xilinx GPIO failed to initialise\n");
     }
-
+		print("1");
     // Enable GPIO Interrupts
-    NVIC_EnableIRQ(GPIO0_IRQn);
+    //NVIC_EnableIRQ(GPIO0_IRQn);
     NVIC_EnableIRQ(GPIO1_IRQn);
+		print("2");
+		NVIC_EnableIRQ(GPIOTrg_IRQn);
+		print("3");
     EnableGPIOInterrupts();
-
+	print("2");
     // Enable UART Interrupts
     NVIC_EnableIRQ(UART0_IRQn);
     EnableUARTInterrupts();
@@ -156,7 +193,7 @@ int main (void)
     else
         print ("\nV2C-DAPLink board detected\r\n");
     print ("Use DIP switches and push buttons to\r\ncontrol LEDS\r\n");
-    print (" Version 1.2\r\n");
+    print (" Version 1.3\r\n");
     print ("************************************\r\n");
 #else
     print ( debugStr );
@@ -229,30 +266,53 @@ int main (void)
 */
     // print( "Startup complete, entering main interrupt loop\r\n" );
 
-		uint32_t returnCode;
-		returnCode = SysTick_Config(SystemCoreClock/500);
-		if (returnCode != 0){
-			print("Error al configurar el SysTick \r\n");
-		}
-
+//		uint32_t returnCode;
+//		returnCode = SysTick_Config(5000000); // La referencia es 1ms cuando ponemos 50.000 (serán 5.000.000 para 100ms)
+//		if (returnCode != 0){
+//			print("Error al configurar el SysTick \r\n");
+//		}
+		
     // Main loop.  Handle LEDs and switches via interrupt
     while ( 1 )
-    {
+    {			
         /* Main loop. Wait for interrupts to occur */
         /*
         if ( CheckUARTRxBytes() != 0 )
             print ("x");
         */
-			if (msTicks==1000){
-				print("A F\r\n");
-				msTicks=1001;
-				XGpio_DiscreteWrite(&Gpio_Trigger, ARTY_A7_GPIO_TRIGGER, 0xF);
-			}
-			if (msTicks==2000){
-				print("A 0\r\n");
-				msTicks=0;
-				XGpio_DiscreteWrite(&Gpio_Trigger, ARTY_A7_GPIO_TRIGGER, 0x0);
-			}	
+//			if (msTicks>0){
+//				print("A F\r\n");
+//				XGpio_DiscreteWrite(&Gpio_Trigger, ARTY_A7_GPIO_TRIGGER, 0xF);
+//				msTicks++;
+////				uint32_t gpio_dip_switches2;
+////				gpio_dip_switches2 = (XGpio_DiscreteRead(&Gpio_Trigger, ARTY_A7_GPIO_TRIGGER) & 0x4) >> 2;
+////				char msg2[24];
+////				sprintf(msg2,"Valor 1: %d\r\n", gpio_dip_switches2);  
+////				print(msg2);
+//			}
+//			if (msTicks==10){
+//				print("A 0\r\n");
+//				msTicks=0;
+//				XGpio_DiscreteWrite(&Gpio_Trigger, ARTY_A7_GPIO_TRIGGER, 0x0);
+				
+				
+//				gpio_dip_switches3 = (XGpio_DiscreteRead(&Gpio_Trigger, ARTY_A7_GPIO_TRIGGER) & 0x4) >> 2;
+//				char msg3[24];
+//				sprintf(msg3,"Valor 2: %d\r\n", gpio_dip_switches3);  
+//				print(msg3);
+			//}	
+////////////			uint32_t gpio_trg = 0;
+////////////			gpio_trg = (XGpio_DiscreteRead(&Gpio_Trigger, ARTY_A7_GPIO_TRIGGER) & 0x4) >> 2;
+////////////			if (gpio_trg == 1){
+////////////				gpio_trg = 0;
+////////////				print("Llega Trigger del GPIO, inicio el Systick.\r\n");
+////////////				SysTick->CTRL  = 1UL;
+////////////				returnCode = SysTick_Config(500000);
+////////////			}
+			
+
+    // Read dip switches, change LEDs to match
+    
     
     }
 }

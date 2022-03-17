@@ -79,7 +79,7 @@ __Vectors       DCD     __initial_sp              ; Top of Stack
 
                 ; External Interrupts
                 DCD     UART0_Handler             ; UART 0 Handler
-                DCD     GPIO0_Handler             ; GPIO 0 Handler
+                DCD     GPIOTrg_Handler             ; GPIO 0 Handler
                 DCD     GPIO1_Handler             ; GPIO 1 Handler
                 DCD     QSPI0_Handler             ; QUAD SPI 0 (Arty board) Handler
                 DCD     DAP_QSPI0_Handler         ; DAPLink board QUAD SPI 0 Handler
@@ -178,7 +178,7 @@ SysTick_Handler\
 
 Default_Handler PROC
                 EXPORT UART0_Handler              [WEAK]
-                EXPORT GPIO0_Handler              [WEAK]
+                EXPORT GPIOTrg_Handler              [WEAK]
                 EXPORT GPIO1_Handler              [WEAK]
                 EXPORT QSPI0_Handler              [WEAK]
                 EXPORT DAP_QSPI0_Handler          [WEAK]
@@ -211,7 +211,7 @@ Default_Handler PROC
                 EXPORT Unused_IRQ31               [WEAK]
 
 UART0_Handler
-GPIO0_Handler
+GPIOTrg_Handler
 GPIO1_Handler
 QSPI0_Handler 
 DAP_QSPI0_Handler 

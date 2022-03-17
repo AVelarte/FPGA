@@ -62,7 +62,7 @@ typedef enum IRQn
 
 /* ----------------------  ARTY_CM1 Specific Interrupt Numbers  ------------------- */
   UART0_IRQn                    = 0,       /* UART 0 Interrupt                      */
-  GPIO0_IRQn                    = 1,       /* GPIO 0 Interrupt                      */
+  GPIOTrg_IRQn                  = 1,       /* GPIO 0 Interrupt                      */
   GPIO1_IRQn                    = 2,       /* GPIO 1 Interrupt                      */
   QSPI0_IRQn                    = 3,       /* Quad SPI 0, (Arty board) Interrupt    */
   DAP_QSPI0_IRQn                = 4,       /* DAPLink board Quad SPI 0 Interrupt    */

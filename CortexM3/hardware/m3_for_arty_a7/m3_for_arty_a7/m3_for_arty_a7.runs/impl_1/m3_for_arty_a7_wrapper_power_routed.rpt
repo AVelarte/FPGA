@@ -1,8 +1,8 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date             : Wed Mar  9 13:12:42 2022
-| Host             : DESKTOP-B2TSFBN running 64-bit major release  (build 9200)
+| Date             : Fri Mar 11 13:40:58 2022
+| Host             : DESKTOP-661ESVO running 64-bit major release  (build 9200)
 | Command          : report_power -file m3_for_arty_a7_wrapper_power_routed.rpt -pb m3_for_arty_a7_wrapper_power_summary_routed.pb -rpx m3_for_arty_a7_wrapper_power_routed.rpx
 | Design           : m3_for_arty_a7_wrapper
 | Device           : xc7a100tcsg324-1
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.298        |
+| Total On-Chip Power (W)  | 0.296        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.199        |
+| Dynamic (W)              | 0.197        |
 | Device Static (W)        | 0.099        |
 | Effective TJA (C/W)      | 4.6          |
 | Max Ambient (C)          | 83.6         |
@@ -53,20 +53,20 @@ Table of Contents
 | On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
 +-------------------------+-----------+----------+-----------+-----------------+
 | Clocks                  |     0.020 |       11 |       --- |             --- |
-| Slice Logic             |     0.016 |    27845 |       --- |             --- |
-|   LUT as Logic          |     0.015 |    17341 |     63400 |           27.35 |
+| Slice Logic             |     0.016 |    27908 |       --- |             --- |
+|   LUT as Logic          |     0.015 |    17362 |     63400 |           27.38 |
 |   CARRY4                |    <0.001 |      313 |     15850 |            1.97 |
-|   Register              |    <0.001 |     9010 |    126800 |            7.11 |
+|   Register              |    <0.001 |     9045 |    126800 |            7.13 |
 |   F7/F8 Muxes           |    <0.001 |      202 |     63400 |            0.32 |
 |   LUT as Shift Register |    <0.001 |       49 |     19000 |            0.26 |
-|   Others                |     0.000 |      584 |       --- |             --- |
-| Signals                 |     0.024 |    22871 |       --- |             --- |
+|   Others                |     0.000 |      588 |       --- |             --- |
+| Signals                 |     0.025 |    22896 |       --- |             --- |
 | Block RAM               |     0.010 |     22.5 |       135 |           16.67 |
 | MMCM                    |     0.106 |        1 |         6 |           16.67 |
 | DSPs                    |    <0.001 |        3 |       240 |            1.25 |
-| I/O                     |     0.022 |       61 |       210 |           29.05 |
+| I/O                     |     0.020 |       61 |       210 |           29.05 |
 | Static Power            |     0.099 |          |           |                 |
-| Total                   |     0.298 |          |           |                 |
+| Total                   |     0.296 |          |           |                 |
 +-------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -76,7 +76,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.087 |       0.071 |      0.016 |
+| Vccint    |       1.000 |     0.088 |       0.072 |      0.016 |
 | Vccaux    |       1.800 |     0.077 |       0.059 |      0.018 |
 | Vcco33    |       3.300 |     0.010 |       0.006 |      0.004 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -152,15 +152,7 @@ Table of Contents
 +-------------------------------------------------------------------------------------------------------+-----------+
 | Name                                                                                                  | Power (W) |
 +-------------------------------------------------------------------------------------------------------+-----------+
-| m3_for_arty_a7_wrapper                                                                                |     0.199 |
-|   GPIO_Trg_tri_iobuf_0                                                                                |    <0.001 |
-|   GPIO_Trg_tri_iobuf_1                                                                                |    <0.001 |
-|   GPIO_Trg_tri_iobuf_2                                                                                |    <0.001 |
-|   GPIO_Trg_tri_iobuf_3                                                                                |    <0.001 |
-|   GPIO_Trg_tri_iobuf_4                                                                                |    <0.001 |
-|   GPIO_Trg_tri_iobuf_5                                                                                |    <0.001 |
-|   GPIO_Trg_tri_iobuf_6                                                                                |    <0.001 |
-|   GPIO_Trg_tri_iobuf_7                                                                                |    <0.001 |
+| m3_for_arty_a7_wrapper                                                                                |     0.197 |
 |   m3_for_arty_a7_i                                                                                    |     0.178 |
 |     Clocks_and_Resets                                                                                 |     0.107 |
 |       clk_wiz_0                                                                                       |     0.107 |
@@ -184,10 +176,10 @@ Table of Contents
 |             ACTIVE_LOW_EXT.ACT_LO_EXT                                                                 |    <0.001 |
 |           SEQ                                                                                         |    <0.001 |
 |             SEQ_COUNTER                                                                               |    <0.001 |
-|     Cortex_M3_0                                                                                       |     0.055 |
-|       inst                                                                                            |     0.055 |
+|     Cortex_M3_0                                                                                       |     0.056 |
+|       inst                                                                                            |     0.056 |
 |         u_CORTEXM3INTEGRATION                                                                         |     0.045 |
-|           uCORTEXM3                                                                                   |     0.043 |
+|           uCORTEXM3                                                                                   |     0.044 |
 |             u_cm3_bus_matrix                                                                          |     0.004 |
 |               u_cm3_mtx_bit_master                                                                    |     0.004 |
 |               u_cm3_mtx_decode_dap                                                                    |    <0.001 |
@@ -208,7 +200,7 @@ Table of Contents
 |               u_cm3_dap_ahb_ap_sync_idle                                                              |    <0.001 |
 |               u_cm3_dap_ahb_ap_sync_tra                                                               |    <0.001 |
 |               u_cm3_dap_ahb_ap_sync_trans_rtn                                                         |    <0.001 |
-|             u_cm3_dpu                                                                                 |     0.029 |
+|             u_cm3_dpu                                                                                 |     0.030 |
 |               u_cm3_dpu_alu                                                                           |     0.006 |
 |                 u_cm3_dpu_alu_ctl                                                                     |     0.003 |
 |                 u_cm3_dpu_alu_dp                                                                      |     0.003 |
@@ -368,8 +360,10 @@ Table of Contents
 |         AXI_LITE_IPIF_I                                                                               |    <0.001 |
 |           I_SLAVE_ATTACHMENT                                                                          |    <0.001 |
 |             I_DECODER                                                                                 |    <0.001 |
+|         INTR_CTRLR_GEN.INTERRUPT_CONTROL_I                                                            |    <0.001 |
 |         gpio_core_1                                                                                   |    <0.001 |
-|           Not_Dual.INPUT_DOUBLE_REGS3                                                                 |    <0.001 |
+|           Dual.INPUT_DOUBLE_REGS4                                                                     |    <0.001 |
+|           Dual.INPUT_DOUBLE_REGS5                                                                     |    <0.001 |
 |     axi_interconnect_0                                                                                |     0.002 |
 |       s00_couplers                                                                                    |     0.001 |
 |         auto_pc                                                                                       |     0.001 |
@@ -565,7 +559,7 @@ Table of Contents
 |                   MEM_DECODE_GEN[1].PER_CE_GEN[6].MULTIPLE_CES_THIS_CS_GEN.CE_I                       |    <0.001 |
 |                   MEM_DECODE_GEN[2].PER_CE_GEN[2].MULTIPLE_CES_THIS_CS_GEN.CE_I                       |    <0.001 |
 |                   MEM_DECODE_GEN[2].PER_CE_GEN[6].MULTIPLE_CES_THIS_CS_GEN.CE_I                       |    <0.001 |
-|             QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I                                                  |     0.003 |
+|             QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I                                                  |     0.002 |
 |               CONTROL_REG_I                                                                           |    <0.001 |
 |               FIFO_EXISTS.CLK_CROSS_I                                                                 |    <0.001 |
 |               FIFO_EXISTS.FIFO_IF_MODULE_I                                                            |    <0.001 |

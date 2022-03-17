@@ -1,8 +1,8 @@
 //Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-//Date        : Wed Mar  9 12:59:21 2022
-//Host        : DESKTOP-B2TSFBN running 64-bit major release  (build 9200)
+//Date        : Fri Mar 11 13:26:47 2022
+//Host        : DESKTOP-661ESVO running 64-bit major release  (build 9200)
 //Command     : generate_target m3_for_arty_a7.bd
 //Design      : m3_for_arty_a7
 //Purpose     : IP block netlist
@@ -2378,11 +2378,10 @@ endmodule
 (* CORE_GENERATION_INFO = "m3_for_arty_a7,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=m3_for_arty_a7,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=47,numReposBlks=30,numNonXlnxBlks=2,numHierBlks=17,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=1,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=3,da_board_cnt=1,synth_mode=Global}" *) (* HW_HANDOFF = "m3_for_arty_a7.hwdef" *) 
 module m3_for_arty_a7
    (DAPLink_tri_o,
-    GPIO_Trg_tri_i,
-    GPIO_Trg_tri_o,
-    GPIO_Trg_tri_t,
     TDI,
     TDO,
+    TrgIN_tri_i,
+    TrgOUT_tri_o,
     dip_switches_4bits_tri_i,
     led_4bits_tri_o,
     nTRST,
@@ -2411,11 +2410,10 @@ module m3_for_arty_a7
     usb_uart_rxd,
     usb_uart_txd);
   (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 DAPLink TRI_O" *) inout [15:0]DAPLink_tri_o;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 GPIO_Trg " *) input [7:0]GPIO_Trg_tri_i;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 GPIO_Trg " *) output [7:0]GPIO_Trg_tri_o;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 GPIO_Trg " *) output [7:0]GPIO_Trg_tri_t;
   input TDI;
   inout [0:0]TDO;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 TrgIN " *) input [3:0]TrgIN_tri_i;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 TrgOUT " *) output [3:0]TrgOUT_tri_o;
   (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 dip_switches_4bits TRI_I" *) input [3:0]dip_switches_4bits_tri_i;
   (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 led_4bits TRI_O" *) output [3:0]led_4bits_tri_o;
   input nTRST;
@@ -2552,13 +2550,12 @@ module m3_for_arty_a7
   wire [3:0]axi_bram_ctrl_0_BRAM_PORTA_WE;
   wire [3:0]axi_gpio_0_GPIO2_TRI_I;
   wire [3:0]axi_gpio_0_GPIO_TRI_O;
-  wire axi_gpio_0_ip2intc_irpt;
   wire [3:0]axi_gpio_1_GPIO2_TRI_I;
   wire [11:0]axi_gpio_1_GPIO_TRI_O;
   wire axi_gpio_1_ip2intc_irpt;
-  wire [7:0]axi_gpio_2_GPIO_TRI_I;
-  wire [7:0]axi_gpio_2_GPIO_TRI_O;
-  wire [7:0]axi_gpio_2_GPIO_TRI_T;
+  wire [3:0]axi_gpio_2_GPIO2_TRI_I;
+  wire [3:0]axi_gpio_2_GPIO_TRI_O;
+  wire axi_gpio_2_ip2intc_irpt;
   wire [31:0]axi_interconnect_0_M00_AXI_ARADDR;
   wire axi_interconnect_0_M00_AXI_ARREADY;
   wire axi_interconnect_0_M00_AXI_ARVALID;
@@ -2698,13 +2695,12 @@ module m3_for_arty_a7
   wire [1:0]xlconcat_1_dout;
   wire [0:0]xlconstant_1_dout;
 
-  assign GPIO_Trg_tri_o[7:0] = axi_gpio_2_GPIO_TRI_O;
-  assign GPIO_Trg_tri_t[7:0] = axi_gpio_2_GPIO_TRI_T;
   assign TDI_1 = TDI;
+  assign TrgOUT_tri_o[3:0] = axi_gpio_2_GPIO_TRI_O;
   assign V2C_DAPLink_interface_UART_out_RxD = usb_uart_rxd;
   assign axi_gpio_0_GPIO2_TRI_I = dip_switches_4bits_tri_i[3:0];
   assign axi_gpio_1_GPIO2_TRI_I = push_buttons_4bits_tri_i[3:0];
-  assign axi_gpio_2_GPIO_TRI_I = GPIO_Trg_tri_i[7:0];
+  assign axi_gpio_2_GPIO2_TRI_I = TrgIN_tri_i[3:0];
   assign axi_quad_spi_0_SPI_0_IO0_I = qspi_flash_io0_i;
   assign axi_quad_spi_0_SPI_0_IO1_I = qspi_flash_io1_i;
   assign axi_quad_spi_0_SPI_0_IO2_I = qspi_flash_io2_i;
@@ -2854,7 +2850,6 @@ module m3_for_arty_a7
   m3_for_arty_a7_axi_gpio_0_0 axi_gpio_0
        (.gpio2_io_i(axi_gpio_0_GPIO2_TRI_I),
         .gpio_io_o(axi_gpio_0_GPIO_TRI_O),
-        .ip2intc_irpt(axi_gpio_0_ip2intc_irpt),
         .s_axi_aclk(clk_wiz_0_clk_out1),
         .s_axi_araddr(axi_interconnect_0_M01_AXI_ARADDR[8:0]),
         .s_axi_aresetn(proc_sys_reset_1_interconnect_aresetn),
@@ -2898,9 +2893,9 @@ module m3_for_arty_a7
         .s_axi_wstrb(axi_interconnect_0_M02_AXI_WSTRB),
         .s_axi_wvalid(axi_interconnect_0_M02_AXI_WVALID));
   m3_for_arty_a7_axi_gpio_2_0 axi_gpio_2
-       (.gpio_io_i(axi_gpio_2_GPIO_TRI_I),
+       (.gpio2_io_i(axi_gpio_2_GPIO2_TRI_I),
         .gpio_io_o(axi_gpio_2_GPIO_TRI_O),
-        .gpio_io_t(axi_gpio_2_GPIO_TRI_T),
+        .ip2intc_irpt(axi_gpio_2_ip2intc_irpt),
         .s_axi_aclk(clk_wiz_0_clk_out1),
         .s_axi_araddr(axi_interconnect_0_M06_AXI_ARADDR[8:0]),
         .s_axi_aresetn(Clocks_and_Resets_peripheral_aresetn1),
@@ -3238,7 +3233,7 @@ module m3_for_arty_a7
         .oen_N(CortexM3DbgAXI_0_nTDOEN));
   m3_for_arty_a7_xlconcat_0_0 xlconcat_0
        (.In0(axi_uartlite_0_interrupt),
-        .In1(axi_gpio_0_ip2intc_irpt),
+        .In1(axi_gpio_2_ip2intc_irpt),
         .In2(axi_gpio_1_ip2intc_irpt),
         .In3(axi_quad_spi_0_ip2intc_irpt),
         .In4(V2C_DAPLink_interface_qspi_irq),

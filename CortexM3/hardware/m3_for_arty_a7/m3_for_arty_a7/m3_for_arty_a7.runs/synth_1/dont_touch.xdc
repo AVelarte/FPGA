@@ -98,7 +98,7 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==m3_for_arty_a7_
 # IP: V:/hardware/m3_for_arty_a7/block_diagram/ip/m3_for_arty_a7_xlconstant_1_1/m3_for_arty_a7_xlconstant_1_1.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==m3_for_arty_a7_xlconstant_1_1 || ORIG_REF_NAME==m3_for_arty_a7_xlconstant_1_1} -quiet] -quiet
 
-# IP: v:/hardware/m3_for_arty_a7/block_diagram/ip/m3_for_arty_a7_axi_gpio_2_0/m3_for_arty_a7_axi_gpio_2_0.xci
+# IP: V:/hardware/m3_for_arty_a7/block_diagram/ip/m3_for_arty_a7_axi_gpio_2_0/m3_for_arty_a7_axi_gpio_2_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==m3_for_arty_a7_axi_gpio_2_0 || ORIG_REF_NAME==m3_for_arty_a7_axi_gpio_2_0} -quiet] -quiet
 
 # IP: v:/hardware/m3_for_arty_a7/block_diagram/ip/m3_for_arty_a7_auto_pc_0/m3_for_arty_a7_auto_pc_0.xci

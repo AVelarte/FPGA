@@ -3,6 +3,7 @@
 .\objects\main.o: D:\Programas\Keil_v5\ARM\ARMCC\Bin\..\include\ctype.h
 .\objects\main.o: D:\Programas\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 .\objects\main.o: D:\Programas\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+.\objects\main.o: D:\Programas\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
 .\objects\main.o: D:\Programas\Keil_v5\ARM\ARMCC\Bin\..\include\time.h
 .\objects\main.o: ..\sdk_workspace\standalone_bsp_0\Cortex_M3_0\include\xparameters.h
 .\objects\main.o: ..\sdk_workspace\standalone_bsp_0\Cortex_M3_0\include\xgpio.h

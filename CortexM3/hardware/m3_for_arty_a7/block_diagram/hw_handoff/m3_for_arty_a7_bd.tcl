@@ -459,7 +459,8 @@ proc create_root_design { parentCell } {
 
   # Create interface ports
   set DAPLink [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:gpio_rtl:1.0 DAPLink ]
-  set GPIO_Trg [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:gpio_rtl:1.0 GPIO_Trg ]
+  set TrgIN [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:gpio_rtl:1.0 TrgIN ]
+  set TrgOUT [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:gpio_rtl:1.0 TrgOUT ]
   set dip_switches_4bits [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:gpio_rtl:1.0 dip_switches_4bits ]
   set led_4bits [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:gpio_rtl:1.0 led_4bits ]
   set push_buttons_4bits [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:gpio_rtl:1.0 push_buttons_4bits ]
@@ -491,6 +492,7 @@ proc create_root_design { parentCell } {
    CONFIG.DTCM_SIZE {"0110"} \
    CONFIG.ITCM_INIT_FILE {bram_a7.hex} \
    CONFIG.ITCM_SIZE {"0110"} \
+   CONFIG.LVL_WIDTH {3} \
    CONFIG.TRACE_LVL {1} \
    CONFIG.WIC_PRESENT {false} \
  ] $Cortex_M3_0
@@ -525,7 +527,13 @@ proc create_root_design { parentCell } {
   set axi_gpio_2 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_gpio:2.0 axi_gpio_2 ]
   set_property -dict [ list \
    CONFIG.C_ALL_INPUTS {0} \
-   CONFIG.C_GPIO_WIDTH {8} \
+   CONFIG.C_ALL_INPUTS_2 {1} \
+   CONFIG.C_ALL_OUTPUTS {1} \
+   CONFIG.C_ALL_OUTPUTS_2 {0} \
+   CONFIG.C_GPIO2_WIDTH {4} \
+   CONFIG.C_GPIO_WIDTH {4} \
+   CONFIG.C_INTERRUPT_PRESENT {1} \
+   CONFIG.C_IS_DUAL {1} \
    CONFIG.GPIO_BOARD_INTERFACE {Custom} \
    CONFIG.USE_BOARD_FLOW {true} \
  ] $axi_gpio_2
@@ -621,7 +629,8 @@ proc create_root_design { parentCell } {
   connect_bd_intf_net -intf_net axi_gpio_0_GPIO2 [get_bd_intf_ports dip_switches_4bits] [get_bd_intf_pins axi_gpio_0/GPIO2]
   connect_bd_intf_net -intf_net axi_gpio_1_GPIO [get_bd_intf_ports rgb_led] [get_bd_intf_pins axi_gpio_1/GPIO]
   connect_bd_intf_net -intf_net axi_gpio_1_GPIO2 [get_bd_intf_ports push_buttons_4bits] [get_bd_intf_pins axi_gpio_1/GPIO2]
-  connect_bd_intf_net -intf_net axi_gpio_2_GPIO [get_bd_intf_ports GPIO_Trg] [get_bd_intf_pins axi_gpio_2/GPIO]
+  connect_bd_intf_net -intf_net axi_gpio_2_GPIO [get_bd_intf_ports TrgOUT] [get_bd_intf_pins axi_gpio_2/GPIO]
+  connect_bd_intf_net -intf_net axi_gpio_2_GPIO2 [get_bd_intf_ports TrgIN] [get_bd_intf_pins axi_gpio_2/GPIO2]
   connect_bd_intf_net -intf_net axi_interconnect_0_M00_AXI [get_bd_intf_pins axi_interconnect_0/M00_AXI] [get_bd_intf_pins axi_uartlite_0/S_AXI]
   connect_bd_intf_net -intf_net axi_interconnect_0_M01_AXI [get_bd_intf_pins axi_gpio_0/S_AXI] [get_bd_intf_pins axi_interconnect_0/M01_AXI]
   connect_bd_intf_net -intf_net axi_interconnect_0_M02_AXI [get_bd_intf_pins axi_gpio_1/S_AXI] [get_bd_intf_pins axi_interconnect_0/M02_AXI]
@@ -646,8 +655,8 @@ proc create_root_design { parentCell } {
   connect_bd_net -net V2C_DAPLink_interface_qspi_xip_irq [get_bd_pins daplink_if_0/qspi_xip_irq] [get_bd_pins xlconcat_0/In6]
   connect_bd_net -net V2C_DAPLink_interface_spi_irq [get_bd_pins daplink_if_0/spi_irq] [get_bd_pins xlconcat_0/In5]
   connect_bd_net -net V2C_DAPLink_interface_uart_rxd_axi [get_bd_pins axi_uartlite_0/rx] [get_bd_pins daplink_if_0/uart_rxd_axi]
-  connect_bd_net -net axi_gpio_0_ip2intc_irpt [get_bd_pins axi_gpio_0/ip2intc_irpt] [get_bd_pins xlconcat_0/In1]
   connect_bd_net -net axi_gpio_1_ip2intc_irpt [get_bd_pins axi_gpio_1/ip2intc_irpt] [get_bd_pins xlconcat_0/In2]
+  connect_bd_net -net axi_gpio_2_ip2intc_irpt [get_bd_pins axi_gpio_2/ip2intc_irpt] [get_bd_pins xlconcat_0/In1]
   connect_bd_net -net axi_quad_spi_0_ip2intc_irpt [get_bd_pins axi_quad_spi_0/ip2intc_irpt] [get_bd_pins xlconcat_0/In3]
   connect_bd_net -net axi_uartlite_0_interrupt [get_bd_pins axi_uartlite_0/interrupt] [get_bd_pins xlconcat_0/In0]
   connect_bd_net -net axi_uartlite_0_tx [get_bd_pins axi_uartlite_0/tx] [get_bd_pins daplink_if_0/uart_txd_axi]

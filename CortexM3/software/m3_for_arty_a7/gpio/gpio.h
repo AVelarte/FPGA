@@ -26,6 +26,7 @@ void SetDAPLinkQSPIMode( u32 mode );
 
 // void GPIO0_Handler ( void );
 // void GPIO1_Handler ( void );
+// void GPIOTrg_Handler (void);
 
 /* GPIO channel identifiers */
 #define ARTY_A7_LED_CHANNEL 1
@@ -33,7 +34,8 @@ void SetDAPLinkQSPIMode( u32 mode );
 #define ARTY_A7_RGB_CHANNEL 1
 #define ARTY_A7_PB_CHANNEL  2
 #define ARTY_A7_DAPLINK_GPIO_CHANNEL 1
-#define ARTY_A7_GPIO_TRIGGER 1
+#define ARTY_A7_TrgOUT_CHANNEL 1
+#define ARTY_A7_TrgIN_CHANNEL 2
 
 // GPIO register control
 #define QSPI_XIPMODE  0x00                                              // XIP controller mode

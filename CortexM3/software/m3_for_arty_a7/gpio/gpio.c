@@ -101,8 +101,9 @@ int InitialiseGPIO( void )
     XGpio_DiscreteWrite(&Gpio_Led_DIPSw, ARTY_A7_LED_CHANNEL, 0x0);
 //    ARTY_A7_GPIO0->DATA0 = 0x0;
 
-		XGpio_SetDataDirection(&Gpio_Trigger, ARTY_A7_GPIO_TRIGGER, 0x0000);
-		XGpio_DiscreteWrite(&Gpio_Trigger, ARTY_A7_GPIO_TRIGGER, 0x0000);
+		XGpio_SetDataDirection(&Gpio_Trigger, ARTY_A7_TrgOUT_CHANNEL, 0xFFFFFFF0);
+		XGpio_SetDataDirection(&Gpio_Trigger, ARTY_A7_TrgIN_CHANNEL, 0xffffffff);
+		XGpio_DiscreteWrite(&Gpio_Trigger, ARTY_A7_TrgOUT_CHANNEL, 0x0);
 
     return XST_SUCCESS;
     
@@ -113,28 +114,48 @@ void EnableGPIOInterrupts( void )
 {
     // Push buttons and DIP switches are on Channel 2
     XGpio_InterruptEnable(&Gpio_RGBLed_PB, XGPIO_IR_CH2_MASK);
-    XGpio_InterruptEnable(&Gpio_Led_DIPSw, XGPIO_IR_CH2_MASK);
+    //XGpio_InterruptEnable(&Gpio_Led_DIPSw, XGPIO_IR_CH2_MASK);
+		XGpio_InterruptEnable(&Gpio_Trigger, XGPIO_IR_CH2_MASK);
 
     // Having enabled the M1 to handle the interrupts, now enable the GPIO to send the interrupts
     XGpio_InterruptGlobalEnable(&Gpio_RGBLed_PB);
-    XGpio_InterruptGlobalEnable(&Gpio_Led_DIPSw);
+    //XGpio_InterruptGlobalEnable(&Gpio_Led_DIPSw);
+		XGpio_InterruptGlobalEnable(&Gpio_Trigger);
 }
 
 
-// Define the GPIO interrupt handlers
-void GPIO0_Handler ( void )
-{
-    volatile uint32_t gpio_dip_switches;
+void GPIOTrg_Handler (void){
+		//print("Trigger");
+		volatile uint32_t gpio_dip_switches;
 
-    // Read dip switches, change LEDs to match
-    gpio_dip_switches = XGpio_DiscreteRead(&Gpio_Led_DIPSw, ARTY_A7_DIP_CHANNEL);   // Capture DIP status
-    XGpio_DiscreteWrite(&Gpio_Led_DIPSw, ARTY_A7_LED_CHANNEL, gpio_dip_switches);   // Set LEDs
-
-    // Clear interrupt from GPIO
-    XGpio_InterruptClear(&Gpio_Led_DIPSw, XGPIO_IR_MASK);
+		// Read dip switches, change LEDs to match
+		if( XGpio_DiscreteRead(&Gpio_Trigger, ARTY_A7_TrgIN_CHANNEL) & 0x1){
+			print("Trigger Positivo \n\r");
+			XGpio_DiscreteWrite(&Gpio_Trigger, ARTY_A7_TrgOUT_CHANNEL, 0x4);
+			SysTick->CTRL  = 1UL;
+			SysTick_Config(50000 * valor);
+			XGpio_DiscreteWrite(&Gpio_Trigger, ARTY_A7_TrgOUT_CHANNEL, 0xC);
+		}
+		
+		// Clear interrupt from GPIO
+    XGpio_InterruptClear(&Gpio_Trigger, XGPIO_IR_MASK);
     // Clear interrupt in NVIC
-    NVIC_ClearPendingIRQ(GPIO0_IRQn);
+    NVIC_ClearPendingIRQ(GPIOTrg_IRQn);
 }
+// Define the GPIO interrupt handlers
+////////void GPIO0_Handler ( void )
+////////{
+////////	volatile uint32_t gpio_dip_switches;
+
+////////    // Read dip switches, change LEDs to match
+////////    gpio_dip_switches = XGpio_DiscreteRead(&Gpio_Led_DIPSw, ARTY_A7_DIP_CHANNEL);   // Capture DIP status
+////////    XGpio_DiscreteWrite(&Gpio_Led_DIPSw, ARTY_A7_LED_CHANNEL, gpio_dip_switches);   // Set LEDs
+
+////////    // Clear interrupt from GPIO
+////////    XGpio_InterruptClear(&Gpio_Led_DIPSw, XGPIO_IR_MASK);
+////////    // Clear interrupt in NVIC
+////////    NVIC_ClearPendingIRQ(GPIO0_IRQn);
+////////}
 
 void GPIO1_Handler ( void )
 {
@@ -142,7 +163,7 @@ void GPIO1_Handler ( void )
     int mask, led_val, incr;
     volatile uint32_t gpio_push_buttons;
     volatile uint32_t gpio_leds_rgb;
-
+		
     // For LEDs, cycle around colour each time respective push button is pressed
     // Only change if a pushbutton is pressed.
     // This prevents a double change as the button is released.
@@ -154,7 +175,9 @@ void GPIO1_Handler ( void )
         if ( gpio_push_buttons & 0x1 ) {
                 mask = 0x7;
                 incr = 0x1;
-								valor++;
+								if(valor<335){		 //Para que no se pase de las 335ms 	
+									valor++;
+								}
         } else if ( gpio_push_buttons & 0x2 ) {
                 mask = (0x7 << 3);
                 incr = (0x1 << 3);
@@ -164,9 +187,16 @@ void GPIO1_Handler ( void )
         } else if ( gpio_push_buttons & 0x4 ) {
                 mask = (0x7 << 6);
                 incr = (0x1 << 6);
+					if(valor<326){			//Para que no se pase de las 335ms 	
+									valor+=10;
+								}
+					
         } else if ( gpio_push_buttons & 0x8 ) {
                 mask = (0x7 << 9);
                 incr = (0x1 << 9);
+					if(valor>10){			
+									valor-=10;
+								}
         }
 
         led_val = gpio_leds_rgb & mask;
@@ -175,14 +205,15 @@ void GPIO1_Handler ( void )
         
         XGpio_DiscreteWrite(&Gpio_RGBLed_PB, ARTY_A7_RGB_CHANNEL, gpio_leds_rgb);
     }
-
     // Clear interrupt from GPIO
     XGpio_InterruptClear(&Gpio_RGBLed_PB, XGPIO_IR_MASK);
     // Clear interrupt in NVIC
-    NVIC_ClearPendingIRQ(GPIO1_IRQn);
+		NVIC_ClearPendingIRQ(GPIO1_IRQn);
 		char msg[24];
-						sprintf(msg,"Valor: %d\r\n", valor);  
-						print(msg);
+		sprintf(msg,"Valor: %d\r\n", valor);  
+		print(msg);
+		// PARA SIMULAR EL TRIGGER DE LA FUENTE
+		XGpio_DiscreteWrite(&Gpio_Trigger, ARTY_A7_TrgOUT_CHANNEL, 0xC);
 }
 
 /* Note : No interrupt handler for DAPLink GPIO, it does not have the IRQ line connected

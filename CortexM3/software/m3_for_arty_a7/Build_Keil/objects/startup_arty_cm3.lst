@@ -122,18 +122,19 @@ ARM Macro Assembler    Page 2
    79 00000040         
    80 00000040         ; External Interrupts
    81 00000040 00000000        DCD              UART0_Handler ; UART 0 Handler
-   82 00000044 00000000        DCD              GPIO0_Handler ; GPIO 0 Handler
+   82 00000044 00000000        DCD              GPIOTrg_Handler 
+                                                            ; GPIO 0 Handler
    83 00000048 00000000        DCD              GPIO1_Handler ; GPIO 1 Handler
    84 0000004C 00000000        DCD              QSPI0_Handler ; QUAD SPI 0 (Art
                                                             y board) Handler
    85 00000050 00000000        DCD              DAP_QSPI0_Handler ; DAPLink boa
-                                                            rd QUAD SPI 0 Handl
 
 
 
 ARM Macro Assembler    Page 3 
 
 
+                                                            rd QUAD SPI 0 Handl
                                                             er
    86 00000054 00000000        DCD              DAP_SPI0_Handler ; DAPLink boar
                                                             d SPI 0 Handler
@@ -192,13 +193,13 @@ ARM Macro Assembler    Page 3
   131 00000008         
   132 00000008         
   133 00000008         ; Dummy Exception Handlers (infinite loops which can be 
-                       modified)
 
 
 
 ARM Macro Assembler    Page 4 
 
 
+                       modified)
   134 00000008         
   135 00000008         NMI_Handler
                                PROC
@@ -257,16 +258,16 @@ ARM Macro Assembler    Page 4
   178 0000001A         
   179 0000001A         Default_Handler
                                PROC
-  180 0000001A                 EXPORT           UART0_Handler              [WEA
 
 
 
 ARM Macro Assembler    Page 5 
 
 
+  180 0000001A                 EXPORT           UART0_Handler              [WEA
 K]
-  181 0000001A                 EXPORT           GPIO0_Handler              [WEA
-K]
+  181 0000001A                 EXPORT           GPIOTrg_Handler              [W
+EAK]
   182 0000001A                 EXPORT           GPIO1_Handler              [WEA
 K]
   183 0000001A                 EXPORT           QSPI0_Handler              [WEA
@@ -322,20 +323,20 @@ K]
   208 0000001A                 EXPORT           Unused_IRQ28               [WEA
 K]
   209 0000001A                 EXPORT           Unused_IRQ29               [WEA
-K]
 
 
 
 ARM Macro Assembler    Page 6 
 
 
+K]
   210 0000001A                 EXPORT           Unused_IRQ30               [WEA
 K]
   211 0000001A                 EXPORT           Unused_IRQ31               [WEA
 K]
   212 0000001A         
   213 0000001A         UART0_Handler
-  214 0000001A         GPIO0_Handler
+  214 0000001A         GPIOTrg_Handler
   215 0000001A         GPIO1_Handler
   216 0000001A         QSPI0_Handler
   217 0000001A         DAP_QSPI0_Handler
@@ -387,13 +388,13 @@ K]
   268 0000001E 4905            LDR              R1, =(Stack_Mem + Stack_Size)
   269 00000020 4A05            LDR              R2, = (Heap_Mem +  Heap_Size)
   270 00000022 4B06            LDR              R3, = Stack_Mem
-  271 00000024 4770            BX               LR
 
 
 
 ARM Macro Assembler    Page 7 
 
 
+  271 00000024 4770            BX               LR
   272 00000026                 ENDP
   273 00000026         
   274 00000026 00 00           ALIGN
@@ -623,17 +624,6 @@ s
    Uses
       None
 Comment: Default_Handler unused
-GPIO0_Handler 0000001A
-
-Symbol: GPIO0_Handler
-   Definitions
-      At line 214 in file ..\cmsis\Device\Source\ARTY_CM3\ARM\startup_ARTY_CM3.
-s
-   Uses
-      At line 82 in file ..\cmsis\Device\Source\ARTY_CM3\ARM\startup_ARTY_CM3.s
-      At line 181 in file ..\cmsis\Device\Source\ARTY_CM3\ARM\startup_ARTY_CM3.
-s
-
 GPIO1_Handler 0000001A
 
 Symbol: GPIO1_Handler
@@ -643,6 +633,17 @@ s
    Uses
       At line 83 in file ..\cmsis\Device\Source\ARTY_CM3\ARM\startup_ARTY_CM3.s
       At line 182 in file ..\cmsis\Device\Source\ARTY_CM3\ARM\startup_ARTY_CM3.
+s
+
+GPIOTrg_Handler 0000001A
+
+Symbol: GPIOTrg_Handler
+   Definitions
+      At line 214 in file ..\cmsis\Device\Source\ARTY_CM3\ARM\startup_ARTY_CM3.
+s
+   Uses
+      At line 82 in file ..\cmsis\Device\Source\ARTY_CM3\ARM\startup_ARTY_CM3.s
+      At line 181 in file ..\cmsis\Device\Source\ARTY_CM3\ARM\startup_ARTY_CM3.
 s
 
 HardFault_Handler 0000000A

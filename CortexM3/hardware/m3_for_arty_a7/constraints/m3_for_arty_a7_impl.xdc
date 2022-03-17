@@ -99,14 +99,14 @@ set_property PACKAGE_PIN N17 [get_ports {DAPLink_tri_o[15]}]
 # As this is not a dedicated clock input pin, Vivado needs to set to allow use of this input as a clock
 set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets {DAPLink_tri_o_IBUF[15]}]
 
-set_property -dict { PACKAGE_PIN G13   IOSTANDARD LVCMOS33 } [get_ports { GPIO_Trg_tri_io[0] }]; #IO_0_15 Sch=ja[1]
-set_property -dict { PACKAGE_PIN B11   IOSTANDARD LVCMOS33 } [get_ports { GPIO_Trg_tri_io[1] }]; #IO_L4P_T0_15 Sch=ja[2]
-set_property -dict { PACKAGE_PIN A11   IOSTANDARD LVCMOS33 } [get_ports { GPIO_Trg_tri_io[2] }]; #IO_L4N_T0_15 Sch=ja[3]
-set_property -dict { PACKAGE_PIN D12   IOSTANDARD LVCMOS33 } [get_ports { GPIO_Trg_tri_io[3] }]; #IO_L6P_T0_15 Sch=ja[4]
-set_property -dict { PACKAGE_PIN D13   IOSTANDARD LVCMOS33 } [get_ports { GPIO_Trg_tri_io[4] }]; #IO_L6N_T0_VREF_15 Sch=ja[7]
-set_property -dict { PACKAGE_PIN B18   IOSTANDARD LVCMOS33 } [get_ports { GPIO_Trg_tri_io[5] }]; #IO_L10P_T1_AD11P_15 Sch=ja[8]
-set_property -dict { PACKAGE_PIN A18   IOSTANDARD LVCMOS33 } [get_ports { GPIO_Trg_tri_io[6] }]; #IO_L10N_T1_AD11N_15 Sch=ja[9]
-set_property -dict { PACKAGE_PIN K16   IOSTANDARD LVCMOS33 } [get_ports { GPIO_Trg_tri_io[7] }]; #IO_25_15 Sch=ja[10]
+set_property -dict { PACKAGE_PIN G13   IOSTANDARD LVCMOS33 } [get_ports { TrgOUT_tri_o[0] }]; #IO_0_15 Sch=ja[1]
+set_property -dict { PACKAGE_PIN B11   IOSTANDARD LVCMOS33 } [get_ports { TrgOUT_tri_o[1] }]; #IO_L4P_T0_15 Sch=ja[2]
+set_property -dict { PACKAGE_PIN A11   IOSTANDARD LVCMOS33 } [get_ports { TrgOUT_tri_o[2] }]; #IO_L4N_T0_15 Sch=ja[3]
+set_property -dict { PACKAGE_PIN D12   IOSTANDARD LVCMOS33 } [get_ports { TrgOUT_tri_o[3] }]; #IO_L6P_T0_15 Sch=ja[4]
+set_property -dict { PACKAGE_PIN D13   IOSTANDARD LVCMOS33 } [get_ports { TrgIN_tri_i[0] }]; #IO_L6N_T0_VREF_15 Sch=ja[7]
+set_property -dict { PACKAGE_PIN B18   IOSTANDARD LVCMOS33 } [get_ports { TrgIN_tri_i[1] }]; #IO_L10P_T1_AD11P_15 Sch=ja[8]
+set_property -dict { PACKAGE_PIN A18   IOSTANDARD LVCMOS33 } [get_ports { TrgIN_tri_i[2] }]; #IO_L10N_T1_AD11N_15 Sch=ja[9]
+set_property -dict { PACKAGE_PIN K16   IOSTANDARD LVCMOS33 } [get_ports { TrgIN_tri_i[3] }]; #IO_25_15 Sch=ja[10]
 # --------------------------------------------------
 # Place output pin muxes near pins
 # --------------------------------------------------

@@ -3,9 +3,9 @@
 <title>Static Call Graph - [.\objects\m3_for_arty_a7.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\objects\m3_for_arty_a7.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Wed Mar 09 17:14:54 2022
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Thu Mar 17 10:31:24 2022
 <BR><P>
-<H3>Maximum Stack Usage =        464 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
+<H3>Maximum Stack Usage =        456 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
 __rt_entry_main &rArr; main &rArr; __2sprintf &rArr; _printf_char_common &rArr; __printf
 <P>
@@ -31,8 +31,8 @@ Function Pointers
  <LI><a href="#[13]">DAP_QSPI_XIP_Handler</a> from spi.o(.text) referenced from startup_arty_cm3.o(RESET)
  <LI><a href="#[12]">DAP_SPI0_Handler</a> from spi.o(.text) referenced from startup_arty_cm3.o(RESET)
  <LI><a href="#[a]">DebugMon_Handler</a> from startup_arty_cm3.o(.text) referenced from startup_arty_cm3.o(RESET)
- <LI><a href="#[e]">GPIO0_Handler</a> from gpio.o(.text) referenced from startup_arty_cm3.o(RESET)
  <LI><a href="#[f]">GPIO1_Handler</a> from gpio.o(.text) referenced from startup_arty_cm3.o(RESET)
+ <LI><a href="#[e]">GPIOTrg_Handler</a> from gpio.o(.text) referenced from startup_arty_cm3.o(RESET)
  <LI><a href="#[5]">HardFault_Handler</a> from startup_arty_cm3.o(.text) referenced from startup_arty_cm3.o(RESET)
  <LI><a href="#[6]">MemManage_Handler</a> from startup_arty_cm3.o(.text) referenced from startup_arty_cm3.o(RESET)
  <LI><a href="#[4]">NMI_Handler</a> from startup_arty_cm3.o(.text) referenced from startup_arty_cm3.o(RESET)
@@ -226,7 +226,7 @@ Global Symbols
 <P><STRONG><a name="[c6]"></a>__rt_entry_postsh_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$00000009))
 
 <P><STRONG><a name="[45]"></a>__rt_entry_main</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$0000000D))
-<BR><BR>[Stack]<UL><LI>Max Depth = 464 + Unknown Stack Size
+<BR><BR>[Stack]<UL><LI>Max Depth = 456 + Unknown Stack Size
 <LI>Call Chain = __rt_entry_main &rArr; main &rArr; __2sprintf &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
@@ -407,6 +407,7 @@ Global Symbols
 </UL>
 <BR>[Called By]<UL><LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WriteSPIData
 <LI><a href="#[f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO1_Handler
+<LI><a href="#[e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIOTrg_Handler
 <LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
@@ -450,36 +451,39 @@ Global Symbols
 <LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;XGpio_InterruptClear
 <LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;XGpio_Initialize
 <LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;XGpio_DiscreteRead
-<LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;XGpio_DiscreteWrite
+<LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;XGpio_DiscreteWrite
 </UL>
 
 <P><STRONG><a name="[ca]"></a>Xil_AssertSetCallback</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, xil_assert.o(.text), UNUSED)
 
 <P><STRONG><a name="[cb]"></a>XNullHandler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, xil_assert.o(.text), UNUSED)
 
-<P><STRONG><a name="[c]"></a>SysTick_Handler</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, main.o(.text))
+<P><STRONG><a name="[c]"></a>SysTick_Handler</STRONG> (Thumb, 136 bytes, Stack size 16 bytes, main.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = SysTick_Handler &rArr; XGpio_DiscreteWrite &rArr; Xil_Assert
+</UL>
+<BR>[Calls]<UL><LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;XGpio_DiscreteWrite
+</UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_arty_cm3.o(RESET)
 </UL>
-<P><STRONG><a name="[46]"></a>main</STRONG> (Thumb, 598 bytes, Stack size 344 bytes, main.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 464 + Unknown Stack Size
+<P><STRONG><a name="[46]"></a>main</STRONG> (Thumb, 454 bytes, Stack size 336 bytes, main.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 456 + Unknown Stack Size
 <LI>Call Chain = main &rArr; __2sprintf &rArr; _printf_char_common &rArr; __printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2sprintf
-<LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;XGpio_DiscreteWrite
-<LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WriteQSPIBaseFlash
-<LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ReadQSPIBaseFlash
-<LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;InitialiseUART
-<LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;InitialiseSPI
-<LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;InitialiseGPIO
-<LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;InitQSPIBaseFlash
-<LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EnableUARTInterrupts
-<LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EnableGPIOInterrupts
-<LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DisableSPIInterrupts
-<LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NVIC_DisableIRQ
-<LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NVIC_EnableIRQ
+<BR>[Calls]<UL><LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2sprintf
+<LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WriteQSPIBaseFlash
+<LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ReadQSPIBaseFlash
+<LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;InitialiseUART
+<LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;InitialiseSPI
+<LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;InitialiseGPIO
+<LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;InitQSPIBaseFlash
+<LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EnableUARTInterrupts
+<LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EnableGPIOInterrupts
+<LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DisableSPIInterrupts
+<LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NVIC_DisableIRQ
+<LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NVIC_EnableIRQ
 <LI><a href="#[4e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;print
-<LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4
-<LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strcpy
+<LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4
+<LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strcpy
 </UL>
 <BR>[Called By]<UL><LI><a href="#[45]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_main
 </UL>
@@ -487,21 +491,21 @@ Global Symbols
 <P><STRONG><a name="[14]"></a>DAPLinkFittedn</STRONG> (Thumb, 24 bytes, Stack size 8 bytes, main.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = DAPLinkFittedn
 </UL>
-<BR>[Calls]<UL><LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NVIC_DisableIRQ
+<BR>[Calls]<UL><LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NVIC_DisableIRQ
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_arty_cm3.o(RESET)
 </UL>
-<P><STRONG><a name="[51]"></a>InitialiseGPIO</STRONG> (Thumb, 166 bytes, Stack size 8 bytes, gpio.o(.text))
+<P><STRONG><a name="[52]"></a>InitialiseGPIO</STRONG> (Thumb, 180 bytes, Stack size 8 bytes, gpio.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = InitialiseGPIO &rArr; XGpio_Initialize &rArr; XGpio_CfgInitialize &rArr; Xil_Assert
 </UL>
 <BR>[Calls]<UL><LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;XGpio_SetDataDirection
 <LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;XGpio_Initialize
-<LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;XGpio_DiscreteWrite
+<LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;XGpio_DiscreteWrite
 </UL>
 <BR>[Called By]<UL><LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[53]"></a>EnableGPIOInterrupts</STRONG> (Thumb, 32 bytes, Stack size 8 bytes, gpio.o(.text))
+<P><STRONG><a name="[54]"></a>EnableGPIOInterrupts</STRONG> (Thumb, 32 bytes, Stack size 8 bytes, gpio.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = EnableGPIOInterrupts &rArr; XGpio_InterruptEnable &rArr; Xil_Assert
 </UL>
 <BR>[Calls]<UL><LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;XGpio_InterruptGlobalEnable
@@ -510,39 +514,40 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[e]"></a>GPIO0_Handler</STRONG> (Thumb, 38 bytes, Stack size 8 bytes, gpio.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = GPIO0_Handler &rArr; XGpio_InterruptClear &rArr; Xil_Assert
+<P><STRONG><a name="[e]"></a>GPIOTrg_Handler</STRONG> (Thumb, 146 bytes, Stack size 16 bytes, gpio.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = GPIOTrg_Handler &rArr; XGpio_InterruptClear &rArr; Xil_Assert
 </UL>
 <BR>[Calls]<UL><LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;XGpio_InterruptClear
 <LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;XGpio_DiscreteRead
 <LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NVIC_ClearPendingIRQ
-<LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;XGpio_DiscreteWrite
+<LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;XGpio_DiscreteWrite
+<LI><a href="#[4e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;print
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_arty_cm3.o(RESET)
 </UL>
-<P><STRONG><a name="[f]"></a>GPIO1_Handler</STRONG> (Thumb, 188 bytes, Stack size 48 bytes, gpio.o(.text))
+<P><STRONG><a name="[f]"></a>GPIO1_Handler</STRONG> (Thumb, 246 bytes, Stack size 48 bytes, gpio.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 168 + Unknown Stack Size
 <LI>Call Chain = GPIO1_Handler &rArr; __2sprintf &rArr; _printf_char_common &rArr; __printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2sprintf
+<BR>[Calls]<UL><LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2sprintf
 <LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;XGpio_InterruptClear
 <LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;XGpio_DiscreteRead
 <LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NVIC_ClearPendingIRQ
-<LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;XGpio_DiscreteWrite
+<LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;XGpio_DiscreteWrite
 <LI><a href="#[4e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;print
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_arty_cm3.o(RESET)
 </UL>
 <P><STRONG><a name="[65]"></a>SetDAPLinkQSPIMode</STRONG> (Thumb, 16 bytes, Stack size 8 bytes, gpio.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;XGpio_DiscreteWrite
+<BR><BR>[Calls]<UL><LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;XGpio_DiscreteWrite
 </UL>
 
 <P><STRONG><a name="[66]"></a>IncLeds</STRONG> (Thumb, 26 bytes, Stack size 8 bytes, gpio.o(.text), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;XGpio_DiscreteRead
-<LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;XGpio_DiscreteWrite
+<LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;XGpio_DiscreteWrite
 </UL>
 
-<P><STRONG><a name="[56]"></a>InitialiseSPI</STRONG> (Thumb, 58 bytes, Stack size 16 bytes, spi.o(.text))
+<P><STRONG><a name="[57]"></a>InitialiseSPI</STRONG> (Thumb, 58 bytes, Stack size 16 bytes, spi.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = InitialiseSPI &rArr; XSpi_Initialize &rArr; XSpi_CfgInitialize &rArr; XSpi_Reset &rArr; XSpi_Abort
 </UL>
 <BR>[Calls]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;XSpi_Start
@@ -554,7 +559,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[57]"></a>DisableSPIInterrupts</STRONG> (Thumb, 18 bytes, Stack size 8 bytes, spi.o(.text))
+<P><STRONG><a name="[58]"></a>DisableSPIInterrupts</STRONG> (Thumb, 18 bytes, Stack size 8 bytes, spi.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = DisableSPIInterrupts
 </UL>
 <BR>[Calls]<UL><LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Xil_Out32
@@ -562,7 +567,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[5a]"></a>InitQSPIBaseFlash</STRONG> (Thumb, 76 bytes, Stack size 16 bytes, spi.o(.text))
+<P><STRONG><a name="[5b]"></a>InitQSPIBaseFlash</STRONG> (Thumb, 76 bytes, Stack size 16 bytes, spi.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = InitQSPIBaseFlash &rArr; XSpi_Transfer &rArr; Xil_Assert
 </UL>
 <BR>[Calls]<UL><LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;XSpi_Transfer
@@ -572,7 +577,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[5b]"></a>WriteQSPIBaseFlash</STRONG> (Thumb, 138 bytes, Stack size 32 bytes, spi.o(.text))
+<P><STRONG><a name="[5c]"></a>WriteQSPIBaseFlash</STRONG> (Thumb, 138 bytes, Stack size 32 bytes, spi.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 96<LI>Call Chain = WriteQSPIBaseFlash &rArr; XSpi_Transfer &rArr; Xil_Assert
 </UL>
 <BR>[Calls]<UL><LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;XSpi_Transfer
@@ -582,7 +587,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[5c]"></a>ReadQSPIBaseFlash</STRONG> (Thumb, 124 bytes, Stack size 32 bytes, spi.o(.text))
+<P><STRONG><a name="[5d]"></a>ReadQSPIBaseFlash</STRONG> (Thumb, 124 bytes, Stack size 32 bytes, spi.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 96<LI>Call Chain = ReadQSPIBaseFlash &rArr; XSpi_Transfer &rArr; Xil_Assert
 </UL>
 <BR>[Calls]<UL><LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;XSpi_Transfer
@@ -593,7 +598,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[6e]"></a>WriteSPIData</STRONG> (Thumb, 248 bytes, Stack size 112 bytes, spi.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2sprintf
+<BR><BR>[Calls]<UL><LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2sprintf
 <LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Xil_Out32
 <LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Xil_In32
 <LI><a href="#[4e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;print
@@ -633,7 +638,7 @@ Global Symbols
 <P><STRONG><a name="[71]"></a>SendHandler</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, uart.o(.text))
 <BR>[Address Reference Count : 1]<UL><LI> uart.o(.text)
 </UL>
-<P><STRONG><a name="[50]"></a>InitialiseUART</STRONG> (Thumb, 58 bytes, Stack size 8 bytes, uart.o(.text))
+<P><STRONG><a name="[51]"></a>InitialiseUART</STRONG> (Thumb, 58 bytes, Stack size 8 bytes, uart.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = InitialiseUART &rArr; XUartLite_Initialize &rArr; XUartLite_CfgInitialize &rArr; XUartLite_ClearStats &rArr; Xil_Assert
 </UL>
 <BR>[Calls]<UL><LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;XUartLite_SetSendHandler
@@ -646,7 +651,7 @@ Global Symbols
 
 <P><STRONG><a name="[cc]"></a>CheckUARTRxBytes</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, uart.o(.text), UNUSED)
 
-<P><STRONG><a name="[54]"></a>EnableUARTInterrupts</STRONG> (Thumb, 10 bytes, Stack size 8 bytes, uart.o(.text))
+<P><STRONG><a name="[55]"></a>EnableUARTInterrupts</STRONG> (Thumb, 10 bytes, Stack size 8 bytes, uart.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = EnableUARTInterrupts &rArr; XUartLite_EnableInterrupt &rArr; Xil_Assert
 </UL>
 <BR>[Calls]<UL><LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;XUartLite_EnableInterrupt
@@ -675,7 +680,7 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Xil_Out32
 <LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Xil_Assert
 </UL>
-<BR>[Called By]<UL><LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;InitialiseGPIO
+<BR>[Called By]<UL><LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;InitialiseGPIO
 </UL>
 
 <P><STRONG><a name="[7b]"></a>XGpio_GetDataDirection</STRONG> (Thumb, 126 bytes, Stack size 16 bytes, xgpio.o(.text), UNUSED)
@@ -689,10 +694,10 @@ Global Symbols
 </UL>
 <BR>[Called By]<UL><LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IncLeds
 <LI><a href="#[f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO1_Handler
-<LI><a href="#[e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO0_Handler
+<LI><a href="#[e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIOTrg_Handler
 </UL>
 
-<P><STRONG><a name="[5d]"></a>XGpio_DiscreteWrite</STRONG> (Thumb, 126 bytes, Stack size 16 bytes, xgpio.o(.text))
+<P><STRONG><a name="[4f]"></a>XGpio_DiscreteWrite</STRONG> (Thumb, 126 bytes, Stack size 16 bytes, xgpio.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = XGpio_DiscreteWrite &rArr; Xil_Assert
 </UL>
 <BR>[Calls]<UL><LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Xil_Out32
@@ -701,9 +706,9 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IncLeds
 <LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetDAPLinkQSPIMode
 <LI><a href="#[f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO1_Handler
-<LI><a href="#[e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO0_Handler
-<LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;InitialiseGPIO
-<LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<LI><a href="#[e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIOTrg_Handler
+<LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;InitialiseGPIO
+<LI><a href="#[c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysTick_Handler
 </UL>
 
 <P><STRONG><a name="[61]"></a>XGpio_InterruptGlobalEnable</STRONG> (Thumb, 110 bytes, Stack size 8 bytes, xgpio_intr.o(.text))
@@ -712,7 +717,7 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Xil_Out32
 <LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Xil_Assert
 </UL>
-<BR>[Called By]<UL><LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EnableGPIOInterrupts
+<BR>[Called By]<UL><LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EnableGPIOInterrupts
 </UL>
 
 <P><STRONG><a name="[7d]"></a>XGpio_InterruptGlobalDisable</STRONG> (Thumb, 108 bytes, Stack size 8 bytes, xgpio_intr.o(.text), UNUSED)
@@ -727,7 +732,7 @@ Global Symbols
 <LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Xil_In32
 <LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Xil_Assert
 </UL>
-<BR>[Called By]<UL><LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EnableGPIOInterrupts
+<BR>[Called By]<UL><LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EnableGPIOInterrupts
 </UL>
 
 <P><STRONG><a name="[7f]"></a>XGpio_InterruptDisable</STRONG> (Thumb, 124 bytes, Stack size 16 bytes, xgpio_intr.o(.text), UNUSED)
@@ -744,7 +749,7 @@ Global Symbols
 <LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Xil_Assert
 </UL>
 <BR>[Called By]<UL><LI><a href="#[f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO1_Handler
-<LI><a href="#[e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO0_Handler
+<LI><a href="#[e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIOTrg_Handler
 </UL>
 
 <P><STRONG><a name="[80]"></a>XGpio_InterruptGetEnabled</STRONG> (Thumb, 116 bytes, Stack size 8 bytes, xgpio_intr.o(.text), UNUSED)
@@ -768,7 +773,7 @@ Global Symbols
 <LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;XGpio_CfgInitialize
 <LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Xil_Assert
 </UL>
-<BR>[Called By]<UL><LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;InitialiseGPIO
+<BR>[Called By]<UL><LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;InitialiseGPIO
 </UL>
 
 <P><STRONG><a name="[83]"></a>XSpi_Abort</STRONG> (Thumb, 62 bytes, Stack size 16 bytes, xspi.o(.text))
@@ -789,7 +794,7 @@ Global Symbols
 <LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Xil_Assert
 </UL>
 <BR>[Called By]<UL><LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;XSpi_CfgInitialize
-<LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;InitialiseSPI
+<LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;InitialiseSPI
 </UL>
 
 <P><STRONG><a name="[86]"></a>XSpi_CfgInitialize</STRONG> (Thumb, 374 bytes, Stack size 32 bytes, xspi.o(.text))
@@ -810,7 +815,7 @@ Global Symbols
 <LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Xil_In32
 <LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Xil_Assert
 </UL>
-<BR>[Called By]<UL><LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;InitialiseSPI
+<BR>[Called By]<UL><LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;InitialiseSPI
 </UL>
 
 <P><STRONG><a name="[87]"></a>XSpi_Stop</STRONG> (Thumb, 124 bytes, Stack size 16 bytes, xspi.o(.text), UNUSED)
@@ -826,9 +831,9 @@ Global Symbols
 <LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Xil_In32
 <LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Xil_Assert
 </UL>
-<BR>[Called By]<UL><LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WriteQSPIBaseFlash
-<LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ReadQSPIBaseFlash
-<LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;InitQSPIBaseFlash
+<BR>[Called By]<UL><LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WriteQSPIBaseFlash
+<LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ReadQSPIBaseFlash
+<LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;InitQSPIBaseFlash
 </UL>
 
 <P><STRONG><a name="[6b]"></a>XSpi_SetSlaveSelect</STRONG> (Thumb, 130 bytes, Stack size 24 bytes, xspi.o(.text))
@@ -836,7 +841,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Xil_Assert
 </UL>
-<BR>[Called By]<UL><LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;InitialiseSPI
+<BR>[Called By]<UL><LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;InitialiseSPI
 </UL>
 
 <P><STRONG><a name="[88]"></a>XSpi_GetSlaveSelect</STRONG> (Thumb, 76 bytes, Stack size 8 bytes, xspi.o(.text), UNUSED)
@@ -867,7 +872,7 @@ Global Symbols
 <LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;XSpi_CfgInitialize
 <LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Xil_Assert
 </UL>
-<BR>[Called By]<UL><LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;InitialiseSPI
+<BR>[Called By]<UL><LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;InitialiseSPI
 </UL>
 
 <P><STRONG><a name="[8c]"></a>XUartLite_CfgInitialize</STRONG> (Thumb, 88 bytes, Stack size 16 bytes, xuartlite.o(.text))
@@ -915,7 +920,7 @@ Global Symbols
 <LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Xil_In32
 <LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Xil_Assert
 </UL>
-<BR>[Called By]<UL><LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;InitialiseUART
+<BR>[Called By]<UL><LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;InitialiseUART
 </UL>
 
 <P><STRONG><a name="[93]"></a>XUartLite_ResetFifos</STRONG> (Thumb, 100 bytes, Stack size 16 bytes, xuartlite.o(.text), UNUSED)
@@ -934,7 +939,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Xil_Assert
 </UL>
-<BR>[Called By]<UL><LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;InitialiseUART
+<BR>[Called By]<UL><LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;InitialiseUART
 </UL>
 
 <P><STRONG><a name="[72]"></a>XUartLite_SetSendHandler</STRONG> (Thumb, 100 bytes, Stack size 16 bytes, xuartlite_intr.o(.text))
@@ -942,7 +947,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Xil_Assert
 </UL>
-<BR>[Called By]<UL><LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;InitialiseUART
+<BR>[Called By]<UL><LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;InitialiseUART
 </UL>
 
 <P><STRONG><a name="[77]"></a>XUartLite_InterruptHandler</STRONG> (Thumb, 72 bytes, Stack size 16 bytes, xuartlite_intr.o(.text))
@@ -966,7 +971,7 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Xil_Out32
 <LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Xil_Assert
 </UL>
-<BR>[Called By]<UL><LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EnableUARTInterrupts
+<BR>[Called By]<UL><LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EnableUARTInterrupts
 </UL>
 
 <P><STRONG><a name="[4d]"></a>XUartLite_SendByte</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, xuartlite_l.o(.text))
@@ -986,7 +991,7 @@ Global Symbols
 <LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;XUartLite_CfgInitialize
 <LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Xil_Assert
 </UL>
-<BR>[Called By]<UL><LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;InitialiseUART
+<BR>[Called By]<UL><LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;InitialiseUART
 </UL>
 
 <P><STRONG><a name="[9a]"></a>XUartLite_GetStats</STRONG> (Thumb, 122 bytes, Stack size 16 bytes, xuartlite_stats.o(.text), UNUSED)
@@ -1001,7 +1006,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;XUartLite_CfgInitialize
 </UL>
 
-<P><STRONG><a name="[59]"></a>__2sprintf</STRONG> (Thumb, 34 bytes, Stack size 32 bytes, noretval__2sprintf.o(.text))
+<P><STRONG><a name="[5a]"></a>__2sprintf</STRONG> (Thumb, 34 bytes, Stack size 32 bytes, noretval__2sprintf.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 120 + Unknown Stack Size
 <LI>Call Chain = __2sprintf &rArr; _printf_char_common &rArr; __printf
 </UL>
@@ -1047,13 +1052,13 @@ Global Symbols
 
 <P><STRONG><a name="[ce]"></a>_printf_longlong_hex</STRONG> (Thumb, 0 bytes, Stack size 16 bytes, _printf_hex_int.o(.text), UNUSED)
 
-<P><STRONG><a name="[58]"></a>strcpy</STRONG> (Thumb, 72 bytes, Stack size 12 bytes, strcpy.o(.text))
+<P><STRONG><a name="[59]"></a>strcpy</STRONG> (Thumb, 72 bytes, Stack size 12 bytes, strcpy.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = strcpy
 </UL>
 <BR>[Called By]<UL><LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[4f]"></a>__aeabi_memcpy4</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, rt_memcpy_w.o(.text))
+<P><STRONG><a name="[50]"></a>__aeabi_memcpy4</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, rt_memcpy_w.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = __aeabi_memcpy4
 </UL>
 <BR>[Called By]<UL><LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
@@ -1084,11 +1089,11 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__printf
 </UL>
-<BR>[Called By]<UL><LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2sprintf
+<BR>[Called By]<UL><LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2sprintf
 </UL>
 
 <P><STRONG><a name="[31]"></a>_sputc</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, _sputc.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2sprintf
+<BR><BR>[Called By]<UL><LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2sprintf
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> noretval__2sprintf.o(.text)
 </UL>
@@ -1152,18 +1157,18 @@ Global Symbols
 <H3>
 Local Symbols
 </H3>
-<P><STRONG><a name="[52]"></a>NVIC_EnableIRQ</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, main.o(.text))
+<P><STRONG><a name="[53]"></a>NVIC_EnableIRQ</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, main.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[55]"></a>NVIC_DisableIRQ</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, main.o(.text))
+<P><STRONG><a name="[56]"></a>NVIC_DisableIRQ</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, main.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[14]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DAPLinkFittedn
 <LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
 <P><STRONG><a name="[64]"></a>NVIC_ClearPendingIRQ</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, gpio.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO1_Handler
-<LI><a href="#[e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO0_Handler
+<LI><a href="#[e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIOTrg_Handler
 </UL>
 
 <P><STRONG><a name="[6f]"></a>NVIC_ClearPendingIRQ</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, spi.o(.text))
@@ -1175,23 +1180,23 @@ Local Symbols
 
 <P><STRONG><a name="[6c]"></a>Xil_In32</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, spi.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WriteSPIData
-<LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WriteQSPIBaseFlash
-<LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ReadQSPIBaseFlash
-<LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;InitQSPIBaseFlash
+<LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WriteQSPIBaseFlash
+<LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ReadQSPIBaseFlash
+<LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;InitQSPIBaseFlash
 </UL>
 
 <P><STRONG><a name="[6a]"></a>Xil_Out32</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, spi.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WriteSPIData
-<LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WriteQSPIBaseFlash
-<LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ReadQSPIBaseFlash
-<LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;InitialiseSPI
-<LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;InitQSPIBaseFlash
-<LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DisableSPIInterrupts
+<LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WriteQSPIBaseFlash
+<LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ReadQSPIBaseFlash
+<LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;InitialiseSPI
+<LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;InitQSPIBaseFlash
+<LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DisableSPIInterrupts
 </UL>
 
 <P><STRONG><a name="[7a]"></a>Xil_Out32</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, xgpio.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;XGpio_SetDataDirection
-<LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;XGpio_DiscreteWrite
+<LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;XGpio_DiscreteWrite
 </UL>
 
 <P><STRONG><a name="[7e]"></a>Xil_In32</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, xgpio_intr.o(.text))

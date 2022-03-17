@@ -1,19 +1,19 @@
-13:16:32 **** Build of project standalone_bsp_0 ****
+16:47:46 **** Build of project standalone_bsp_0 ****
 make -k all 
 "Running Make include in Cortex_M3_0/libsrc/bram_v4_2/src"
-C:/Xilinx/SDK/2018.2/gnuwin/bin/make -C Cortex_M3_0/libsrc/bram_v4_2/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-march=armv6-m -mthumb -Wall -Wextra"
+make -C Cortex_M3_0/libsrc/bram_v4_2/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-march=armv6-m -mthumb -Wall -Wextra"
 "Running Make include in Cortex_M3_0/libsrc/cpu_cortexm3_v1_0/src"
-C:/Xilinx/SDK/2018.2/gnuwin/bin/make -C Cortex_M3_0/libsrc/cpu_cortexm3_v1_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-march=armv6-m -mthumb -Wall -Wextra"
+make -C Cortex_M3_0/libsrc/cpu_cortexm3_v1_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-march=armv6-m -mthumb -Wall -Wextra"
 "Running Make include in Cortex_M3_0/libsrc/gpio_v4_3/src"
-C:/Xilinx/SDK/2018.2/gnuwin/bin/make -C Cortex_M3_0/libsrc/gpio_v4_3/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-march=armv6-m -mthumb -Wall -Wextra"
+make -C Cortex_M3_0/libsrc/gpio_v4_3/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-march=armv6-m -mthumb -Wall -Wextra"
 "Running Make include in Cortex_M3_0/libsrc/spi_v4_4/src"
-C:/Xilinx/SDK/2018.2/gnuwin/bin/make -C Cortex_M3_0/libsrc/spi_v4_4/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-march=armv6-m -mthumb -Wall -Wextra"
+make -C Cortex_M3_0/libsrc/spi_v4_4/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-march=armv6-m -mthumb -Wall -Wextra"
 "Running Make include in Cortex_M3_0/libsrc/standalone_v6_7/src"
-C:/Xilinx/SDK/2018.2/gnuwin/bin/make -C Cortex_M3_0/libsrc/standalone_v6_7/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-march=armv6-m -mthumb -Wall -Wextra"
+make -C Cortex_M3_0/libsrc/standalone_v6_7/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-march=armv6-m -mthumb -Wall -Wextra"
 "Running Make include in Cortex_M3_0/libsrc/uartlite_v3_2/src"
-C:/Xilinx/SDK/2018.2/gnuwin/bin/make -C Cortex_M3_0/libsrc/uartlite_v3_2/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-march=armv6-m -mthumb -Wall -Wextra"
+make -C Cortex_M3_0/libsrc/uartlite_v3_2/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-march=armv6-m -mthumb -Wall -Wextra"
 "Running Make libs in Cortex_M3_0/libsrc/bram_v4_2/src"
-C:/Xilinx/SDK/2018.2/gnuwin/bin/make -C Cortex_M3_0/libsrc/bram_v4_2/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-march=armv6-m -mthumb -Wall -Wextra"
+make -C Cortex_M3_0/libsrc/bram_v4_2/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-march=armv6-m -mthumb -Wall -Wextra"
 "Compiling bram"
 In file included from xbram_selftest.c:73:0:
 ../../../include/xil_cache.h: In function 'Xil_DCacheInvalidateRange':
@@ -39,16 +39,16 @@ In file included from xbram_selftest.c:73:0:
                                                 ^~~
 arm-none-eabi-ar: creating ../../../lib/libxil.a
 "Running Make libs in Cortex_M3_0/libsrc/cpu_cortexm3_v1_0/src"
-C:/Xilinx/SDK/2018.2/gnuwin/bin/make -C Cortex_M3_0/libsrc/cpu_cortexm3_v1_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-march=armv6-m -mthumb -Wall -Wextra"
+make -C Cortex_M3_0/libsrc/cpu_cortexm3_v1_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-march=armv6-m -mthumb -Wall -Wextra"
 "Compiling cpu_cortexm3"
 "Running Make libs in Cortex_M3_0/libsrc/gpio_v4_3/src"
-C:/Xilinx/SDK/2018.2/gnuwin/bin/make -C Cortex_M3_0/libsrc/gpio_v4_3/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-march=armv6-m -mthumb -Wall -Wextra"
+make -C Cortex_M3_0/libsrc/gpio_v4_3/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-march=armv6-m -mthumb -Wall -Wextra"
 "Compiling gpio"
 "Running Make libs in Cortex_M3_0/libsrc/spi_v4_4/src"
-C:/Xilinx/SDK/2018.2/gnuwin/bin/make -C Cortex_M3_0/libsrc/spi_v4_4/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-march=armv6-m -mthumb -Wall -Wextra"
+make -C Cortex_M3_0/libsrc/spi_v4_4/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-march=armv6-m -mthumb -Wall -Wextra"
 "Compiling spi"
 "Running Make libs in Cortex_M3_0/libsrc/standalone_v6_7/src"
-C:/Xilinx/SDK/2018.2/gnuwin/bin/make -C Cortex_M3_0/libsrc/standalone_v6_7/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-march=armv6-m -mthumb -Wall -Wextra"
+make -C Cortex_M3_0/libsrc/standalone_v6_7/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-march=armv6-m -mthumb -Wall -Wextra"
 "Compiling standalone"
 In file included from xil_cache.c:108:0:
 xil_cache.h: In function 'Xil_DCacheInvalidateRange':
@@ -73,9 +73,9 @@ xil_cache.h:69:48: warning: unused parameter 'len' [-Wunused-parameter]
  void Xil_ICacheInvalidateRange(INTPTR adr, u32 len) {};
                                                 ^~~
 "Running Make libs in Cortex_M3_0/libsrc/uartlite_v3_2/src"
-C:/Xilinx/SDK/2018.2/gnuwin/bin/make -C Cortex_M3_0/libsrc/uartlite_v3_2/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-march=armv6-m -mthumb -Wall -Wextra"
+make -C Cortex_M3_0/libsrc/uartlite_v3_2/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-march=armv6-m -mthumb -Wall -Wextra"
 "Compiling uartlite"
 'Finished building libraries'
 
-13:16:38 Build Finished (took 5s.575ms)
+16:47:52 Build Finished (took 6s.724ms)
 

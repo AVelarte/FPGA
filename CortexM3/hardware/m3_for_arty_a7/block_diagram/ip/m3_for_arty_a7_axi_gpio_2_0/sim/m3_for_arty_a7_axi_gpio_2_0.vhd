@@ -77,9 +77,9 @@ ENTITY m3_for_arty_a7_axi_gpio_2_0 IS
     s_axi_rresp : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
     s_axi_rvalid : OUT STD_LOGIC;
     s_axi_rready : IN STD_LOGIC;
-    gpio_io_i : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
-    gpio_io_o : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
-    gpio_io_t : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
+    ip2intc_irpt : OUT STD_LOGIC;
+    gpio_io_o : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
+    gpio2_io_i : IN STD_LOGIC_VECTOR(3 DOWNTO 0)
   );
 END m3_for_arty_a7_axi_gpio_2_0;
 
@@ -125,20 +125,22 @@ ARCHITECTURE m3_for_arty_a7_axi_gpio_2_0_arch OF m3_for_arty_a7_axi_gpio_2_0 IS
       s_axi_rvalid : OUT STD_LOGIC;
       s_axi_rready : IN STD_LOGIC;
       ip2intc_irpt : OUT STD_LOGIC;
-      gpio_io_i : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
-      gpio_io_o : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
-      gpio_io_t : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
-      gpio2_io_i : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
-      gpio2_io_o : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
-      gpio2_io_t : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)
+      gpio_io_i : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
+      gpio_io_o : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
+      gpio_io_t : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
+      gpio2_io_i : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
+      gpio2_io_o : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
+      gpio2_io_t : OUT STD_LOGIC_VECTOR(3 DOWNTO 0)
     );
   END COMPONENT axi_gpio;
   ATTRIBUTE X_INTERFACE_INFO : STRING;
   ATTRIBUTE X_INTERFACE_PARAMETER : STRING;
-  ATTRIBUTE X_INTERFACE_INFO OF gpio_io_t: SIGNAL IS "xilinx.com:interface:gpio:1.0 GPIO TRI_T";
+  ATTRIBUTE X_INTERFACE_PARAMETER OF gpio2_io_i: SIGNAL IS "XIL_INTERFACENAME GPIO2, BOARD.ASSOCIATED_PARAM GPIO2_BOARD_INTERFACE";
+  ATTRIBUTE X_INTERFACE_INFO OF gpio2_io_i: SIGNAL IS "xilinx.com:interface:gpio:1.0 GPIO2 TRI_I";
+  ATTRIBUTE X_INTERFACE_PARAMETER OF gpio_io_o: SIGNAL IS "XIL_INTERFACENAME GPIO, BOARD.ASSOCIATED_PARAM GPIO_BOARD_INTERFACE";
   ATTRIBUTE X_INTERFACE_INFO OF gpio_io_o: SIGNAL IS "xilinx.com:interface:gpio:1.0 GPIO TRI_O";
-  ATTRIBUTE X_INTERFACE_PARAMETER OF gpio_io_i: SIGNAL IS "XIL_INTERFACENAME GPIO, BOARD.ASSOCIATED_PARAM GPIO_BOARD_INTERFACE";
-  ATTRIBUTE X_INTERFACE_INFO OF gpio_io_i: SIGNAL IS "xilinx.com:interface:gpio:1.0 GPIO TRI_I";
+  ATTRIBUTE X_INTERFACE_PARAMETER OF ip2intc_irpt: SIGNAL IS "XIL_INTERFACENAME IP2INTC_IRQ, SENSITIVITY LEVEL_HIGH, PortWidth 1";
+  ATTRIBUTE X_INTERFACE_INFO OF ip2intc_irpt: SIGNAL IS "xilinx.com:signal:interrupt:1.0 IP2INTC_IRQ INTERRUPT";
   ATTRIBUTE X_INTERFACE_INFO OF s_axi_rready: SIGNAL IS "xilinx.com:interface:aximm:1.0 S_AXI RREADY";
   ATTRIBUTE X_INTERFACE_INFO OF s_axi_rvalid: SIGNAL IS "xilinx.com:interface:aximm:1.0 S_AXI RVALID";
   ATTRIBUTE X_INTERFACE_INFO OF s_axi_rresp: SIGNAL IS "xilinx.com:interface:aximm:1.0 S_AXI RRESP";
@@ -168,16 +170,16 @@ BEGIN
       C_FAMILY => "artix7",
       C_S_AXI_ADDR_WIDTH => 9,
       C_S_AXI_DATA_WIDTH => 32,
-      C_GPIO_WIDTH => 8,
-      C_GPIO2_WIDTH => 32,
+      C_GPIO_WIDTH => 4,
+      C_GPIO2_WIDTH => 4,
       C_ALL_INPUTS => 0,
-      C_ALL_INPUTS_2 => 0,
-      C_ALL_OUTPUTS => 0,
+      C_ALL_INPUTS_2 => 1,
+      C_ALL_OUTPUTS => 1,
       C_ALL_OUTPUTS_2 => 0,
-      C_INTERRUPT_PRESENT => 0,
+      C_INTERRUPT_PRESENT => 1,
       C_DOUT_DEFAULT => X"00000000",
       C_TRI_DEFAULT => X"FFFFFFFF",
-      C_IS_DUAL => 0,
+      C_IS_DUAL => 1,
       C_DOUT_DEFAULT_2 => X"00000000",
       C_TRI_DEFAULT_2 => X"FFFFFFFF"
     )
@@ -201,9 +203,9 @@ BEGIN
       s_axi_rresp => s_axi_rresp,
       s_axi_rvalid => s_axi_rvalid,
       s_axi_rready => s_axi_rready,
-      gpio_io_i => gpio_io_i,
+      ip2intc_irpt => ip2intc_irpt,
+      gpio_io_i => STD_LOGIC_VECTOR(TO_UNSIGNED(0, 4)),
       gpio_io_o => gpio_io_o,
-      gpio_io_t => gpio_io_t,
-      gpio2_io_i => STD_LOGIC_VECTOR(TO_UNSIGNED(0, 32))
+      gpio2_io_i => gpio2_io_i
     );
 END m3_for_arty_a7_axi_gpio_2_0_arch;

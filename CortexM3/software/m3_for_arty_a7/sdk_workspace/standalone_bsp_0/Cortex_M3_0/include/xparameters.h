@@ -101,8 +101,8 @@
 #define XPAR_AXI_GPIO_2_BASEADDR 0x40040000
 #define XPAR_AXI_GPIO_2_HIGHADDR 0x4004FFFF
 #define XPAR_AXI_GPIO_2_DEVICE_ID 3
-#define XPAR_AXI_GPIO_2_INTERRUPT_PRESENT 0
-#define XPAR_AXI_GPIO_2_IS_DUAL 0
+#define XPAR_AXI_GPIO_2_INTERRUPT_PRESENT 1
+#define XPAR_AXI_GPIO_2_IS_DUAL 1
 
 
 /******************************************************************/
@@ -132,8 +132,8 @@
 #define XPAR_GPIO_3_BASEADDR 0x40040000
 #define XPAR_GPIO_3_HIGHADDR 0x4004FFFF
 #define XPAR_GPIO_3_DEVICE_ID XPAR_AXI_GPIO_2_DEVICE_ID
-#define XPAR_GPIO_3_INTERRUPT_PRESENT 0
-#define XPAR_GPIO_3_IS_DUAL 0
+#define XPAR_GPIO_3_INTERRUPT_PRESENT 1
+#define XPAR_GPIO_3_IS_DUAL 1
 
 
 /******************************************************************/

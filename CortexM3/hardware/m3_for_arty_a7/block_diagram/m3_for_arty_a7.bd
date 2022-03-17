@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<bd:repository xmlns:bd="http://www.xilinx.com/bd" bd:BoundaryCRC="0xC900CA0A248882BB" bd:device="xc7a100tcsg324-1" bd:isValidated="true" bd:synthFlowMode="None" bd:tool_version="2018.2" bd:top="m3_for_arty_a7" bd:version="1.00.a">
+<bd:repository xmlns:bd="http://www.xilinx.com/bd" bd:BoundaryCRC="0x98F88AD583A505A0" bd:device="xc7a100tcsg324-1" bd:isValidated="true" bd:synthFlowMode="None" bd:tool_version="2018.2" bd:top="m3_for_arty_a7" bd:version="1.00.a">
 
   <spirit:component xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009">
     <spirit:vendor>xilinx.com</spirit:vendor>
@@ -56,7 +56,13 @@
         <spirit:abstractionType spirit:library="interface" spirit:name="uart_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
       </spirit:busInterface>
       <spirit:busInterface>
-        <spirit:name>GPIO_Trg</spirit:name>
+        <spirit:name>TrgOUT</spirit:name>
+        <spirit:master/>
+        <spirit:busType spirit:library="interface" spirit:name="gpio" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:abstractionType spirit:library="interface" spirit:name="gpio_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+      </spirit:busInterface>
+      <spirit:busInterface>
+        <spirit:name>TrgIN</spirit:name>
         <spirit:master/>
         <spirit:busType spirit:library="interface" spirit:name="gpio" spirit:vendor="xilinx.com" spirit:version="1.0"/>
         <spirit:abstractionType spirit:library="interface" spirit:name="gpio_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
@@ -332,6 +338,7 @@
           <spirit:configurableElementValue spirit:referenceId="DTCM_SIZE">"0110"</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="ITCM_INIT_FILE">bram_a7.hex</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="Component_Name">m3_for_arty_a7_Cortex_M3_0_0</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="LVL_WIDTH">3</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="TRACE_LVL">1</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="DEBUG_LVL">2</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="WIC_PRESENT">false</spirit:configurableElementValue>
@@ -342,10 +349,15 @@
         <spirit:componentRef spirit:library="ip" spirit:name="axi_gpio" spirit:vendor="xilinx.com" spirit:version="2.0"/>
         <spirit:configurableElementValues>
           <spirit:configurableElementValue spirit:referenceId="bd:xciName">m3_for_arty_a7_axi_gpio_2_0</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="C_GPIO_WIDTH">8</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_GPIO_WIDTH">4</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_GPIO2_WIDTH">4</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_IS_DUAL">1</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="C_ALL_INPUTS">0</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_ALL_INPUTS_2">1</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_INTERRUPT_PRESENT">1</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="USE_BOARD_FLOW">true</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="GPIO_BOARD_INTERFACE">Custom</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_ALL_OUTPUTS">1</spirit:configurableElementValue>
         </spirit:configurableElementValues>
       </spirit:componentInstance>
     </spirit:componentInstances>
@@ -434,11 +446,6 @@
         <spirit:internalPortReference spirit:componentRef="axi_uartlite_0" spirit:portRef="rx"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
-        <spirit:name>axi_gpio_0_ip2intc_irpt</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="axi_gpio_0" spirit:portRef="ip2intc_irpt"/>
-        <spirit:internalPortReference spirit:componentRef="xlconcat_0" spirit:portRef="In1"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
         <spirit:name>axi_gpio_1_ip2intc_irpt</spirit:name>
         <spirit:internalPortReference spirit:componentRef="axi_gpio_1" spirit:portRef="ip2intc_irpt"/>
         <spirit:internalPortReference spirit:componentRef="xlconcat_0" spirit:portRef="In2"/>
@@ -467,6 +474,7 @@
         <spirit:internalPortReference spirit:componentRef="axi_gpio_1" spirit:portRef="s_axi_aclk"/>
         <spirit:internalPortReference spirit:componentRef="axi_quad_spi_0" spirit:portRef="s_axi_aclk"/>
         <spirit:internalPortReference spirit:componentRef="Cortex_M3_0" spirit:portRef="HCLK"/>
+        <spirit:internalPortReference spirit:componentRef="axi_gpio_2" spirit:portRef="s_axi_aclk"/>
         <spirit:internalPortReference spirit:componentRef="axi_interconnect_0" spirit:portRef="ACLK"/>
         <spirit:internalPortReference spirit:componentRef="axi_interconnect_0" spirit:portRef="S00_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="axi_interconnect_0" spirit:portRef="M00_ACLK"/>
@@ -477,7 +485,6 @@
         <spirit:internalPortReference spirit:componentRef="daplink_if_0" spirit:portRef="s_axi_aclk"/>
         <spirit:internalPortReference spirit:componentRef="axi_interconnect_0" spirit:portRef="M05_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="axi_interconnect_0" spirit:portRef="M06_ACLK"/>
-        <spirit:internalPortReference spirit:componentRef="axi_gpio_2" spirit:portRef="s_axi_aclk"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>daplink_if_0_nSRST</spirit:name>
@@ -595,8 +602,13 @@
       <spirit:adHocConnection>
         <spirit:name>Clocks_and_Resets_peripheral_aresetn1</spirit:name>
         <spirit:internalPortReference spirit:componentRef="Clocks_and_Resets" spirit:portRef="peripheral_aresetn1"/>
-        <spirit:internalPortReference spirit:componentRef="axi_interconnect_0" spirit:portRef="M06_ARESETN"/>
         <spirit:internalPortReference spirit:componentRef="axi_gpio_2" spirit:portRef="s_axi_aresetn"/>
+        <spirit:internalPortReference spirit:componentRef="axi_interconnect_0" spirit:portRef="M06_ARESETN"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>axi_gpio_2_ip2intc_irpt</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="axi_gpio_2" spirit:portRef="ip2intc_irpt"/>
+        <spirit:internalPortReference spirit:componentRef="xlconcat_0" spirit:portRef="In1"/>
       </spirit:adHocConnection>
     </spirit:adHocConnections>
     <spirit:hierConnections>
@@ -621,8 +633,11 @@
       <spirit:hierConnection spirit:interfaceRef="usb_uart/V2C_DAPLink_interface_UART_out">
         <spirit:activeInterface spirit:busRef="UART_out" spirit:componentRef="daplink_if_0"/>
       </spirit:hierConnection>
-      <spirit:hierConnection spirit:interfaceRef="GPIO_Trg/axi_gpio_2_GPIO">
+      <spirit:hierConnection spirit:interfaceRef="TrgOUT/axi_gpio_2_GPIO">
         <spirit:activeInterface spirit:busRef="GPIO" spirit:componentRef="axi_gpio_2"/>
+      </spirit:hierConnection>
+      <spirit:hierConnection spirit:interfaceRef="TrgIN/axi_gpio_2_GPIO2">
+        <spirit:activeInterface spirit:busRef="GPIO2" spirit:componentRef="axi_gpio_2"/>
       </spirit:hierConnection>
     </spirit:hierConnections>
   </spirit:design>
