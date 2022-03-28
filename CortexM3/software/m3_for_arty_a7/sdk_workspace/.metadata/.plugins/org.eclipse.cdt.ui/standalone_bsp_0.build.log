@@ -1,4 +1,4 @@
-16:47:46 **** Build of project standalone_bsp_0 ****
+12:01:44 **** Build of project standalone_bsp_0 ****
 make -k all 
 "Running Make include in Cortex_M3_0/libsrc/bram_v4_2/src"
 make -C Cortex_M3_0/libsrc/bram_v4_2/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-march=armv6-m -mthumb -Wall -Wextra"
@@ -10,6 +10,8 @@ make -C Cortex_M3_0/libsrc/gpio_v4_3/src -s include  "SHELL=CMD" "COMPILER=arm-n
 make -C Cortex_M3_0/libsrc/spi_v4_4/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-march=armv6-m -mthumb -Wall -Wextra"
 "Running Make include in Cortex_M3_0/libsrc/standalone_v6_7/src"
 make -C Cortex_M3_0/libsrc/standalone_v6_7/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-march=armv6-m -mthumb -Wall -Wextra"
+"Running Make include in Cortex_M3_0/libsrc/tmrctr_v4_4/src"
+make -C Cortex_M3_0/libsrc/tmrctr_v4_4/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-march=armv6-m -mthumb -Wall -Wextra"
 "Running Make include in Cortex_M3_0/libsrc/uartlite_v3_2/src"
 make -C Cortex_M3_0/libsrc/uartlite_v3_2/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-march=armv6-m -mthumb -Wall -Wextra"
 "Running Make libs in Cortex_M3_0/libsrc/bram_v4_2/src"
@@ -72,10 +74,13 @@ xil_cache.h:69:39: warning: unused parameter 'adr' [-Wunused-parameter]
 xil_cache.h:69:48: warning: unused parameter 'len' [-Wunused-parameter]
  void Xil_ICacheInvalidateRange(INTPTR adr, u32 len) {};
                                                 ^~~
+"Running Make libs in Cortex_M3_0/libsrc/tmrctr_v4_4/src"
+make -C Cortex_M3_0/libsrc/tmrctr_v4_4/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-march=armv6-m -mthumb -Wall -Wextra"
+"Compiling tmrctr"
 "Running Make libs in Cortex_M3_0/libsrc/uartlite_v3_2/src"
 make -C Cortex_M3_0/libsrc/uartlite_v3_2/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-march=armv6-m -mthumb -Wall -Wextra"
 "Compiling uartlite"
 'Finished building libraries'
 
-16:47:52 Build Finished (took 6s.724ms)
+12:01:52 Build Finished (took 7s.262ms)
 

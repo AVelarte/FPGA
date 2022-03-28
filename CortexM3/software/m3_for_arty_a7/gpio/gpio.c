@@ -37,7 +37,7 @@ static XGpio Gpio_Led_DIPSw;   /* The driver instance for GPIO Device 0 */
 static XGpio Gpio_RGBLed_PB;   /* The driver instance for GPIO Device 1 */
 static XGpio Gpio_DAPLink;     /* The driver instance for the DAPLink GPIO */
 extern XGpio Gpio_Trigger;
-extern uint32_t valor;
+static uint32_t valor = 20;
 
 /*****************************************************************************/
 
@@ -119,7 +119,7 @@ void EnableGPIOInterrupts( void )
 
     // Having enabled the M1 to handle the interrupts, now enable the GPIO to send the interrupts
     XGpio_InterruptGlobalEnable(&Gpio_RGBLed_PB);
-    //XGpio_InterruptGlobalEnable(&Gpio_Led_DIPSw);
+   // XGpio_InterruptGlobalEnable(&Gpio_Led_DIPSw);
 		XGpio_InterruptGlobalEnable(&Gpio_Trigger);
 }
 
@@ -143,19 +143,19 @@ void GPIOTrg_Handler (void){
     NVIC_ClearPendingIRQ(GPIOTrg_IRQn);
 }
 // Define the GPIO interrupt handlers
-////////void GPIO0_Handler ( void )
-////////{
-////////	volatile uint32_t gpio_dip_switches;
+void GPIO0_Handler ( void )
+{
+	volatile uint32_t gpio_dip_switches;
 
-////////    // Read dip switches, change LEDs to match
-////////    gpio_dip_switches = XGpio_DiscreteRead(&Gpio_Led_DIPSw, ARTY_A7_DIP_CHANNEL);   // Capture DIP status
-////////    XGpio_DiscreteWrite(&Gpio_Led_DIPSw, ARTY_A7_LED_CHANNEL, gpio_dip_switches);   // Set LEDs
+    // Read dip switches, change LEDs to match
+    gpio_dip_switches = XGpio_DiscreteRead(&Gpio_Led_DIPSw, ARTY_A7_DIP_CHANNEL);   // Capture DIP status
+    XGpio_DiscreteWrite(&Gpio_Led_DIPSw, ARTY_A7_LED_CHANNEL, gpio_dip_switches);   // Set LEDs
 
-////////    // Clear interrupt from GPIO
-////////    XGpio_InterruptClear(&Gpio_Led_DIPSw, XGPIO_IR_MASK);
-////////    // Clear interrupt in NVIC
-////////    NVIC_ClearPendingIRQ(GPIO0_IRQn);
-////////}
+    // Clear interrupt from GPIO
+    XGpio_InterruptClear(&Gpio_Led_DIPSw, XGPIO_IR_MASK);
+    // Clear interrupt in NVIC
+    NVIC_ClearPendingIRQ(GPIO0_IRQn);
+}
 
 void GPIO1_Handler ( void )
 {

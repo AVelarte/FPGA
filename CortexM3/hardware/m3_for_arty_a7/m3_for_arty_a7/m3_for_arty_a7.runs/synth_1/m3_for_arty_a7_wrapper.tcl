@@ -86,6 +86,8 @@ set_property used_in_implementation false [get_files -all v:/hardware/m3_for_art
 set_property used_in_implementation false [get_files -all v:/hardware/m3_for_arty_a7/block_diagram/ip/m3_for_arty_a7_axi_gpio_2_0/m3_for_arty_a7_axi_gpio_2_0_board.xdc]
 set_property used_in_implementation false [get_files -all v:/hardware/m3_for_arty_a7/block_diagram/ip/m3_for_arty_a7_axi_gpio_2_0/m3_for_arty_a7_axi_gpio_2_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all v:/hardware/m3_for_arty_a7/block_diagram/ip/m3_for_arty_a7_axi_gpio_2_0/m3_for_arty_a7_axi_gpio_2_0.xdc]
+set_property used_in_implementation false [get_files -all v:/hardware/m3_for_arty_a7/block_diagram/ip/m3_for_arty_a7_axi_timer_0_0/m3_for_arty_a7_axi_timer_0_0.xdc]
+set_property used_in_implementation false [get_files -all v:/hardware/m3_for_arty_a7/block_diagram/ip/m3_for_arty_a7_axi_timer_0_0/m3_for_arty_a7_axi_timer_0_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all v:/hardware/m3_for_arty_a7/block_diagram/ip/m3_for_arty_a7_auto_pc_0/m3_for_arty_a7_auto_pc_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all V:/hardware/m3_for_arty_a7/block_diagram/m3_for_arty_a7_ooc.xdc]
 

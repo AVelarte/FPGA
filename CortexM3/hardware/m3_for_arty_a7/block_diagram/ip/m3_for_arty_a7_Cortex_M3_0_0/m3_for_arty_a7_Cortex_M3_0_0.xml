@@ -27,7 +27,7 @@
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>PortWidth</spirit:name>
-          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.IRQ.PortWidth">8</spirit:value>
+          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.IRQ.PortWidth">10</spirit:value>
           <spirit:vendorExtensions>
             <xilinx:parameterInfo>
               <xilinx:parameterUsage>none</xilinx:parameterUsage>
@@ -1456,11 +1456,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sat Sep 18 10:01:28 UTC 2021</spirit:value>
+            <spirit:value>Wed Mar 23 10:01:11 UTC 2022</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>8:5ecadd8e</spirit:value>
+            <spirit:value>8:8ced802a</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1476,11 +1476,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Fri Mar 11 12:26:48 UTC 2022</spirit:value>
+            <spirit:value>Wed Mar 23 10:29:19 UTC 2022</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>8:5ecadd8e</spirit:value>
+            <spirit:value>8:8ced802a</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1495,11 +1495,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sat Sep 18 10:01:28 UTC 2021</spirit:value>
+            <spirit:value>Wed Mar 23 10:01:11 UTC 2022</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>8:0d1f94c5</spirit:value>
+            <spirit:value>8:8fc5fe20</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1515,11 +1515,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Fri Mar 11 12:26:48 UTC 2022</spirit:value>
+            <spirit:value>Wed Mar 23 10:29:19 UTC 2022</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>8:0d1f94c5</spirit:value>
+            <spirit:value>8:8fc5fe20</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1825,7 +1825,7 @@
         <spirit:wire>
           <spirit:direction>in</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.NUM_IRQ&apos;)) - 1)">7</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.NUM_IRQ&apos;)) - 1)">9</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -3095,7 +3095,7 @@
       <spirit:modelParameter xsi:type="spirit:nameValueTypeType" spirit:dataType="integer">
         <spirit:name>NUM_IRQ</spirit:name>
         <spirit:displayName>Num Irq</spirit:displayName>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.NUM_IRQ">8</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.NUM_IRQ">10</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>JTAG_PRESENT</spirit:name>
@@ -3165,12 +3165,12 @@
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>TRACE_LVL</spirit:name>
         <spirit:displayName>Trace Lvl</spirit:displayName>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.TRACE_LVL">1</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.TRACE_LVL">2</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>DEBUG_LVL</spirit:name>
         <spirit:displayName>Debug Lvl</spirit:displayName>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.DEBUG_LVL">2</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.DEBUG_LVL">3</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>WIC_PRESENT</spirit:name>
@@ -3612,7 +3612,7 @@
     <spirit:parameter>
       <spirit:name>NUM_IRQ</spirit:name>
       <spirit:displayName>Number of Interrupts</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.NUM_IRQ" spirit:minimum="0" spirit:maximum="240" spirit:rangeType="long">8</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.NUM_IRQ" spirit:minimum="0" spirit:maximum="240" spirit:rangeType="long">10</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>JTAG_PRESENT</spirit:name>
@@ -3686,12 +3686,12 @@
     <spirit:parameter>
       <spirit:name>TRACE_LVL</spirit:name>
       <spirit:displayName>Trace Level</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.TRACE_LVL" spirit:choiceRef="choice_pairs_10012c65">1</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.TRACE_LVL" spirit:choiceRef="choice_pairs_10012c65">2</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>DEBUG_LVL</spirit:name>
       <spirit:displayName>Debug Level</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.DEBUG_LVL" spirit:choiceRef="choice_pairs_def33b70">2</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.DEBUG_LVL" spirit:choiceRef="choice_pairs_def33b70">3</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>WIC_PRESENT</spirit:name>

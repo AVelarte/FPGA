@@ -30,3 +30,6 @@
 .\objects\main.o: ..\gpio\gpio.h
 .\objects\main.o: ..\uart\uart.h
 .\objects\main.o: ..\spi\spi.h
+.\objects\main.o: ..\timer\tmr.h
+.\objects\main.o: ..\sdk_workspace\standalone_bsp_0\Cortex_M3_0\include\xtmrctr.h
+.\objects\main.o: ..\sdk_workspace\standalone_bsp_0\Cortex_M3_0\include\xtmrctr_l.h

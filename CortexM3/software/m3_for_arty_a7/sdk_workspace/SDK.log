@@ -193,3 +193,48 @@ Design is not opened in the current session.
 16:47:44 INFO  : Closing and re-opening the MSS file of ther project standalone_bsp_0
 16:47:45 INFO  : Workspace synchronized with the new hardware specification file. Cleaning dependent projects...
 16:47:46 WARN  : Linker script will not be updated automatically. Users need to update it manually.
+12:21:58 INFO  : Launching XSCT server: xsct.bat -interactive V:\software\m3_for_arty_a7\sdk_workspace\temp_xsdb_launch_script.tcl
+12:22:02 INFO  : XSCT server has started successfully.
+12:22:05 INFO  : Successfully done setting XSCT server connection channel  
+12:22:05 INFO  : Successfully done setting SDK workspace  
+12:22:05 INFO  : Restoring global repository preferences: 
+		 V:\vivado\Arm_sw_repository
+12:22:10 INFO  : Registering command handlers for SDK TCF services
+12:22:11 INFO  : Processing command line option -hwspec V:/software/m3_for_arty_a7_wrapper.hdf.
+12:22:11 INFO  : Checking for hwspec changes in the project m3_for_arty_a7_wrapper_hw_platform_0.
+12:22:11 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1648034435550,  Project:1647013478424
+12:22:11 INFO  : The hardware specification for project 'm3_for_arty_a7_wrapper_hw_platform_0' is different from V:/software/m3_for_arty_a7_wrapper.hdf.
+12:22:11 INFO  : Copied contents of V:/software/m3_for_arty_a7_wrapper.hdf into \m3_for_arty_a7_wrapper_hw_platform_0\system.hdf.
+12:22:11 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+12:22:23 INFO  : 
+12:22:23 INFO  : Clearing existing target manager status.
+12:22:23 INFO  : Closing and re-opening the MSS file of ther project standalone_bsp_0
+12:22:24 INFO  : Workspace synchronized with the new hardware specification file. Cleaning dependent projects...
+12:22:25 WARN  : Linker script will not be updated automatically. Users need to update it manually.
+12:23:09 INFO  : Launching XSCT server: xsct.bat -interactive V:\software\m3_for_arty_a7\sdk_workspace\temp_xsdb_launch_script.tcl
+12:23:11 INFO  : XSCT server has started successfully.
+12:23:11 INFO  : Successfully done setting XSCT server connection channel  
+12:23:12 INFO  : Successfully done setting SDK workspace  
+12:23:12 INFO  : Restoring global repository preferences: 
+		 V:\vivado\Arm_sw_repository
+12:23:14 INFO  : Registering command handlers for SDK TCF services
+12:23:14 INFO  : Processing command line option -hwspec V:/software/m3_for_arty_a7_wrapper.hdf.
+12:23:15 INFO  : Checking for hwspec changes in the project m3_for_arty_a7_wrapper_hw_platform_0.
+12:01:23 INFO  : Launching XSCT server: xsct.bat -interactive V:\software\m3_for_arty_a7\sdk_workspace\temp_xsdb_launch_script.tcl
+12:01:25 INFO  : XSCT server has started successfully.
+12:01:27 INFO  : Successfully done setting XSCT server connection channel  
+12:01:27 INFO  : Successfully done setting SDK workspace  
+12:01:27 INFO  : Restoring global repository preferences: 
+		 V:\vivado\Arm_sw_repository
+12:01:32 INFO  : Registering command handlers for SDK TCF services
+12:01:32 INFO  : Processing command line option -hwspec V:/software/m3_for_arty_a7_wrapper.hdf.
+12:01:32 INFO  : Checking for hwspec changes in the project m3_for_arty_a7_wrapper_hw_platform_0.
+12:01:32 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1648119657368,  Project:1648034435550
+12:01:32 INFO  : The hardware specification for project 'm3_for_arty_a7_wrapper_hw_platform_0' is different from V:/software/m3_for_arty_a7_wrapper.hdf.
+12:01:32 INFO  : Copied contents of V:/software/m3_for_arty_a7_wrapper.hdf into \m3_for_arty_a7_wrapper_hw_platform_0\system.hdf.
+12:01:32 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+12:01:35 INFO  : 
+12:01:43 INFO  : Clearing existing target manager status.
+12:01:43 INFO  : Closing and re-opening the MSS file of ther project standalone_bsp_0
+12:01:44 INFO  : Workspace synchronized with the new hardware specification file. Cleaning dependent projects...
+12:01:44 WARN  : Linker script will not be updated automatically. Users need to update it manually.

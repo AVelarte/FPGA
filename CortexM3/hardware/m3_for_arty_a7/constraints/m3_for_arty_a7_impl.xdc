@@ -107,6 +107,9 @@ set_property -dict { PACKAGE_PIN D13   IOSTANDARD LVCMOS33 } [get_ports { TrgIN_
 set_property -dict { PACKAGE_PIN B18   IOSTANDARD LVCMOS33 } [get_ports { TrgIN_tri_i[1] }]; #IO_L10P_T1_AD11P_15 Sch=ja[8]
 set_property -dict { PACKAGE_PIN A18   IOSTANDARD LVCMOS33 } [get_ports { TrgIN_tri_i[2] }]; #IO_L10N_T1_AD11N_15 Sch=ja[9]
 set_property -dict { PACKAGE_PIN K16   IOSTANDARD LVCMOS33 } [get_ports { TrgIN_tri_i[3] }]; #IO_25_15 Sch=ja[10]
+
+set_property -dict { PACKAGE_PIN D4   IOSTANDARD LVCMOS33 } [get_ports { captureTrig }];
+
 # --------------------------------------------------
 # Place output pin muxes near pins
 # --------------------------------------------------

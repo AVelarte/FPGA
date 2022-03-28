@@ -122,19 +122,18 @@ ARM Macro Assembler    Page 2
    79 00000040         
    80 00000040         ; External Interrupts
    81 00000040 00000000        DCD              UART0_Handler ; UART 0 Handler
-   82 00000044 00000000        DCD              GPIOTrg_Handler 
-                                                            ; GPIO 0 Handler
+   82 00000044 00000000        DCD              GPIO0_Handler ; GPIO 0 Handler
    83 00000048 00000000        DCD              GPIO1_Handler ; GPIO 1 Handler
    84 0000004C 00000000        DCD              QSPI0_Handler ; QUAD SPI 0 (Art
                                                             y board) Handler
    85 00000050 00000000        DCD              DAP_QSPI0_Handler ; DAPLink boa
+                                                            rd QUAD SPI 0 Handl
 
 
 
 ARM Macro Assembler    Page 3 
 
 
-                                                            rd QUAD SPI 0 Handl
                                                             er
    86 00000054 00000000        DCD              DAP_SPI0_Handler ; DAPLink boar
                                                             d SPI 0 Handler
@@ -144,8 +143,8 @@ ARM Macro Assembler    Page 3
    88 0000005C 00000000        DCD              DAPLinkFittedn ; Used as steady
                                                              state GPIO input, 
                                                             not IRQ
-   89 00000060 00000000        DCD              Unused_IRQ8 ; Unused
-   90 00000064 00000000        DCD              Unused_IRQ9 ; Unused
+   89 00000060 00000000        DCD              GPIOTrg_Handler ; Unused
+   90 00000064 00000000        DCD              TimerHandler ; Unused
    91 00000068 00000000        DCD              Unused_IRQ10 ; Unused
    92 0000006C 00000000        DCD              Unused_IRQ11 ; Unused
    93 00000070 00000000        DCD              Unused_IRQ12 ; Unused
@@ -193,13 +192,13 @@ ARM Macro Assembler    Page 3
   131 00000008         
   132 00000008         
   133 00000008         ; Dummy Exception Handlers (infinite loops which can be 
+                       modified)
 
 
 
 ARM Macro Assembler    Page 4 
 
 
-                       modified)
   134 00000008         
   135 00000008         NMI_Handler
                                PROC
@@ -258,16 +257,16 @@ ARM Macro Assembler    Page 4
   178 0000001A         
   179 0000001A         Default_Handler
                                PROC
+  180 0000001A                 EXPORT           UART0_Handler              [WEA
 
 
 
 ARM Macro Assembler    Page 5 
 
 
-  180 0000001A                 EXPORT           UART0_Handler              [WEA
 K]
-  181 0000001A                 EXPORT           GPIOTrg_Handler              [W
-EAK]
+  181 0000001A                 EXPORT           GPIO0_Handler              [WEA
+K]
   182 0000001A                 EXPORT           GPIO1_Handler              [WEA
 K]
   183 0000001A                 EXPORT           QSPI0_Handler              [WEA
@@ -280,10 +279,10 @@ K]
 K]
   187 0000001A                 EXPORT           DAPLinkFittedn             [WEA
 K]
-  188 0000001A                 EXPORT           Unused_IRQ8                [WEA
-K]
-  189 0000001A                 EXPORT           Unused_IRQ9                [WEA
-K]
+  188 0000001A                 EXPORT           GPIOTrg_Handler                
+[WEAK]
+  189 0000001A                 EXPORT           TimerHandler                 [W
+EAK]
   190 0000001A                 EXPORT           Unused_IRQ10               [WEA
 K]
   191 0000001A                 EXPORT           Unused_IRQ11               [WEA
@@ -323,28 +322,28 @@ K]
   208 0000001A                 EXPORT           Unused_IRQ28               [WEA
 K]
   209 0000001A                 EXPORT           Unused_IRQ29               [WEA
+K]
 
 
 
 ARM Macro Assembler    Page 6 
 
 
-K]
   210 0000001A                 EXPORT           Unused_IRQ30               [WEA
 K]
   211 0000001A                 EXPORT           Unused_IRQ31               [WEA
 K]
   212 0000001A         
   213 0000001A         UART0_Handler
-  214 0000001A         GPIOTrg_Handler
+  214 0000001A         GPIO0_Handler
   215 0000001A         GPIO1_Handler
   216 0000001A         QSPI0_Handler
   217 0000001A         DAP_QSPI0_Handler
   218 0000001A         DAP_SPI0_Handler
   219 0000001A         DAP_QSPI_XIP_Handler
   220 0000001A         DAPLinkFittedn
-  221 0000001A         Unused_IRQ8
-  222 0000001A         Unused_IRQ9
+  221 0000001A         GPIOTrg_Handler
+  222 0000001A         TimerHandler
   223 0000001A         Unused_IRQ10
   224 0000001A         Unused_IRQ11
   225 0000001A         Unused_IRQ12
@@ -388,13 +387,13 @@ K]
   268 0000001E 4905            LDR              R1, =(Stack_Mem + Stack_Size)
   269 00000020 4A05            LDR              R2, = (Heap_Mem +  Heap_Size)
   270 00000022 4B06            LDR              R3, = Stack_Mem
+  271 00000024 4770            BX               LR
 
 
 
 ARM Macro Assembler    Page 7 
 
 
-  271 00000024 4770            BX               LR
   272 00000026                 ENDP
   273 00000026         
   274 00000026 00 00           ALIGN
@@ -624,6 +623,17 @@ s
    Uses
       None
 Comment: Default_Handler unused
+GPIO0_Handler 0000001A
+
+Symbol: GPIO0_Handler
+   Definitions
+      At line 214 in file ..\cmsis\Device\Source\ARTY_CM3\ARM\startup_ARTY_CM3.
+s
+   Uses
+      At line 82 in file ..\cmsis\Device\Source\ARTY_CM3\ARM\startup_ARTY_CM3.s
+      At line 181 in file ..\cmsis\Device\Source\ARTY_CM3\ARM\startup_ARTY_CM3.
+s
+
 GPIO1_Handler 0000001A
 
 Symbol: GPIO1_Handler
@@ -639,14 +649,20 @@ GPIOTrg_Handler 0000001A
 
 Symbol: GPIOTrg_Handler
    Definitions
-      At line 214 in file ..\cmsis\Device\Source\ARTY_CM3\ARM\startup_ARTY_CM3.
+      At line 221 in file ..\cmsis\Device\Source\ARTY_CM3\ARM\startup_ARTY_CM3.
 s
    Uses
-      At line 82 in file ..\cmsis\Device\Source\ARTY_CM3\ARM\startup_ARTY_CM3.s
-      At line 181 in file ..\cmsis\Device\Source\ARTY_CM3\ARM\startup_ARTY_CM3.
+      At line 89 in file ..\cmsis\Device\Source\ARTY_CM3\ARM\startup_ARTY_CM3.s
+      At line 188 in file ..\cmsis\Device\Source\ARTY_CM3\ARM\startup_ARTY_CM3.
 s
 
 HardFault_Handler 0000000A
+
+
+
+ARM Macro Assembler    Page 3 Alphabetic symbol ordering
+Relocatable symbols
+
 
 Symbol: HardFault_Handler
    Definitions
@@ -658,12 +674,6 @@ s
 s
 
 MemManage_Handler 0000000C
-
-
-
-ARM Macro Assembler    Page 3 Alphabetic symbol ordering
-Relocatable symbols
-
 
 Symbol: MemManage_Handler
    Definitions
@@ -712,6 +722,12 @@ Reset_Handler 00000000
 Symbol: Reset_Handler
    Definitions
       At line 122 in file ..\cmsis\Device\Source\ARTY_CM3\ARM\startup_ARTY_CM3.
+
+
+
+ARM Macro Assembler    Page 4 Alphabetic symbol ordering
+Relocatable symbols
+
 s
    Uses
       At line 64 in file ..\cmsis\Device\Source\ARTY_CM3\ARM\startup_ARTY_CM3.s
@@ -723,12 +739,6 @@ SVC_Handler 00000012
 Symbol: SVC_Handler
    Definitions
       At line 159 in file ..\cmsis\Device\Source\ARTY_CM3\ARM\startup_ARTY_CM3.
-
-
-
-ARM Macro Assembler    Page 4 Alphabetic symbol ordering
-Relocatable symbols
-
 s
    Uses
       At line 74 in file ..\cmsis\Device\Source\ARTY_CM3\ARM\startup_ARTY_CM3.s
@@ -744,6 +754,17 @@ s
    Uses
       At line 78 in file ..\cmsis\Device\Source\ARTY_CM3\ARM\startup_ARTY_CM3.s
       At line 175 in file ..\cmsis\Device\Source\ARTY_CM3\ARM\startup_ARTY_CM3.
+s
+
+TimerHandler 0000001A
+
+Symbol: TimerHandler
+   Definitions
+      At line 222 in file ..\cmsis\Device\Source\ARTY_CM3\ARM\startup_ARTY_CM3.
+s
+   Uses
+      At line 90 in file ..\cmsis\Device\Source\ARTY_CM3\ARM\startup_ARTY_CM3.s
+      At line 189 in file ..\cmsis\Device\Source\ARTY_CM3\ARM\startup_ARTY_CM3.
 s
 
 UART0_Handler 0000001A
@@ -766,6 +787,12 @@ s
    Uses
       At line 91 in file ..\cmsis\Device\Source\ARTY_CM3\ARM\startup_ARTY_CM3.s
       At line 190 in file ..\cmsis\Device\Source\ARTY_CM3\ARM\startup_ARTY_CM3.
+
+
+
+ARM Macro Assembler    Page 5 Alphabetic symbol ordering
+Relocatable symbols
+
 s
 
 Unused_IRQ11 0000001A
@@ -788,12 +815,6 @@ s
    Uses
       At line 93 in file ..\cmsis\Device\Source\ARTY_CM3\ARM\startup_ARTY_CM3.s
       At line 192 in file ..\cmsis\Device\Source\ARTY_CM3\ARM\startup_ARTY_CM3.
-
-
-
-ARM Macro Assembler    Page 5 Alphabetic symbol ordering
-Relocatable symbols
-
 s
 
 Unused_IRQ13 0000001A
@@ -831,6 +852,12 @@ s
 
 Unused_IRQ16 0000001A
 
+
+
+
+ARM Macro Assembler    Page 6 Alphabetic symbol ordering
+Relocatable symbols
+
 Symbol: Unused_IRQ16
    Definitions
       At line 229 in file ..\cmsis\Device\Source\ARTY_CM3\ARM\startup_ARTY_CM3.
@@ -852,12 +879,6 @@ s
 s
 
 Unused_IRQ18 0000001A
-
-
-
-
-ARM Macro Assembler    Page 6 Alphabetic symbol ordering
-Relocatable symbols
 
 Symbol: Unused_IRQ18
    Definitions
@@ -896,6 +917,12 @@ Unused_IRQ21 0000001A
 
 Symbol: Unused_IRQ21
    Definitions
+
+
+
+ARM Macro Assembler    Page 7 Alphabetic symbol ordering
+Relocatable symbols
+
       At line 234 in file ..\cmsis\Device\Source\ARTY_CM3\ARM\startup_ARTY_CM3.
 s
    Uses
@@ -917,12 +944,6 @@ s
 s
 
 Unused_IRQ23 0000001A
-
-
-
-
-ARM Macro Assembler    Page 7 Alphabetic symbol ordering
-Relocatable symbols
 
 Symbol: Unused_IRQ23
    Definitions
@@ -961,6 +982,12 @@ s
 Unused_IRQ26 0000001A
 
 Symbol: Unused_IRQ26
+
+
+
+ARM Macro Assembler    Page 8 Alphabetic symbol ordering
+Relocatable symbols
+
    Definitions
       At line 239 in file ..\cmsis\Device\Source\ARTY_CM3\ARM\startup_ARTY_CM3.
 s
@@ -983,12 +1010,6 @@ s
 s
 
 Unused_IRQ28 0000001A
-
-
-
-ARM Macro Assembler    Page 8 Alphabetic symbol ordering
-Relocatable symbols
-
 
 Symbol: Unused_IRQ28
    Definitions
@@ -1026,6 +1047,12 @@ s
 
 Unused_IRQ31 0000001A
 
+
+
+
+ARM Macro Assembler    Page 9 Alphabetic symbol ordering
+Relocatable symbols
+
 Symbol: Unused_IRQ31
    Definitions
       At line 244 in file ..\cmsis\Device\Source\ARTY_CM3\ARM\startup_ARTY_CM3.
@@ -1034,34 +1061,6 @@ s
       At line 112 in file ..\cmsis\Device\Source\ARTY_CM3\ARM\startup_ARTY_CM3.
 s
       At line 211 in file ..\cmsis\Device\Source\ARTY_CM3\ARM\startup_ARTY_CM3.
-s
-
-Unused_IRQ8 0000001A
-
-Symbol: Unused_IRQ8
-   Definitions
-      At line 221 in file ..\cmsis\Device\Source\ARTY_CM3\ARM\startup_ARTY_CM3.
-s
-   Uses
-      At line 89 in file ..\cmsis\Device\Source\ARTY_CM3\ARM\startup_ARTY_CM3.s
-      At line 188 in file ..\cmsis\Device\Source\ARTY_CM3\ARM\startup_ARTY_CM3.
-s
-
-Unused_IRQ9 0000001A
-
-
-
-ARM Macro Assembler    Page 9 Alphabetic symbol ordering
-Relocatable symbols
-
-
-Symbol: Unused_IRQ9
-   Definitions
-      At line 222 in file ..\cmsis\Device\Source\ARTY_CM3\ARM\startup_ARTY_CM3.
-s
-   Uses
-      At line 90 in file ..\cmsis\Device\Source\ARTY_CM3\ARM\startup_ARTY_CM3.s
-      At line 189 in file ..\cmsis\Device\Source\ARTY_CM3\ARM\startup_ARTY_CM3.
 s
 
 UsageFault_Handler 00000010

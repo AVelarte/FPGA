@@ -34,49 +34,56 @@
 #include "gpio.h"
 #include "uart.h"
 #include "spi.h"
+#include "tmr.h"
 
 /*******************************************************************/
 volatile uint32_t msTicks = 0;
 XGpio Gpio_Trigger;
-uint32_t valor = 20;
 bool abiertos = FALSE;
 
-void SysTick_Handler(void){
-	//print("DONE");
-//	msTicks++;
-//	if(msTicks>20){
-	if(abiertos){
-//		XGpio_DiscreteWrite(&Gpio_Trigger, ARTY_A7_TrgOUT_CHANNEL, 0x0);
-		//print("Llega el fin de conteo del Systick, cierro los interruptores y apago el Systick.\r\n");		
-////		if(msTicks == 50){ //Pasan los 500ms
-////			msTicks = 0;
-			XGpio_DiscreteWrite(&Gpio_Trigger, ARTY_A7_TrgOUT_CHANNEL, 0x0);
-			SysTick->CTRL  = 0UL;
-			abiertos = FALSE;
-////		}else{
-////			msTicks++;
-////		}
-	}else{
-//		XGpio_DiscreteWrite(&Gpio_Trigger, ARTY_A7_TrgOUT_CHANNEL, 0xF);
-		//SysTick->CTRL  = 0UL;
-		XGpio_DiscreteWrite(&Gpio_Trigger, ARTY_A7_TrgOUT_CHANNEL, 0x4);
-		
-		//print("Llega el fin de conteo del Systick, abro los interruptores y cambio el periodo del Systick.\r\n");
-		
-		SysTick->CTRL  = 1UL;
-		SysTick_Config(5000000 * 3); //Salta una int. cada 100ms * valor_indicado (en este caso son 300 ms)
-		XGpio_DiscreteWrite(&Gpio_Trigger, ARTY_A7_TrgOUT_CHANNEL, 0xF);
-		abiertos = TRUE;
-	}
-//		//	uint32_t gpio_dip_switches3;
-//			//gpio_dip_switches3 = (XGpio_DiscreteRead(&Gpio_Trigger, ARTY_A7_TrgIN_CHANNEL) & 0x1);
-//			//	char msg3[24];
-//	//sprintf(msg3,"Valor 2: %d, bool: %d \r\n", gpio_dip_switches3, abiertos);  
-//			//	print(msg3);
-//	msTicks=0;
-//}
-}
+////////void SysTick_Handler(void){
+////////	//print("DONE");
+//////////	msTicks++;
+//////////	if(msTicks>20){
+////////	if(abiertos){
+//////////		XGpio_DiscreteWrite(&Gpio_Trigger, ARTY_A7_TrgOUT_CHANNEL, 0x0);
+////////		//print("Llega el fin de conteo del Systick, cierro los interruptores y apago el Systick.\r\n");		
+////////////		if(msTicks == 50){ //Pasan los 500ms
+////////////			msTicks = 0;
+////////			XGpio_DiscreteWrite(&Gpio_Trigger, ARTY_A7_TrgOUT_CHANNEL, 0x0);
+////////			SysTick->CTRL  = 0UL;
+////////			abiertos = FALSE;
+////////////		}else{
+////////////			msTicks++;
+////////////		}
+////////	}else{
+//////////		XGpio_DiscreteWrite(&Gpio_Trigger, ARTY_A7_TrgOUT_CHANNEL, 0xF);
+////////		//SysTick->CTRL  = 0UL;
+////////		XGpio_DiscreteWrite(&Gpio_Trigger, ARTY_A7_TrgOUT_CHANNEL, 0x4);
+////////		
+////////		//print("Llega el fin de conteo del Systick, abro los interruptores y cambio el periodo del Systick.\r\n");
+////////		
+////////		SysTick->CTRL  = 1UL;
+////////		SysTick_Config(5000000 * 3); //Salta una int. cada 100ms * valor_indicado (en este caso son 300 ms)
+////////		XGpio_DiscreteWrite(&Gpio_Trigger, ARTY_A7_TrgOUT_CHANNEL, 0xF);
+////////		abiertos = TRUE;
+////////	}
+//////////		//	uint32_t gpio_dip_switches3;
+//////////			//gpio_dip_switches3 = (XGpio_DiscreteRead(&Gpio_Trigger, ARTY_A7_TrgIN_CHANNEL) & 0x1);
+//////////			//	char msg3[24];
+//////////	//sprintf(msg3,"Valor 2: %d, bool: %d \r\n", gpio_dip_switches3, abiertos);  
+//////////			//	print(msg3);
+//////////	msTicks=0;
+//////////}
+////////}
 
+int valorTimer;
+void SysTick_Handler(void){
+valorTimer = valorTimer0();
+			char msg2[24];
+			sprintf(msg2,"Valor Timer: %d\r\n", valorTimer);  
+			print(msg2);
+}
 int main (void)
 {
 
@@ -140,6 +147,7 @@ int main (void)
 		print("3");
     EnableGPIOInterrupts();
 	print("2");
+		NVIC_EnableIRQ(Timer_IRQn);
     // Enable UART Interrupts
     NVIC_EnableIRQ(UART0_IRQn);
     EnableUARTInterrupts();
@@ -193,7 +201,7 @@ int main (void)
     else
         print ("\nV2C-DAPLink board detected\r\n");
     print ("Use DIP switches and push buttons to\r\ncontrol LEDS\r\n");
-    print (" Version 1.3\r\n");
+    print ("Version 1.33\r\n");
     print ("************************************\r\n");
 #else
     print ( debugStr );
@@ -265,16 +273,26 @@ int main (void)
 
 */
     // print( "Startup complete, entering main interrupt loop\r\n" );
-
-//		uint32_t returnCode;
-//		returnCode = SysTick_Config(5000000); // La referencia es 1ms cuando ponemos 50.000 (serán 5.000.000 para 100ms)
-//		if (returnCode != 0){
-//			print("Error al configurar el SysTick \r\n");
-//		}
+			
+		InitialiseTIMER0();
+		//testTIMER0();
+		setResetValueTIMER0(50000000);
+		startTimer0();
+		
+		
+		uint32_t returnCode;
+		returnCode = SysTick_Config(5000000); // La referencia es 1ms cuando ponemos 50.000 (serán 5.000.000 para 100ms)
+		if (returnCode != 0){
+			print("Error al configurar el SysTick \r\n");
+		}
 		
     // Main loop.  Handle LEDs and switches via interrupt
+		
     while ( 1 )
     {			
+			
+			
+			
         /* Main loop. Wait for interrupts to occur */
         /*
         if ( CheckUARTRxBytes() != 0 )

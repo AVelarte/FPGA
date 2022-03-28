@@ -79,15 +79,15 @@ __Vectors       DCD     __initial_sp              ; Top of Stack
 
                 ; External Interrupts
                 DCD     UART0_Handler             ; UART 0 Handler
-                DCD     GPIOTrg_Handler             ; GPIO 0 Handler
+                DCD     GPIO0_Handler             ; GPIO 0 Handler
                 DCD     GPIO1_Handler             ; GPIO 1 Handler
                 DCD     QSPI0_Handler             ; QUAD SPI 0 (Arty board) Handler
                 DCD     DAP_QSPI0_Handler         ; DAPLink board QUAD SPI 0 Handler
                 DCD     DAP_SPI0_Handler          ; DAPLink board SPI 0 Handler
                 DCD     DAP_QSPI_XIP_Handler      ; DAPLink board QUAD SPI XIP Handler
                 DCD     DAPLinkFittedn            ; Used as steady state GPIO input, not IRQ
-                DCD     Unused_IRQ8               ; Unused
-                DCD     Unused_IRQ9               ; Unused
+                DCD     GPIOTrg_Handler               ; Unused
+                DCD     TimerHandler               ; Unused
                 DCD     Unused_IRQ10              ; Unused
                 DCD     Unused_IRQ11              ; Unused
                 DCD     Unused_IRQ12              ; Unused
@@ -178,15 +178,15 @@ SysTick_Handler\
 
 Default_Handler PROC
                 EXPORT UART0_Handler              [WEAK]
-                EXPORT GPIOTrg_Handler              [WEAK]
+                EXPORT GPIO0_Handler              [WEAK]
                 EXPORT GPIO1_Handler              [WEAK]
                 EXPORT QSPI0_Handler              [WEAK]
                 EXPORT DAP_QSPI0_Handler          [WEAK]
                 EXPORT DAP_SPI0_Handler           [WEAK]
                 EXPORT DAP_QSPI_XIP_Handler       [WEAK]
                 EXPORT DAPLinkFittedn             [WEAK]
-                EXPORT Unused_IRQ8                [WEAK]
-                EXPORT Unused_IRQ9                [WEAK]
+                EXPORT GPIOTrg_Handler                [WEAK]
+                EXPORT TimerHandler                 [WEAK]
                 EXPORT Unused_IRQ10               [WEAK]
                 EXPORT Unused_IRQ11               [WEAK]
                 EXPORT Unused_IRQ12               [WEAK]
@@ -211,15 +211,15 @@ Default_Handler PROC
                 EXPORT Unused_IRQ31               [WEAK]
 
 UART0_Handler
-GPIOTrg_Handler
+GPIO0_Handler
 GPIO1_Handler
 QSPI0_Handler 
 DAP_QSPI0_Handler 
 DAP_SPI0_Handler  
 DAP_QSPI_XIP_Handler 
 DAPLinkFittedn   
-Unused_IRQ8   
-Unused_IRQ9   
+GPIOTrg_Handler   
+TimerHandler   
 Unused_IRQ10  
 Unused_IRQ11  
 Unused_IRQ12  

@@ -471,6 +471,7 @@ proc create_root_design { parentCell } {
   # Create ports
   set TDI [ create_bd_port -dir I TDI ]
   set TDO [ create_bd_port -dir IO -from 0 -to 0 TDO ]
+  set captureTrig [ create_bd_port -dir I captureTrig ]
   set nTRST [ create_bd_port -dir I nTRST ]
   set reset [ create_bd_port -dir I -type rst reset ]
   set_property -dict [ list \
@@ -553,7 +554,7 @@ proc create_root_design { parentCell } {
    CONFIG.M03_HAS_REGSLICE {3} \
    CONFIG.M04_HAS_REGSLICE {3} \
    CONFIG.M05_HAS_REGSLICE {3} \
-   CONFIG.NUM_MI {7} \
+   CONFIG.NUM_MI {8} \
    CONFIG.NUM_SI {1} \
    CONFIG.S00_HAS_REGSLICE {3} \
    CONFIG.S01_HAS_DATA_FIFO {1} \
@@ -568,6 +569,9 @@ proc create_root_design { parentCell } {
    CONFIG.QSPI_BOARD_INTERFACE {qspi_flash} \
    CONFIG.USE_BOARD_FLOW {true} \
  ] $axi_quad_spi_0
+
+  # Create instance: axi_timer_0, and set properties
+  set axi_timer_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_timer:2.0 axi_timer_0 ]
 
   # Create instance: axi_uartlite_0, and set properties
   set axi_uartlite_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_uartlite:2.0 axi_uartlite_0 ]
@@ -601,7 +605,7 @@ proc create_root_design { parentCell } {
   # Create instance: xlconcat_0, and set properties
   set xlconcat_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconcat:2.1 xlconcat_0 ]
   set_property -dict [ list \
-   CONFIG.NUM_PORTS {8} \
+   CONFIG.NUM_PORTS {10} \
  ] $xlconcat_0
 
   # Create instance: xlconcat_1, and set properties
@@ -637,11 +641,12 @@ proc create_root_design { parentCell } {
   connect_bd_intf_net -intf_net axi_interconnect_0_M03_AXI [get_bd_intf_pins axi_bram_ctrl_0/S_AXI] [get_bd_intf_pins axi_interconnect_0/M03_AXI]
   connect_bd_intf_net -intf_net axi_interconnect_0_M04_AXI [get_bd_intf_pins axi_interconnect_0/M04_AXI] [get_bd_intf_pins axi_quad_spi_0/AXI_LITE]
   connect_bd_intf_net -intf_net axi_interconnect_0_M06_AXI [get_bd_intf_pins axi_gpio_2/S_AXI] [get_bd_intf_pins axi_interconnect_0/M06_AXI]
+  connect_bd_intf_net -intf_net axi_interconnect_0_M07_AXI [get_bd_intf_pins axi_interconnect_0/M07_AXI] [get_bd_intf_pins axi_timer_0/S_AXI]
   connect_bd_intf_net -intf_net axi_quad_spi_0_SPI_0 [get_bd_intf_ports qspi_flash] [get_bd_intf_pins axi_quad_spi_0/SPI_0]
 
   # Create port connections
   connect_bd_net -net Clocks_and_Resets_dbgresetn [get_bd_pins Clocks_and_Resets/dbgresetn] [get_bd_pins Cortex_M3_0/DBGRESETn]
-  connect_bd_net -net Clocks_and_Resets_peripheral_aresetn1 [get_bd_pins Clocks_and_Resets/peripheral_aresetn1] [get_bd_pins axi_gpio_2/s_axi_aresetn] [get_bd_pins axi_interconnect_0/M06_ARESETN]
+  connect_bd_net -net Clocks_and_Resets_peripheral_aresetn1 [get_bd_pins Clocks_and_Resets/peripheral_aresetn1] [get_bd_pins axi_gpio_2/s_axi_aresetn] [get_bd_pins axi_interconnect_0/M06_ARESETN] [get_bd_pins axi_interconnect_0/M07_ARESETN] [get_bd_pins axi_timer_0/s_axi_aresetn]
   connect_bd_net -net Clocks_and_Resets_sysresetn [get_bd_pins Clocks_and_Resets/sysresetn] [get_bd_pins Cortex_M3_0/SYSRESETn]
   connect_bd_net -net CortexM3DbgAXI_0_SWDO [get_bd_pins Cortex_M3_0/SWDO] [get_bd_pins daplink_if_0/SWDO]
   connect_bd_net -net CortexM3DbgAXI_0_SWDOEN [get_bd_pins Cortex_M3_0/SWDOEN] [get_bd_pins daplink_if_0/SWDOEN]
@@ -655,12 +660,15 @@ proc create_root_design { parentCell } {
   connect_bd_net -net V2C_DAPLink_interface_qspi_xip_irq [get_bd_pins daplink_if_0/qspi_xip_irq] [get_bd_pins xlconcat_0/In6]
   connect_bd_net -net V2C_DAPLink_interface_spi_irq [get_bd_pins daplink_if_0/spi_irq] [get_bd_pins xlconcat_0/In5]
   connect_bd_net -net V2C_DAPLink_interface_uart_rxd_axi [get_bd_pins axi_uartlite_0/rx] [get_bd_pins daplink_if_0/uart_rxd_axi]
+  connect_bd_net -net axi_gpio_0_ip2intc_irpt [get_bd_pins axi_gpio_0/ip2intc_irpt] [get_bd_pins xlconcat_0/In1]
   connect_bd_net -net axi_gpio_1_ip2intc_irpt [get_bd_pins axi_gpio_1/ip2intc_irpt] [get_bd_pins xlconcat_0/In2]
-  connect_bd_net -net axi_gpio_2_ip2intc_irpt [get_bd_pins axi_gpio_2/ip2intc_irpt] [get_bd_pins xlconcat_0/In1]
+  connect_bd_net -net axi_gpio_2_ip2intc_irpt [get_bd_pins axi_gpio_2/ip2intc_irpt] [get_bd_pins xlconcat_0/In8]
   connect_bd_net -net axi_quad_spi_0_ip2intc_irpt [get_bd_pins axi_quad_spi_0/ip2intc_irpt] [get_bd_pins xlconcat_0/In3]
+  connect_bd_net -net axi_timer_0_interrupt [get_bd_pins axi_timer_0/interrupt] [get_bd_pins xlconcat_0/In9]
   connect_bd_net -net axi_uartlite_0_interrupt [get_bd_pins axi_uartlite_0/interrupt] [get_bd_pins xlconcat_0/In0]
   connect_bd_net -net axi_uartlite_0_tx [get_bd_pins axi_uartlite_0/tx] [get_bd_pins daplink_if_0/uart_txd_axi]
-  connect_bd_net -net clk_wiz_0_clk_out1 [get_bd_pins Clocks_and_Resets/clk_cpu] [get_bd_pins Cortex_M3_0/HCLK] [get_bd_pins axi_bram_ctrl_0/s_axi_aclk] [get_bd_pins axi_gpio_0/s_axi_aclk] [get_bd_pins axi_gpio_1/s_axi_aclk] [get_bd_pins axi_gpio_2/s_axi_aclk] [get_bd_pins axi_interconnect_0/ACLK] [get_bd_pins axi_interconnect_0/M00_ACLK] [get_bd_pins axi_interconnect_0/M01_ACLK] [get_bd_pins axi_interconnect_0/M02_ACLK] [get_bd_pins axi_interconnect_0/M03_ACLK] [get_bd_pins axi_interconnect_0/M04_ACLK] [get_bd_pins axi_interconnect_0/M05_ACLK] [get_bd_pins axi_interconnect_0/M06_ACLK] [get_bd_pins axi_interconnect_0/S00_ACLK] [get_bd_pins axi_quad_spi_0/s_axi_aclk] [get_bd_pins axi_uartlite_0/s_axi_aclk] [get_bd_pins daplink_if_0/s_axi_aclk]
+  connect_bd_net -net capturetrig0_0_1 [get_bd_ports captureTrig] [get_bd_pins axi_timer_0/capturetrig0]
+  connect_bd_net -net clk_wiz_0_clk_out1 [get_bd_pins Clocks_and_Resets/clk_cpu] [get_bd_pins Cortex_M3_0/HCLK] [get_bd_pins axi_bram_ctrl_0/s_axi_aclk] [get_bd_pins axi_gpio_0/s_axi_aclk] [get_bd_pins axi_gpio_1/s_axi_aclk] [get_bd_pins axi_gpio_2/s_axi_aclk] [get_bd_pins axi_interconnect_0/ACLK] [get_bd_pins axi_interconnect_0/M00_ACLK] [get_bd_pins axi_interconnect_0/M01_ACLK] [get_bd_pins axi_interconnect_0/M02_ACLK] [get_bd_pins axi_interconnect_0/M03_ACLK] [get_bd_pins axi_interconnect_0/M04_ACLK] [get_bd_pins axi_interconnect_0/M05_ACLK] [get_bd_pins axi_interconnect_0/M06_ACLK] [get_bd_pins axi_interconnect_0/M07_ACLK] [get_bd_pins axi_interconnect_0/S00_ACLK] [get_bd_pins axi_quad_spi_0/s_axi_aclk] [get_bd_pins axi_timer_0/s_axi_aclk] [get_bd_pins axi_uartlite_0/s_axi_aclk] [get_bd_pins daplink_if_0/s_axi_aclk]
   connect_bd_net -net daplink_if_0_SWCLK [get_bd_pins Cortex_M3_0/SWCLKTCK] [get_bd_pins daplink_if_0/SWCLK]
   connect_bd_net -net daplink_if_0_SWDI [get_bd_pins Cortex_M3_0/SWDITMS] [get_bd_pins daplink_if_0/SWDI]
   connect_bd_net -net daplink_if_0_nSRST [get_bd_pins Clocks_and_Resets/aux_reset_in] [get_bd_pins daplink_if_0/nSRST]
@@ -683,6 +691,7 @@ proc create_root_design { parentCell } {
   create_bd_addr_seg -range 0x00010000 -offset 0x40130000 [get_bd_addr_spaces Cortex_M3_0/CM3_SYS_AXI3] [get_bd_addr_segs axi_quad_spi_0/AXI_LITE/Reg] SEG_axi_quad_spi_0_Reg
   create_bd_addr_seg -range 0x00010000 -offset 0x40020000 [get_bd_addr_spaces Cortex_M3_0/CM3_SYS_AXI3] [get_bd_addr_segs daplink_if_0/axi_quad_spi_0/AXI_LITE/Reg] SEG_axi_quad_spi_0_Reg1
   create_bd_addr_seg -range 0x00010000 -offset 0x40030000 [get_bd_addr_spaces Cortex_M3_0/CM3_SYS_AXI3] [get_bd_addr_segs daplink_if_0/axi_single_spi_0/AXI_LITE/Reg] SEG_axi_single_spi_0_Reg
+  create_bd_addr_seg -range 0x00010000 -offset 0x41C00000 [get_bd_addr_spaces Cortex_M3_0/CM3_SYS_AXI3] [get_bd_addr_segs axi_timer_0/S_AXI/Reg] SEG_axi_timer_0_Reg
   create_bd_addr_seg -range 0x00010000 -offset 0x40100000 [get_bd_addr_spaces Cortex_M3_0/CM3_SYS_AXI3] [get_bd_addr_segs axi_uartlite_0/S_AXI/Reg] SEG_axi_uartlite_0_Reg
   create_bd_addr_seg -range 0x00100000 -offset 0x00000000 [get_bd_addr_spaces Cortex_M3_0/CM3_CODE_AXI3] [get_bd_addr_segs daplink_if_0/axi_xip_quad_spi_0/aximm/MEM0] SEG_axi_xip_quad_spi_0_MEM0
   create_bd_addr_seg -range 0x00010000 -offset 0x40000000 [get_bd_addr_spaces Cortex_M3_0/CM3_SYS_AXI3] [get_bd_addr_segs daplink_if_0/axi_xip_quad_spi_0/AXI_LITE/Reg] SEG_axi_xip_quad_spi_0_Reg

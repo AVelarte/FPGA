@@ -25,7 +25,9 @@
 #define PLATFORM_ARM
  
 /* Definitions for sleep timer configuration */
-#define XSLEEP_TIMER_IS_DEFAULT_TIMER
+#define SLEEP_TIMER_BASEADDR XPAR_AXI_TIMER_0_BASEADDR 
+#define SLEEP_TIMER_FREQUENCY XPAR_AXI_TIMER_0_CLOCK_FREQ_HZ 
+#define XSLEEP_TIMER_IS_AXI_TIMER
  
  
 /******************************************************************/
@@ -272,6 +274,26 @@
 #define XPAR_SPI_3_USE_STARTUP 0U
 
 
+
+/******************************************************************/
+
+/* Definitions for driver TMRCTR */
+#define XPAR_XTMRCTR_NUM_INSTANCES 1U
+
+/* Definitions for peripheral AXI_TIMER_0 */
+#define XPAR_AXI_TIMER_0_DEVICE_ID 0U
+#define XPAR_AXI_TIMER_0_BASEADDR 0x41C00000U
+#define XPAR_AXI_TIMER_0_HIGHADDR 0x41C0FFFFU
+#define XPAR_AXI_TIMER_0_CLOCK_FREQ_HZ 50000000U
+
+
+/******************************************************************/
+
+/* Canonical definitions for peripheral AXI_TIMER_0 */
+#define XPAR_TMRCTR_0_DEVICE_ID 0U
+#define XPAR_TMRCTR_0_BASEADDR 0x41C00000U
+#define XPAR_TMRCTR_0_HIGHADDR 0x41C0FFFFU
+#define XPAR_TMRCTR_0_CLOCK_FREQ_HZ XPAR_AXI_TIMER_0_CLOCK_FREQ_HZ
 
 /******************************************************************/
 

@@ -6,6 +6,8 @@ BEGIN OS
  PARAMETER OS_NAME = standalone
  PARAMETER OS_VER = 6.7
  PARAMETER PROC_INSTANCE = Cortex_M3_0
+ PARAMETER profile_timer = axi_timer_0
+ PARAMETER sleep_timer = axi_timer_0
  PARAMETER stdin = axi_uartlite_0
  PARAMETER stdout = axi_uartlite_0
 END
@@ -76,6 +78,12 @@ BEGIN DRIVER
  PARAMETER DRIVER_NAME = gpio
  PARAMETER DRIVER_VER = 4.3
  PARAMETER HW_INSTANCE = axi_gpio_2
+END
+
+BEGIN DRIVER
+ PARAMETER DRIVER_NAME = tmrctr
+ PARAMETER DRIVER_VER = 4.4
+ PARAMETER HW_INSTANCE = axi_timer_0
 END
 
 
