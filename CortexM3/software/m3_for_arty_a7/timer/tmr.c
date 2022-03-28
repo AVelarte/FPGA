@@ -9,11 +9,11 @@ static XTmrCtr Timer0;
 void TimerHandler (void *CallBackRef, u8 TmrCtrNumber){
 	print("TimerHandler \r\n");
 	XTmrCtr_InterruptHandler(&Timer0);
-	XTmrCtr_WriteReg(&Timer0->BaseAddress,
-						 TmrCtrNumber,
-						 XTC_TCSR_OFFSET,
-						 ControlStatusReg |
-						 XTC_CSR_INT_OCCURED_MASK);
+//	XTmrCtr_WriteReg(&Timer0->BaseAddress,
+//						 TmrCtrNumber,
+//						 XTC_TCSR_OFFSET,
+//						 ControlStatusReg |
+//						 XTC_CSR_INT_OCCURED_MASK);
 	// Clear interrupt in NVIC
     NVIC_ClearPendingIRQ(Timer_IRQn);
 	
