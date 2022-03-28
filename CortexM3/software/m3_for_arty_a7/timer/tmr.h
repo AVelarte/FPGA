@@ -4,6 +4,5 @@
 
 int InitialiseTIMER0 ( void );
 void testTIMER0 ( void ) ;
-void setResetValueTIMER0 ( u32 ResetValue );
-void startTimer0 ( void ) ;
+void startTimer0 ( u32 ResetValue ) ;
 u32 valorTimer0 ( void );

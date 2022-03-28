@@ -23,8 +23,8 @@
 #include "xparameters.h"        // Project memory and device map
 #include "xgpio.h"              // Xilinx GPIO routines
 #include "peripherallink.h"     // IRQ definitions
-
-
+#include "tmr.h"
+#include <stdbool.h>
 /************************** Variable Definitions **************************/
 /*
  * The following are declared static to this module so they are zeroed and so they are
@@ -38,7 +38,7 @@ static XGpio Gpio_RGBLed_PB;   /* The driver instance for GPIO Device 1 */
 static XGpio Gpio_DAPLink;     /* The driver instance for the DAPLink GPIO */
 extern XGpio Gpio_Trigger;
 static uint32_t valor = 20;
-
+extern bool faseExc;
 /*****************************************************************************/
 
 // Initialise the GPIO and zero the outputs
@@ -123,22 +123,35 @@ void EnableGPIOInterrupts( void )
 		XGpio_InterruptGlobalEnable(&Gpio_Trigger);
 }
 
+void openSwitch (void)
+{
+	XGpio_DiscreteWrite(&Gpio_Trigger, ARTY_A7_TrgOUT_CHANNEL, 0x1);
+}
+
+void closeSwitch (void)
+{
+	XGpio_DiscreteWrite(&Gpio_Trigger, ARTY_A7_TrgOUT_CHANNEL, 0x0);
+}
 
 void GPIOTrg_Handler (void){
-		//print("Trigger");
-		volatile uint32_t gpio_dip_switches;
 
-		// Read dip switches, change LEDs to match
-		if( XGpio_DiscreteRead(&Gpio_Trigger, ARTY_A7_TrgIN_CHANNEL) & 0x1){
-			print("Trigger Positivo \n\r");
-			XGpio_DiscreteWrite(&Gpio_Trigger, ARTY_A7_TrgOUT_CHANNEL, 0x4);
-			SysTick->CTRL  = 1UL;
-			SysTick_Config(50000 * valor);
-			XGpio_DiscreteWrite(&Gpio_Trigger, ARTY_A7_TrgOUT_CHANNEL, 0xC);
-		}
+		// Para la simulacion
+//		if( XGpio_DiscreteRead(&Gpio_Trigger, ARTY_A7_TrgIN_CHANNEL) & 0x1){
+//			print("Trigger Positivo \n\r");
+//			XGpio_DiscreteWrite(&Gpio_Trigger, ARTY_A7_TrgOUT_CHANNEL, 0x4);
+//			SysTick->CTRL  = 1UL;
+//			SysTick_Config(50000 * valor);
+//			XGpio_DiscreteWrite(&Gpio_Trigger, ARTY_A7_TrgOUT_CHANNEL, 0xC);
+//		}
 		
-		// Clear interrupt from GPIO
-    XGpio_InterruptClear(&Gpio_Trigger, XGPIO_IR_MASK);
+		// Apertura de los switch
+		if( XGpio_DiscreteRead(&Gpio_Trigger, ARTY_A7_TrgIN_CHANNEL) & 0x1){
+			print("Estamos");
+			startTimer0(50000 * valor);
+			faseExc = TRUE;
+			// Clear interrupt from GPIO
+			XGpio_InterruptClear(&Gpio_Trigger, XGPIO_IR_MASK);
+		}
     // Clear interrupt in NVIC
     NVIC_ClearPendingIRQ(GPIOTrg_IRQn);
 }

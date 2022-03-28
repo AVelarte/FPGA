@@ -23,7 +23,7 @@
 #include <ctype.h>
 #include <string.h>
 #include <stdlib.h>
-#include<stdbool.h>
+#include <stdbool.h>
 #include <time.h>
 
 // Xilinx specific headers
@@ -39,7 +39,7 @@
 /*******************************************************************/
 volatile uint32_t msTicks = 0;
 XGpio Gpio_Trigger;
-bool abiertos = FALSE;
+bool faseExc = FALSE;
 
 ////////void SysTick_Handler(void){
 ////////	//print("DONE");
@@ -77,13 +77,13 @@ bool abiertos = FALSE;
 //////////}
 ////////}
 
-int valorTimer;
-void SysTick_Handler(void){
-valorTimer = valorTimer0();
-			char msg2[24];
-			sprintf(msg2,"Valor Timer: %d\r\n", valorTimer);  
-			print(msg2);
-}
+//int valorTimer;
+//void SysTick_Handler(void){
+//valorTimer = valorTimer0();
+//			char msg2[24];
+//			sprintf(msg2,"Valor Timer: %d\r\n", valorTimer);  
+//			print(msg2);
+//}
 int main (void)
 {
 
@@ -276,22 +276,18 @@ int main (void)
 			
 		InitialiseTIMER0();
 		//testTIMER0();
-		setResetValueTIMER0(50000000);
-		startTimer0();
 		
 		
-		uint32_t returnCode;
-		returnCode = SysTick_Config(5000000); // La referencia es 1ms cuando ponemos 50.000 (serán 5.000.000 para 100ms)
-		if (returnCode != 0){
-			print("Error al configurar el SysTick \r\n");
-		}
+//		uint32_t returnCode;
+//		returnCode = SysTick_Config(5000000); // La referencia es 1ms cuando ponemos 50.000 (serán 5.000.000 para 100ms)
+//		if (returnCode != 0){
+//			print("Error al configurar el SysTick \r\n");
+//		}
 		
     // Main loop.  Handle LEDs and switches via interrupt
 		
     while ( 1 )
     {			
-			
-			
 			
         /* Main loop. Wait for interrupts to occur */
         /*

@@ -1,0 +1,334 @@
+/*
+
+Xilinx Vivado v2018.2 (64-bit) [Major: 2018, Minor: 2]
+SW Build: 2258646 on Thu Jun 14 20:03:12 MDT 2018
+IP Build: 2256618 on Thu Jun 14 22:10:49 MDT 2018
+
+Process ID: 8832
+License: Customer
+
+Current time: 	Mon Mar 28 23:24:01 CEST 2022
+Time zone: 	Central European Time (Europe/Paris)
+
+OS: Windows 10
+OS Version: 10.0
+OS Architecture: amd64
+Available processors (cores): 16
+
+Screen size: 1920x1080
+Screen resolution (DPI): 96
+Available screens: 2
+Available disk space: 174 GB
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	1.8.0_112 64-bit
+Java home: 	C:/Xilinx/Vivado/2018.2/tps/win64/jre
+Java executable location: 	C:/Xilinx/Vivado/2018.2/tps/win64/jre/bin/java.exe
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 2 GB
+
+
+User name: 	Antonio
+User home directory: C:/Users/Antonio
+User working directory: V:/hardware/m3_for_arty_a7/m3_for_arty_a7
+User country: 	ES
+User language: 	es
+User locale: 	es_ES
+
+RDI_BASEROOT: C:/Xilinx/Vivado
+HDI_APPROOT: C:/Xilinx/Vivado/2018.2
+RDI_DATADIR: C:/Xilinx/Vivado/2018.2/data
+RDI_BINDIR: C:/Xilinx/Vivado/2018.2/bin
+
+Vivado preferences file location: C:/Users/Antonio/AppData/Roaming/Xilinx/Vivado/2018.2/vivado.xml
+Vivado preferences directory: C:/Users/Antonio/AppData/Roaming/Xilinx/Vivado/2018.2/
+Vivado layouts directory: C:/Users/Antonio/AppData/Roaming/Xilinx/Vivado/2018.2/layouts
+PlanAhead jar file location: 	C:/Xilinx/Vivado/2018.2/lib/classes/planAhead.jar
+Vivado log file location: 	V:/hardware/m3_for_arty_a7/m3_for_arty_a7/vivado.log
+Vivado journal file location: 	V:/hardware/m3_for_arty_a7/m3_for_arty_a7/vivado.jou
+Engine tmp dir: 	V:/hardware/m3_for_arty_a7/m3_for_arty_a7/.Xil/Vivado-8832-DESKTOP-B2TSFBN
+
+Xilinx Environment Variables
+----------------------------
+AMDRMSDKPATH: C:\Program Files\AMD\RyzenMasterSDK\
+XILINX: C:/Xilinx/Vivado/2018.2/ids_lite/ISE
+XILINX_DSP: C:/Xilinx/Vivado/2018.2/ids_lite/ISE
+XILINX_PLANAHEAD: C:/Xilinx/Vivado/2018.2
+XILINX_SDK: C:/Xilinx/SDK/2018.2
+XILINX_VIVADO: C:/Xilinx/Vivado/2018.2
+XILINX_VIVADO_HLS: C:/Xilinx/Vivado/2018.2
+
+
+GUI allocated memory:	135 MB
+GUI max memory:		3,052 MB
+Engine allocated memory: 601 MB
+
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// TclEventType: PROJECT_OPEN_DIALOG
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// [GUI Memory]: 64 MB (+64943kb) [00:00:05]
+// [Engine Memory]: 477 MB (+348236kb) [00:00:05]
+// bx (ck):  Open Project : addNotify
+// Opening Vivado Project: V:\hardware\m3_for_arty_a7\m3_for_arty_a7\m3_for_arty_a7.xpr. Version: Vivado v2018.2 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: open_project V:/hardware/m3_for_arty_a7/m3_for_arty_a7/m3_for_arty_a7.xpr 
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_CURRENT
+// [GUI Memory]: 69 MB (+1871kb) [00:00:08]
+// [Engine Memory]: 602 MB (+106576kb) [00:00:08]
+// HMemoryUtils.trashcanNow. Engine heap size: 613 MB. GUI used memory: 38 MB. Current time: 3/28/22 11:24:03 PM CEST
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// [Engine Memory]: 662 MB (+31700kb) [00:00:13]
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_NEW
+// [Engine Memory]: 721 MB (+27011kb) [00:00:15]
+// [Engine Memory]: 771 MB (+13753kb) [00:00:17]
+// [GUI Memory]: 73 MB (+332kb) [00:00:17]
+// Tcl Message: open_project V:/hardware/m3_for_arty_a7/m3_for_arty_a7/m3_for_arty_a7.xpr 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1700] Loaded user IP repository 'v:/vivado/Arm_ipi_repository'. INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.2/data/ip'. 
+// Tcl Message: open_project: Time (s): cpu = 00:00:18 ; elapsed = 00:00:13 . Memory (MB): peak = 939.734 ; gain = 251.895 
+// Project name: m3_for_arty_a7; location: V:/hardware/m3_for_arty_a7/m3_for_arty_a7; part: xc7a100tcsg324-1
+dismissDialog("Open Project"); // bx (ck)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, IP Integrator]", 5, true); // u (O, ck) - Node
+// [GUI Memory]: 85 MB (+8194kb) [00:00:22]
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, IP Integrator]", 5, true); // u (O, ck) - Node
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// [GUI Memory]: 92 MB (+3563kb) [00:00:23]
+// TclEventType: DG_GRAPH_GENERATED
+// Tcl Message: update_compile_order -fileset sources_1 
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, m3_for_arty_a7_wrapper (m3_for_arty_a7_wrapper.v)]", 1); // B (D, ck)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, m3_for_arty_a7_wrapper (m3_for_arty_a7_wrapper.v), m3_for_arty_a7_i : m3_for_arty_a7 (m3_for_arty_a7.bd)]", 2, true); // B (D, ck) - Node
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, m3_for_arty_a7_wrapper (m3_for_arty_a7_wrapper.v), m3_for_arty_a7_i : m3_for_arty_a7 (m3_for_arty_a7.bd)]", 2); // B (D, ck)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, m3_for_arty_a7_wrapper (m3_for_arty_a7_wrapper.v), m3_for_arty_a7_i : m3_for_arty_a7 (m3_for_arty_a7.bd)]", 2, true); // B (D, ck) - Node
+// [GUI Memory]: 97 MB (+248kb) [00:00:35]
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, m3_for_arty_a7_wrapper (m3_for_arty_a7_wrapper.v), m3_for_arty_a7_i : m3_for_arty_a7 (m3_for_arty_a7.bd)]", 2, true, false, false, false, false, true); // B (D, ck) - Double Click - Node
+// bx (ck):  Open Block Design : addNotify
+// TclEventType: LOAD_FEATURE
+// Tcl Message: open_bd_design {V:/hardware/m3_for_arty_a7/block_diagram/m3_for_arty_a7.bd} 
+// TclEventType: RSB_CHANGE_CURRENT_DIAGRAM
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: LOAD_FEATURE
+// Tcl Message: Adding cell -- xilinx.com:ip:axi_bram_ctrl:4.0 - axi_bram_ctrl_0 
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_PROPERTY_CHANGE
+// Tcl Message: Adding cell -- xilinx.com:ip:axi_gpio:2.0 - axi_gpio_0 Adding cell -- xilinx.com:ip:axi_gpio:2.0 - axi_gpio_1 Adding cell -- xilinx.com:ip:axi_quad_spi:3.2 - axi_quad_spi_0 Adding cell -- xilinx.com:ip:axi_uartlite:2.0 - axi_uartlite_0 Adding cell -- xilinx.com:ip:blk_mem_gen:8.4 - blk_mem_gen_0 Adding cell -- xilinx.com:module_ref:tri_io_buf:1.0 - tri_io_buf_0 Adding cell -- xilinx.com:ip:xlconcat:2.1 - xlconcat_0 Adding cell -- xilinx.com:ip:xlconcat:2.1 - xlconcat_1 Adding cell -- xilinx.com:ip:xlconstant:1.1 - xlconstant_1 Adding cell -- Arm.com:CortexM:CORTEXM3_AXI:1.0 - Cortex_M3_0 
+// Tcl Message: cell handle is /Cortex_M3_0 
+// Tcl Message: Adding cell -- xilinx.com:ip:axi_gpio:2.0 - axi_gpio_2 Adding cell -- xilinx.com:ip:axi_timer:2.0 - axi_timer_0 Adding cell -- xilinx.com:ip:axi_quad_spi:3.2 - axi_single_spi_0 Adding cell -- xilinx.com:ip:axi_quad_spi:3.2 - axi_quad_spi_0 Adding cell -- xilinx.com:ip:axi_quad_spi:3.2 - axi_xip_quad_spi_0 
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_PROPERTY_CHANGE
+// Tcl Message: Adding cell -- xilinx.com:ip:axi_gpio:2.0 - axi_gpio_0 Adding cell -- xilinx.com:ip:axi_protocol_converter:2.1 - axi_protocol_convert_0 Adding cell -- Arm.com:user:DAPLink_to_Arty_shield:1.0 - DAPLink_to_Arty_shield_0 Adding cell -- xilinx.com:ip:axi_crossbar:2.1 - xbar 
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_PROPERTY_CHANGE
+// [Engine Memory]: 863 MB (+56495kb) [00:00:39]
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: RSB_OPEN_DIAGRAM
+// HMemoryUtils.trashcanNow. Engine heap size: 873 MB. GUI used memory: 55 MB. Current time: 3/28/22 11:24:33 PM CEST
+// [Engine Memory]: 928 MB (+22875kb) [00:00:43]
+// TclEventType: RSB_OPEN_DIAGRAM
+// TclEventType: RSB_CONNECTION_CHANGE
+// TclEventType: RSB_LOCK_CHANGE
+// Tcl Message: open_bd_design: Time (s): cpu = 00:00:11 ; elapsed = 00:00:10 . Memory (MB): peak = 1106.402 ; gain = 159.633 
+// Elapsed time: 10 seconds
+dismissDialog("Open Block Design"); // bx (ck)
+// [Engine Memory]: 974 MB (+48kb) [00:00:47]
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Address Editor", 1); // k (j, ck)
+// Elapsed time: 17 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "System", 0); // k (j, ck)
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /capturetrig0_0_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /capturetrig0_0_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /capturetrig0_0_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /capturetrig0_0_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /capturetrig0_0_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /capturetrig0_0_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /capturetrig0_0_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /capturetrig0_0_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /capturetrig0_0_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /capturetrig0_0_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /capturetrig0_0_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /capturetrig0_0_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /capturetrig0_0_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /capturetrig0_0_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /capturetrig0_0_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /capturetrig0_0_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /capturetrig0_0_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /capturetrig0_0_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /capturetrig0_0_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /capturetrig0_0_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /capturetrig0_0_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /capturetrig0_0_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /capturetrig0_0_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /capturetrig0_0_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /capturetrig0_0_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /capturetrig0_0_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /capturetrig0_0_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /capturetrig0_0_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /Cortex_M3_0_SYSRESETREQ 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /Cortex_M3_0_SYSRESETREQ 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /axi_uartlite_0_interrupt 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /axi_uartlite_0_interrupt 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /TDI_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /TDI_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /TDI_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /Cortex_M3_0_SYSRESETREQ 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /Cortex_M3_0_SYSRESETREQ 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /Cortex_M3_0_SYSRESETREQ 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /Cortex_M3_0_SYSRESETREQ 
+// Elapsed time: 75 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Address Editor", 1); // k (j, ck)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "System", 0); // k (j, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// HMemoryUtils.trashcanNow. Engine heap size: 980 MB. GUI used memory: 60 MB. Current time: 3/28/22 11:54:33 PM CEST
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /V2C_DAPLink_interface_qspi_irq 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /V2C_DAPLink_interface_qspi_irq 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /daplink_if_0_nSRST 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /daplink_if_0_nSRST 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /ext_spi_clk_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /proc_sys_reset_1_interconnect_aresetn 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /Clocks_and_Resets_peripheral_aresetn1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /axi_gpio_1_ip2intc_irpt 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /axi_gpio_1_ip2intc_irpt 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /daplink_if_0_nSRST 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /daplink_if_0_nSRST 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /V2C_DAPLink_interface_qspi_irq 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /V2C_DAPLink_interface_qspi_irq 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /daplink_if_0_SWCLK 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /daplink_if_0_SWCLK 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /daplink_if_0_SWDI 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /daplink_if_0_SWDI 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /Clocks_and_Resets_peripheral_aresetn1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /Clocks_and_Resets_peripheral_aresetn1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /V2C_DAPLink_interface_DAPLink_fittedn 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /V2C_DAPLink_interface_DAPLink_fittedn 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /V2C_DAPLink_interface_DAPLink_fittedn 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /V2C_DAPLink_interface_DAPLink_fittedn 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /V2C_DAPLink_interface_DAPLink_fittedn 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /V2C_DAPLink_interface_DAPLink_fittedn 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /V2C_DAPLink_interface_DAPLink_fittedn 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /V2C_DAPLink_interface_DAPLink_fittedn 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /V2C_DAPLink_interface_DAPLink_fittedn 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /V2C_DAPLink_interface_DAPLink_fittedn 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /V2C_DAPLink_interface_DAPLink_fittedn 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /V2C_DAPLink_interface_DAPLink_fittedn 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /V2C_DAPLink_interface_DAPLink_fittedn 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /V2C_DAPLink_interface_DAPLink_fittedn 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /ext_spi_clk_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /ext_spi_clk_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /CortexM3DbgAXI_0_TDO 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /CortexM3DbgAXI_0_TDO 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /clk_wiz_0_clk_out1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /clk_wiz_0_clk_out1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /CortexM3DbgAXI_0_TDO 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /CortexM3DbgAXI_0_TDO 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /V2C_DAPLink_interface_DAPLink_fittedn 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /V2C_DAPLink_interface_DAPLink_fittedn 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /axi_uartlite_0_interrupt 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /axi_uartlite_0_interrupt 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /axi_uartlite_0_interrupt 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /axi_uartlite_0_interrupt 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /CortexM3DbgAXI_0_SWDO 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /CortexM3DbgAXI_0_SWDO 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /axi_gpio_0_ip2intc_irpt 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /axi_gpio_0_ip2intc_irpt 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /clk_wiz_0_clk_out1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /clk_wiz_0_clk_out1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /proc_sys_reset_1_interconnect_aresetn 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /proc_sys_reset_1_interconnect_aresetn 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /proc_sys_reset_1_interconnect_aresetn 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /proc_sys_reset_1_interconnect_aresetn 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /proc_sys_reset_1_interconnect_aresetn 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /proc_sys_reset_1_interconnect_aresetn 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /axi_quad_spi_0_ip2intc_irpt 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /axi_quad_spi_0_ip2intc_irpt 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /daplink_if_0_SWDI 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /daplink_if_0_SWDI 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /axi_gpio_2_ip2intc_irpt 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /axi_gpio_2_ip2intc_irpt 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /axi_timer_0_interrupt 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /axi_timer_0_interrupt 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /capturetrig0_0_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /capturetrig0_0_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /axi_gpio_1_ip2intc_irpt 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /axi_gpio_1_ip2intc_irpt 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /axi_gpio_1_ip2intc_irpt 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /axi_gpio_1_ip2intc_irpt 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /axi_gpio_1_ip2intc_irpt 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /axi_gpio_1_ip2intc_irpt 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /axi_gpio_1_ip2intc_irpt 
+// Run Command: PAResourceCommand.PACommandNames_CUSTOMIZE_RSB_BLOC
+// r (ck): Re-customize IP: addNotify
+// Elapsed time: 1705 seconds
+dismissDialog("Re-customize IP"); // r (ck)
+// [GUI Memory]: 103 MB (+898kb) [00:31:12]
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE

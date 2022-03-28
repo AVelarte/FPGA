@@ -23,6 +23,8 @@ int InitialiseGPIO( void );
 void EnableGPIOInterrupts( void );
 void IncLeds( void );
 void SetDAPLinkQSPIMode( u32 mode );
+void openSwitch (void);
+void closeSwitch (void);
 
 // void GPIO0_Handler ( void );
 // void GPIO1_Handler ( void );

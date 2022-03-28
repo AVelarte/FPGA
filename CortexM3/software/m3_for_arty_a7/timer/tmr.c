@@ -1,22 +1,31 @@
 #include "tmr.h"
 #include "xtmrctr.h"
 #include "peripherallink.h"     // IRQ definitions
+#include <stdbool.h>
+#include "gpio.h"
 
 // Instance of the TIMER
 static XTmrCtr Timer0;
+// Variable para controlar el estado de los switch
+extern bool faseExc;
 /*****************************************************************************/
+
 
 void TimerHandler (void *CallBackRef, u8 TmrCtrNumber){
 	print("TimerHandler \r\n");
+	XTmrCtr_Stop(&Timer0, 0UL);
 	XTmrCtr_InterruptHandler(&Timer0);
-//	XTmrCtr_WriteReg(&Timer0->BaseAddress,
-//						 TmrCtrNumber,
-//						 XTC_TCSR_OFFSET,
-//						 ControlStatusReg |
-//						 XTC_CSR_INT_OCCURED_MASK);
 	// Clear interrupt in NVIC
-    NVIC_ClearPendingIRQ(Timer_IRQn);
-	
+  NVIC_ClearPendingIRQ(Timer_IRQn);
+	if (faseExc)   //Termina la fase de excitacion
+	{
+		openSwitch();
+		faseExc = FALSE;
+		startTimer0(50000 * 500); //Para contar 500ms
+	}
+	else{
+		closeSwitch();
+	}
 };
 
 int InitialiseTIMER0( void )
@@ -27,10 +36,19 @@ int InitialiseTIMER0( void )
     if (status != XST_SUCCESS)  {
         return XST_FAILURE;
     }
-		
+		XTmrCtr_SetOptions(&Timer0, 0UL, XTC_DOWN_COUNT_OPTION | XTC_INT_MODE_OPTION);
+//	XTmrCtr_SetOptions(&Timer0, 0UL, XTC_AUTO_RELOAD_OPTION);
 		XTmrCtr_SetHandler(&Timer0, TimerHandler, &Timer0);
 		
+		
 		return XST_SUCCESS;
+}
+
+void startTimer0 ( u32 ResetValue ) 
+{
+	XTmrCtr_SetResetValue(&Timer0, 0UL, ResetValue);
+	XTmrCtr_Reset(&Timer0, 0UL);
+	XTmrCtr_Start(&Timer0, 0UL);
 }
 
 void testTIMER0 ( void ) 
@@ -44,19 +62,6 @@ void testTIMER0 ( void )
 		print("VA BIEN EL TIMER \r\n");
 	}
 	
-}
-
-void setResetValueTIMER0 ( u32 ResetValue )
-{
-	XTmrCtr_SetResetValue(&Timer0, 0UL, ResetValue);
-	//XTmrCtr_Reset(&Timer0, 0UL);
-}
-
-void startTimer0 ( void ) 
-{
-	XTmrCtr_SetOptions(&Timer0, 0UL, XTC_DOWN_COUNT_OPTION | XTC_INT_MODE_OPTION );
-//	XTmrCtr_SetOptions(&Timer0, 0UL, XTC_AUTO_RELOAD_OPTION);
-	XTmrCtr_Start(&Timer0, 0UL);
 }
 
 u32 valorTimer0 ( void )

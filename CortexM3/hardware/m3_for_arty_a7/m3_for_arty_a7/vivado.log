@@ -2,59 +2,54 @@
 # Vivado v2018.2 (64-bit)
 # SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
 # IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
-# Start of session at: Mon Mar 28 17:37:31 2022
-# Process ID: 15704
-# Current directory: D:/FPGA/FPGA/CortexM3/hardware/m3_for_arty_a7/m3_for_arty_a7
-# Command line: vivado.exe -mode batch -source make_prog_files.tcl -notrace
-# Log file: D:/FPGA/FPGA/CortexM3/hardware/m3_for_arty_a7/m3_for_arty_a7/vivado.log
-# Journal file: D:/FPGA/FPGA/CortexM3/hardware/m3_for_arty_a7/m3_for_arty_a7\vivado.jou
+# Start of session at: Mon Mar 28 23:23:49 2022
+# Process ID: 8832
+# Current directory: V:/hardware/m3_for_arty_a7/m3_for_arty_a7
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent24812 V:\hardware\m3_for_arty_a7\m3_for_arty_a7\m3_for_arty_a7.xpr
+# Log file: V:/hardware/m3_for_arty_a7/m3_for_arty_a7/vivado.log
+# Journal file: V:/hardware/m3_for_arty_a7/m3_for_arty_a7\vivado.jou
 #-----------------------------------------------------------
-source make_prog_files.tcl -notrace
-  Running updatemem ...
-
-****** updatemem v2018.2 (64-bit)
-  **** SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
-  **** IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
-    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
-
-source D:/Programas/Xilinx/Vivado/2018.2/scripts/updatemem/main.tcl -notrace
-Command: update_mem -meminfo ./m3.mmi -data ./bram_a7.elf -proc dummy -bit ./m3_for_arty_a7.runs/impl_1/m3_for_arty_a7_wrapper.bit -out m3_for_arty_a7.bit -force
-Loading bitfile ./m3_for_arty_a7.runs/impl_1/m3_for_arty_a7_wrapper.bit
-Loading data files...
-Updating memory content...
-Creating bitstream...
-Writing bitstream m3_for_arty_a7.bit...
-0 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
-update_mem completed successfully
-update_mem: Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 525.941 ; gain = 470.203
-INFO: [Common 17-206] Exiting updatemem at Mon Mar 28 17:37:45 2022...
-
-********************************************
-  m3_for_arty_a7.bit correctly generated
-********************************************
-
-Command: write_cfgmem -force -format MCS -size 16 -interface SPIx4 -loadbit { up 0 m3_for_arty_a7.bit} m3_for_arty_a7.mcs
-Creating config memory files...
-Creating bitstream load up from address 0x00000000
-Loading bitfile m3_for_arty_a7.bit
-Writing file ./m3_for_arty_a7.mcs
-Writing log file ./m3_for_arty_a7.prm
-===================================
-Configuration Memory information
-===================================
-File Format        MCS
-Interface          SPIX4
-Size               16M
-Start Address      0x00000000
-End Address        0x00FFFFFF
-
-Addr1         Addr2         Date                    File(s)
-0x00000000    0x003A607B    Mar 28 17:37:45 2022    m3_for_arty_a7.bit
-0 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
-write_cfgmem completed successfully
-
-********************************************
-  m3_for_arty_a7.mcs correctly generated
-********************************************
-
-INFO: [Common 17-206] Exiting Vivado at Mon Mar 28 17:37:48 2022...
+start_gui
+open_project V:/hardware/m3_for_arty_a7/m3_for_arty_a7/m3_for_arty_a7.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'v:/vivado/Arm_ipi_repository'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.2/data/ip'.
+open_project: Time (s): cpu = 00:00:18 ; elapsed = 00:00:13 . Memory (MB): peak = 939.734 ; gain = 251.895
+update_compile_order -fileset sources_1
+open_bd_design {V:/hardware/m3_for_arty_a7/block_diagram/m3_for_arty_a7.bd}
+Adding cell -- xilinx.com:ip:axi_bram_ctrl:4.0 - axi_bram_ctrl_0
+Adding cell -- xilinx.com:ip:axi_gpio:2.0 - axi_gpio_0
+Adding cell -- xilinx.com:ip:axi_gpio:2.0 - axi_gpio_1
+Adding cell -- xilinx.com:ip:axi_quad_spi:3.2 - axi_quad_spi_0
+Adding cell -- xilinx.com:ip:axi_uartlite:2.0 - axi_uartlite_0
+Adding cell -- xilinx.com:ip:blk_mem_gen:8.4 - blk_mem_gen_0
+Adding cell -- xilinx.com:module_ref:tri_io_buf:1.0 - tri_io_buf_0
+Adding cell -- xilinx.com:ip:xlconcat:2.1 - xlconcat_0
+Adding cell -- xilinx.com:ip:xlconcat:2.1 - xlconcat_1
+Adding cell -- xilinx.com:ip:xlconstant:1.1 - xlconstant_1
+Adding cell -- Arm.com:CortexM:CORTEXM3_AXI:1.0 - Cortex_M3_0
+cell handle is /Cortex_M3_0
+Adding cell -- xilinx.com:ip:axi_gpio:2.0 - axi_gpio_2
+Adding cell -- xilinx.com:ip:axi_timer:2.0 - axi_timer_0
+Adding cell -- xilinx.com:ip:axi_quad_spi:3.2 - axi_single_spi_0
+Adding cell -- xilinx.com:ip:axi_quad_spi:3.2 - axi_quad_spi_0
+Adding cell -- xilinx.com:ip:axi_quad_spi:3.2 - axi_xip_quad_spi_0
+Adding cell -- xilinx.com:ip:axi_gpio:2.0 - axi_gpio_0
+Adding cell -- xilinx.com:ip:axi_protocol_converter:2.1 - axi_protocol_convert_0
+Adding cell -- Arm.com:user:DAPLink_to_Arty_shield:1.0 - DAPLink_to_Arty_shield_0
+Adding cell -- xilinx.com:ip:axi_crossbar:2.1 - xbar
+Adding cell -- xilinx.com:ip:axi_crossbar:2.1 - xbar
+Adding cell -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc
+Adding cell -- xilinx.com:ip:proc_sys_reset:5.0 - proc_sys_reset_DAPLink
+Adding cell -- xilinx.com:ip:proc_sys_reset:5.0 - proc_sys_reset_base
+Adding cell -- xilinx.com:ip:util_vector_logic:2.0 - i_interconnect_aresetn
+Adding cell -- xilinx.com:ip:util_vector_logic:2.0 - i_peripheral_aresetn1
+Adding cell -- xilinx.com:ip:util_vector_logic:2.0 - i_sysresetn_or
+Adding cell -- xilinx.com:ip:util_vector_logic:2.0 - i_inv_dbgresetn
+Adding cell -- xilinx.com:ip:util_vector_logic:2.0 - i_inv_sysresetn1
+Adding cell -- xilinx.com:ip:clk_wiz:6.0 - clk_wiz_0
+Adding cell -- xilinx.com:ip:xlconstant:1.1 - xlconstant_1
+Successfully read diagram <m3_for_arty_a7> from BD file <V:/hardware/m3_for_arty_a7/block_diagram/m3_for_arty_a7.bd>
+open_bd_design: Time (s): cpu = 00:00:11 ; elapsed = 00:00:10 . Memory (MB): peak = 1106.402 ; gain = 159.633
