@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\objects\m3_for_arty_a7.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\objects\m3_for_arty_a7.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Tue Mar 29 00:09:24 2022
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Wed Mar 30 18:07:33 2022
 <BR><P>
 <H3>Maximum Stack Usage =        456 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -408,10 +408,8 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;outbyte
 </UL>
 <BR>[Called By]<UL><LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;testTIMER0
-<LI><a href="#[16]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TimerHandler
 <LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WriteSPIData
 <LI><a href="#[f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO1_Handler
-<LI><a href="#[15]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIOTrg_Handler
 <LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
@@ -478,7 +476,7 @@ Global Symbols
 
 <P><STRONG><a name="[e7]"></a>XNullHandler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, xil_assert.o(.text), UNUSED)
 
-<P><STRONG><a name="[46]"></a>main</STRONG> (Thumb, 462 bytes, Stack size 336 bytes, main.o(.text))
+<P><STRONG><a name="[46]"></a>main</STRONG> (Thumb, 444 bytes, Stack size 336 bytes, main.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 456 + Unknown Stack Size
 <LI>Call Chain = main &rArr; __2sprintf &rArr; _printf_char_common &rArr; __printf
 </UL>
@@ -519,7 +517,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[53]"></a>EnableGPIOInterrupts</STRONG> (Thumb, 32 bytes, Stack size 8 bytes, gpio.o(.text))
+<P><STRONG><a name="[53]"></a>EnableGPIOInterrupts</STRONG> (Thumb, 46 bytes, Stack size 8 bytes, gpio.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = EnableGPIOInterrupts &rArr; XGpio_InterruptEnable &rArr; Xil_Assert
 </UL>
 <BR>[Calls]<UL><LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;XGpio_InterruptGlobalEnable
@@ -534,7 +532,6 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;XGpio_DiscreteWrite
 </UL>
 <BR>[Called By]<UL><LI><a href="#[16]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TimerHandler
-<LI><a href="#[15]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIOTrg_Handler
 </UL>
 
 <P><STRONG><a name="[64]"></a>closeSwitch</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, gpio.o(.text))
@@ -550,14 +547,13 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;startTimer0
 <LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;XGpio_InterruptClear
+<LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;XGpio_DiscreteWrite
 <LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;XGpio_DiscreteRead
-<LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;openSwitch
 <LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NVIC_ClearPendingIRQ
-<LI><a href="#[4e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;print
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_arty_cm3.o(RESET)
 </UL>
-<P><STRONG><a name="[e]"></a>GPIO0_Handler</STRONG> (Thumb, 38 bytes, Stack size 8 bytes, gpio.o(.text))
+<P><STRONG><a name="[e]"></a>GPIO0_Handler</STRONG> (Thumb, 48 bytes, Stack size 8 bytes, gpio.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = GPIO0_Handler &rArr; XGpio_InterruptClear &rArr; Xil_Assert
 </UL>
 <BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;XGpio_InterruptClear
@@ -567,7 +563,7 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_arty_cm3.o(RESET)
 </UL>
-<P><STRONG><a name="[f]"></a>GPIO1_Handler</STRONG> (Thumb, 246 bytes, Stack size 48 bytes, gpio.o(.text))
+<P><STRONG><a name="[f]"></a>GPIO1_Handler</STRONG> (Thumb, 216 bytes, Stack size 48 bytes, gpio.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 168 + Unknown Stack Size
 <LI>Call Chain = GPIO1_Handler &rArr; __2sprintf &rArr; _printf_char_common &rArr; __printf
 </UL>
@@ -719,7 +715,7 @@ Global Symbols
 <LI><a href="#[15]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIOTrg_Handler
 </UL>
 
-<P><STRONG><a name="[16]"></a>TimerHandler</STRONG> (Thumb, 76 bytes, Stack size 16 bytes, tmr.o(.text))
+<P><STRONG><a name="[16]"></a>TimerHandler</STRONG> (Thumb, 66 bytes, Stack size 16 bytes, tmr.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = TimerHandler &rArr; XTmrCtr_InterruptHandler &rArr; Xil_Assert
 </UL>
 <BR>[Calls]<UL><LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;XTmrCtr_Stop
@@ -727,7 +723,6 @@ Global Symbols
 <LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;startTimer0
 <LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;closeSwitch
 <LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;openSwitch
-<LI><a href="#[4e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;print
 </UL>
 <BR>[Address Reference Count : 2]<UL><LI> startup_arty_cm3.o(RESET)
 <LI> tmr.o(.text)
@@ -793,6 +788,7 @@ Global Symbols
 <LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetDAPLinkQSPIMode
 <LI><a href="#[f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO1_Handler
 <LI><a href="#[e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO0_Handler
+<LI><a href="#[15]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIOTrg_Handler
 <LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;closeSwitch
 <LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;openSwitch
 <LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;InitialiseGPIO

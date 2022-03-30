@@ -342,8 +342,8 @@ input wire [31 : 0] HRDATAC;
     .STRB_MAX(3),
     .MPU_PRESENT(1'B1),
     .LVL_WIDTH(3),
-    .TRACE_LVL(1),
-    .DEBUG_LVL(2),
+    .TRACE_LVL(2),
+    .DEBUG_LVL(3),
     .WIC_PRESENT(1'B0),
     .WIC_LINES(3),
     .BB_PRESENT(1'B1)

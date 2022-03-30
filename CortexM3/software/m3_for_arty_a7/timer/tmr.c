@@ -12,7 +12,7 @@ extern bool faseExc;
 
 
 void TimerHandler (void *CallBackRef, u8 TmrCtrNumber){
-	print("TimerHandler \r\n");
+	//print("TimerHandler \r\n");
 	XTmrCtr_Stop(&Timer0, 0UL);
 	XTmrCtr_InterruptHandler(&Timer0);
 	// Clear interrupt in NVIC

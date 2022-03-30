@@ -1,7 +1,7 @@
 //Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-//Date        : Thu Mar 24 11:19:09 2022
+//Date        : Tue Mar 29 16:28:46 2022
 //Host        : DESKTOP-661ESVO running 64-bit major release  (build 9200)
 //Command     : generate_target m3_for_arty_a7_wrapper.bd
 //Design      : m3_for_arty_a7_wrapper
@@ -15,7 +15,6 @@ module m3_for_arty_a7_wrapper
     TDO,
     TrgIN_tri_i,
     TrgOUT_tri_o,
-    captureTrig,
     dip_switches_4bits_tri_i,
     led_4bits_tri_o,
     nTRST,
@@ -36,7 +35,6 @@ module m3_for_arty_a7_wrapper
   inout [0:0]TDO;
   input [3:0]TrgIN_tri_i;
   output [3:0]TrgOUT_tri_o;
-  input captureTrig;
   input [3:0]dip_switches_4bits_tri_i;
   output [3:0]led_4bits_tri_o;
   input nTRST;
@@ -58,7 +56,6 @@ module m3_for_arty_a7_wrapper
   wire [0:0]TDO;
   wire [3:0]TrgIN_tri_i;
   wire [3:0]TrgOUT_tri_o;
-  wire captureTrig;
   wire [3:0]dip_switches_4bits_tri_i;
   wire [3:0]led_4bits_tri_o;
   wire nTRST;
@@ -99,7 +96,6 @@ module m3_for_arty_a7_wrapper
         .TDO(TDO),
         .TrgIN_tri_i(TrgIN_tri_i),
         .TrgOUT_tri_o(TrgOUT_tri_o),
-        .captureTrig(captureTrig),
         .dip_switches_4bits_tri_i(dip_switches_4bits_tri_i),
         .led_4bits_tri_o(led_4bits_tri_o),
         .nTRST(nTRST),

@@ -37,8 +37,8 @@
 #include "tmr.h"
 
 /*******************************************************************/
-volatile uint32_t msTicks = 0;
-XGpio Gpio_Trigger;
+//volatile uint32_t msTicks = 0;
+//XGpio Gpio_Trigger;
 bool faseExc = FALSE;
 
 ////////void SysTick_Handler(void){
@@ -138,15 +138,11 @@ int main (void)
     if (status != XST_SUCCESS)  {
         print("Error - Xilinx GPIO failed to initialise\n");
     }
-		print("1");
     // Enable GPIO Interrupts
-    //NVIC_EnableIRQ(GPIO0_IRQn);
+    NVIC_EnableIRQ(GPIO0_IRQn);
     NVIC_EnableIRQ(GPIO1_IRQn);
-		print("2");
 		NVIC_EnableIRQ(GPIOTrg_IRQn);
-		print("3");
     EnableGPIOInterrupts();
-	print("2");
 		NVIC_EnableIRQ(Timer_IRQn);
     // Enable UART Interrupts
     NVIC_EnableIRQ(UART0_IRQn);
@@ -201,7 +197,7 @@ int main (void)
     else
         print ("\nV2C-DAPLink board detected\r\n");
     print ("Use DIP switches and push buttons to\r\ncontrol LEDS\r\n");
-    print ("Version 1.33\r\n");
+    print ("Version 1.41\r\n");
     print ("************************************\r\n");
 #else
     print ( debugStr );

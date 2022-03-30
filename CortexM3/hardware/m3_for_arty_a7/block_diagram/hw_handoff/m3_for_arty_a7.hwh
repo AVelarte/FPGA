@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Thu Mar 24 11:19:09 2022" VIVADOVERSION="2018.2">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Tue Mar 29 16:28:47 2022" VIVADOVERSION="2018.2">
 
   <SYSTEMINFO ARCH="artix7" BOARD="digilentinc.com:arty-a7-100:part0:1.0" DEVICE="7a100t" NAME="m3_for_arty_a7" PACKAGE="csg324" SPEEDGRADE="-1"/>
 
@@ -56,11 +56,6 @@
     <PORT DIR="O" NAME="usb_uart_txd" SIGIS="undef"/>
     <PORT DIR="I" NAME="usb_uart_rxd" SIGIS="undef"/>
     <PORT DIR="IO" LEFT="15" NAME="DAPLink_tri_o" RIGHT="0" SIGIS="undef"/>
-    <PORT DIR="I" NAME="captureTrig" SIGIS="undef" SIGNAME="External_Ports_captureTrig">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_timer_0" PORT="capturetrig0"/>
-      </CONNECTIONS>
-    </PORT>
   </EXTERNALPORTS>
 
   <EXTERNALINTERFACES>
@@ -1075,8 +1070,8 @@
         <PARAMETER NAME="STRB_MAX" VALUE="3"/>
         <PARAMETER NAME="MPU_PRESENT" VALUE="true"/>
         <PARAMETER NAME="LVL_WIDTH" VALUE="3"/>
-        <PARAMETER NAME="TRACE_LVL" VALUE="1"/>
-        <PARAMETER NAME="DEBUG_LVL" VALUE="2"/>
+        <PARAMETER NAME="TRACE_LVL" VALUE="2"/>
+        <PARAMETER NAME="DEBUG_LVL" VALUE="3"/>
         <PARAMETER NAME="WIC_PRESENT" VALUE="false"/>
         <PARAMETER NAME="WIC_LINES" VALUE="3"/>
         <PARAMETER NAME="BB_PRESENT" VALUE="true"/>
@@ -5411,11 +5406,7 @@
         <PARAMETER NAME="C_HIGHADDR" VALUE="0x41C0FFFF"/>
       </PARAMETERS>
       <PORTS>
-        <PORT DIR="I" NAME="capturetrig0" SIGIS="undef" SIGNAME="External_Ports_captureTrig">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="captureTrig"/>
-          </CONNECTIONS>
-        </PORT>
+        <PORT DIR="I" NAME="capturetrig0" SIGIS="undef"/>
         <PORT DIR="I" NAME="capturetrig1" SIGIS="undef"/>
         <PORT DIR="O" NAME="generateout0" SIGIS="undef"/>
         <PORT DIR="O" NAME="generateout1" SIGIS="undef"/>

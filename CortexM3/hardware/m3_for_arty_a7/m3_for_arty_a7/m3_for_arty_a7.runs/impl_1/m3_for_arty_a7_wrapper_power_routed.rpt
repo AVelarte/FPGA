@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date             : Thu Mar 24 11:33:35 2022
+| Date             : Tue Mar 29 16:49:12 2022
 | Host             : DESKTOP-661ESVO running 64-bit major release  (build 9200)
 | Command          : report_power -file m3_for_arty_a7_wrapper_power_routed.rpt -pb m3_for_arty_a7_wrapper_power_summary_routed.pb -rpx m3_for_arty_a7_wrapper_power_routed.rpx
 | Design           : m3_for_arty_a7_wrapper
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.301        |
+| Total On-Chip Power (W)  | 0.302        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.202        |
+| Dynamic (W)              | 0.204        |
 | Device Static (W)        | 0.099        |
 | Effective TJA (C/W)      | 4.6          |
 | Max Ambient (C)          | 83.6         |
@@ -52,21 +52,21 @@ Table of Contents
 +-------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
 +-------------------------+-----------+----------+-----------+-----------------+
-| Clocks                  |     0.021 |       11 |       --- |             --- |
-| Slice Logic             |     0.017 |    28758 |       --- |             --- |
-|   LUT as Logic          |     0.016 |    17840 |     63400 |           28.14 |
-|   CARRY4                |    <0.001 |      361 |     15850 |            2.28 |
-|   Register              |    <0.001 |     9305 |    126800 |            7.34 |
-|   F7/F8 Muxes           |    <0.001 |      214 |     63400 |            0.34 |
+| Clocks                  |     0.024 |       11 |       --- |             --- |
+| Slice Logic             |     0.017 |    30692 |       --- |             --- |
+|   LUT as Logic          |     0.016 |    19071 |     63400 |           30.08 |
+|   CARRY4                |    <0.001 |      377 |     15850 |            2.38 |
+|   Register              |    <0.001 |    10009 |    126800 |            7.89 |
+|   F7/F8 Muxes           |    <0.001 |      190 |     63400 |            0.30 |
 |   LUT as Shift Register |    <0.001 |       49 |     19000 |            0.26 |
-|   Others                |     0.000 |      638 |       --- |             --- |
-| Signals                 |     0.026 |    23399 |       --- |             --- |
-| Block RAM               |     0.012 |     22.5 |       135 |           16.67 |
+|   Others                |     0.000 |      657 |       --- |             --- |
+| Signals                 |     0.026 |    25118 |       --- |             --- |
+| Block RAM               |     0.010 |     22.5 |       135 |           16.67 |
 | MMCM                    |     0.106 |        1 |         6 |           16.67 |
 | DSPs                    |    <0.001 |        3 |       240 |            1.25 |
-| I/O                     |     0.020 |       62 |       210 |           29.52 |
+| I/O                     |     0.020 |       61 |       210 |           29.05 |
 | Static Power            |     0.099 |          |           |                 |
-| Total                   |     0.301 |          |           |                 |
+| Total                   |     0.302 |          |           |                 |
 +-------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -76,9 +76,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.092 |       0.076 |      0.016 |
+| Vccint    |       1.000 |     0.094 |       0.078 |      0.016 |
 | Vccaux    |       1.800 |     0.077 |       0.059 |      0.018 |
-| Vcco33    |       3.300 |     0.010 |       0.006 |      0.004 |
+| Vcco33    |       3.300 |     0.009 |       0.005 |      0.004 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
@@ -152,8 +152,8 @@ Table of Contents
 +-------------------------------------------------------------------------------------------------------+-----------+
 | Name                                                                                                  | Power (W) |
 +-------------------------------------------------------------------------------------------------------+-----------+
-| m3_for_arty_a7_wrapper                                                                                |     0.202 |
-|   m3_for_arty_a7_i                                                                                    |     0.182 |
+| m3_for_arty_a7_wrapper                                                                                |     0.204 |
+|   m3_for_arty_a7_i                                                                                    |     0.184 |
 |     Clocks_and_Resets                                                                                 |     0.107 |
 |       clk_wiz_0                                                                                       |     0.107 |
 |         inst                                                                                          |     0.107 |
@@ -176,11 +176,23 @@ Table of Contents
 |             ACTIVE_LOW_EXT.ACT_LO_EXT                                                                 |    <0.001 |
 |           SEQ                                                                                         |    <0.001 |
 |             SEQ_COUNTER                                                                               |    <0.001 |
-|     Cortex_M3_0                                                                                       |     0.058 |
-|       inst                                                                                            |     0.058 |
-|         u_CORTEXM3INTEGRATION                                                                         |     0.047 |
-|           uCORTEXM3                                                                                   |     0.045 |
-|             u_cm3_bus_matrix                                                                          |     0.005 |
+|     Cortex_M3_0                                                                                       |     0.059 |
+|       inst                                                                                            |     0.059 |
+|         u_CORTEXM3INTEGRATION                                                                         |     0.049 |
+|           uCM3ETM                                                                                     |     0.003 |
+|             u_etm_apb_if                                                                              |    <0.001 |
+|             u_etm_control_reg                                                                         |    <0.001 |
+|             u_etm_trace                                                                               |     0.003 |
+|               u_control                                                                               |     0.002 |
+|               u_fifo                                                                                  |     0.001 |
+|               u_sync_count                                                                            |    <0.001 |
+|             u_etm_trace_out                                                                           |    <0.001 |
+|             u_etm_trigger                                                                             |    <0.001 |
+|               u_res_control                                                                           |    <0.001 |
+|               u_trc_en                                                                                |    <0.001 |
+|               u_trig_gen                                                                              |    <0.001 |
+|           uCORTEXM3                                                                                   |     0.044 |
+|             u_cm3_bus_matrix                                                                          |     0.004 |
 |               u_cm3_mtx_bit_master                                                                    |     0.004 |
 |               u_cm3_mtx_decode_dap                                                                    |    <0.001 |
 |               u_cm3_mtx_decode_dcore                                                                  |    <0.001 |
@@ -200,20 +212,20 @@ Table of Contents
 |               u_cm3_dap_ahb_ap_sync_idle                                                              |    <0.001 |
 |               u_cm3_dap_ahb_ap_sync_tra                                                               |    <0.001 |
 |               u_cm3_dap_ahb_ap_sync_trans_rtn                                                         |    <0.001 |
-|             u_cm3_dpu                                                                                 |     0.030 |
-|               u_cm3_dpu_alu                                                                           |     0.005 |
+|             u_cm3_dpu                                                                                 |     0.029 |
+|               u_cm3_dpu_alu                                                                           |     0.006 |
 |                 u_cm3_dpu_alu_ctl                                                                     |     0.003 |
 |                 u_cm3_dpu_alu_dp                                                                      |     0.003 |
 |               u_cm3_dpu_dec                                                                           |    <0.001 |
 |                 u_cm3_dpu_br_dec                                                                      |    <0.001 |
 |               u_cm3_dpu_etmintf                                                                       |    <0.001 |
 |               u_cm3_dpu_exec                                                                          |    <0.001 |
-|               u_cm3_dpu_fetch                                                                         |     0.006 |
+|               u_cm3_dpu_fetch                                                                         |     0.005 |
 |                 u_cm3_dpu_fetch_ahbintf                                                               |     0.003 |
-|                 u_cm3_dpu_fetch_ctl                                                                   |     0.003 |
-|               u_cm3_dpu_lsu                                                                           |     0.012 |
+|                 u_cm3_dpu_fetch_ctl                                                                   |     0.002 |
+|               u_cm3_dpu_lsu                                                                           |     0.011 |
 |                 u_cm3_dpu_lsu_ahbintf                                                                 |     0.004 |
-|                 u_cm3_dpu_lsu_ctl                                                                     |     0.008 |
+|                 u_cm3_dpu_lsu_ctl                                                                     |     0.007 |
 |               u_cm3_dpu_regbank                                                                       |     0.004 |
 |                 u_cm3_dpu_regfile                                                                     |     0.003 |
 |               u_cm3_dpu_status                                                                        |     0.001 |
@@ -241,8 +253,8 @@ Table of Contents
 |                 u_itm_fifo_byte_4                                                                     |    <0.001 |
 |               u_itm_if                                                                                |    <0.001 |
 |               u_itm_ts                                                                                |    <0.001 |
-|             u_cm3_mpu                                                                                 |     0.004 |
-|               u_cm3_mpu_full                                                                          |     0.004 |
+|             u_cm3_mpu                                                                                 |     0.003 |
+|               u_cm3_mpu_full                                                                          |     0.003 |
 |                 u_cm3_mpu_ahb_ctl                                                                     |    <0.001 |
 |                 u_cm3_mpu_align                                                                       |     0.001 |
 |                 u_cm3_mpu_ppb_intf                                                                    |    <0.001 |
@@ -287,7 +299,7 @@ Table of Contents
 |             u_cm3_ppb_ahb_to_apb                                                                      |    <0.001 |
 |             u_cm3_ppb_decoder                                                                         |    <0.001 |
 |             u_cm3_sync_dbg_en                                                                         |    <0.001 |
-|           uDAPSWJDP                                                                                   |    <0.001 |
+|           uDAPSWJDP                                                                                   |     0.001 |
 |             uDAPDpApbIf                                                                               |    <0.001 |
 |             uDAPDpApbSync                                                                             |    <0.001 |
 |               uSyncBusAbort                                                                           |    <0.001 |
@@ -307,21 +319,31 @@ Table of Contents
 |           u_cm3_tpiu                                                                                  |    <0.001 |
 |             u_cm3_tpiu_apb_if                                                                         |    <0.001 |
 |             u_cm3_tpiu_atb_fifo1                                                                      |    <0.001 |
+|             u_cm3_tpiu_atb_fifo2                                                                      |    <0.001 |
 |             u_cm3_tpiu_atb_sync                                                                       |    <0.001 |
 |               u_read_pointer1_gray0                                                                   |    <0.001 |
 |               u_read_pointer1_gray1                                                                   |    <0.001 |
 |               u_read_pointer1_gray2                                                                   |    <0.001 |
+|               u_read_pointer2_gray0                                                                   |    <0.001 |
+|               u_read_pointer2_gray1                                                                   |    <0.001 |
+|               u_read_pointer2_gray2                                                                   |    <0.001 |
 |               u_sync_ack_async                                                                        |    <0.001 |
 |               u_tpiu_baud                                                                             |    <0.001 |
 |               u_trace_out_idle                                                                        |    <0.001 |
+|               u_trigger_ack_async                                                                     |    <0.001 |
 |             u_cm3_tpiu_trace_fifo1                                                                    |    <0.001 |
+|             u_cm3_tpiu_trace_fifo2                                                                    |    <0.001 |
 |             u_cm3_tpiu_trace_out                                                                      |    <0.001 |
 |             u_cm3_tpiu_trace_sync                                                                     |    <0.001 |
 |               u_baud_div_reset                                                                        |    <0.001 |
 |               u_sync_valid_async                                                                      |    <0.001 |
+|               u_trigger_valid_async                                                                   |    <0.001 |
 |               u_write_pointer1_gray0                                                                  |    <0.001 |
 |               u_write_pointer1_gray1                                                                  |    <0.001 |
 |               u_write_pointer1_gray2                                                                  |    <0.001 |
+|               u_write_pointer2_gray0                                                                  |    <0.001 |
+|               u_write_pointer2_gray1                                                                  |    <0.001 |
+|               u_write_pointer2_gray2                                                                  |    <0.001 |
 |             u_tpiu_formatter                                                                          |    <0.001 |
 |         u_c_AhbSToAxi                                                                                 |    <0.001 |
 |           uA11AhbLiteMToAxi                                                                           |    <0.001 |
@@ -332,7 +354,7 @@ Table of Contents
 |         u_s_AhbSToAxi                                                                                 |    <0.001 |
 |           uA11AhbLiteMToAxi                                                                           |    <0.001 |
 |         u_x_dtcm                                                                                      |     0.008 |
-|         u_x_itcm                                                                                      |     0.002 |
+|         u_x_itcm                                                                                      |     0.001 |
 |     axi_bram_ctrl_0                                                                                   |    <0.001 |
 |       U0                                                                                              |    <0.001 |
 |         gext_inst.abcv4_0_ext_inst                                                                    |    <0.001 |
@@ -496,7 +518,7 @@ Table of Contents
 |             COUNTER_I                                                                                 |    <0.001 |
 |           GEN_SECOND_TIMER.COUNTER_1_I                                                                |    <0.001 |
 |             COUNTER_I                                                                                 |    <0.001 |
-|           READ_MUX_I                                                                                  |     0.000 |
+|           READ_MUX_I                                                                                  |    <0.001 |
 |           TIMER_CONTROL_I                                                                             |    <0.001 |
 |             INPUT_DOUBLE_REGS                                                                         |    <0.001 |
 |             INPUT_DOUBLE_REGS2                                                                        |    <0.001 |
@@ -637,9 +659,9 @@ Table of Contents
 |               RESET_SYNC_AXI_SPI_CLK_INST                                                             |    <0.001 |
 |               SOFT_RESET_I                                                                            |    <0.001 |
 |               STATUS_REG_MODE_12_GEN.STATUS_SLAVE_SEL_REG_I                                           |    <0.001 |
-|       axi_single_spi_0                                                                                |     0.002 |
-|         U0                                                                                            |     0.002 |
-|           NO_DUAL_QUAD_MODE.QSPI_NORMAL                                                               |     0.002 |
+|       axi_single_spi_0                                                                                |     0.003 |
+|         U0                                                                                            |     0.003 |
+|           NO_DUAL_QUAD_MODE.QSPI_NORMAL                                                               |     0.003 |
 |             QSPI_LEGACY_MD_GEN.AXI_LITE_IPIF_I                                                        |    <0.001 |
 |               I_SLAVE_ATTACHMENT                                                                      |    <0.001 |
 |                 I_DECODER                                                                             |    <0.001 |

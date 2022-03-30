@@ -1,7 +1,7 @@
 //Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-//Date        : Thu Mar 24 11:19:08 2022
+//Date        : Tue Mar 29 16:28:45 2022
 //Host        : DESKTOP-661ESVO running 64-bit major release  (build 9200)
 //Command     : generate_target m3_for_arty_a7.bd
 //Design      : m3_for_arty_a7
@@ -2514,7 +2514,6 @@ module m3_for_arty_a7
     TDO,
     TrgIN_tri_i,
     TrgOUT_tri_o,
-    captureTrig,
     dip_switches_4bits_tri_i,
     led_4bits_tri_o,
     nTRST,
@@ -2547,7 +2546,6 @@ module m3_for_arty_a7
   inout [0:0]TDO;
   (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 TrgIN TRI_I" *) input [3:0]TrgIN_tri_i;
   (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 TrgOUT TRI_O" *) output [3:0]TrgOUT_tri_o;
-  input captureTrig;
   (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 dip_switches_4bits TRI_I" *) input [3:0]dip_switches_4bits_tri_i;
   (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 led_4bits TRI_O" *) output [3:0]led_4bits_tri_o;
   input nTRST;
@@ -2834,7 +2832,6 @@ module m3_for_arty_a7
   wire axi_timer_0_interrupt;
   wire axi_uartlite_0_interrupt;
   wire axi_uartlite_0_tx;
-  wire capturetrig0_0_1;
   wire clk_wiz_0_clk_out1;
   wire daplink_if_0_SWCLK;
   wire daplink_if_0_SWDI;
@@ -2861,7 +2858,6 @@ module m3_for_arty_a7
   assign axi_quad_spi_0_SPI_0_IO3_I = qspi_flash_io3_i;
   assign axi_quad_spi_0_SPI_0_SCK_I = qspi_flash_sck_i;
   assign axi_quad_spi_0_SPI_0_SS_I = qspi_flash_ss_i;
-  assign capturetrig0_0_1 = captureTrig;
   assign led_4bits_tri_o[3:0] = axi_gpio_0_GPIO_TRI_O;
   assign nTRST_1 = nTRST;
   assign qspi_flash_io0_o = axi_quad_spi_0_SPI_0_IO0_O;
@@ -3304,7 +3300,7 @@ module m3_for_arty_a7
         .ss_o(axi_quad_spi_0_SPI_0_SS_O),
         .ss_t(axi_quad_spi_0_SPI_0_SS_T));
   m3_for_arty_a7_axi_timer_0_0 axi_timer_0
-       (.capturetrig0(capturetrig0_0_1),
+       (.capturetrig0(1'b0),
         .capturetrig1(1'b0),
         .freeze(1'b0),
         .interrupt(axi_timer_0_interrupt),

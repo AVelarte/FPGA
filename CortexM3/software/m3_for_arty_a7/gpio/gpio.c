@@ -36,7 +36,7 @@
 static XGpio Gpio_Led_DIPSw;   /* The driver instance for GPIO Device 0 */
 static XGpio Gpio_RGBLed_PB;   /* The driver instance for GPIO Device 1 */
 static XGpio Gpio_DAPLink;     /* The driver instance for the DAPLink GPIO */
-extern XGpio Gpio_Trigger;
+static XGpio Gpio_Trigger;
 static uint32_t valor = 20;
 extern bool faseExc;
 /*****************************************************************************/
@@ -114,12 +114,12 @@ void EnableGPIOInterrupts( void )
 {
     // Push buttons and DIP switches are on Channel 2
     XGpio_InterruptEnable(&Gpio_RGBLed_PB, XGPIO_IR_CH2_MASK);
-    //XGpio_InterruptEnable(&Gpio_Led_DIPSw, XGPIO_IR_CH2_MASK);
+    XGpio_InterruptEnable(&Gpio_Led_DIPSw, XGPIO_IR_CH2_MASK);
 		XGpio_InterruptEnable(&Gpio_Trigger, XGPIO_IR_CH2_MASK);
 
     // Having enabled the M1 to handle the interrupts, now enable the GPIO to send the interrupts
     XGpio_InterruptGlobalEnable(&Gpio_RGBLed_PB);
-   // XGpio_InterruptGlobalEnable(&Gpio_Led_DIPSw);
+    XGpio_InterruptGlobalEnable(&Gpio_Led_DIPSw);
 		XGpio_InterruptGlobalEnable(&Gpio_Trigger);
 }
 
@@ -146,12 +146,12 @@ void GPIOTrg_Handler (void){
 		
 		// Apertura de los switch
 		if( XGpio_DiscreteRead(&Gpio_Trigger, ARTY_A7_TrgIN_CHANNEL) & 0x1){
-			print("Estamos");
 			startTimer0(50000 * valor);
 			faseExc = TRUE;
-			// Clear interrupt from GPIO
-			XGpio_InterruptClear(&Gpio_Trigger, XGPIO_IR_MASK);
+			XGpio_DiscreteWrite(&Gpio_Trigger, ARTY_A7_TrgOUT_CHANNEL, 0x4); //REVISAR (puede ser que sólo haga falta en simulación)
 		}
+		// Clear interrupt from GPIO
+		XGpio_InterruptClear(&Gpio_Trigger, XGPIO_IR_MASK);
     // Clear interrupt in NVIC
     NVIC_ClearPendingIRQ(GPIOTrg_IRQn);
 }
@@ -164,6 +164,12 @@ void GPIO0_Handler ( void )
     gpio_dip_switches = XGpio_DiscreteRead(&Gpio_Led_DIPSw, ARTY_A7_DIP_CHANNEL);   // Capture DIP status
     XGpio_DiscreteWrite(&Gpio_Led_DIPSw, ARTY_A7_LED_CHANNEL, gpio_dip_switches);   // Set LEDs
 
+		// PARA SIMULAR EL TRIGGER DE LA FUENTE
+		XGpio_DiscreteWrite(&Gpio_Trigger, ARTY_A7_TrgOUT_CHANNEL, 0xC); // Pongo a 1 el pin A3 y A4
+		//print("Mando un pulso por el pin A3 y A4 \r\n");
+	
+	
+	
     // Clear interrupt from GPIO
     XGpio_InterruptClear(&Gpio_Led_DIPSw, XGPIO_IR_MASK);
     // Clear interrupt in NVIC
@@ -188,9 +194,9 @@ void GPIO1_Handler ( void )
         if ( gpio_push_buttons & 0x1 ) {
                 mask = 0x7;
                 incr = 0x1;
-								if(valor<335){		 //Para que no se pase de las 335ms 	
-									valor++;
-								}
+								//if(valor<335){		 //Para que no se pase de las 335ms 	
+								valor++;
+								//}
         } else if ( gpio_push_buttons & 0x2 ) {
                 mask = (0x7 << 3);
                 incr = (0x1 << 3);
@@ -200,9 +206,9 @@ void GPIO1_Handler ( void )
         } else if ( gpio_push_buttons & 0x4 ) {
                 mask = (0x7 << 6);
                 incr = (0x1 << 6);
-					if(valor<326){			//Para que no se pase de las 335ms 	
-									valor+=10;
-								}
+					//if(valor<326){			//Para que no se pase de las 335ms 	
+								valor+=10;
+							//	}
 					
         } else if ( gpio_push_buttons & 0x8 ) {
                 mask = (0x7 << 9);
@@ -222,11 +228,10 @@ void GPIO1_Handler ( void )
     XGpio_InterruptClear(&Gpio_RGBLed_PB, XGPIO_IR_MASK);
     // Clear interrupt in NVIC
 		NVIC_ClearPendingIRQ(GPIO1_IRQn);
+		// Variable "valor" para establecer el tiempo de apertura de los switch
 		char msg[24];
-		sprintf(msg,"Valor: %d\r\n", valor);  
+		sprintf(msg,"Valor evitar exc. (ms): %d\r\n", valor);  
 		print(msg);
-		// PARA SIMULAR EL TRIGGER DE LA FUENTE
-		XGpio_DiscreteWrite(&Gpio_Trigger, ARTY_A7_TrgOUT_CHANNEL, 0xC);
 }
 
 /* Note : No interrupt handler for DAPLink GPIO, it does not have the IRQ line connected

@@ -471,7 +471,6 @@ proc create_root_design { parentCell } {
   # Create ports
   set TDI [ create_bd_port -dir I TDI ]
   set TDO [ create_bd_port -dir IO -from 0 -to 0 TDO ]
-  set captureTrig [ create_bd_port -dir I captureTrig ]
   set nTRST [ create_bd_port -dir I nTRST ]
   set reset [ create_bd_port -dir I -type rst reset ]
   set_property -dict [ list \
@@ -489,12 +488,12 @@ proc create_root_design { parentCell } {
   # Create instance: Cortex_M3_0, and set properties
   set Cortex_M3_0 [ create_bd_cell -type ip -vlnv Arm.com:CortexM:CORTEXM3_AXI:1.0 Cortex_M3_0 ]
   set_property -dict [ list \
-   CONFIG.DEBUG_LVL {2} \
+   CONFIG.DEBUG_LVL {3} \
    CONFIG.DTCM_SIZE {"0110"} \
    CONFIG.ITCM_INIT_FILE {bram_a7.hex} \
    CONFIG.ITCM_SIZE {"0110"} \
    CONFIG.LVL_WIDTH {3} \
-   CONFIG.TRACE_LVL {1} \
+   CONFIG.TRACE_LVL {2} \
    CONFIG.WIC_PRESENT {false} \
  ] $Cortex_M3_0
 
@@ -667,7 +666,6 @@ proc create_root_design { parentCell } {
   connect_bd_net -net axi_timer_0_interrupt [get_bd_pins axi_timer_0/interrupt] [get_bd_pins xlconcat_0/In9]
   connect_bd_net -net axi_uartlite_0_interrupt [get_bd_pins axi_uartlite_0/interrupt] [get_bd_pins xlconcat_0/In0]
   connect_bd_net -net axi_uartlite_0_tx [get_bd_pins axi_uartlite_0/tx] [get_bd_pins daplink_if_0/uart_txd_axi]
-  connect_bd_net -net capturetrig0_0_1 [get_bd_ports captureTrig] [get_bd_pins axi_timer_0/capturetrig0]
   connect_bd_net -net clk_wiz_0_clk_out1 [get_bd_pins Clocks_and_Resets/clk_cpu] [get_bd_pins Cortex_M3_0/HCLK] [get_bd_pins axi_bram_ctrl_0/s_axi_aclk] [get_bd_pins axi_gpio_0/s_axi_aclk] [get_bd_pins axi_gpio_1/s_axi_aclk] [get_bd_pins axi_gpio_2/s_axi_aclk] [get_bd_pins axi_interconnect_0/ACLK] [get_bd_pins axi_interconnect_0/M00_ACLK] [get_bd_pins axi_interconnect_0/M01_ACLK] [get_bd_pins axi_interconnect_0/M02_ACLK] [get_bd_pins axi_interconnect_0/M03_ACLK] [get_bd_pins axi_interconnect_0/M04_ACLK] [get_bd_pins axi_interconnect_0/M05_ACLK] [get_bd_pins axi_interconnect_0/M06_ACLK] [get_bd_pins axi_interconnect_0/M07_ACLK] [get_bd_pins axi_interconnect_0/S00_ACLK] [get_bd_pins axi_quad_spi_0/s_axi_aclk] [get_bd_pins axi_timer_0/s_axi_aclk] [get_bd_pins axi_uartlite_0/s_axi_aclk] [get_bd_pins daplink_if_0/s_axi_aclk]
   connect_bd_net -net daplink_if_0_SWCLK [get_bd_pins Cortex_M3_0/SWCLKTCK] [get_bd_pins daplink_if_0/SWCLK]
   connect_bd_net -net daplink_if_0_SWDI [get_bd_pins Cortex_M3_0/SWDITMS] [get_bd_pins daplink_if_0/SWDI]
