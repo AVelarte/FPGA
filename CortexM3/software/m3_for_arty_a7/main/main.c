@@ -197,7 +197,7 @@ int main (void)
     else
         print ("\nV2C-DAPLink board detected\r\n");
     print ("Use DIP switches and push buttons to\r\ncontrol LEDS\r\n");
-    print ("Version 1.42\r\n");
+    print ("Version 1.43\r\n");
     print ("************************************\r\n");
 #else
     print ( debugStr );
@@ -275,7 +275,7 @@ int main (void)
 		
 		
 //		uint32_t returnCode;
-//		returnCode = SysTick_Config(5000000); // La referencia es 1ms cuando ponemos 50.000 (ser·n 5.000.000 para 100ms)
+//		returnCode = SysTick_Config(5000000); // La referencia es 1ms cuando ponemos 50.000 (ser√°n 5.000.000 para 100ms)
 //		if (returnCode != 0){
 //			print("Error al configurar el SysTick \r\n");
 //		}
