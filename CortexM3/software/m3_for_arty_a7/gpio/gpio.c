@@ -146,7 +146,7 @@ void GPIOTrg_Handler (void){
 		
 		// Apertura de los switch
 		if( XGpio_DiscreteRead(&Gpio_Trigger, ARTY_A7_TrgIN_CHANNEL) & 0x1){
-			startTimer0(50000 * valor);
+			startTimer0(25000 * valor);
 			faseExc = TRUE;
 			XGpio_DiscreteWrite(&Gpio_Trigger, ARTY_A7_TrgOUT_CHANNEL, 0x4); //REVISAR (puede ser que sólo haga falta en simulación)
 		}
@@ -230,7 +230,7 @@ void GPIO1_Handler ( void )
 		NVIC_ClearPendingIRQ(GPIO1_IRQn);
 		// Variable "valor" para establecer el tiempo de apertura de los switch
 		char msg[24];
-		sprintf(msg,"Valor evitar exc. (ms): %d\r\n", valor);  
+		sprintf(msg,"Valor evitar exc. (ms): %.1f\r\n", ((float)valor)/2);  
 		print(msg);
 }
 
