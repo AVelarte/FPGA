@@ -164,6 +164,22 @@
           <ExecCommand></ExecCommand>
           <Expression>\\m3_for_arty_a7\../gpio/gpio.c\255</Expression>
         </Bp>
+        <Bp>
+          <Number>1</Number>
+          <Type>0</Type>
+          <LineNumber>273</LineNumber>
+          <EnabledFlag>1</EnabledFlag>
+          <Address>1060</Address>
+          <ByteObject>0</ByteObject>
+          <HtxType>0</HtxType>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>1</BreakIfRCount>
+          <Filename>..\main\main.c</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression>\\m3_for_arty_a7\../main/main.c\273</Expression>
+        </Bp>
       </Breakpoint>
       <MemoryWindow1>
         <Mm>

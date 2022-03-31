@@ -197,7 +197,7 @@ int main (void)
     else
         print ("\nV2C-DAPLink board detected\r\n");
     print ("Use DIP switches and push buttons to\r\ncontrol LEDS\r\n");
-    print ("Version 1.41\r\n");
+    print ("Version 1.42\r\n");
     print ("************************************\r\n");
 #else
     print ( debugStr );
