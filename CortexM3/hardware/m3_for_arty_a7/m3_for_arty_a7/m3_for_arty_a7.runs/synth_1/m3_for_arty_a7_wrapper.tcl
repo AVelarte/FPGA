@@ -17,8 +17,7 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-set_param xicom.use_bs_reader 1
-set_msg_config -id {Common 17-41} -limit 10000000
+set_msg_config -id {HDL-1065} -limit 10000
 create_project -in_memory -part xc7a100tcsg324-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -89,6 +88,10 @@ set_property used_in_implementation false [get_files -all v:/hardware/m3_for_art
 set_property used_in_implementation false [get_files -all v:/hardware/m3_for_arty_a7/block_diagram/ip/m3_for_arty_a7_axi_gpio_2_0/m3_for_arty_a7_axi_gpio_2_0.xdc]
 set_property used_in_implementation false [get_files -all v:/hardware/m3_for_arty_a7/block_diagram/ip/m3_for_arty_a7_axi_timer_0_0/m3_for_arty_a7_axi_timer_0_0.xdc]
 set_property used_in_implementation false [get_files -all v:/hardware/m3_for_arty_a7/block_diagram/ip/m3_for_arty_a7_axi_timer_0_0/m3_for_arty_a7_axi_timer_0_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all v:/hardware/m3_for_arty_a7/block_diagram/ip/m3_for_arty_a7_axi_quad_spi_1_1/m3_for_arty_a7_axi_quad_spi_1_1_board.xdc]
+set_property used_in_implementation false [get_files -all v:/hardware/m3_for_arty_a7/block_diagram/ip/m3_for_arty_a7_axi_quad_spi_1_1/m3_for_arty_a7_axi_quad_spi_1_1.xdc]
+set_property used_in_implementation false [get_files -all v:/hardware/m3_for_arty_a7/block_diagram/ip/m3_for_arty_a7_axi_quad_spi_1_1/m3_for_arty_a7_axi_quad_spi_1_1_ooc.xdc]
+set_property used_in_implementation false [get_files -all v:/hardware/m3_for_arty_a7/block_diagram/ip/m3_for_arty_a7_axi_quad_spi_1_1/m3_for_arty_a7_axi_quad_spi_1_1_clocks.xdc]
 set_property used_in_implementation false [get_files -all v:/hardware/m3_for_arty_a7/block_diagram/ip/m3_for_arty_a7_auto_pc_0/m3_for_arty_a7_auto_pc_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all V:/hardware/m3_for_arty_a7/block_diagram/m3_for_arty_a7_ooc.xdc]
 

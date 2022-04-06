@@ -2,8 +2,8 @@
 # Vivado v2018.2 (64-bit)
 # SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
 # IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
-# Start of session at: Tue Mar 29 16:43:19 2022
-# Process ID: 19496
+# Start of session at: Tue Apr  5 16:01:23 2022
+# Process ID: 22892
 # Current directory: V:/hardware/m3_for_arty_a7/m3_for_arty_a7/m3_for_arty_a7.runs/impl_1
 # Command line: vivado.exe -log m3_for_arty_a7_wrapper.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source m3_for_arty_a7_wrapper.tcl -notrace
 # Log file: V:/hardware/m3_for_arty_a7/m3_for_arty_a7/m3_for_arty_a7.runs/impl_1/m3_for_arty_a7_wrapper.vdi
@@ -13,11 +13,11 @@ source m3_for_arty_a7_wrapper.tcl -notrace
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'v:/vivado/Arm_ipi_repository'.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Programas/Xilinx/Vivado/2018.2/data/ip'.
-add_files: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 405.977 ; gain = 81.004
+add_files: Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 406.824 ; gain = 82.223
 Command: link_design -top m3_for_arty_a7_wrapper -part xc7a100tcsg324-1
 Design is defaulting to srcset: sources_1
 Design is defaulting to constrset: constrs_1
-INFO: [Netlist 29-17] Analyzing 694 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 719 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-479] Netlist was created with Vivado 2018.2
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
@@ -69,7 +69,7 @@ Finished Parsing XDC File [v:/hardware/m3_for_arty_a7/block_diagram/ip/m3_for_ar
 Parsing XDC File [v:/hardware/m3_for_arty_a7/block_diagram/ip/m3_for_arty_a7_clk_wiz_0_0/m3_for_arty_a7_clk_wiz_0_0.xdc] for cell 'm3_for_arty_a7_i/Clocks_and_Resets/clk_wiz_0/inst'
 INFO: [Timing 38-35] Done setting XDC timing constraints. [v:/hardware/m3_for_arty_a7/block_diagram/ip/m3_for_arty_a7_clk_wiz_0_0/m3_for_arty_a7_clk_wiz_0_0.xdc:57]
 INFO: [Timing 38-2] Deriving generated clocks [v:/hardware/m3_for_arty_a7/block_diagram/ip/m3_for_arty_a7_clk_wiz_0_0/m3_for_arty_a7_clk_wiz_0_0.xdc:57]
-get_clocks: Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 1398.066 ; gain = 568.008
+get_clocks: Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 1402.223 ; gain = 567.211
 WARNING: [Vivado 12-2489] -input_jitter contains time 0.833330 which will be rounded to 0.833 to ensure it is an integer multiple of 1 picosecond [v:/hardware/m3_for_arty_a7/block_diagram/ip/m3_for_arty_a7_clk_wiz_0_0/m3_for_arty_a7_clk_wiz_0_0.xdc:57]
 Finished Parsing XDC File [v:/hardware/m3_for_arty_a7/block_diagram/ip/m3_for_arty_a7_clk_wiz_0_0/m3_for_arty_a7_clk_wiz_0_0.xdc] for cell 'm3_for_arty_a7_i/Clocks_and_Resets/clk_wiz_0/inst'
 Parsing XDC File [v:/hardware/m3_for_arty_a7/block_diagram/ip/m3_for_arty_a7_axi_gpio_2_0/m3_for_arty_a7_axi_gpio_2_0_board.xdc] for cell 'm3_for_arty_a7_i/axi_gpio_2/U0'
@@ -78,6 +78,10 @@ Parsing XDC File [v:/hardware/m3_for_arty_a7/block_diagram/ip/m3_for_arty_a7_axi
 Finished Parsing XDC File [v:/hardware/m3_for_arty_a7/block_diagram/ip/m3_for_arty_a7_axi_gpio_2_0/m3_for_arty_a7_axi_gpio_2_0.xdc] for cell 'm3_for_arty_a7_i/axi_gpio_2/U0'
 Parsing XDC File [v:/hardware/m3_for_arty_a7/block_diagram/ip/m3_for_arty_a7_axi_timer_0_0/m3_for_arty_a7_axi_timer_0_0.xdc] for cell 'm3_for_arty_a7_i/axi_timer_0/U0'
 Finished Parsing XDC File [v:/hardware/m3_for_arty_a7/block_diagram/ip/m3_for_arty_a7_axi_timer_0_0/m3_for_arty_a7_axi_timer_0_0.xdc] for cell 'm3_for_arty_a7_i/axi_timer_0/U0'
+Parsing XDC File [v:/hardware/m3_for_arty_a7/block_diagram/ip/m3_for_arty_a7_axi_quad_spi_1_1/m3_for_arty_a7_axi_quad_spi_1_1_board.xdc] for cell 'm3_for_arty_a7_i/axi_single_spi_1/U0'
+Finished Parsing XDC File [v:/hardware/m3_for_arty_a7/block_diagram/ip/m3_for_arty_a7_axi_quad_spi_1_1/m3_for_arty_a7_axi_quad_spi_1_1_board.xdc] for cell 'm3_for_arty_a7_i/axi_single_spi_1/U0'
+Parsing XDC File [v:/hardware/m3_for_arty_a7/block_diagram/ip/m3_for_arty_a7_axi_quad_spi_1_1/m3_for_arty_a7_axi_quad_spi_1_1.xdc] for cell 'm3_for_arty_a7_i/axi_single_spi_1/U0'
+Finished Parsing XDC File [v:/hardware/m3_for_arty_a7/block_diagram/ip/m3_for_arty_a7_axi_quad_spi_1_1/m3_for_arty_a7_axi_quad_spi_1_1.xdc] for cell 'm3_for_arty_a7_i/axi_single_spi_1/U0'
 Parsing XDC File [V:/hardware/m3_for_arty_a7/constraints/m3_for_arty_a7.xdc]
 INFO: [Constraints 18-483] create_clock: no pin(s)/port(s)/net(s) specified as objects, only virtual clock 'slow_out_clk' will be created. If you don't want this, please specify pin(s)/ports(s)/net(s) as objects to the command. [V:/hardware/m3_for_arty_a7/constraints/m3_for_arty_a7.xdc:119]
 CRITICAL WARNING: [Constraints 18-602] set_input_delay: list contains '4' objects of types '(port)' other than the types '(input port,internal pin)' supported by the constraint. These objects will not be used for this constraint. Please review the object list and ensure unsupported object types are removed. [V:/hardware/m3_for_arty_a7/constraints/m3_for_arty_a7.xdc:299]
@@ -88,17 +92,34 @@ Finished Parsing XDC File [V:/hardware/m3_for_arty_a7/constraints/m3_for_arty_a7
 Parsing XDC File [V:/hardware/m3_for_arty_a7/constraints/m3_for_arty_a7_impl.xdc]
 Finished Parsing XDC File [V:/hardware/m3_for_arty_a7/constraints/m3_for_arty_a7_impl.xdc]
 Parsing XDC File [v:/hardware/m3_for_arty_a7/block_diagram/ip/m3_for_arty_a7_axi_quad_spi_0_0/m3_for_arty_a7_axi_quad_spi_0_0_clocks.xdc] for cell 'm3_for_arty_a7_i/axi_quad_spi_0/U0'
+CRITICAL WARNING: [Timing 38-285] Generated clock dap_qspi_clk with source pin m3_for_arty_a7_i/daplink_if_0/axi_xip_quad_spi_0/sck_o does not have a valid master clock or valid waveform. [v:/hardware/m3_for_arty_a7/block_diagram/ip/m3_for_arty_a7_axi_quad_spi_0_0/m3_for_arty_a7_axi_quad_spi_0_0_clocks.xdc:50]
+Resolution: Check that either a master clock has been defined on the source pin of the generated clock or that a clock reaches that source pin. The waveform of the master clock must be valid.
+CRITICAL WARNING: [Timing 38-285] Generated clock dap_spi_clk with source pin m3_for_arty_a7_i/daplink_if_0/axi_single_spi_0/sck_o does not have a valid master clock or valid waveform. [v:/hardware/m3_for_arty_a7/block_diagram/ip/m3_for_arty_a7_axi_quad_spi_0_0/m3_for_arty_a7_axi_quad_spi_0_0_clocks.xdc:50]
+Resolution: Check that either a master clock has been defined on the source pin of the generated clock or that a clock reaches that source pin. The waveform of the master clock must be valid.
 Finished Parsing XDC File [v:/hardware/m3_for_arty_a7/block_diagram/ip/m3_for_arty_a7_axi_quad_spi_0_0/m3_for_arty_a7_axi_quad_spi_0_0_clocks.xdc] for cell 'm3_for_arty_a7_i/axi_quad_spi_0/U0'
 Parsing XDC File [v:/hardware/m3_for_arty_a7/block_diagram/ip/m3_for_arty_a7_axi_single_spi_0_0/m3_for_arty_a7_axi_single_spi_0_0_clocks.xdc] for cell 'm3_for_arty_a7_i/daplink_if_0/axi_single_spi_0/U0'
+WARNING: [Vivado 12-1008] No clocks found for command 'get_clocks -of_objects [get_ports -scoped_to_current_instance ext_spi_clk]'. [v:/hardware/m3_for_arty_a7/block_diagram/ip/m3_for_arty_a7_axi_single_spi_0_0/m3_for_arty_a7_axi_single_spi_0_0_clocks.xdc:51]
+Resolution: Verify the create_clock command was called to create the clock object before it is referenced.
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [v:/hardware/m3_for_arty_a7/block_diagram/ip/m3_for_arty_a7_axi_single_spi_0_0/m3_for_arty_a7_axi_single_spi_0_0_clocks.xdc:51]
 Finished Parsing XDC File [v:/hardware/m3_for_arty_a7/block_diagram/ip/m3_for_arty_a7_axi_single_spi_0_0/m3_for_arty_a7_axi_single_spi_0_0_clocks.xdc] for cell 'm3_for_arty_a7_i/daplink_if_0/axi_single_spi_0/U0'
 Parsing XDC File [v:/hardware/m3_for_arty_a7/block_diagram/ip/m3_for_arty_a7_axi_quad_spi_0_1/m3_for_arty_a7_axi_quad_spi_0_1_clocks.xdc] for cell 'm3_for_arty_a7_i/daplink_if_0/axi_quad_spi_0/U0'
+WARNING: [Vivado 12-1008] No clocks found for command 'get_clocks -of_objects [get_ports -scoped_to_current_instance ext_spi_clk]'. [v:/hardware/m3_for_arty_a7/block_diagram/ip/m3_for_arty_a7_axi_quad_spi_0_1/m3_for_arty_a7_axi_quad_spi_0_1_clocks.xdc:51]
+Resolution: Verify the create_clock command was called to create the clock object before it is referenced.
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [v:/hardware/m3_for_arty_a7/block_diagram/ip/m3_for_arty_a7_axi_quad_spi_0_1/m3_for_arty_a7_axi_quad_spi_0_1_clocks.xdc:51]
 Finished Parsing XDC File [v:/hardware/m3_for_arty_a7/block_diagram/ip/m3_for_arty_a7_axi_quad_spi_0_1/m3_for_arty_a7_axi_quad_spi_0_1_clocks.xdc] for cell 'm3_for_arty_a7_i/daplink_if_0/axi_quad_spi_0/U0'
 Parsing XDC File [v:/hardware/m3_for_arty_a7/block_diagram/ip/m3_for_arty_a7_axi_xip_quad_spi_0_0/m3_for_arty_a7_axi_xip_quad_spi_0_0_clocks.xdc] for cell 'm3_for_arty_a7_i/daplink_if_0/axi_xip_quad_spi_0/U0'
+WARNING: [Vivado 12-1008] No clocks found for command 'get_clocks -of_objects [get_ports -scoped_to_current_instance ext_spi_clk]'. [v:/hardware/m3_for_arty_a7/block_diagram/ip/m3_for_arty_a7_axi_xip_quad_spi_0_0/m3_for_arty_a7_axi_xip_quad_spi_0_0_clocks.xdc:51]
+Resolution: Verify the create_clock command was called to create the clock object before it is referenced.
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [v:/hardware/m3_for_arty_a7/block_diagram/ip/m3_for_arty_a7_axi_xip_quad_spi_0_0/m3_for_arty_a7_axi_xip_quad_spi_0_0_clocks.xdc:51]
 Finished Parsing XDC File [v:/hardware/m3_for_arty_a7/block_diagram/ip/m3_for_arty_a7_axi_xip_quad_spi_0_0/m3_for_arty_a7_axi_xip_quad_spi_0_0_clocks.xdc] for cell 'm3_for_arty_a7_i/daplink_if_0/axi_xip_quad_spi_0/U0'
 Parsing XDC File [v:/hardware/m3_for_arty_a7/block_diagram/ip/m3_for_arty_a7_clk_wiz_0_0/m3_for_arty_a7_clk_wiz_0_0_late.xdc] for cell 'm3_for_arty_a7_i/Clocks_and_Resets/clk_wiz_0/inst'
 Finished Parsing XDC File [v:/hardware/m3_for_arty_a7/block_diagram/ip/m3_for_arty_a7_clk_wiz_0_0/m3_for_arty_a7_clk_wiz_0_0_late.xdc] for cell 'm3_for_arty_a7_i/Clocks_and_Resets/clk_wiz_0/inst'
+Parsing XDC File [v:/hardware/m3_for_arty_a7/block_diagram/ip/m3_for_arty_a7_axi_quad_spi_1_1/m3_for_arty_a7_axi_quad_spi_1_1_clocks.xdc] for cell 'm3_for_arty_a7_i/axi_single_spi_1/U0'
+Finished Parsing XDC File [v:/hardware/m3_for_arty_a7/block_diagram/ip/m3_for_arty_a7_axi_quad_spi_1_1/m3_for_arty_a7_axi_quad_spi_1_1_clocks.xdc] for cell 'm3_for_arty_a7_i/axi_single_spi_1/U0'
 Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'm3_for_arty_a7_i/axi_quad_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.RX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.rd_pntr_cdc_inst'
 Finished Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'm3_for_arty_a7_i/axi_quad_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.RX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.rd_pntr_cdc_inst'
+Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'm3_for_arty_a7_i/daplink_if_0/axi_single_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.RX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.rd_pntr_cdc_inst'
+Finished Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'm3_for_arty_a7_i/daplink_if_0/axi_single_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.RX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.rd_pntr_cdc_inst'
 Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'm3_for_arty_a7_i/daplink_if_0/axi_quad_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.TX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_inst'
 Finished Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'm3_for_arty_a7_i/daplink_if_0/axi_quad_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.TX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_inst'
 Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'm3_for_arty_a7_i/daplink_if_0/axi_quad_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.TX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.rd_pntr_cdc_inst'
@@ -107,6 +128,14 @@ Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/tcl/xpm
 Finished Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'm3_for_arty_a7_i/daplink_if_0/axi_quad_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.RX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_inst'
 Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'm3_for_arty_a7_i/daplink_if_0/axi_quad_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.RX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.rd_pntr_cdc_inst'
 Finished Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'm3_for_arty_a7_i/daplink_if_0/axi_quad_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.RX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.rd_pntr_cdc_inst'
+Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'm3_for_arty_a7_i/axi_single_spi_1/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.TX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_inst'
+Finished Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'm3_for_arty_a7_i/axi_single_spi_1/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.TX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_inst'
+Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'm3_for_arty_a7_i/axi_single_spi_1/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.TX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.rd_pntr_cdc_inst'
+Finished Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'm3_for_arty_a7_i/axi_single_spi_1/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.TX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.rd_pntr_cdc_inst'
+Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'm3_for_arty_a7_i/axi_single_spi_1/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.RX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_inst'
+Finished Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'm3_for_arty_a7_i/axi_single_spi_1/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.RX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_inst'
+Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'm3_for_arty_a7_i/axi_single_spi_1/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.RX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.rd_pntr_cdc_inst'
+Finished Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'm3_for_arty_a7_i/axi_single_spi_1/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.RX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.rd_pntr_cdc_inst'
 Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'm3_for_arty_a7_i/axi_quad_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.TX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_inst'
 Finished Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'm3_for_arty_a7_i/axi_quad_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.TX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_inst'
 Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'm3_for_arty_a7_i/axi_quad_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.TX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.rd_pntr_cdc_inst'
@@ -119,10 +148,14 @@ Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/tcl/xpm
 Finished Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'm3_for_arty_a7_i/daplink_if_0/axi_single_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.TX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.rd_pntr_cdc_inst'
 Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'm3_for_arty_a7_i/daplink_if_0/axi_single_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.RX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_inst'
 Finished Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'm3_for_arty_a7_i/daplink_if_0/axi_single_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.RX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_inst'
-Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'm3_for_arty_a7_i/daplink_if_0/axi_single_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.RX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.rd_pntr_cdc_inst'
-Finished Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'm3_for_arty_a7_i/daplink_if_0/axi_single_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.RX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.rd_pntr_cdc_inst'
 Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'm3_for_arty_a7_i/axi_quad_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.RX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_dc_inst'
 Finished Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'm3_for_arty_a7_i/axi_quad_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.RX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_dc_inst'
+Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'm3_for_arty_a7_i/daplink_if_0/axi_quad_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.RX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_dc_inst'
+Finished Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'm3_for_arty_a7_i/daplink_if_0/axi_quad_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.RX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_dc_inst'
+Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'm3_for_arty_a7_i/axi_single_spi_1/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.TX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_dc_inst'
+Finished Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'm3_for_arty_a7_i/axi_single_spi_1/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.TX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_dc_inst'
+Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'm3_for_arty_a7_i/axi_single_spi_1/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.RX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_dc_inst'
+Finished Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'm3_for_arty_a7_i/axi_single_spi_1/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.RX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_dc_inst'
 Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'm3_for_arty_a7_i/axi_quad_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.TX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_dc_inst'
 Finished Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'm3_for_arty_a7_i/axi_quad_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.TX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_dc_inst'
 Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'm3_for_arty_a7_i/daplink_if_0/axi_single_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.TX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_dc_inst'
@@ -131,10 +164,14 @@ Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/tcl/xpm
 Finished Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'm3_for_arty_a7_i/daplink_if_0/axi_single_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.RX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_dc_inst'
 Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'm3_for_arty_a7_i/daplink_if_0/axi_quad_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.TX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_dc_inst'
 Finished Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'm3_for_arty_a7_i/daplink_if_0/axi_quad_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.TX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_dc_inst'
-Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'm3_for_arty_a7_i/daplink_if_0/axi_quad_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.RX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_dc_inst'
-Finished Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'm3_for_arty_a7_i/daplink_if_0/axi_quad_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.RX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_dc_inst'
 Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'm3_for_arty_a7_i/axi_quad_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.RX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.rd_pntr_cdc_dc_inst'
 Finished Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'm3_for_arty_a7_i/axi_quad_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.RX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.rd_pntr_cdc_dc_inst'
+Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'm3_for_arty_a7_i/daplink_if_0/axi_quad_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.RX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.rd_pntr_cdc_dc_inst'
+Finished Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'm3_for_arty_a7_i/daplink_if_0/axi_quad_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.RX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.rd_pntr_cdc_dc_inst'
+Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'm3_for_arty_a7_i/axi_single_spi_1/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.TX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.rd_pntr_cdc_dc_inst'
+Finished Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'm3_for_arty_a7_i/axi_single_spi_1/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.TX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.rd_pntr_cdc_dc_inst'
+Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'm3_for_arty_a7_i/axi_single_spi_1/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.RX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.rd_pntr_cdc_dc_inst'
+Finished Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'm3_for_arty_a7_i/axi_single_spi_1/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.RX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.rd_pntr_cdc_dc_inst'
 Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'm3_for_arty_a7_i/axi_quad_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.TX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.rd_pntr_cdc_dc_inst'
 Finished Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'm3_for_arty_a7_i/axi_quad_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.TX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.rd_pntr_cdc_dc_inst'
 Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'm3_for_arty_a7_i/daplink_if_0/axi_single_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.TX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.rd_pntr_cdc_dc_inst'
@@ -143,8 +180,6 @@ Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/tcl/xpm
 Finished Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'm3_for_arty_a7_i/daplink_if_0/axi_single_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.RX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.rd_pntr_cdc_dc_inst'
 Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'm3_for_arty_a7_i/daplink_if_0/axi_quad_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.TX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.rd_pntr_cdc_dc_inst'
 Finished Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'm3_for_arty_a7_i/daplink_if_0/axi_quad_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.TX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.rd_pntr_cdc_dc_inst'
-Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'm3_for_arty_a7_i/daplink_if_0/axi_quad_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.RX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.rd_pntr_cdc_dc_inst'
-Finished Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'm3_for_arty_a7_i/daplink_if_0/axi_quad_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.RX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.rd_pntr_cdc_dc_inst'
 Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'm3_for_arty_a7_i/daplink_if_0/axi_xip_quad_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/XIP_MODE_GEN.AXI_QSPI_XIP_I/XIP_RECEIVE_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.rd_pntr_cdc_inst'
 Finished Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'm3_for_arty_a7_i/daplink_if_0/axi_xip_quad_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/XIP_MODE_GEN.AXI_QSPI_XIP_I/XIP_RECEIVE_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.rd_pntr_cdc_inst'
 Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'm3_for_arty_a7_i/daplink_if_0/axi_xip_quad_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/XIP_MODE_GEN.AXI_QSPI_XIP_I/XIP_RECEIVE_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_inst'
@@ -155,6 +190,10 @@ Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/tcl/xpm
 Finished Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'm3_for_arty_a7_i/daplink_if_0/axi_xip_quad_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/XIP_MODE_GEN.AXI_QSPI_XIP_I/XIP_RECEIVE_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.rd_pntr_cdc_dc_inst'
 Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_sync_rst.tcl] for cell 'm3_for_arty_a7_i/axi_quad_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.RX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/xpm_fifo_rst_inst/gen_rst_ic.rrst_wr_inst'
 Finished Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_sync_rst.tcl] for cell 'm3_for_arty_a7_i/axi_quad_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.RX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/xpm_fifo_rst_inst/gen_rst_ic.rrst_wr_inst'
+Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_sync_rst.tcl] for cell 'm3_for_arty_a7_i/daplink_if_0/axi_xip_quad_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/XIP_MODE_GEN.AXI_QSPI_XIP_I/XIP_RECEIVE_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/xpm_fifo_rst_inst/gen_rst_ic.rrst_wr_inst'
+Finished Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_sync_rst.tcl] for cell 'm3_for_arty_a7_i/daplink_if_0/axi_xip_quad_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/XIP_MODE_GEN.AXI_QSPI_XIP_I/XIP_RECEIVE_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/xpm_fifo_rst_inst/gen_rst_ic.rrst_wr_inst'
+Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_sync_rst.tcl] for cell 'm3_for_arty_a7_i/daplink_if_0/axi_single_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.TX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/xpm_fifo_rst_inst/gen_rst_ic.wrst_rd_inst'
+Finished Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_sync_rst.tcl] for cell 'm3_for_arty_a7_i/daplink_if_0/axi_single_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.TX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/xpm_fifo_rst_inst/gen_rst_ic.wrst_rd_inst'
 Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_sync_rst.tcl] for cell 'm3_for_arty_a7_i/daplink_if_0/axi_single_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.TX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/xpm_fifo_rst_inst/gen_rst_ic.rrst_wr_inst'
 Finished Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_sync_rst.tcl] for cell 'm3_for_arty_a7_i/daplink_if_0/axi_single_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.TX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/xpm_fifo_rst_inst/gen_rst_ic.rrst_wr_inst'
 Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_sync_rst.tcl] for cell 'm3_for_arty_a7_i/daplink_if_0/axi_single_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.RX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/xpm_fifo_rst_inst/gen_rst_ic.wrst_rd_inst'
@@ -169,6 +208,14 @@ Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/tcl/xpm
 Finished Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_sync_rst.tcl] for cell 'm3_for_arty_a7_i/daplink_if_0/axi_quad_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.RX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/xpm_fifo_rst_inst/gen_rst_ic.wrst_rd_inst'
 Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_sync_rst.tcl] for cell 'm3_for_arty_a7_i/daplink_if_0/axi_quad_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.RX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/xpm_fifo_rst_inst/gen_rst_ic.rrst_wr_inst'
 Finished Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_sync_rst.tcl] for cell 'm3_for_arty_a7_i/daplink_if_0/axi_quad_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.RX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/xpm_fifo_rst_inst/gen_rst_ic.rrst_wr_inst'
+Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_sync_rst.tcl] for cell 'm3_for_arty_a7_i/axi_single_spi_1/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.TX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/xpm_fifo_rst_inst/gen_rst_ic.wrst_rd_inst'
+Finished Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_sync_rst.tcl] for cell 'm3_for_arty_a7_i/axi_single_spi_1/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.TX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/xpm_fifo_rst_inst/gen_rst_ic.wrst_rd_inst'
+Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_sync_rst.tcl] for cell 'm3_for_arty_a7_i/axi_single_spi_1/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.TX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/xpm_fifo_rst_inst/gen_rst_ic.rrst_wr_inst'
+Finished Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_sync_rst.tcl] for cell 'm3_for_arty_a7_i/axi_single_spi_1/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.TX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/xpm_fifo_rst_inst/gen_rst_ic.rrst_wr_inst'
+Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_sync_rst.tcl] for cell 'm3_for_arty_a7_i/axi_single_spi_1/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.RX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/xpm_fifo_rst_inst/gen_rst_ic.wrst_rd_inst'
+Finished Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_sync_rst.tcl] for cell 'm3_for_arty_a7_i/axi_single_spi_1/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.RX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/xpm_fifo_rst_inst/gen_rst_ic.wrst_rd_inst'
+Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_sync_rst.tcl] for cell 'm3_for_arty_a7_i/axi_single_spi_1/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.RX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/xpm_fifo_rst_inst/gen_rst_ic.rrst_wr_inst'
+Finished Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_sync_rst.tcl] for cell 'm3_for_arty_a7_i/axi_single_spi_1/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.RX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/xpm_fifo_rst_inst/gen_rst_ic.rrst_wr_inst'
 Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_sync_rst.tcl] for cell 'm3_for_arty_a7_i/axi_quad_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.TX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/xpm_fifo_rst_inst/gen_rst_ic.wrst_rd_inst'
 Finished Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_sync_rst.tcl] for cell 'm3_for_arty_a7_i/axi_quad_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.TX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/xpm_fifo_rst_inst/gen_rst_ic.wrst_rd_inst'
 Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_sync_rst.tcl] for cell 'm3_for_arty_a7_i/axi_quad_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.TX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/xpm_fifo_rst_inst/gen_rst_ic.rrst_wr_inst'
@@ -177,12 +224,12 @@ Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/tcl/xpm
 Finished Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_sync_rst.tcl] for cell 'm3_for_arty_a7_i/axi_quad_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.RX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/xpm_fifo_rst_inst/gen_rst_ic.wrst_rd_inst'
 Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_sync_rst.tcl] for cell 'm3_for_arty_a7_i/daplink_if_0/axi_xip_quad_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/XIP_MODE_GEN.AXI_QSPI_XIP_I/XIP_RECEIVE_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/xpm_fifo_rst_inst/gen_rst_ic.wrst_rd_inst'
 Finished Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_sync_rst.tcl] for cell 'm3_for_arty_a7_i/daplink_if_0/axi_xip_quad_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/XIP_MODE_GEN.AXI_QSPI_XIP_I/XIP_RECEIVE_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/xpm_fifo_rst_inst/gen_rst_ic.wrst_rd_inst'
-Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_sync_rst.tcl] for cell 'm3_for_arty_a7_i/daplink_if_0/axi_xip_quad_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/XIP_MODE_GEN.AXI_QSPI_XIP_I/XIP_RECEIVE_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/xpm_fifo_rst_inst/gen_rst_ic.rrst_wr_inst'
-Finished Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_sync_rst.tcl] for cell 'm3_for_arty_a7_i/daplink_if_0/axi_xip_quad_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/XIP_MODE_GEN.AXI_QSPI_XIP_I/XIP_RECEIVE_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/xpm_fifo_rst_inst/gen_rst_ic.rrst_wr_inst'
-Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_sync_rst.tcl] for cell 'm3_for_arty_a7_i/daplink_if_0/axi_single_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.TX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/xpm_fifo_rst_inst/gen_rst_ic.wrst_rd_inst'
-Finished Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_sync_rst.tcl] for cell 'm3_for_arty_a7_i/daplink_if_0/axi_single_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.TX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/xpm_fifo_rst_inst/gen_rst_ic.wrst_rd_inst'
 Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_fifo/tcl/xpm_fifo_rst.tcl] for cell 'm3_for_arty_a7_i/daplink_if_0/axi_single_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.TX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst'
 Finished Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_fifo/tcl/xpm_fifo_rst.tcl] for cell 'm3_for_arty_a7_i/daplink_if_0/axi_single_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.TX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst'
+Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_fifo/tcl/xpm_fifo_rst.tcl] for cell 'm3_for_arty_a7_i/axi_single_spi_1/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.TX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst'
+Finished Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_fifo/tcl/xpm_fifo_rst.tcl] for cell 'm3_for_arty_a7_i/axi_single_spi_1/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.TX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst'
+Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_fifo/tcl/xpm_fifo_rst.tcl] for cell 'm3_for_arty_a7_i/axi_single_spi_1/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.RX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst'
+Finished Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_fifo/tcl/xpm_fifo_rst.tcl] for cell 'm3_for_arty_a7_i/axi_single_spi_1/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.RX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst'
 Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_fifo/tcl/xpm_fifo_rst.tcl] for cell 'm3_for_arty_a7_i/daplink_if_0/axi_xip_quad_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/XIP_MODE_GEN.AXI_QSPI_XIP_I/XIP_RECEIVE_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst'
 Finished Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_fifo/tcl/xpm_fifo_rst.tcl] for cell 'm3_for_arty_a7_i/daplink_if_0/axi_xip_quad_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/XIP_MODE_GEN.AXI_QSPI_XIP_I/XIP_RECEIVE_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst'
 Sourcing Tcl File [D:/Programas/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_fifo/tcl/xpm_fifo_rst.tcl] for cell 'm3_for_arty_a7_i/axi_quad_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.RX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst'
@@ -204,9 +251,9 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 12 instances were transformed.
   IOBUF => IOBUF (IBUF, OBUFT): 12 instances
 
-13 Infos, 5 Warnings, 4 Critical Warnings and 0 Errors encountered.
+16 Infos, 8 Warnings, 6 Critical Warnings and 0 Errors encountered.
 link_design completed successfully
-link_design: Time (s): cpu = 00:00:24 ; elapsed = 00:00:31 . Memory (MB): peak = 1470.891 ; gain = 1064.914
+link_design: Time (s): cpu = 00:00:25 ; elapsed = 00:00:32 . Memory (MB): peak = 1484.066 ; gain = 1077.242
 Command: opt_design
 Attempting to get a license for feature 'Implementation' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a100t'
@@ -228,62 +275,66 @@ WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port DAPLink_tri_o
 INFO: [Project 1-461] DRC finished with 0 Errors, 11 Warnings
 INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.915 . Memory (MB): peak = 1470.891 ; gain = 0.000
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.886 . Memory (MB): peak = 1484.066 ; gain = 0.000
 
 Starting Cache Timing Information Task
 INFO: [Constraints 18-483] create_clock: no pin(s)/port(s)/net(s) specified as objects, only virtual clock 'slow_out_clk' will be created. If you don't want this, please specify pin(s)/ports(s)/net(s) as objects to the command. [V:/hardware/m3_for_arty_a7/constraints/m3_for_arty_a7.xdc:119]
 INFO: [Timing 38-35] Done setting XDC timing constraints.
-Ending Cache Timing Information Task | Checksum: 1dacc2c32
+Ending Cache Timing Information Task | Checksum: 24df8cbd8
 
-Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1470.891 ; gain = 0.000
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 1484.066 ; gain = 0.000
 
 Starting Logic Optimization Task
+CRITICAL WARNING: [Timing 38-285] Generated clock dap_qspi_clk with source pin m3_for_arty_a7_i/daplink_if_0/axi_xip_quad_spi_0/sck_o does not have a valid master clock or valid waveform.
+Resolution: Check that either a master clock has been defined on the source pin of the generated clock or that a clock reaches that source pin. The waveform of the master clock must be valid.
+CRITICAL WARNING: [Timing 38-285] Generated clock dap_spi_clk with source pin m3_for_arty_a7_i/daplink_if_0/axi_single_spi_0/sck_o does not have a valid master clock or valid waveform.
+Resolution: Check that either a master clock has been defined on the source pin of the generated clock or that a clock reaches that source pin. The waveform of the master clock must be valid.
 
 Phase 1 Retarget
 INFO: [Opt 31-138] Pushed 4 inverter(s) to 18 load pin(s).
 INFO: [Opt 31-49] Retargeted 0 cell(s).
-Phase 1 Retarget | Checksum: 22dba6f62
+Phase 1 Retarget | Checksum: 1367eb678
 
-Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1470.891 ; gain = 0.000
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1484.066 ; gain = 0.000
 INFO: [Opt 31-389] Phase Retarget created 0 cells and removed 0 cells
 
 Phase 2 Constant propagation
 INFO: [Opt 31-138] Pushed 1 inverter(s) to 4 load pin(s).
-Phase 2 Constant propagation | Checksum: 265ea6938
+Phase 2 Constant propagation | Checksum: 1e91a3a2d
 
-Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 1470.891 ; gain = 0.000
-INFO: [Opt 31-389] Phase Constant propagation created 152 cells and removed 403 cells
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 1484.066 ; gain = 0.000
+INFO: [Opt 31-389] Phase Constant propagation created 146 cells and removed 2252 cells
 
 Phase 3 Sweep
-Phase 3 Sweep | Checksum: 25a9f1521
+Phase 3 Sweep | Checksum: 1311a8c83
 
-Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 1470.891 ; gain = 0.000
-INFO: [Opt 31-389] Phase Sweep created 20 cells and removed 1655 cells
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1484.066 ; gain = 0.000
+INFO: [Opt 31-389] Phase Sweep created 20 cells and removed 2015 cells
 
 Phase 4 BUFG optimization
-Phase 4 BUFG optimization | Checksum: 25a9f1521
+Phase 4 BUFG optimization | Checksum: 1311a8c83
 
-Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 1470.891 ; gain = 0.000
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 1484.066 ; gain = 0.000
 INFO: [Opt 31-662] Phase BUFG optimization created 0 cells of which 0 are BUFGs and removed 0 cells.
 
 Phase 5 Shift Register Optimization
-Phase 5 Shift Register Optimization | Checksum: 1d0edfaff
+Phase 5 Shift Register Optimization | Checksum: 186fe05fe
 
-Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 1470.891 ; gain = 0.000
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:07 . Memory (MB): peak = 1484.066 ; gain = 0.000
 INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
 
 Phase 6 Post Processing Netlist
-Phase 6 Post Processing Netlist | Checksum: 1aa6b541e
+Phase 6 Post Processing Netlist | Checksum: 16530056a
 
-Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 1470.891 ; gain = 0.000
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:07 . Memory (MB): peak = 1484.066 ; gain = 0.000
 INFO: [Opt 31-389] Phase Post Processing Netlist created 0 cells and removed 0 cells
 
 Starting Connectivity Check Task
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.087 . Memory (MB): peak = 1470.891 ; gain = 0.000
-Ending Logic Optimization Task | Checksum: 1aa6b541e
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.084 . Memory (MB): peak = 1484.066 ; gain = 0.000
+Ending Logic Optimization Task | Checksum: 16530056a
 
-Time (s): cpu = 00:00:08 ; elapsed = 00:00:07 . Memory (MB): peak = 1470.891 ; gain = 0.000
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1484.066 ; gain = 0.000
 
 Starting Power Optimization Task
 INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
@@ -291,41 +342,49 @@ INFO: [Constraints 18-483] create_clock: no pin(s)/port(s)/net(s) specified as o
 INFO: [Timing 38-35] Done setting XDC timing constraints.
 INFO: [Pwropt 34-9] Applying IDT optimizations ...
 INFO: [Pwropt 34-10] Applying ODC optimizations ...
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=1.639 | TNS=0.000 |
+CRITICAL WARNING: [Timing 38-285] Generated clock dap_qspi_clk with source pin m3_for_arty_a7_i/daplink_if_0/axi_xip_quad_spi_0/sck_o does not have a valid master clock or valid waveform.
+Resolution: Check that either a master clock has been defined on the source pin of the generated clock or that a clock reaches that source pin. The waveform of the master clock must be valid.
+CRITICAL WARNING: [Timing 38-285] Generated clock dap_spi_clk with source pin m3_for_arty_a7_i/daplink_if_0/axi_single_spi_0/sck_o does not have a valid master clock or valid waveform.
+Resolution: Check that either a master clock has been defined on the source pin of the generated clock or that a clock reaches that source pin. The waveform of the master clock must be valid.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=1.631 | TNS=0.000 |
+CRITICAL WARNING: [Timing 38-285] Generated clock dap_qspi_clk with source pin m3_for_arty_a7_i/daplink_if_0/axi_xip_quad_spi_0/sck_o does not have a valid master clock or valid waveform.
+Resolution: Check that either a master clock has been defined on the source pin of the generated clock or that a clock reaches that source pin. The waveform of the master clock must be valid.
+CRITICAL WARNING: [Timing 38-285] Generated clock dap_spi_clk with source pin m3_for_arty_a7_i/daplink_if_0/axi_single_spi_0/sck_o does not have a valid master clock or valid waveform.
+Resolution: Check that either a master clock has been defined on the source pin of the generated clock or that a clock reaches that source pin. The waveform of the master clock must be valid.
 Running Vector-less Activity Propagation...
 
 Finished Running Vector-less Activity Propagation
 
 
 Starting PowerOpt Patch Enables Task
-INFO: [Pwropt 34-162] WRITE_MODE attribute of 0 BRAM(s) out of a total of 27 has been updated to save power. Run report_power_opt to get a complete listing of the BRAMs updated.
+INFO: [Pwropt 34-162] WRITE_MODE attribute of 0 BRAM(s) out of a total of 26 has been updated to save power. Run report_power_opt to get a complete listing of the BRAMs updated.
 INFO: [Pwropt 34-201] Structural ODC has moved 0 WE to EN ports
-Number of BRAM Ports augmented: 1 newly gated: 2 Total Ports: 54
-Number of Flops added for Enable Generation: 6
+Number of BRAM Ports augmented: 1 newly gated: 1 Total Ports: 52
+Number of Flops added for Enable Generation: 3
 
-Ending PowerOpt Patch Enables Task | Checksum: 1991a9884
+Ending PowerOpt Patch Enables Task | Checksum: 175163dc8
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.216 . Memory (MB): peak = 1785.750 ; gain = 0.000
-Ending Power Optimization Task | Checksum: 1991a9884
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.198 . Memory (MB): peak = 1793.809 ; gain = 0.000
+Ending Power Optimization Task | Checksum: 175163dc8
 
-Time (s): cpu = 00:00:21 ; elapsed = 00:00:10 . Memory (MB): peak = 1785.750 ; gain = 314.859
+Time (s): cpu = 00:00:21 ; elapsed = 00:00:10 . Memory (MB): peak = 1793.809 ; gain = 309.742
 
 Starting Final Cleanup Task
-Ending Final Cleanup Task | Checksum: 1991a9884
+Ending Final Cleanup Task | Checksum: 175163dc8
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1785.750 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1793.809 ; gain = 0.000
 INFO: [Common 17-83] Releasing license: Implementation
-37 Infos, 16 Warnings, 4 Critical Warnings and 0 Errors encountered.
+40 Infos, 19 Warnings, 12 Critical Warnings and 0 Errors encountered.
 opt_design completed successfully
-opt_design: Time (s): cpu = 00:00:32 ; elapsed = 00:00:19 . Memory (MB): peak = 1785.750 ; gain = 314.859
+opt_design: Time (s): cpu = 00:00:32 ; elapsed = 00:00:19 . Memory (MB): peak = 1793.809 ; gain = 309.742
 INFO: [Timing 38-480] Writing timing data to binary archive.
 Writing placer database...
 Writing XDEF routing.
 Writing XDEF routing logical nets.
 Writing XDEF routing special nets.
-Write XDEF Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.034 . Memory (MB): peak = 1785.750 ; gain = 0.000
+Write XDEF Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.036 . Memory (MB): peak = 1793.809 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'V:/hardware/m3_for_arty_a7/m3_for_arty_a7/m3_for_arty_a7.runs/impl_1/m3_for_arty_a7_wrapper_opt.dcp' has been generated.
-write_checkpoint: Time (s): cpu = 00:00:07 ; elapsed = 00:00:05 . Memory (MB): peak = 1785.750 ; gain = 0.000
+write_checkpoint: Time (s): cpu = 00:00:07 ; elapsed = 00:00:05 . Memory (MB): peak = 1793.809 ; gain = 0.000
 INFO: [runtcl-4] Executing : report_drc -file m3_for_arty_a7_wrapper_drc_opted.rpt -pb m3_for_arty_a7_wrapper_drc_opted.pb -rpx m3_for_arty_a7_wrapper_drc_opted.rpx
 Command: report_drc -file m3_for_arty_a7_wrapper_drc_opted.rpt -pb m3_for_arty_a7_wrapper_drc_opted.pb -rpx m3_for_arty_a7_wrapper_drc_opted.rpx
 INFO: [DRC 23-27] Running DRC with 2 threads
@@ -367,12 +426,11 @@ WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port DAPLink_tri_o
 WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port DAPLink_tri_o[12] expects both input and output buffering but the buffers are incomplete.
 WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port DAPLink_tri_o[13] expects both input and output buffering but the buffers are incomplete.
 WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port DAPLink_tri_o[15] expects both input and output buffering but the buffers are incomplete.
-WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port DAPLink_tri_o[1] expects both input and output buffering but the buffers are incomplete.
 WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port DAPLink_tri_o[2] expects both input and output buffering but the buffers are incomplete.
 WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port DAPLink_tri_o[3] expects both input and output buffering but the buffers are incomplete.
 WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port DAPLink_tri_o[8] expects both input and output buffering but the buffers are incomplete.
 WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port DAPLink_tri_o[9] expects both input and output buffering but the buffers are incomplete.
-INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors, 33 Warnings
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors, 32 Warnings
 INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
 
 Starting Placer Task
@@ -381,14 +439,14 @@ INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 
 Phase 1 Placer Initialization
 
 Phase 1.1 Placer Initialization Netlist Sorting
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.041 . Memory (MB): peak = 1785.750 ; gain = 0.000
-Phase 1.1 Placer Initialization Netlist Sorting | Checksum: 18db1a053
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.046 . Memory (MB): peak = 1793.809 ; gain = 0.000
+Phase 1.1 Placer Initialization Netlist Sorting | Checksum: 9ed4fb2c
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.049 . Memory (MB): peak = 1785.750 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.054 . Memory (MB): peak = 1793.809 ; gain = 0.000
 INFO: [Constraints 18-483] create_clock: no pin(s)/port(s)/net(s) specified as objects, only virtual clock 'slow_out_clk' will be created. If you don't want this, please specify pin(s)/ports(s)/net(s) as objects to the command. [V:/hardware/m3_for_arty_a7/constraints/m3_for_arty_a7.xdc:119]
 INFO: [Timing 38-35] Done setting XDC timing constraints.
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.040 . Memory (MB): peak = 1785.750 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.041 . Memory (MB): peak = 1793.809 ; gain = 0.000
 
 Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
 INFO: [Constraints 18-483] create_clock: no pin(s)/port(s)/net(s) specified as objects, only virtual clock 'slow_out_clk' will be created. If you don't want this, please specify pin(s)/ports(s)/net(s) as objects to the command. [V:/hardware/m3_for_arty_a7/constraints/m3_for_arty_a7.xdc:119]
@@ -398,35 +456,39 @@ WARNING: [Place 30-574] Poor placement for routing between an IO pin and BUFG. T
 	DAPLink_tri_o_IBUF[15]_inst (IBUF.O) is locked to IOB_X0Y82
 	DAPLink_tri_o_IBUF_BUFG[15]_inst (BUFG.I) is provisionally placed by clockplacer on BUFGCTRL_X0Y0
 Resolution: Poor placement of an IO pin and a BUFG has resulted in the router using a non-dedicated path between the two.  There are several things that could trigger this DRC, each of which can cause unpredictable clock insertion delays that result in poor timing.  This DRC could be caused by any of the following: (a) a clock port was placed on a pin that is not a CCIO-pin (b)the BUFG has not been placed in the same half of the device or SLR as the CCIO-pin (c) a single ended clock has been placed on the N-Side of a differential pair CCIO-pin.
-Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: ba40a525
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 5da85ca3
 
-Time (s): cpu = 00:00:08 ; elapsed = 00:00:06 . Memory (MB): peak = 1785.750 ; gain = 0.000
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:06 . Memory (MB): peak = 1793.809 ; gain = 0.000
 
 Phase 1.3 Build Placer Netlist Model
-Phase 1.3 Build Placer Netlist Model | Checksum: 1dbd53246
+CRITICAL WARNING: [Timing 38-285] Generated clock dap_qspi_clk with source pin m3_for_arty_a7_i/daplink_if_0/axi_xip_quad_spi_0/sck_o does not have a valid master clock or valid waveform.
+Resolution: Check that either a master clock has been defined on the source pin of the generated clock or that a clock reaches that source pin. The waveform of the master clock must be valid.
+CRITICAL WARNING: [Timing 38-285] Generated clock dap_spi_clk with source pin m3_for_arty_a7_i/daplink_if_0/axi_single_spi_0/sck_o does not have a valid master clock or valid waveform.
+Resolution: Check that either a master clock has been defined on the source pin of the generated clock or that a clock reaches that source pin. The waveform of the master clock must be valid.
+Phase 1.3 Build Placer Netlist Model | Checksum: ebe0a14c
 
-Time (s): cpu = 00:00:16 ; elapsed = 00:00:12 . Memory (MB): peak = 1785.750 ; gain = 0.000
+Time (s): cpu = 00:00:16 ; elapsed = 00:00:12 . Memory (MB): peak = 1793.809 ; gain = 0.000
 
 Phase 1.4 Constrain Clocks/Macros
-Phase 1.4 Constrain Clocks/Macros | Checksum: 1dbd53246
+Phase 1.4 Constrain Clocks/Macros | Checksum: ebe0a14c
 
-Time (s): cpu = 00:00:16 ; elapsed = 00:00:12 . Memory (MB): peak = 1785.750 ; gain = 0.000
-Phase 1 Placer Initialization | Checksum: 1dbd53246
+Time (s): cpu = 00:00:16 ; elapsed = 00:00:12 . Memory (MB): peak = 1793.809 ; gain = 0.000
+Phase 1 Placer Initialization | Checksum: ebe0a14c
 
-Time (s): cpu = 00:00:16 ; elapsed = 00:00:12 . Memory (MB): peak = 1785.750 ; gain = 0.000
+Time (s): cpu = 00:00:16 ; elapsed = 00:00:12 . Memory (MB): peak = 1793.809 ; gain = 0.000
 
 Phase 2 Global Placement
 
 Phase 2.1 Floorplanning
-Phase 2.1 Floorplanning | Checksum: 14b2eeb44
+Phase 2.1 Floorplanning | Checksum: ca4ef7ad
 
-Time (s): cpu = 00:00:19 ; elapsed = 00:00:14 . Memory (MB): peak = 1785.750 ; gain = 0.000
+Time (s): cpu = 00:00:19 ; elapsed = 00:00:14 . Memory (MB): peak = 1793.809 ; gain = 0.000
 
 Phase 2.2 Physical Synthesis In Placer
 INFO: [Physopt 32-65] No nets found for high-fanout optimization.
 INFO: [Physopt 32-232] Optimized 0 net. Created 0 new instance.
 INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.041 . Memory (MB): peak = 1785.750 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.042 . Memory (MB): peak = 1793.809 ; gain = 0.000
 
 Summary of Physical Synthesis Optimizations
 ============================================
@@ -440,123 +502,127 @@ Summary of Physical Synthesis Optimizations
 -----------------------------------------------------------------------------------------------------------------------------
 
 
-Phase 2.2 Physical Synthesis In Placer | Checksum: 14319679a
+Phase 2.2 Physical Synthesis In Placer | Checksum: 82044f3b
 
-Time (s): cpu = 00:00:56 ; elapsed = 00:00:33 . Memory (MB): peak = 1785.750 ; gain = 0.000
-Phase 2 Global Placement | Checksum: 13286110d
+Time (s): cpu = 00:00:50 ; elapsed = 00:00:31 . Memory (MB): peak = 1793.809 ; gain = 0.000
+Phase 2 Global Placement | Checksum: 178d73680
 
-Time (s): cpu = 00:00:57 ; elapsed = 00:00:34 . Memory (MB): peak = 1785.750 ; gain = 0.000
+Time (s): cpu = 00:00:52 ; elapsed = 00:00:32 . Memory (MB): peak = 1793.809 ; gain = 0.000
 
 Phase 3 Detail Placement
 
 Phase 3.1 Commit Multi Column Macros
-Phase 3.1 Commit Multi Column Macros | Checksum: 13286110d
+Phase 3.1 Commit Multi Column Macros | Checksum: 178d73680
 
-Time (s): cpu = 00:00:58 ; elapsed = 00:00:35 . Memory (MB): peak = 1785.750 ; gain = 0.000
+Time (s): cpu = 00:00:52 ; elapsed = 00:00:32 . Memory (MB): peak = 1793.809 ; gain = 0.000
 
 Phase 3.2 Commit Most Macros & LUTRAMs
-Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 1b6c42720
+Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 90d293b7
 
-Time (s): cpu = 00:01:03 ; elapsed = 00:00:38 . Memory (MB): peak = 1785.750 ; gain = 0.000
+Time (s): cpu = 00:00:58 ; elapsed = 00:00:36 . Memory (MB): peak = 1793.809 ; gain = 0.000
 
 Phase 3.3 Area Swap Optimization
-Phase 3.3 Area Swap Optimization | Checksum: 147577baf
+Phase 3.3 Area Swap Optimization | Checksum: 87641e7b
 
-Time (s): cpu = 00:01:04 ; elapsed = 00:00:39 . Memory (MB): peak = 1785.750 ; gain = 0.000
+Time (s): cpu = 00:00:58 ; elapsed = 00:00:37 . Memory (MB): peak = 1793.809 ; gain = 0.000
 
 Phase 3.4 Pipeline Register Optimization
-Phase 3.4 Pipeline Register Optimization | Checksum: 13f2a8c26
+Phase 3.4 Pipeline Register Optimization | Checksum: b4d0fb43
 
-Time (s): cpu = 00:01:04 ; elapsed = 00:00:39 . Memory (MB): peak = 1785.750 ; gain = 0.000
+Time (s): cpu = 00:00:58 ; elapsed = 00:00:37 . Memory (MB): peak = 1793.809 ; gain = 0.000
 
 Phase 3.5 Timing Path Optimizer
-Phase 3.5 Timing Path Optimizer | Checksum: 13f2a8c26
+Phase 3.5 Timing Path Optimizer | Checksum: b4d0fb43
 
-Time (s): cpu = 00:01:04 ; elapsed = 00:00:39 . Memory (MB): peak = 1785.750 ; gain = 0.000
+Time (s): cpu = 00:00:58 ; elapsed = 00:00:37 . Memory (MB): peak = 1793.809 ; gain = 0.000
 
 Phase 3.6 Fast Optimization
-Phase 3.6 Fast Optimization | Checksum: 1434a74b7
+Phase 3.6 Fast Optimization | Checksum: 118a31660
 
-Time (s): cpu = 00:01:05 ; elapsed = 00:00:40 . Memory (MB): peak = 1785.750 ; gain = 0.000
+Time (s): cpu = 00:00:59 ; elapsed = 00:00:37 . Memory (MB): peak = 1793.809 ; gain = 0.000
 
 Phase 3.7 Small Shape Detail Placement
-Phase 3.7 Small Shape Detail Placement | Checksum: 101713ba0
+Phase 3.7 Small Shape Detail Placement | Checksum: 1279c9567
 
-Time (s): cpu = 00:01:17 ; elapsed = 00:00:52 . Memory (MB): peak = 1785.750 ; gain = 0.000
+Time (s): cpu = 00:01:10 ; elapsed = 00:00:49 . Memory (MB): peak = 1793.809 ; gain = 0.000
 
 Phase 3.8 Re-assign LUT pins
-Phase 3.8 Re-assign LUT pins | Checksum: 174d424ee
+Phase 3.8 Re-assign LUT pins | Checksum: 12eebf4d8
 
-Time (s): cpu = 00:01:19 ; elapsed = 00:00:54 . Memory (MB): peak = 1785.750 ; gain = 0.000
+Time (s): cpu = 00:01:12 ; elapsed = 00:00:51 . Memory (MB): peak = 1793.809 ; gain = 0.000
 
 Phase 3.9 Pipeline Register Optimization
-Phase 3.9 Pipeline Register Optimization | Checksum: 174d424ee
+Phase 3.9 Pipeline Register Optimization | Checksum: 168727aa0
 
-Time (s): cpu = 00:01:19 ; elapsed = 00:00:55 . Memory (MB): peak = 1785.750 ; gain = 0.000
-Phase 3 Detail Placement | Checksum: 174d424ee
+Time (s): cpu = 00:01:12 ; elapsed = 00:00:51 . Memory (MB): peak = 1793.809 ; gain = 0.000
+Phase 3 Detail Placement | Checksum: 168727aa0
 
-Time (s): cpu = 00:01:20 ; elapsed = 00:00:55 . Memory (MB): peak = 1785.750 ; gain = 0.000
+Time (s): cpu = 00:01:12 ; elapsed = 00:00:51 . Memory (MB): peak = 1793.809 ; gain = 0.000
 
 Phase 4 Post Placement Optimization and Clean-Up
 
 Phase 4.1 Post Commit Optimization
 INFO: [Constraints 18-483] create_clock: no pin(s)/port(s)/net(s) specified as objects, only virtual clock 'slow_out_clk' will be created. If you don't want this, please specify pin(s)/ports(s)/net(s) as objects to the command. [V:/hardware/m3_for_arty_a7/constraints/m3_for_arty_a7.xdc:119]
 INFO: [Timing 38-35] Done setting XDC timing constraints.
+CRITICAL WARNING: [Timing 38-285] Generated clock dap_qspi_clk with source pin m3_for_arty_a7_i/daplink_if_0/axi_xip_quad_spi_0/sck_o does not have a valid master clock or valid waveform.
+Resolution: Check that either a master clock has been defined on the source pin of the generated clock or that a clock reaches that source pin. The waveform of the master clock must be valid.
+CRITICAL WARNING: [Timing 38-285] Generated clock dap_spi_clk with source pin m3_for_arty_a7_i/daplink_if_0/axi_single_spi_0/sck_o does not have a valid master clock or valid waveform.
+Resolution: Check that either a master clock has been defined on the source pin of the generated clock or that a clock reaches that source pin. The waveform of the master clock must be valid.
 
 Phase 4.1.1 Post Placement Optimization
-Post Placement Optimization Initialization | Checksum: 19fdf20d6
+Post Placement Optimization Initialization | Checksum: f652d529
 
 Phase 4.1.1.1 BUFG Insertion
 INFO: [Place 46-31] BUFG insertion identified 0 candidate nets, 0 success, 0 skipped for placement/routing, 0 skipped for timing, 0 skipped for netlist change reason.
-Phase 4.1.1.1 BUFG Insertion | Checksum: 19fdf20d6
+Phase 4.1.1.1 BUFG Insertion | Checksum: f652d529
 
-Time (s): cpu = 00:01:27 ; elapsed = 00:01:00 . Memory (MB): peak = 1785.750 ; gain = 0.000
-INFO: [Place 30-746] Post Placement Timing Summary WNS=0.507. For the most accurate timing information please run report_timing.
-Phase 4.1.1 Post Placement Optimization | Checksum: 21c6d41bd
+Time (s): cpu = 00:01:20 ; elapsed = 00:00:56 . Memory (MB): peak = 1793.809 ; gain = 0.000
+INFO: [Place 30-746] Post Placement Timing Summary WNS=0.524. For the most accurate timing information please run report_timing.
+Phase 4.1.1 Post Placement Optimization | Checksum: 15f3cc582
 
-Time (s): cpu = 00:01:28 ; elapsed = 00:01:01 . Memory (MB): peak = 1785.750 ; gain = 0.000
-Phase 4.1 Post Commit Optimization | Checksum: 21c6d41bd
+Time (s): cpu = 00:01:23 ; elapsed = 00:00:59 . Memory (MB): peak = 1793.809 ; gain = 0.000
+Phase 4.1 Post Commit Optimization | Checksum: 15f3cc582
 
-Time (s): cpu = 00:01:29 ; elapsed = 00:01:01 . Memory (MB): peak = 1785.750 ; gain = 0.000
+Time (s): cpu = 00:01:23 ; elapsed = 00:00:59 . Memory (MB): peak = 1793.809 ; gain = 0.000
 
 Phase 4.2 Post Placement Cleanup
-Phase 4.2 Post Placement Cleanup | Checksum: 21c6d41bd
+Phase 4.2 Post Placement Cleanup | Checksum: 15f3cc582
 
-Time (s): cpu = 00:01:29 ; elapsed = 00:01:01 . Memory (MB): peak = 1785.750 ; gain = 0.000
+Time (s): cpu = 00:01:23 ; elapsed = 00:00:59 . Memory (MB): peak = 1793.809 ; gain = 0.000
 
 Phase 4.3 Placer Reporting
-Phase 4.3 Placer Reporting | Checksum: 21c6d41bd
+Phase 4.3 Placer Reporting | Checksum: 15f3cc582
 
-Time (s): cpu = 00:01:29 ; elapsed = 00:01:01 . Memory (MB): peak = 1785.750 ; gain = 0.000
+Time (s): cpu = 00:01:24 ; elapsed = 00:00:59 . Memory (MB): peak = 1793.809 ; gain = 0.000
 
 Phase 4.4 Final Placement Cleanup
-Phase 4.4 Final Placement Cleanup | Checksum: 239d2002d
+Phase 4.4 Final Placement Cleanup | Checksum: 1b3d52a01
 
-Time (s): cpu = 00:01:29 ; elapsed = 00:01:01 . Memory (MB): peak = 1785.750 ; gain = 0.000
-Phase 4 Post Placement Optimization and Clean-Up | Checksum: 239d2002d
+Time (s): cpu = 00:01:24 ; elapsed = 00:00:59 . Memory (MB): peak = 1793.809 ; gain = 0.000
+Phase 4 Post Placement Optimization and Clean-Up | Checksum: 1b3d52a01
 
-Time (s): cpu = 00:01:29 ; elapsed = 00:01:02 . Memory (MB): peak = 1785.750 ; gain = 0.000
-Ending Placer Task | Checksum: 13fc6fdbe
+Time (s): cpu = 00:01:24 ; elapsed = 00:01:00 . Memory (MB): peak = 1793.809 ; gain = 0.000
+Ending Placer Task | Checksum: 17ca3a996
 
-Time (s): cpu = 00:01:29 ; elapsed = 00:01:02 . Memory (MB): peak = 1785.750 ; gain = 0.000
+Time (s): cpu = 00:01:24 ; elapsed = 00:01:00 . Memory (MB): peak = 1793.809 ; gain = 0.000
 INFO: [Common 17-83] Releasing license: Implementation
-63 Infos, 50 Warnings, 4 Critical Warnings and 0 Errors encountered.
+66 Infos, 52 Warnings, 16 Critical Warnings and 0 Errors encountered.
 place_design completed successfully
-place_design: Time (s): cpu = 00:01:33 ; elapsed = 00:01:03 . Memory (MB): peak = 1785.750 ; gain = 0.000
+place_design: Time (s): cpu = 00:01:27 ; elapsed = 00:01:01 . Memory (MB): peak = 1793.809 ; gain = 0.000
 INFO: [Timing 38-480] Writing timing data to binary archive.
 Writing placer database...
 Writing XDEF routing.
 Writing XDEF routing logical nets.
 Writing XDEF routing special nets.
-Write XDEF Complete: Time (s): cpu = 00:00:06 ; elapsed = 00:00:02 . Memory (MB): peak = 1785.750 ; gain = 0.000
+Write XDEF Complete: Time (s): cpu = 00:00:06 ; elapsed = 00:00:02 . Memory (MB): peak = 1793.809 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'V:/hardware/m3_for_arty_a7/m3_for_arty_a7/m3_for_arty_a7.runs/impl_1/m3_for_arty_a7_wrapper_placed.dcp' has been generated.
-write_checkpoint: Time (s): cpu = 00:00:09 ; elapsed = 00:00:06 . Memory (MB): peak = 1785.750 ; gain = 0.000
+write_checkpoint: Time (s): cpu = 00:00:09 ; elapsed = 00:00:06 . Memory (MB): peak = 1793.809 ; gain = 0.000
 INFO: [runtcl-4] Executing : report_io -file m3_for_arty_a7_wrapper_io_placed.rpt
-report_io: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.054 . Memory (MB): peak = 1785.750 ; gain = 0.000
+report_io: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.056 . Memory (MB): peak = 1793.809 ; gain = 0.000
 INFO: [runtcl-4] Executing : report_utilization -file m3_for_arty_a7_wrapper_utilization_placed.rpt -pb m3_for_arty_a7_wrapper_utilization_placed.pb
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.269 . Memory (MB): peak = 1785.750 ; gain = 0.000
+report_utilization: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.262 . Memory (MB): peak = 1793.809 ; gain = 0.000
 INFO: [runtcl-4] Executing : report_control_sets -verbose -file m3_for_arty_a7_wrapper_control_sets_placed.rpt
-report_control_sets: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.113 . Memory (MB): peak = 1785.750 ; gain = 0.000
+report_control_sets: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.109 . Memory (MB): peak = 1793.809 ; gain = 0.000
 Command: route_design
 Attempting to get a license for feature 'Implementation' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a100t'
@@ -574,180 +640,144 @@ INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more in
 
 Starting Routing Task
 INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 2 CPUs
-Checksum: PlaceDB: b0964f8e ConstDB: 0 ShapeSum: 8f30ae30 RouteDB: 0
+Checksum: PlaceDB: ef987c85 ConstDB: 0 ShapeSum: 8d0b2d11 RouteDB: 0
 
 Phase 1 Build RT Design
-Phase 1 Build RT Design | Checksum: 9b4d0c7a
+Phase 1 Build RT Design | Checksum: 8667ac13
 
-Time (s): cpu = 00:00:34 ; elapsed = 00:00:28 . Memory (MB): peak = 1785.750 ; gain = 0.000
-Post Restoration Checksum: NetGraph: 36f7a949 NumContArr: 64556331 Constraints: 0 Timing: 0
+Time (s): cpu = 00:00:35 ; elapsed = 00:00:29 . Memory (MB): peak = 1793.809 ; gain = 0.000
+Post Restoration Checksum: NetGraph: 3bb75f7a NumContArr: 4ab04c99 Constraints: 0 Timing: 0
 
 Phase 2 Router Initialization
 
 Phase 2.1 Create Timer
-Phase 2.1 Create Timer | Checksum: 9b4d0c7a
+Phase 2.1 Create Timer | Checksum: 8667ac13
 
-Time (s): cpu = 00:00:35 ; elapsed = 00:00:29 . Memory (MB): peak = 1785.750 ; gain = 0.000
+Time (s): cpu = 00:00:36 ; elapsed = 00:00:29 . Memory (MB): peak = 1793.809 ; gain = 0.000
 
 Phase 2.2 Fix Topology Constraints
-Phase 2.2 Fix Topology Constraints | Checksum: 9b4d0c7a
+Phase 2.2 Fix Topology Constraints | Checksum: 8667ac13
 
-Time (s): cpu = 00:00:35 ; elapsed = 00:00:29 . Memory (MB): peak = 1785.750 ; gain = 0.000
+Time (s): cpu = 00:00:36 ; elapsed = 00:00:30 . Memory (MB): peak = 1793.809 ; gain = 0.000
 
 Phase 2.3 Pre Route Cleanup
-Phase 2.3 Pre Route Cleanup | Checksum: 9b4d0c7a
+Phase 2.3 Pre Route Cleanup | Checksum: 8667ac13
 
-Time (s): cpu = 00:00:35 ; elapsed = 00:00:29 . Memory (MB): peak = 1785.750 ; gain = 0.000
+Time (s): cpu = 00:00:36 ; elapsed = 00:00:30 . Memory (MB): peak = 1793.809 ; gain = 0.000
  Number of Nodes with overlaps = 0
 
 Phase 2.4 Update Timing
-Phase 2.4 Update Timing | Checksum: 9f15d99a
+Phase 2.4 Update Timing | Checksum: e69f991f
 
-Time (s): cpu = 00:00:45 ; elapsed = 00:00:36 . Memory (MB): peak = 1785.750 ; gain = 0.000
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.773  | TNS=0.000  | WHS=-4.924 | THS=-554.039|
+Time (s): cpu = 00:00:46 ; elapsed = 00:00:36 . Memory (MB): peak = 1793.809 ; gain = 0.000
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.722  | TNS=0.000  | WHS=-4.129 | THS=-580.135|
 
 
 Phase 2.5 Update Timing for Bus Skew
 
 Phase 2.5.1 Update Timing
-Phase 2.5.1 Update Timing | Checksum: b65e8717
+Phase 2.5.1 Update Timing | Checksum: 154ec996c
 
-Time (s): cpu = 00:00:52 ; elapsed = 00:00:39 . Memory (MB): peak = 1786.766 ; gain = 1.016
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.773  | TNS=0.000  | WHS=N/A    | THS=N/A    |
+Time (s): cpu = 00:00:52 ; elapsed = 00:00:40 . Memory (MB): peak = 1801.871 ; gain = 8.062
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.722  | TNS=0.000  | WHS=N/A    | THS=N/A    |
 
-Phase 2.5 Update Timing for Bus Skew | Checksum: 10dff6f71
+Phase 2.5 Update Timing for Bus Skew | Checksum: 13d115d3e
 
-Time (s): cpu = 00:00:52 ; elapsed = 00:00:40 . Memory (MB): peak = 1792.277 ; gain = 6.527
-Phase 2 Router Initialization | Checksum: 2c265a9c
+Time (s): cpu = 00:00:52 ; elapsed = 00:00:40 . Memory (MB): peak = 1807.363 ; gain = 13.555
+Phase 2 Router Initialization | Checksum: 153d103a1
 
-Time (s): cpu = 00:00:52 ; elapsed = 00:00:40 . Memory (MB): peak = 1792.277 ; gain = 6.527
+Time (s): cpu = 00:00:52 ; elapsed = 00:00:40 . Memory (MB): peak = 1807.363 ; gain = 13.555
 
 Phase 3 Initial Routing
-Phase 3 Initial Routing | Checksum: 1789487c6
+Phase 3 Initial Routing | Checksum: 1c528de1b
 
-Time (s): cpu = 00:01:16 ; elapsed = 00:00:52 . Memory (MB): peak = 1815.438 ; gain = 29.688
+Time (s): cpu = 00:01:04 ; elapsed = 00:00:46 . Memory (MB): peak = 1816.016 ; gain = 22.207
 
 Phase 4 Rip-up And Reroute
 
 Phase 4.1 Global Iteration 0
- Number of Nodes with overlaps = 9884
- Number of Nodes with overlaps = 3672
- Number of Nodes with overlaps = 1802
- Number of Nodes with overlaps = 648
- Number of Nodes with overlaps = 317
- Number of Nodes with overlaps = 164
- Number of Nodes with overlaps = 58
- Number of Nodes with overlaps = 28
- Number of Nodes with overlaps = 13
- Number of Nodes with overlaps = 4
- Number of Nodes with overlaps = 3
- Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 9421
+ Number of Nodes with overlaps = 3568
+ Number of Nodes with overlaps = 1643
+ Number of Nodes with overlaps = 712
+ Number of Nodes with overlaps = 274
+ Number of Nodes with overlaps = 91
+ Number of Nodes with overlaps = 60
+ Number of Nodes with overlaps = 16
+ Number of Nodes with overlaps = 6
  Number of Nodes with overlaps = 0
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=-2.249 | TNS=-8.904 | WHS=N/A    | THS=N/A    |
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.202 | TNS=-0.202 | WHS=N/A    | THS=N/A    |
 
-Phase 4.1 Global Iteration 0 | Checksum: 131635b81
+Phase 4.1 Global Iteration 0 | Checksum: 1dc679c76
 
-Time (s): cpu = 00:02:58 ; elapsed = 00:01:48 . Memory (MB): peak = 1815.438 ; gain = 29.688
+Time (s): cpu = 00:02:33 ; elapsed = 00:01:34 . Memory (MB): peak = 1816.016 ; gain = 22.207
 
 Phase 4.2 Global Iteration 1
- Number of Nodes with overlaps = 69
- Number of Nodes with overlaps = 528
- Number of Nodes with overlaps = 213
- Number of Nodes with overlaps = 134
- Number of Nodes with overlaps = 97
- Number of Nodes with overlaps = 39
- Number of Nodes with overlaps = 35
- Number of Nodes with overlaps = 26
- Number of Nodes with overlaps = 12
- Number of Nodes with overlaps = 10
+ Number of Nodes with overlaps = 1754
+ Number of Nodes with overlaps = 813
+ Number of Nodes with overlaps = 348
+ Number of Nodes with overlaps = 162
+ Number of Nodes with overlaps = 66
+ Number of Nodes with overlaps = 48
+ Number of Nodes with overlaps = 17
  Number of Nodes with overlaps = 5
- Number of Nodes with overlaps = 3
- Number of Nodes with overlaps = 2
- Number of Nodes with overlaps = 1
- Number of Nodes with overlaps = 4
- Number of Nodes with overlaps = 1
  Number of Nodes with overlaps = 0
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=-1.005 | TNS=-1.753 | WHS=N/A    | THS=N/A    |
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.386 | TNS=-1.793 | WHS=N/A    | THS=N/A    |
 
-Phase 4.2 Global Iteration 1 | Checksum: 15e3d4da9
+Phase 4.2 Global Iteration 1 | Checksum: 145e92e5d
 
-Time (s): cpu = 00:03:36 ; elapsed = 00:02:13 . Memory (MB): peak = 1815.438 ; gain = 29.688
+Time (s): cpu = 00:03:02 ; elapsed = 00:01:51 . Memory (MB): peak = 1816.016 ; gain = 22.207
+Phase 4 Rip-up And Reroute | Checksum: 145e92e5d
 
-Phase 4.3 Global Iteration 2
- Number of Nodes with overlaps = 1383
- Number of Nodes with overlaps = 692
- Number of Nodes with overlaps = 316
- Number of Nodes with overlaps = 195
- Number of Nodes with overlaps = 84
- Number of Nodes with overlaps = 76
- Number of Nodes with overlaps = 47
- Number of Nodes with overlaps = 47
- Number of Nodes with overlaps = 16
- Number of Nodes with overlaps = 10
- Number of Nodes with overlaps = 5
- Number of Nodes with overlaps = 3
- Number of Nodes with overlaps = 2
- Number of Nodes with overlaps = 1
- Number of Nodes with overlaps = 0
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.269 | TNS=-0.439 | WHS=N/A    | THS=N/A    |
-
-Phase 4.3 Global Iteration 2 | Checksum: 200cbf2d5
-
-Time (s): cpu = 00:04:35 ; elapsed = 00:02:53 . Memory (MB): peak = 1833.992 ; gain = 48.242
-Phase 4 Rip-up And Reroute | Checksum: 200cbf2d5
-
-Time (s): cpu = 00:04:35 ; elapsed = 00:02:53 . Memory (MB): peak = 1833.992 ; gain = 48.242
+Time (s): cpu = 00:03:02 ; elapsed = 00:01:51 . Memory (MB): peak = 1816.016 ; gain = 22.207
 
 Phase 5 Delay and Skew Optimization
 
 Phase 5.1 Delay CleanUp
 
 Phase 5.1.1 Update Timing
-Phase 5.1.1 Update Timing | Checksum: 1e1648722
+Phase 5.1.1 Update Timing | Checksum: 162dee383
 
-Time (s): cpu = 00:04:37 ; elapsed = 00:02:54 . Memory (MB): peak = 1833.992 ; gain = 48.242
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.269 | TNS=-0.439 | WHS=N/A    | THS=N/A    |
+Time (s): cpu = 00:03:05 ; elapsed = 00:01:53 . Memory (MB): peak = 1816.016 ; gain = 22.207
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.202 | TNS=-0.202 | WHS=N/A    | THS=N/A    |
 
-Phase 5.1 Delay CleanUp | Checksum: 250d9a8dd
+Phase 5.1 Delay CleanUp | Checksum: 1980af5b5
 
-Time (s): cpu = 00:04:38 ; elapsed = 00:02:54 . Memory (MB): peak = 1833.992 ; gain = 48.242
+Time (s): cpu = 00:03:06 ; elapsed = 00:01:53 . Memory (MB): peak = 1816.016 ; gain = 22.207
 
 Phase 5.2 Clock Skew Optimization
-Phase 5.2 Clock Skew Optimization | Checksum: 250d9a8dd
+Phase 5.2 Clock Skew Optimization | Checksum: 1980af5b5
 
-Time (s): cpu = 00:04:38 ; elapsed = 00:02:54 . Memory (MB): peak = 1833.992 ; gain = 48.242
-Phase 5 Delay and Skew Optimization | Checksum: 250d9a8dd
+Time (s): cpu = 00:03:06 ; elapsed = 00:01:53 . Memory (MB): peak = 1816.016 ; gain = 22.207
+Phase 5 Delay and Skew Optimization | Checksum: 1980af5b5
 
-Time (s): cpu = 00:04:38 ; elapsed = 00:02:54 . Memory (MB): peak = 1833.992 ; gain = 48.242
+Time (s): cpu = 00:03:06 ; elapsed = 00:01:53 . Memory (MB): peak = 1816.016 ; gain = 22.207
 
 Phase 6 Post Hold Fix
 
 Phase 6.1 Hold Fix Iter
 
 Phase 6.1.1 Update Timing
-Phase 6.1.1 Update Timing | Checksum: 208d987e6
+Phase 6.1.1 Update Timing | Checksum: 13e603282
 
-Time (s): cpu = 00:04:40 ; elapsed = 00:02:56 . Memory (MB): peak = 1833.992 ; gain = 48.242
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.269 | TNS=-0.439 | WHS=-4.175 | THS=-4.175 |
+Time (s): cpu = 00:03:08 ; elapsed = 00:01:55 . Memory (MB): peak = 1816.016 ; gain = 22.207
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.202 | TNS=-0.202 | WHS=-4.048 | THS=-16.057|
 
-Phase 6.1 Hold Fix Iter | Checksum: 1a5c8d530
+Phase 6.1 Hold Fix Iter | Checksum: 1a4393f79
 
-Time (s): cpu = 00:04:41 ; elapsed = 00:02:56 . Memory (MB): peak = 1833.992 ; gain = 48.242
-WARNING: [Route 35-468] The router encountered 4 pins that are both setup-critical and hold-critical and tried to fix hold violations at the expense of setup slack. Such pins are:
-	m3_for_arty_a7_i/Cortex_M3_0/inst/u_CORTEXM3INTEGRATION/uDAPSWJDP/uDAPSwDpProtocol/IfaceRdyAc_i_3/I5
-	m3_for_arty_a7_i/Cortex_M3_0/inst/u_CORTEXM3INTEGRATION/uDAPSWJDP/uDAPSwDpProtocol/ErrorChk_i_1/I2
-	m3_for_arty_a7_i/Cortex_M3_0/inst/u_CORTEXM3INTEGRATION/uDAPSWJDP/uDAPSwDpProtocol/IfaceRdyAc_i_1/I1
-	m3_for_arty_a7_i/Cortex_M3_0/inst/u_CORTEXM3INTEGRATION/uDAPSWJDP/uDAPSwDpProtocol/RespFaultReg_i_1/I4
+Time (s): cpu = 00:03:09 ; elapsed = 00:01:55 . Memory (MB): peak = 1816.016 ; gain = 22.207
+WARNING: [Route 35-468] The router encountered 1 pins that are both setup-critical and hold-critical and tried to fix hold violations at the expense of setup slack. Such pins are:
+	m3_for_arty_a7_i/Cortex_M3_0/inst/u_CORTEXM3INTEGRATION/uDAPSWJDP/uDAPSwjWatcher/FSM_onehot_State_cdc_check[16]_i_1/I4
 
-Phase 6 Post Hold Fix | Checksum: 22ef16c47
+Phase 6 Post Hold Fix | Checksum: 132b975d4
 
-Time (s): cpu = 00:04:41 ; elapsed = 00:02:56 . Memory (MB): peak = 1833.992 ; gain = 48.242
+Time (s): cpu = 00:03:09 ; elapsed = 00:01:55 . Memory (MB): peak = 1816.016 ; gain = 22.207
 
 Phase 7 Route finalize
 
 Router Utilization Summary
-  Global Vertical Routing Utilization    = 7.45385 %
-  Global Horizontal Routing Utilization  = 9.30428 %
+  Global Vertical Routing Utilization    = 6.87649 %
+  Global Horizontal Routing Utilization  = 9.05321 %
   Routable Net Status*
   *Does not include unroutable nets such as driverless and loadless.
   Run report_route_status for detailed report.
@@ -757,17 +787,15 @@ Router Utilization Summary
   Number of Node Overlaps             = 0
 
 Congestion Report
-North Dir 1x1 Area, Max Cong = 72.0721%, No Congested Regions.
-South Dir 1x1 Area, Max Cong = 76.5766%, No Congested Regions.
-East Dir 1x1 Area, Max Cong = 92.6471%, Congestion bounded by tiles (Lower Left Tile -> Upper Right Tile):
-   INT_L_X38Y86 -> INT_L_X38Y86
-   INT_R_X37Y83 -> INT_R_X37Y83
-   INT_L_X40Y82 -> INT_L_X40Y82
-West Dir 1x1 Area, Max Cong = 91.1765%, Congestion bounded by tiles (Lower Left Tile -> Upper Right Tile):
-   INT_R_X45Y106 -> INT_R_X45Y106
-   INT_L_X48Y103 -> INT_L_X48Y103
-   INT_R_X47Y100 -> INT_R_X47Y100
-   INT_L_X50Y100 -> INT_L_X50Y100
+North Dir 1x1 Area, Max Cong = 71.1712%, No Congested Regions.
+South Dir 1x1 Area, Max Cong = 72.973%, No Congested Regions.
+East Dir 1x1 Area, Max Cong = 97.0588%, Congestion bounded by tiles (Lower Left Tile -> Upper Right Tile):
+   INT_L_X36Y132 -> INT_L_X36Y132
+   INT_L_X36Y129 -> INT_L_X36Y129
+   INT_L_X38Y128 -> INT_L_X38Y128
+   INT_R_X43Y104 -> INT_R_X43Y104
+West Dir 1x1 Area, Max Cong = 85.2941%, Congestion bounded by tiles (Lower Left Tile -> Upper Right Tile):
+   INT_R_X37Y131 -> INT_R_X37Y131
 
 ------------------------------
 Reporting congestion hotspots
@@ -783,58 +811,58 @@ Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
 Direction: East
 ----------------
 Congested clusters found at Level 0
-Effective congestion level: 1 Aspect Ratio: 1 Sparse Ratio: 0.75
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 1
 Direction: West
 ----------------
 Congested clusters found at Level 0
 Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 1
 
-Phase 7 Route finalize | Checksum: 1ebf33f25
+Phase 7 Route finalize | Checksum: 1c1e5efd9
 
-Time (s): cpu = 00:04:41 ; elapsed = 00:02:56 . Memory (MB): peak = 1833.992 ; gain = 48.242
+Time (s): cpu = 00:03:09 ; elapsed = 00:01:55 . Memory (MB): peak = 1816.016 ; gain = 22.207
 
 Phase 8 Verifying routed nets
 
  Verification completed successfully
-Phase 8 Verifying routed nets | Checksum: 1ebf33f25
+Phase 8 Verifying routed nets | Checksum: 1c1e5efd9
 
-Time (s): cpu = 00:04:41 ; elapsed = 00:02:56 . Memory (MB): peak = 1833.992 ; gain = 48.242
+Time (s): cpu = 00:03:09 ; elapsed = 00:01:55 . Memory (MB): peak = 1816.016 ; gain = 22.207
 
 Phase 9 Depositing Routes
-Phase 9 Depositing Routes | Checksum: 22ff2a286
+Phase 9 Depositing Routes | Checksum: 1421a041e
 
-Time (s): cpu = 00:04:44 ; elapsed = 00:03:00 . Memory (MB): peak = 1833.992 ; gain = 48.242
+Time (s): cpu = 00:03:12 ; elapsed = 00:01:58 . Memory (MB): peak = 1816.016 ; gain = 22.207
 
 Phase 10 Post Router Timing
 
 Phase 10.1 Update Timing
-Phase 10.1 Update Timing | Checksum: 29a699640
+Phase 10.1 Update Timing | Checksum: db7df449
 
-Time (s): cpu = 00:04:47 ; elapsed = 00:03:01 . Memory (MB): peak = 1833.992 ; gain = 48.242
-INFO: [Route 35-57] Estimated Timing Summary | WNS=-0.269 | TNS=-0.439 | WHS=0.067  | THS=0.000  |
+Time (s): cpu = 00:03:14 ; elapsed = 00:02:00 . Memory (MB): peak = 1816.016 ; gain = 22.207
+INFO: [Route 35-57] Estimated Timing Summary | WNS=-0.202 | TNS=-0.202 | WHS=0.052  | THS=0.000  |
 
 WARNING: [Route 35-328] Router estimated timing not met.
 Resolution: For a complete and accurate timing signoff, report_timing_summary must be run after route_design. Alternatively, route_design can be run with the -timing_summary option to enable a complete timing signoff at the end of route_design.
-Phase 10 Post Router Timing | Checksum: 29a699640
+Phase 10 Post Router Timing | Checksum: db7df449
 
-Time (s): cpu = 00:04:47 ; elapsed = 00:03:01 . Memory (MB): peak = 1833.992 ; gain = 48.242
+Time (s): cpu = 00:03:15 ; elapsed = 00:02:00 . Memory (MB): peak = 1816.016 ; gain = 22.207
 INFO: [Route 35-16] Router Completed Successfully
 
-Time (s): cpu = 00:04:47 ; elapsed = 00:03:01 . Memory (MB): peak = 1833.992 ; gain = 48.242
+Time (s): cpu = 00:03:15 ; elapsed = 00:02:00 . Memory (MB): peak = 1816.016 ; gain = 22.207
 
 Routing Is Done.
 INFO: [Common 17-83] Releasing license: Implementation
-83 Infos, 53 Warnings, 4 Critical Warnings and 0 Errors encountered.
+85 Infos, 55 Warnings, 16 Critical Warnings and 0 Errors encountered.
 route_design completed successfully
-route_design: Time (s): cpu = 00:04:52 ; elapsed = 00:03:04 . Memory (MB): peak = 1833.992 ; gain = 48.242
+route_design: Time (s): cpu = 00:03:19 ; elapsed = 00:02:02 . Memory (MB): peak = 1816.016 ; gain = 22.207
 INFO: [Timing 38-480] Writing timing data to binary archive.
 Writing placer database...
 Writing XDEF routing.
 Writing XDEF routing logical nets.
 Writing XDEF routing special nets.
-Write XDEF Complete: Time (s): cpu = 00:00:07 ; elapsed = 00:00:03 . Memory (MB): peak = 1833.992 ; gain = 0.000
+Write XDEF Complete: Time (s): cpu = 00:00:07 ; elapsed = 00:00:03 . Memory (MB): peak = 1816.016 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'V:/hardware/m3_for_arty_a7/m3_for_arty_a7/m3_for_arty_a7.runs/impl_1/m3_for_arty_a7_wrapper_routed.dcp' has been generated.
-write_checkpoint: Time (s): cpu = 00:00:10 ; elapsed = 00:00:06 . Memory (MB): peak = 1833.992 ; gain = 0.000
+write_checkpoint: Time (s): cpu = 00:00:10 ; elapsed = 00:00:06 . Memory (MB): peak = 1816.016 ; gain = 0.000
 INFO: [runtcl-4] Executing : report_drc -file m3_for_arty_a7_wrapper_drc_routed.rpt -pb m3_for_arty_a7_wrapper_drc_routed.pb -rpx m3_for_arty_a7_wrapper_drc_routed.rpx
 Command: report_drc -file m3_for_arty_a7_wrapper_drc_routed.rpt -pb m3_for_arty_a7_wrapper_drc_routed.pb -rpx m3_for_arty_a7_wrapper_drc_routed.rpx
 INFO: [DRC 23-27] Running DRC with 2 threads
@@ -846,24 +874,40 @@ INFO: [Constraints 18-483] create_clock: no pin(s)/port(s)/net(s) specified as o
 INFO: [Timing 38-35] Done setting XDC timing constraints.
 INFO: [Constraints 18-483] create_clock: no pin(s)/port(s)/net(s) specified as objects, only virtual clock 'slow_out_clk' will be created. If you don't want this, please specify pin(s)/ports(s)/net(s) as objects to the command. [V:/hardware/m3_for_arty_a7/constraints/m3_for_arty_a7.xdc:119]
 INFO: [Timing 38-35] Done setting XDC timing constraints.
+CRITICAL WARNING: [Timing 38-285] Generated clock dap_qspi_clk with source pin m3_for_arty_a7_i/daplink_if_0/axi_xip_quad_spi_0/sck_o does not have a valid master clock or valid waveform.
+Resolution: Check that either a master clock has been defined on the source pin of the generated clock or that a clock reaches that source pin. The waveform of the master clock must be valid.
+CRITICAL WARNING: [Timing 38-285] Generated clock dap_spi_clk with source pin m3_for_arty_a7_i/daplink_if_0/axi_single_spi_0/sck_o does not have a valid master clock or valid waveform.
+Resolution: Check that either a master clock has been defined on the source pin of the generated clock or that a clock reaches that source pin. The waveform of the master clock must be valid.
 INFO: [DRC 23-133] Running Methodology with 2 threads
 INFO: [Coretcl 2-1520] The results of Report Methodology are in file V:/hardware/m3_for_arty_a7/m3_for_arty_a7/m3_for_arty_a7.runs/impl_1/m3_for_arty_a7_wrapper_methodology_drc_routed.rpt.
 report_methodology completed successfully
-report_methodology: Time (s): cpu = 00:00:19 ; elapsed = 00:00:11 . Memory (MB): peak = 1857.348 ; gain = 23.355
+report_methodology: Time (s): cpu = 00:00:19 ; elapsed = 00:00:11 . Memory (MB): peak = 1863.379 ; gain = 47.363
 INFO: [runtcl-4] Executing : report_power -file m3_for_arty_a7_wrapper_power_routed.rpt -pb m3_for_arty_a7_wrapper_power_summary_routed.pb -rpx m3_for_arty_a7_wrapper_power_routed.rpx
 Command: report_power -file m3_for_arty_a7_wrapper_power_routed.rpt -pb m3_for_arty_a7_wrapper_power_summary_routed.pb -rpx m3_for_arty_a7_wrapper_power_routed.rpx
 INFO: [Constraints 18-483] create_clock: no pin(s)/port(s)/net(s) specified as objects, only virtual clock 'slow_out_clk' will be created. If you don't want this, please specify pin(s)/ports(s)/net(s) as objects to the command. [V:/hardware/m3_for_arty_a7/constraints/m3_for_arty_a7.xdc:119]
 INFO: [Timing 38-35] Done setting XDC timing constraints.
+CRITICAL WARNING: [Timing 38-285] Generated clock dap_qspi_clk with source pin m3_for_arty_a7_i/daplink_if_0/axi_xip_quad_spi_0/sck_o does not have a valid master clock or valid waveform.
+Resolution: Check that either a master clock has been defined on the source pin of the generated clock or that a clock reaches that source pin. The waveform of the master clock must be valid.
+CRITICAL WARNING: [Timing 38-285] Generated clock dap_spi_clk with source pin m3_for_arty_a7_i/daplink_if_0/axi_single_spi_0/sck_o does not have a valid master clock or valid waveform.
+Resolution: Check that either a master clock has been defined on the source pin of the generated clock or that a clock reaches that source pin. The waveform of the master clock must be valid.
 Running Vector-less Activity Propagation...
+CRITICAL WARNING: [Timing 38-285] Generated clock dap_qspi_clk with source pin m3_for_arty_a7_i/daplink_if_0/axi_xip_quad_spi_0/sck_o does not have a valid master clock or valid waveform.
+Resolution: Check that either a master clock has been defined on the source pin of the generated clock or that a clock reaches that source pin. The waveform of the master clock must be valid.
+CRITICAL WARNING: [Timing 38-285] Generated clock dap_spi_clk with source pin m3_for_arty_a7_i/daplink_if_0/axi_single_spi_0/sck_o does not have a valid master clock or valid waveform.
+Resolution: Check that either a master clock has been defined on the source pin of the generated clock or that a clock reaches that source pin. The waveform of the master clock must be valid.
 
 Finished Running Vector-less Activity Propagation
-98 Infos, 53 Warnings, 4 Critical Warnings and 0 Errors encountered.
+100 Infos, 55 Warnings, 22 Critical Warnings and 0 Errors encountered.
 report_power completed successfully
-report_power: Time (s): cpu = 00:00:18 ; elapsed = 00:00:10 . Memory (MB): peak = 1925.871 ; gain = 68.523
+report_power: Time (s): cpu = 00:00:17 ; elapsed = 00:00:10 . Memory (MB): peak = 1928.266 ; gain = 64.887
 INFO: [runtcl-4] Executing : report_route_status -file m3_for_arty_a7_wrapper_route_status.rpt -pb m3_for_arty_a7_wrapper_route_status.pb
 INFO: [runtcl-4] Executing : report_timing_summary -max_paths 10 -file m3_for_arty_a7_wrapper_timing_summary_routed.rpt -pb m3_for_arty_a7_wrapper_timing_summary_routed.pb -rpx m3_for_arty_a7_wrapper_timing_summary_routed.rpx -warn_on_violation 
 INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max, Timing Stage: Requireds.
 INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+CRITICAL WARNING: [Timing 38-285] Generated clock dap_qspi_clk with source pin m3_for_arty_a7_i/daplink_if_0/axi_xip_quad_spi_0/sck_o does not have a valid master clock or valid waveform.
+Resolution: Check that either a master clock has been defined on the source pin of the generated clock or that a clock reaches that source pin. The waveform of the master clock must be valid.
+CRITICAL WARNING: [Timing 38-285] Generated clock dap_spi_clk with source pin m3_for_arty_a7_i/daplink_if_0/axi_single_spi_0/sck_o does not have a valid master clock or valid waveform.
+Resolution: Check that either a master clock has been defined on the source pin of the generated clock or that a clock reaches that source pin. The waveform of the master clock must be valid.
 CRITICAL WARNING: [Timing 38-282] The design failed to meet the timing requirements. Please see the timing summary report for details on the timing violations.
 WARNING: [Timing 38-436] There are set_bus_skew constraint(s) in this design. Please run report_bus_skew to ensure that bus skew requirements are met.
 INFO: [runtcl-4] Executing : report_incremental_reuse -file m3_for_arty_a7_wrapper_incremental_reuse_routed.rpt
@@ -872,12 +916,15 @@ INFO: [runtcl-4] Executing : report_clock_utilization -file m3_for_arty_a7_wrapp
 INFO: [runtcl-4] Executing : report_bus_skew -warn_on_violation -file m3_for_arty_a7_wrapper_bus_skew_routed.rpt -pb m3_for_arty_a7_wrapper_bus_skew_routed.pb -rpx m3_for_arty_a7_wrapper_bus_skew_routed.rpx
 INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max, Timing Stage: Requireds.
 INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+CRITICAL WARNING: [Timing 38-285] Generated clock dap_qspi_clk with source pin m3_for_arty_a7_i/daplink_if_0/axi_xip_quad_spi_0/sck_o does not have a valid master clock or valid waveform.
+Resolution: Check that either a master clock has been defined on the source pin of the generated clock or that a clock reaches that source pin. The waveform of the master clock must be valid.
+CRITICAL WARNING: [Timing 38-285] Generated clock dap_spi_clk with source pin m3_for_arty_a7_i/daplink_if_0/axi_single_spi_0/sck_o does not have a valid master clock or valid waveform.
+Resolution: Check that either a master clock has been defined on the source pin of the generated clock or that a clock reaches that source pin. The waveform of the master clock must be valid.
 INFO: [Memdata 28-208] The XPM instance: <m3_for_arty_a7_i/daplink_if_0/axi_xip_quad_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/XIP_MODE_GEN.AXI_QSPI_XIP_I/XIP_RECEIVE_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst> is part of IP: <m3_for_arty_a7_i/daplink_if_0/axi_xip_quad_spi_0>. This XPM instance will be excluded from the .mmi because updatemem is prohibited from making changes to an XPM that is part of an IP.
-INFO: [Memdata 28-208] The XPM instance: <m3_for_arty_a7_i/daplink_if_0/axi_single_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.TX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst> is part of IP: <m3_for_arty_a7_i/daplink_if_0/axi_single_spi_0>. This XPM instance will be excluded from the .mmi because updatemem is prohibited from making changes to an XPM that is part of an IP.
 INFO: [Memdata 28-208] The XPM instance: <m3_for_arty_a7_i/daplink_if_0/axi_single_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.RX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst> is part of IP: <m3_for_arty_a7_i/daplink_if_0/axi_single_spi_0>. This XPM instance will be excluded from the .mmi because updatemem is prohibited from making changes to an XPM that is part of an IP.
-INFO: [Memdata 28-208] The XPM instance: <m3_for_arty_a7_i/daplink_if_0/axi_quad_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/LOGIC_FOR_MD_12_GEN.SPI_MODE_1_LUT_LOGIC_I/QSPI_LOOK_UP_MODE_2_MEMORY_1.xpm_mem_gen_QSPI_LOOK_UP_MODE_2_MEMORY_1.xpm_memory_inst/xpm_memory_base_inst> is part of IP: <m3_for_arty_a7_i/daplink_if_0/axi_quad_spi_0>. This XPM instance will be excluded from the .mmi because updatemem is prohibited from making changes to an XPM that is part of an IP.
-INFO: [Memdata 28-208] The XPM instance: <m3_for_arty_a7_i/daplink_if_0/axi_quad_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.TX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst> is part of IP: <m3_for_arty_a7_i/daplink_if_0/axi_quad_spi_0>. This XPM instance will be excluded from the .mmi because updatemem is prohibited from making changes to an XPM that is part of an IP.
 INFO: [Memdata 28-208] The XPM instance: <m3_for_arty_a7_i/daplink_if_0/axi_quad_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.RX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst> is part of IP: <m3_for_arty_a7_i/daplink_if_0/axi_quad_spi_0>. This XPM instance will be excluded from the .mmi because updatemem is prohibited from making changes to an XPM that is part of an IP.
+INFO: [Memdata 28-208] The XPM instance: <m3_for_arty_a7_i/axi_single_spi_1/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.TX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst> is part of IP: <m3_for_arty_a7_i/axi_single_spi_1>. This XPM instance will be excluded from the .mmi because updatemem is prohibited from making changes to an XPM that is part of an IP.
+INFO: [Memdata 28-208] The XPM instance: <m3_for_arty_a7_i/axi_single_spi_1/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.RX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst> is part of IP: <m3_for_arty_a7_i/axi_single_spi_1>. This XPM instance will be excluded from the .mmi because updatemem is prohibited from making changes to an XPM that is part of an IP.
 INFO: [Memdata 28-208] The XPM instance: <m3_for_arty_a7_i/axi_quad_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/LOGIC_FOR_MD_12_GEN.SPI_MODE_1_LUT_LOGIC_I/QSPI_LOOK_UP_MODE_2_MEMORY_2.xpm_mem_gen_QSPI_LOOK_UP_MODE_2_MEMORY_2.xpm_memory_inst/xpm_memory_base_inst> is part of IP: <m3_for_arty_a7_i/axi_quad_spi_0>. This XPM instance will be excluded from the .mmi because updatemem is prohibited from making changes to an XPM that is part of an IP.
 INFO: [Memdata 28-208] The XPM instance: <m3_for_arty_a7_i/axi_quad_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.TX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst> is part of IP: <m3_for_arty_a7_i/axi_quad_spi_0>. This XPM instance will be excluded from the .mmi because updatemem is prohibited from making changes to an XPM that is part of an IP.
 INFO: [Memdata 28-208] The XPM instance: <m3_for_arty_a7_i/axi_quad_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.RX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst> is part of IP: <m3_for_arty_a7_i/axi_quad_spi_0>. This XPM instance will be excluded from the .mmi because updatemem is prohibited from making changes to an XPM that is part of an IP.
@@ -886,6 +933,10 @@ Attempting to get a license for feature 'Implementation' and/or device 'xc7a100t
 INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a100t'
 Running DRC as a precondition to command write_bitstream
 INFO: [DRC 23-27] Running DRC with 2 threads
+WARNING: [DRC BUFC-1] Input Buffer Connections: Input buffer m3_for_arty_a7_i/daplink_if_0/DAPLink_to_Arty_shield_0/shield_41_to_26_IOBUF[30]_inst/IBUF has no loads. It is recommended to have an input buffer drive an internal load.
+WARNING: [DRC BUFC-1] Input Buffer Connections: Input buffer m3_for_arty_a7_i/daplink_if_0/DAPLink_to_Arty_shield_0/shield_41_to_26_IOBUF[31]_inst/IBUF has no loads. It is recommended to have an input buffer drive an internal load.
+WARNING: [DRC BUFC-1] Input Buffer Connections: Input buffer m3_for_arty_a7_i/daplink_if_0/DAPLink_to_Arty_shield_0/shield_41_to_26_IOBUF[32]_inst/IBUF has no loads. It is recommended to have an input buffer drive an internal load.
+WARNING: [DRC BUFC-1] Input Buffer Connections: Input buffer m3_for_arty_a7_i/daplink_if_0/DAPLink_to_Arty_shield_0/shield_41_to_26_IOBUF[33]_inst/IBUF has no loads. It is recommended to have an input buffer drive an internal load.
 WARNING: [DRC BUFC-1] Input Buffer Connections: Input buffer m3_for_arty_a7_i/tri_io_buf_0/inst/genblk1[0].IOBUF_inst/IBUF has no loads. It is recommended to have an input buffer drive an internal load.
 WARNING: [DRC BUFC-1] Input Buffer Connections: Input buffer qspi_flash_sck_iobuf/IBUF has no loads. It is recommended to have an input buffer drive an internal load.
 WARNING: [DRC BUFC-1] Input Buffer Connections: Input buffer qspi_flash_ss_iobuf/IBUF has no loads. It is recommended to have an input buffer drive an internal load.
@@ -923,7 +974,7 @@ WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 m3_for_arty_a7
 WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 m3_for_arty_a7_i/Cortex_M3_0/inst/u_x_dtcm/genblk3[1].ram_block_reg_0_0 has an input control pin m3_for_arty_a7_i/Cortex_M3_0/inst/u_x_dtcm/genblk3[1].ram_block_reg_0_0/ADDRARDADDR[14] (net: m3_for_arty_a7_i/Cortex_M3_0/inst/u_x_dtcm/buf_addr_reg[12][12]) which is driven by a register (m3_for_arty_a7_i/Cortex_M3_0/inst/u_CORTEXM3INTEGRATION/uCORTEXM3/u_cm3_bus_matrix/u_cm3_mtx_input_stage_dcore/buffered_write_reg[1]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 m3_for_arty_a7_i/Cortex_M3_0/inst/u_x_dtcm/genblk3[1].ram_block_reg_0_0 has an input control pin m3_for_arty_a7_i/Cortex_M3_0/inst/u_x_dtcm/genblk3[1].ram_block_reg_0_0/ADDRARDADDR[14] (net: m3_for_arty_a7_i/Cortex_M3_0/inst/u_x_dtcm/buf_addr_reg[12][12]) which is driven by a register (m3_for_arty_a7_i/Cortex_M3_0/inst/u_CORTEXM3INTEGRATION/uCORTEXM3/u_cm3_bus_matrix/u_cm3_mtx_input_stage_dcore/mpu_canceld_reg_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 WARNING: [DRC REQP-1840] RAMB18 async control check: The RAMB18E1 m3_for_arty_a7_i/daplink_if_0/axi_xip_quad_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/XIP_MODE_GEN.AXI_QSPI_XIP_I/XIP_RECEIVE_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg has an input control pin m3_for_arty_a7_i/daplink_if_0/axi_xip_quad_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/XIP_MODE_GEN.AXI_QSPI_XIP_I/XIP_RECEIVE_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg/ENARDEN (net: m3_for_arty_a7_i/daplink_if_0/axi_xip_quad_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/XIP_MODE_GEN.AXI_QSPI_XIP_I/XIP_RECEIVE_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/enb) which is driven by a register (m3_for_arty_a7_i/Cortex_M3_0/inst/u_c_AhbSToAxi/uA11AhbLiteMToAxi/iRREADY_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-INFO: [Vivado 12-3199] DRC finished with 0 Errors, 37 Warnings
+INFO: [Vivado 12-3199] DRC finished with 0 Errors, 41 Warnings
 INFO: [Vivado 12-3200] Please refer to the DRC report (report_drc) for more information.
 INFO: [Designutils 20-2272] Running write_bitstream with 2 threads.
 Loading data files...
@@ -936,7 +987,7 @@ Writing bitstream ./m3_for_arty_a7_wrapper.bit...
 INFO: [Vivado 12-1842] Bitgen Completed Successfully.
 INFO: [Project 1-120] WebTalk data collection is mandatory when using a WebPACK part without a full Vivado license. To see the specific WebTalk data collected for your design, open the usage_statistics_webtalk.html or usage_statistics_webtalk.xml file in the implementation directory.
 INFO: [Common 17-83] Releasing license: Implementation
-125 Infos, 91 Warnings, 5 Critical Warnings and 0 Errors encountered.
+126 Infos, 97 Warnings, 27 Critical Warnings and 0 Errors encountered.
 write_bitstream completed successfully
-write_bitstream: Time (s): cpu = 00:00:33 ; elapsed = 00:00:24 . Memory (MB): peak = 2399.016 ; gain = 471.152
-INFO: [Common 17-206] Exiting Vivado at Tue Mar 29 16:49:41 2022...
+write_bitstream: Time (s): cpu = 00:00:33 ; elapsed = 00:00:24 . Memory (MB): peak = 2401.738 ; gain = 471.508
+INFO: [Common 17-206] Exiting Vivado at Tue Apr  5 16:06:43 2022...

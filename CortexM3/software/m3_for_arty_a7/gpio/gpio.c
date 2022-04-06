@@ -150,6 +150,7 @@ void GPIOTrg_Handler (void){
 			faseExc = TRUE;
 			XGpio_DiscreteWrite(&Gpio_Trigger, ARTY_A7_TrgOUT_CHANNEL, 0x4); //REVISAR (puede ser que sólo haga falta en simulación)
 		}
+		
 		// Clear interrupt from GPIO
 		XGpio_InterruptClear(&Gpio_Trigger, XGPIO_IR_MASK);
     // Clear interrupt in NVIC

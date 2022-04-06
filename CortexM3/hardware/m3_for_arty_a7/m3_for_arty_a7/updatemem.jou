@@ -2,8 +2,8 @@
 # updatemem v2018.2 (64-bit)
 # SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
 # IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
-# Start of session at: Thu Mar 31 09:56:38 2022
-# Process ID: 15060
+# Start of session at: Wed Apr  6 11:23:39 2022
+# Process ID: 15392
 # Current directory: V:/hardware/m3_for_arty_a7/m3_for_arty_a7
 # Command line: updatemem.exe -mode batch -source D:/Programas/Xilinx/Vivado/2018.2/scripts/updatemem/main.tcl -notrace -tclargs -meminfo ./m3.mmi -data ./bram_a7.elf -proc dummy -bit ./m3_for_arty_a7.runs/impl_1/m3_for_arty_a7_wrapper.bit -out m3_for_arty_a7.bit -force
 # Log file: V:/hardware/m3_for_arty_a7/m3_for_arty_a7/updatemem.log

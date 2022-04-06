@@ -101,8 +101,11 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==m3_for_arty_a7_
 # IP: V:/hardware/m3_for_arty_a7/block_diagram/ip/m3_for_arty_a7_axi_gpio_2_0/m3_for_arty_a7_axi_gpio_2_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==m3_for_arty_a7_axi_gpio_2_0 || ORIG_REF_NAME==m3_for_arty_a7_axi_gpio_2_0} -quiet] -quiet
 
-# IP: v:/hardware/m3_for_arty_a7/block_diagram/ip/m3_for_arty_a7_axi_timer_0_0/m3_for_arty_a7_axi_timer_0_0.xci
+# IP: V:/hardware/m3_for_arty_a7/block_diagram/ip/m3_for_arty_a7_axi_timer_0_0/m3_for_arty_a7_axi_timer_0_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==m3_for_arty_a7_axi_timer_0_0 || ORIG_REF_NAME==m3_for_arty_a7_axi_timer_0_0} -quiet] -quiet
+
+# IP: v:/hardware/m3_for_arty_a7/block_diagram/ip/m3_for_arty_a7_axi_quad_spi_1_1/m3_for_arty_a7_axi_quad_spi_1_1.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==m3_for_arty_a7_axi_quad_spi_1_1 || ORIG_REF_NAME==m3_for_arty_a7_axi_quad_spi_1_1} -quiet] -quiet
 
 # IP: v:/hardware/m3_for_arty_a7/block_diagram/ip/m3_for_arty_a7_auto_pc_0/m3_for_arty_a7_auto_pc_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==m3_for_arty_a7_auto_pc_0 || ORIG_REF_NAME==m3_for_arty_a7_auto_pc_0} -quiet] -quiet
@@ -235,6 +238,17 @@ set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {R
 set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==m3_for_arty_a7_axi_timer_0_0 || ORIG_REF_NAME==m3_for_arty_a7_axi_timer_0_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
 
 # XDC: v:/hardware/m3_for_arty_a7/block_diagram/ip/m3_for_arty_a7_axi_timer_0_0/m3_for_arty_a7_axi_timer_0_0_ooc.xdc
+
+# XDC: v:/hardware/m3_for_arty_a7/block_diagram/ip/m3_for_arty_a7_axi_quad_spi_1_1/m3_for_arty_a7_axi_quad_spi_1_1_board.xdc
+set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==m3_for_arty_a7_axi_quad_spi_1_1 || ORIG_REF_NAME==m3_for_arty_a7_axi_quad_spi_1_1} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
+
+# XDC: v:/hardware/m3_for_arty_a7/block_diagram/ip/m3_for_arty_a7_axi_quad_spi_1_1/m3_for_arty_a7_axi_quad_spi_1_1.xdc
+#dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==m3_for_arty_a7_axi_quad_spi_1_1 || ORIG_REF_NAME==m3_for_arty_a7_axi_quad_spi_1_1} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
+
+# XDC: v:/hardware/m3_for_arty_a7/block_diagram/ip/m3_for_arty_a7_axi_quad_spi_1_1/m3_for_arty_a7_axi_quad_spi_1_1_ooc.xdc
+
+# XDC: v:/hardware/m3_for_arty_a7/block_diagram/ip/m3_for_arty_a7_axi_quad_spi_1_1/m3_for_arty_a7_axi_quad_spi_1_1_clocks.xdc
+#dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==m3_for_arty_a7_axi_quad_spi_1_1 || ORIG_REF_NAME==m3_for_arty_a7_axi_quad_spi_1_1} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
 
 # XDC: v:/hardware/m3_for_arty_a7/block_diagram/ip/m3_for_arty_a7_auto_pc_0/m3_for_arty_a7_auto_pc_0_ooc.xdc
 

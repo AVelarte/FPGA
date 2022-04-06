@@ -34,27 +34,27 @@ preplace netloc DAPLink_to_Arty_shie_1_UART 1 3 1 NJ
 preplace netloc axi_protocol_convert_0_M_AXI 1 1 1 N
 preplace netloc axi_xip_quad_spi_0_ip2intc_irpt 1 2 2 NJ 150 NJ
 preplace netloc axi_single_spi_0_ip2intc_irpt 1 2 2 NJ 700 NJ
-preplace netloc s_axi_aclk_1 1 0 2 0 230 340
-preplace netloc axi_single_spi_0_SPI_0 1 2 1 670
-preplace netloc s_axi_aresetn_1 1 0 2 -10 590 350
-preplace netloc axi_interconnect_0_M02_AXI 1 1 1 300
-preplace netloc axi_quad_spi_1_ip2intc_irpt 1 2 2 640J 260 NJ
-preplace netloc axi_xip_quad_spi_0_SPI_0 1 2 1 650
+preplace netloc s_axi_aclk_1 1 0 2 -20 180 320
+preplace netloc axi_single_spi_0_SPI_0 1 2 1 660
+preplace netloc s_axi_aresetn_1 1 0 2 -30 190 330
+preplace netloc axi_interconnect_0_M02_AXI 1 1 1 280
+preplace netloc axi_quad_spi_1_ip2intc_irpt 1 2 2 630J 260 NJ
+preplace netloc axi_xip_quad_spi_0_SPI_0 1 2 1 660
 preplace netloc DAPLink_to_Arty_shie_1_DAPLink_fittedn 1 3 1 NJ
 preplace netloc axi_quad_spi_1_SPI_0 1 2 1 N
 preplace netloc DAPLink_to_Arty_shie_1_SWRSTn 1 3 1 NJ
 preplace netloc DAPLink_to_Arty_shie_1_uart_rxd_axi 1 3 1 NJ
-preplace netloc axi_gpio_0_gpio_io_o 1 2 1 690
+preplace netloc axi_gpio_0_gpio_io_o 1 2 1 650
 preplace netloc DAPLink_to_Arty_shie_1_SWDI 1 3 1 NJ
-preplace netloc axi_interconnect_0_M00_AXI 1 1 1 300
-preplace netloc SWDO_1 1 0 3 NJ 200 310J 260 630J
-preplace netloc ext_spi_clk_1 1 0 3 NJ 220 330 440 640J
-preplace netloc axi_interconnect_0_M01_AXI 1 1 1 320
-preplace netloc SWDOEN_1 1 0 3 NJ 20 NJ 20 660J
+preplace netloc axi_interconnect_0_M00_AXI 1 1 1 280
+preplace netloc SWDO_1 1 0 3 -40J 600 NJ 600 670J
+preplace netloc ext_spi_clk_1 1 0 3 NJ 220 310 440 630J
+preplace netloc axi_interconnect_0_M01_AXI 1 1 1 300
+preplace netloc SWDOEN_1 1 0 3 NJ 20 NJ 20 640J
 preplace netloc DAPLink_to_Arty_shie_1_SWCLK 1 3 1 NJ
-preplace netloc axi_interconnect_0_M03_AXI 1 1 1 310
-preplace netloc uart_txd_axi_1 1 0 3 NJ 600 NJ 600 680J
-levelinfo -pg 1 -30 150 490 820 970 -top 0 -bot 780
+preplace netloc axi_interconnect_0_M03_AXI 1 1 1 290
+preplace netloc uart_txd_axi_1 1 0 3 -50J 230 340J 260 620J
+levelinfo -pg 1 -70 130 480 810 960 -top 0 -bot 780
 ",
 }
 0

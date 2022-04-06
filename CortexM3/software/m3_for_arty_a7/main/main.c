@@ -37,53 +37,8 @@
 #include "tmr.h"
 
 /*******************************************************************/
-//volatile uint32_t msTicks = 0;
-//XGpio Gpio_Trigger;
 bool faseExc = FALSE;
 
-////////void SysTick_Handler(void){
-////////	//print("DONE");
-//////////	msTicks++;
-//////////	if(msTicks>20){
-////////	if(abiertos){
-//////////		XGpio_DiscreteWrite(&Gpio_Trigger, ARTY_A7_TrgOUT_CHANNEL, 0x0);
-////////		//print("Llega el fin de conteo del Systick, cierro los interruptores y apago el Systick.\r\n");		
-////////////		if(msTicks == 50){ //Pasan los 500ms
-////////////			msTicks = 0;
-////////			XGpio_DiscreteWrite(&Gpio_Trigger, ARTY_A7_TrgOUT_CHANNEL, 0x0);
-////////			SysTick->CTRL  = 0UL;
-////////			abiertos = FALSE;
-////////////		}else{
-////////////			msTicks++;
-////////////		}
-////////	}else{
-//////////		XGpio_DiscreteWrite(&Gpio_Trigger, ARTY_A7_TrgOUT_CHANNEL, 0xF);
-////////		//SysTick->CTRL  = 0UL;
-////////		XGpio_DiscreteWrite(&Gpio_Trigger, ARTY_A7_TrgOUT_CHANNEL, 0x4);
-////////		
-////////		//print("Llega el fin de conteo del Systick, abro los interruptores y cambio el periodo del Systick.\r\n");
-////////		
-////////		SysTick->CTRL  = 1UL;
-////////		SysTick_Config(5000000 * 3); //Salta una int. cada 100ms * valor_indicado (en este caso son 300 ms)
-////////		XGpio_DiscreteWrite(&Gpio_Trigger, ARTY_A7_TrgOUT_CHANNEL, 0xF);
-////////		abiertos = TRUE;
-////////	}
-//////////		//	uint32_t gpio_dip_switches3;
-//////////			//gpio_dip_switches3 = (XGpio_DiscreteRead(&Gpio_Trigger, ARTY_A7_TrgIN_CHANNEL) & 0x1);
-//////////			//	char msg3[24];
-//////////	//sprintf(msg3,"Valor 2: %d, bool: %d \r\n", gpio_dip_switches3, abiertos);  
-//////////			//	print(msg3);
-//////////	msTicks=0;
-//////////}
-////////}
-
-//int valorTimer;
-//void SysTick_Handler(void){
-//valorTimer = valorTimer0();
-//			char msg2[24];
-//			sprintf(msg2,"Valor Timer: %d\r\n", valorTimer);  
-//			print(msg2);
-//}
 int main (void)
 {
 
@@ -161,6 +116,7 @@ int main (void)
     }
 
     DisableSPIInterrupts();
+		
 
 
     // Set DAPLink QSPI to the normal read-write controller
@@ -235,14 +191,15 @@ int main (void)
     status = InitQSPIBaseFlash();
     status = WriteQSPIBaseFlash( spi_tx_data, sizeof(spi_tx_data)/sizeof(u8), 0x0 );
     status = ReadQSPIBaseFlash ( spi_rx_data, sizeof(spi_rx_data)/sizeof(u8), 0x0 );
-
+		//testSpiLVDS();
+		status = WriteSpiLVDS( spi_tx_data, sizeof(spi_tx_data)/sizeof(u8), 0x0 );
 
     // Manually type out, print does work when called back to back from a loop
-/*
+
     sprintf( debugStr, "%x %x %x %x %x %x %x %x\r\n", spi_rx_data[0], spi_rx_data[1], spi_rx_data[2], spi_rx_data[3], 
                                                    spi_rx_data[4], spi_rx_data[5], spi_rx_data[6], spi_rx_data[7] );
     print( debugStr );
-*/    
+    
     // Compare buffers
     readbackError = 0;
     for( i=0; i<(sizeof(spi_rx_data)/sizeof(u8)); i++ )
@@ -255,73 +212,12 @@ int main (void)
         print( "ERROR - Base SPI readback corrupted.\r\n" );
     else
         print( "Base SPI readback correct\r\n" );
-   
-
-    // ******************************************************
-    // Test exceptions.  Write to legal and illegal addresses
-    // ******************************************************
-/*    
-    // Do an access to an legal location
-    emptyLoc = *pLegalAddr;
-
-    // Do an access to an illegal location
-    emptyLoc = *pIllegalAddr;
-
-*/
-    // print( "Startup complete, entering main interrupt loop\r\n" );
 			
 		InitialiseTIMER0();
-		//testTIMER0();
-		
-		
-//		uint32_t returnCode;
-//		returnCode = SysTick_Config(5000000); // La referencia es 1ms cuando ponemos 50.000 (serán 5.000.000 para 100ms)
-//		if (returnCode != 0){
-//			print("Error al configurar el SysTick \r\n");
-//		}
-		
-    // Main loop.  Handle LEDs and switches via interrupt
-		
+		status = WriteSpiLVDS( spi_tx_data, sizeof(spi_tx_data)/sizeof(u8), 0x0 );
     while ( 1 )
     {			
 			
-        /* Main loop. Wait for interrupts to occur */
-        /*
-        if ( CheckUARTRxBytes() != 0 )
-            print ("x");
-        */
-//			if (msTicks>0){
-//				print("A F\r\n");
-//				XGpio_DiscreteWrite(&Gpio_Trigger, ARTY_A7_GPIO_TRIGGER, 0xF);
-//				msTicks++;
-////				uint32_t gpio_dip_switches2;
-////				gpio_dip_switches2 = (XGpio_DiscreteRead(&Gpio_Trigger, ARTY_A7_GPIO_TRIGGER) & 0x4) >> 2;
-////				char msg2[24];
-////				sprintf(msg2,"Valor 1: %d\r\n", gpio_dip_switches2);  
-////				print(msg2);
-//			}
-//			if (msTicks==10){
-//				print("A 0\r\n");
-//				msTicks=0;
-//				XGpio_DiscreteWrite(&Gpio_Trigger, ARTY_A7_GPIO_TRIGGER, 0x0);
-				
-				
-//				gpio_dip_switches3 = (XGpio_DiscreteRead(&Gpio_Trigger, ARTY_A7_GPIO_TRIGGER) & 0x4) >> 2;
-//				char msg3[24];
-//				sprintf(msg3,"Valor 2: %d\r\n", gpio_dip_switches3);  
-//				print(msg3);
-			//}	
-////////////			uint32_t gpio_trg = 0;
-////////////			gpio_trg = (XGpio_DiscreteRead(&Gpio_Trigger, ARTY_A7_GPIO_TRIGGER) & 0x4) >> 2;
-////////////			if (gpio_trg == 1){
-////////////				gpio_trg = 0;
-////////////				print("Llega Trigger del GPIO, inicio el Systick.\r\n");
-////////////				SysTick->CTRL  = 1UL;
-////////////				returnCode = SysTick_Config(500000);
-////////////			}
-			
-
-    // Read dip switches, change LEDs to match
     
     
     }

@@ -1,7 +1,7 @@
 //Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-//Date        : Tue Mar 29 16:28:46 2022
+//Date        : Tue Apr  5 15:50:59 2022
 //Host        : DESKTOP-661ESVO running 64-bit major release  (build 9200)
 //Command     : generate_target m3_for_arty_a7_wrapper.bd
 //Design      : m3_for_arty_a7_wrapper
@@ -17,6 +17,8 @@ module m3_for_arty_a7_wrapper
     TrgOUT_tri_o,
     dip_switches_4bits_tri_i,
     led_4bits_tri_o,
+    miso1,
+    mosi1,
     nTRST,
     push_buttons_4bits_tri_i,
     qspi_flash_io0_io,
@@ -27,6 +29,8 @@ module m3_for_arty_a7_wrapper
     qspi_flash_ss_io,
     reset,
     rgb_led_tri_o,
+    sck1,
+    ss1,
     sys_clock,
     usb_uart_rxd,
     usb_uart_txd);
@@ -37,6 +41,8 @@ module m3_for_arty_a7_wrapper
   output [3:0]TrgOUT_tri_o;
   input [3:0]dip_switches_4bits_tri_i;
   output [3:0]led_4bits_tri_o;
+  input miso1;
+  output mosi1;
   input nTRST;
   input [3:0]push_buttons_4bits_tri_i;
   inout qspi_flash_io0_io;
@@ -47,6 +53,8 @@ module m3_for_arty_a7_wrapper
   inout qspi_flash_ss_io;
   input reset;
   output [11:0]rgb_led_tri_o;
+  output sck1;
+  output [0:0]ss1;
   input sys_clock;
   input usb_uart_rxd;
   output usb_uart_txd;
@@ -58,6 +66,8 @@ module m3_for_arty_a7_wrapper
   wire [3:0]TrgOUT_tri_o;
   wire [3:0]dip_switches_4bits_tri_i;
   wire [3:0]led_4bits_tri_o;
+  wire miso1;
+  wire mosi1;
   wire nTRST;
   wire [3:0]push_buttons_4bits_tri_i;
   wire qspi_flash_io0_i;
@@ -86,6 +96,8 @@ module m3_for_arty_a7_wrapper
   wire qspi_flash_ss_t;
   wire reset;
   wire [11:0]rgb_led_tri_o;
+  wire sck1;
+  wire [0:0]ss1;
   wire sys_clock;
   wire usb_uart_rxd;
   wire usb_uart_txd;
@@ -98,6 +110,8 @@ module m3_for_arty_a7_wrapper
         .TrgOUT_tri_o(TrgOUT_tri_o),
         .dip_switches_4bits_tri_i(dip_switches_4bits_tri_i),
         .led_4bits_tri_o(led_4bits_tri_o),
+        .miso1(miso1),
+        .mosi1(mosi1),
         .nTRST(nTRST),
         .push_buttons_4bits_tri_i(push_buttons_4bits_tri_i),
         .qspi_flash_io0_i(qspi_flash_io0_i),
@@ -120,6 +134,8 @@ module m3_for_arty_a7_wrapper
         .qspi_flash_ss_t(qspi_flash_ss_t),
         .reset(reset),
         .rgb_led_tri_o(rgb_led_tri_o),
+        .sck1(sck1),
+        .ss1(ss1),
         .sys_clock(sys_clock),
         .usb_uart_rxd(usb_uart_rxd),
         .usb_uart_txd(usb_uart_txd));

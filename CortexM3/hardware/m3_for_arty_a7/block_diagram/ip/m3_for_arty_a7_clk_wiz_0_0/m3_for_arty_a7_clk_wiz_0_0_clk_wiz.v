@@ -56,8 +56,9 @@
 //  Output     Output      Phase    Duty Cycle   Pk-to-Pk     Phase
 //   Clock     Freq (MHz)  (degrees)    (%)     Jitter (ps)  Error (ps)
 //----------------------------------------------------------------------------
-// clk_out1____50.000______0.000______50.0______151.636_____98.575
-// clk_out2____50.000______0.000______50.0______151.636_____98.575
+// clk_out1____50.000______0.000______50.0______167.017____114.212
+// clk_out2____50.000______0.000______50.0______167.017____114.212
+// clk_out3____80.000______0.000______50.0______151.652____114.212
 //
 //----------------------------------------------------------------------------
 // Input Clock   Freq (MHz)    Input Jitter (UI)
@@ -72,6 +73,7 @@ module m3_for_arty_a7_clk_wiz_0_0_clk_wiz
   // Clock out ports
   output        clk_out1,
   output        clk_out2,
+  output        clk_out3,
   // Status and control signals
   output        locked,
   input         clk_in1
@@ -111,7 +113,6 @@ wire clk_in2_m3_for_arty_a7_clk_wiz_0_0;
   wire        clkfboutb_unused;
     wire clkout0b_unused;
    wire clkout1b_unused;
-   wire clkout2_unused;
    wire clkout2b_unused;
    wire clkout3_unused;
    wire clkout3b_unused;
@@ -126,6 +127,9 @@ wire clk_in2_m3_for_arty_a7_clk_wiz_0_0;
   (* KEEP = "TRUE" *) 
   (* ASYNC_REG = "TRUE" *)
   reg  [7 :0] seq_reg2 = 0;
+  (* KEEP = "TRUE" *) 
+  (* ASYNC_REG = "TRUE" *)
+  reg  [7 :0] seq_reg3 = 0;
 
   MMCME2_ADV
   #(.BANDWIDTH            ("OPTIMIZED"),
@@ -133,17 +137,21 @@ wire clk_in2_m3_for_arty_a7_clk_wiz_0_0;
     .COMPENSATION         ("ZHOLD"),
     .STARTUP_WAIT         ("FALSE"),
     .DIVCLK_DIVIDE        (1),
-    .CLKFBOUT_MULT_F      (10.000),
+    .CLKFBOUT_MULT_F      (8.000),
     .CLKFBOUT_PHASE       (0.000),
     .CLKFBOUT_USE_FINE_PS ("FALSE"),
-    .CLKOUT0_DIVIDE_F     (20.000),
+    .CLKOUT0_DIVIDE_F     (16.000),
     .CLKOUT0_PHASE        (0.000),
     .CLKOUT0_DUTY_CYCLE   (0.500),
     .CLKOUT0_USE_FINE_PS  ("FALSE"),
-    .CLKOUT1_DIVIDE       (20),
+    .CLKOUT1_DIVIDE       (16),
     .CLKOUT1_PHASE        (0.000),
     .CLKOUT1_DUTY_CYCLE   (0.500),
     .CLKOUT1_USE_FINE_PS  ("FALSE"),
+    .CLKOUT2_DIVIDE       (10),
+    .CLKOUT2_PHASE        (0.000),
+    .CLKOUT2_DUTY_CYCLE   (0.500),
+    .CLKOUT2_USE_FINE_PS  ("FALSE"),
     .CLKIN1_PERIOD        (10.000))
   mmcm_adv_inst
     // Output clocks
@@ -154,7 +162,7 @@ wire clk_in2_m3_for_arty_a7_clk_wiz_0_0;
     .CLKOUT0B            (clkout0b_unused),
     .CLKOUT1             (clk_out2_m3_for_arty_a7_clk_wiz_0_0),
     .CLKOUT1B            (clkout1b_unused),
-    .CLKOUT2             (clkout2_unused),
+    .CLKOUT2             (clk_out3_m3_for_arty_a7_clk_wiz_0_0),
     .CLKOUT2B            (clkout2b_unused),
     .CLKOUT3             (clkout3_unused),
     .CLKOUT3B            (clkout3b_unused),
@@ -226,6 +234,19 @@ wire clk_in2_m3_for_arty_a7_clk_wiz_0_0;
  
   always @(posedge clk_out2_m3_for_arty_a7_clk_wiz_0_0_en_clk)
         seq_reg2 <= {seq_reg2[6:0],locked_int};
+
+
+  BUFGCE clkout3_buf
+   (.O   (clk_out3),
+    .CE  (seq_reg3[7]),
+    .I   (clk_out3_m3_for_arty_a7_clk_wiz_0_0));
+ 
+  BUFH clkout3_buf_en
+   (.O   (clk_out3_m3_for_arty_a7_clk_wiz_0_0_en_clk),
+    .I   (clk_out3_m3_for_arty_a7_clk_wiz_0_0));
+ 
+  always @(posedge clk_out3_m3_for_arty_a7_clk_wiz_0_0_en_clk)
+        seq_reg3 <= {seq_reg3[6:0],locked_int};
 
 
 

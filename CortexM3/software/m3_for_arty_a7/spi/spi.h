@@ -23,4 +23,5 @@ int WriteSPIData( u8 * pbyte, int length );
 int InitQSPIBaseFlash( void );
 int WriteQSPIBaseFlash( u8 *pbytes, int length, u32 addr );
 int ReadQSPIBaseFlash( u8 *pbytes, int length, u32 addr );
-
+int testSpiLVDS( void );
+int WriteSpiLVDS ( u8 *pbytes, int length, u32 addr );

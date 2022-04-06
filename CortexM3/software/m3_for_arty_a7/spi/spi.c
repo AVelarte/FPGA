@@ -39,11 +39,15 @@ static XSpi QSPI_base;      /* The driver instance for the QSPI on the base boar
 //static XSpi QSPI_XIP_dap;   /* The driver instance for the QSPI XIP on the DAPLink board */
 //static XSpi QSPI_dap;       /* The driver instance for the normal QSPI on the DAPLink board */
 //static XSpi SPI_dap;        /* The driver instance for the SPI on the DAPLink board */
+static XSpi SPI_LVDS;
 
 // Local buffers relating to each QSPI instance
 // The buffers are set to be the size of the FIFO in hardware
 static u8 QSPI_base_tx_buf[XPAR_AXI_QUAD_SPI_0_FIFO_DEPTH];
 static u8 QSPI_base_rx_buf[XPAR_AXI_QUAD_SPI_0_FIFO_DEPTH];
+
+static u8 SPI_LVDS_tx_buf[XPAR_AXI_SINGLE_SPI_1_FIFO_DEPTH];
+static u8 SPI_LVDS_rx_buf[XPAR_AXI_SINGLE_SPI_1_FIFO_DEPTH];
 
 
 /*****************************************************************************/
@@ -72,9 +76,28 @@ int InitialiseSPI( int DapLinkFittedn )
     XSpi_SetSlaveSelect(&QSPI_base, 0x1);
 
     // If DAP link fitted, then initialise the other SPI peripherals here
-    
+		
+		// Inicializamos el SPI_LVDS
+    status = XSpi_Initialize(&SPI_LVDS, XPAR_AXI_SINGLE_SPI_1_DEVICE_ID);
+    if (status != XST_SUCCESS)  {
+        return XST_FAILURE;
+    }
+//		XSpi_Reset(&SPI_LVDS);
+		XSpi_Start(&SPI_LVDS);
+    XSpi_IntrGlobalDisable(&SPI_LVDS);
+		XSpi_SetSlaveSelect(&SPI_LVDS, 0x1);
+		
     return XST_SUCCESS;
     
+}
+int testSpiLVDS ( void ) 
+{
+	int status;
+	status = XSpi_SelfTest( &SPI_LVDS );
+	if (status != XST_SUCCESS)  {
+        return XST_FAILURE;
+    }
+	return XST_SUCCESS;
 }
 
 // Set SPI interrupts
@@ -82,7 +105,51 @@ void DisableSPIInterrupts( void )
 {
     // Disable interrupts from the base QSPI
     XSpi_IntrGlobalDisable(&QSPI_base);
+}
 
+int InitSpiLVDS ( void )
+{
+		u32 ControlReg;
+    int status;
+	
+		/*
+    * Setup the control register to enable master mode
+    */
+    ControlReg = XSpi_GetControlReg(&SPI_LVDS);
+    XSpi_SetControlReg(&SPI_LVDS, ControlReg | XSP_CR_MASTER_MODE_MASK);
+    
+//    // Set WEL
+//    SPI_LVDS_tx_buf[0] = 0x06;
+//    status = XSpi_Transfer(&QSPI_base, SPI_LVDS_tx_buf, NULL, 1);
+
+//    // Read status reg
+//    QSPI_base_tx_buf[0] = 0x05;
+//    QSPI_base_tx_buf[1] = 0xFF;
+//    status = XSpi_Transfer(&QSPI_base, QSPI_base_tx_buf, QSPI_base_rx_buf, 2);
+    
+    return status;
+}
+
+int WriteSpiLVDS ( u8 *pbytes, int length, u32 addr )
+{
+		int status;
+    u32 ControlReg;
+    u32 loop;
+		/*
+    * Setup the control register to enable master mode
+    */
+    ControlReg = XSpi_GetControlReg(&SPI_LVDS);
+    XSpi_SetControlReg(&SPI_LVDS, ControlReg | XSP_CR_MASTER_MODE_MASK);
+	
+	for (loop = 0; loop < length; loop++)
+        SPI_LVDS_tx_buf[loop] = *pbytes++;
+	// Write to spi
+    status = XSpi_Transfer(&SPI_LVDS, SPI_LVDS_tx_buf, NULL, length);
+	// Wait for command to complete
+    for (loop = 0; loop < 20000; loop++)
+    {}
+
+    return status;
 }
 
 int InitQSPIBaseFlash( void )

@@ -1,4 +1,4 @@
-17:33:19 **** Auto Build of project standalone_bsp_0 ****
+16:14:42 **** Build of project standalone_bsp_0 ****
 make -k all 
 "Running Make include in Cortex_M3_0/libsrc/bram_v4_2/src"
 make -C Cortex_M3_0/libsrc/bram_v4_2/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-march=armv6-m -mthumb -Wall -Wextra"
@@ -39,6 +39,7 @@ In file included from xbram_selftest.c:73:0:
 ../../../include/xil_cache.h:69:48: warning: unused parameter 'len' [-Wunused-parameter]
  void Xil_ICacheInvalidateRange(INTPTR adr, u32 len) {};
                                                 ^~~
+arm-none-eabi-ar: creating ../../../lib/libxil.a
 "Running Make libs in Cortex_M3_0/libsrc/cpu_cortexm3_v1_0/src"
 make -C Cortex_M3_0/libsrc/cpu_cortexm3_v1_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-march=armv6-m -mthumb -Wall -Wextra"
 "Compiling cpu_cortexm3"
@@ -81,5 +82,5 @@ make -C Cortex_M3_0/libsrc/uartlite_v3_2/src -s libs  "SHELL=CMD" "COMPILER=arm-
 "Compiling uartlite"
 'Finished building libraries'
 
-17:33:26 Build Finished (took 7s.591ms)
+16:14:50 Build Finished (took 7s.411ms)
 

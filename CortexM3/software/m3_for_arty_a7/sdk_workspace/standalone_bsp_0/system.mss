@@ -6,6 +6,8 @@ BEGIN OS
  PARAMETER OS_NAME = standalone
  PARAMETER OS_VER = 6.7
  PARAMETER PROC_INSTANCE = Cortex_M3_0
+ PARAMETER profile_timer = axi_timer_0
+ PARAMETER sleep_timer = axi_timer_0
  PARAMETER stdin = axi_uartlite_0
  PARAMETER stdout = axi_uartlite_0
 END
@@ -82,6 +84,12 @@ BEGIN DRIVER
  PARAMETER DRIVER_NAME = spi
  PARAMETER DRIVER_VER = 4.4
  PARAMETER HW_INSTANCE = daplink_if_0_axi_xip_quad_spi_0
+END
+
+BEGIN DRIVER
+ PARAMETER DRIVER_NAME = spi
+ PARAMETER DRIVER_VER = 4.4
+ PARAMETER HW_INSTANCE = axi_single_spi_1
 END
 
 

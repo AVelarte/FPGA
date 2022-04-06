@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date         : Tue Mar 29 16:49:02 2022
+| Date         : Tue Apr  5 16:06:04 2022
 | Host         : DESKTOP-661ESVO running 64-bit major release  (build 9200)
 | Command      : report_methodology -file m3_for_arty_a7_wrapper_methodology_drc_routed.rpt -pb m3_for_arty_a7_wrapper_methodology_drc_routed.pb -rpx m3_for_arty_a7_wrapper_methodology_drc_routed.rpx
 | Design       : m3_for_arty_a7_wrapper
@@ -23,16 +23,16 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 56
+             Violations found: 59
 +-----------+----------+-------------------------------------------------+------------+
 | Rule      | Severity | Description                                     | Violations |
 +-----------+----------+-------------------------------------------------+------------+
 | LUTAR-1   | Warning  | LUT drives async reset alert                    | 13         |
-| PDRC-190  | Warning  | Suboptimally placed synchronized register chain | 3          |
+| PDRC-190  | Warning  | Suboptimally placed synchronized register chain | 4          |
 | TIMING-9  | Warning  | Unknown CDC Logic                               | 1          |
 | TIMING-10 | Warning  | Missing property on synchronizer                | 1          |
 | TIMING-18 | Warning  | Missing input or output delay                   | 1          |
-| XDCB-5    | Warning  | Runtime inefficient way to find pin objects     | 3          |
+| XDCB-5    | Warning  | Runtime inefficient way to find pin objects     | 5          |
 | XDCH-2    | Warning  | Same min and max delay values on IO port        | 34         |
 +-----------+----------+-------------------------------------------------+------------+
 
@@ -40,7 +40,7 @@ Table of Contents
 -----------------
 LUTAR-1#1 Warning
 LUT drives async reset alert  
-LUT cell m3_for_arty_a7_i/Clocks_and_Resets/i_sysresetn_or/Res[0]_INST_0, with 2 or more inputs, drives asynchronous preset/clear pin(s) m3_for_arty_a7_i/Cortex_M3_0/inst/u_c_AhbSToAxi/uA11AhbLiteMToAxi/ABURST_reg[0]/CLR, m3_for_arty_a7_i/Cortex_M3_0/inst/u_c_AhbSToAxi/uA11AhbLiteMToAxi/ADDR_reg[0]/CLR, m3_for_arty_a7_i/Cortex_M3_0/inst/u_c_AhbSToAxi/uA11AhbLiteMToAxi/ADDR_reg[10]/CLR, m3_for_arty_a7_i/Cortex_M3_0/inst/u_c_AhbSToAxi/uA11AhbLiteMToAxi/ADDR_reg[11]/CLR, m3_for_arty_a7_i/Cortex_M3_0/inst/u_c_AhbSToAxi/uA11AhbLiteMToAxi/ADDR_reg[12]/CLR, m3_for_arty_a7_i/Cortex_M3_0/inst/u_c_AhbSToAxi/uA11AhbLiteMToAxi/ADDR_reg[13]/CLR, m3_for_arty_a7_i/Cortex_M3_0/inst/u_c_AhbSToAxi/uA11AhbLiteMToAxi/ADDR_reg[14]/CLR, m3_for_arty_a7_i/Cortex_M3_0/inst/u_c_AhbSToAxi/uA11AhbLiteMToAxi/ADDR_reg[15]/CLR, m3_for_arty_a7_i/Cortex_M3_0/inst/u_c_AhbSToAxi/uA11AhbLiteMToAxi/ADDR_reg[16]/CLR, m3_for_arty_a7_i/Cortex_M3_0/inst/u_c_AhbSToAxi/uA11AhbLiteMToAxi/ADDR_reg[17]/CLR, m3_for_arty_a7_i/Cortex_M3_0/inst/u_c_AhbSToAxi/uA11AhbLiteMToAxi/ADDR_reg[18]/CLR, m3_for_arty_a7_i/Cortex_M3_0/inst/u_c_AhbSToAxi/uA11AhbLiteMToAxi/ADDR_reg[19]/CLR, m3_for_arty_a7_i/Cortex_M3_0/inst/u_c_AhbSToAxi/uA11AhbLiteMToAxi/ADDR_reg[1]/CLR, m3_for_arty_a7_i/Cortex_M3_0/inst/u_c_AhbSToAxi/uA11AhbLiteMToAxi/ADDR_reg[20]/CLR, m3_for_arty_a7_i/Cortex_M3_0/inst/u_c_AhbSToAxi/uA11AhbLiteMToAxi/ADDR_reg[21]/CLR (the first 15 of 103 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell m3_for_arty_a7_i/Clocks_and_Resets/i_sysresetn_or/Res[0]_INST_0, with 2 or more inputs, drives asynchronous preset/clear pin(s) m3_for_arty_a7_i/Cortex_M3_0/inst/u_c_AhbSToAxi/uA11AhbLiteMToAxi/ABURST_reg[0]/CLR, m3_for_arty_a7_i/Cortex_M3_0/inst/u_c_AhbSToAxi/uA11AhbLiteMToAxi/AVALID_reg/CLR, m3_for_arty_a7_i/Cortex_M3_0/inst/u_c_AhbSToAxi/uA11AhbLiteMToAxi/AWRITE_reg/CLR, m3_for_arty_a7_i/Cortex_M3_0/inst/u_c_AhbSToAxi/uA11AhbLiteMToAxi/AhbDataValid_reg/CLR, m3_for_arty_a7_i/Cortex_M3_0/inst/u_c_AhbSToAxi/uA11AhbLiteMToAxi/BRespWait_reg/CLR, m3_for_arty_a7_i/Cortex_M3_0/inst/u_c_AhbSToAxi/uA11AhbLiteMToAxi/HRespReg_reg[0]/CLR, m3_for_arty_a7_i/Cortex_M3_0/inst/u_c_AhbSToAxi/uA11AhbLiteMToAxi/MissedAddr_reg/CLR, m3_for_arty_a7_i/Cortex_M3_0/inst/u_c_AhbSToAxi/uA11AhbLiteMToAxi/ReadTerminate_reg/CLR, m3_for_arty_a7_i/Cortex_M3_0/inst/u_c_AhbSToAxi/uA11AhbLiteMToAxi/ReadXfer_reg/CLR, m3_for_arty_a7_i/Cortex_M3_0/inst/u_c_AhbSToAxi/uA11AhbLiteMToAxi/WCount_reg[0]/CLR, m3_for_arty_a7_i/Cortex_M3_0/inst/u_c_AhbSToAxi/uA11AhbLiteMToAxi/WCount_reg[1]/CLR, m3_for_arty_a7_i/Cortex_M3_0/inst/u_c_AhbSToAxi/uA11AhbLiteMToAxi/WCount_reg[2]/CLR, m3_for_arty_a7_i/Cortex_M3_0/inst/u_c_AhbSToAxi/uA11AhbLiteMToAxi/WCount_reg[3]/CLR, m3_for_arty_a7_i/Cortex_M3_0/inst/u_c_AhbSToAxi/uA11AhbLiteMToAxi/iRREADY_reg/CLR, m3_for_arty_a7_i/Cortex_M3_0/inst/u_c_AhbSToAxi/uA11AhbLiteMToAxi/iWLAST_reg/CLR (the first 15 of 77 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#2 Warning
@@ -105,17 +105,22 @@ Related violations: <none>
 
 PDRC-190#1 Warning
 Suboptimally placed synchronized register chain  
-The FDCE cell m3_for_arty_a7_i/Cortex_M3_0/inst/u_CORTEXM3INTEGRATION/uDAPSWJDP/uDAPSwDpSync/uCDBGPWRUPACK/sync_reg_reg in site SLICE_X29Y68 is part of a synchronized register chain that is suboptimally placed as the load FDCE cell m3_for_arty_a7_i/Cortex_M3_0/inst/u_CORTEXM3INTEGRATION/uDAPSWJDP/uDAPSwDpSync/uCDBGPWRUPACK/sync2_reg_reg is not placed in the same (SLICE) site.
+The FDCE cell m3_for_arty_a7_i/Cortex_M3_0/inst/u_CORTEXM3INTEGRATION/uDAPSWJDP/uDAPSwDpSync/uCDBGPWRUPACK/sync_reg_reg in site SLICE_X11Y80 is part of a synchronized register chain that is suboptimally placed as the load FDCE cell m3_for_arty_a7_i/Cortex_M3_0/inst/u_CORTEXM3INTEGRATION/uDAPSWJDP/uDAPSwDpSync/uCDBGPWRUPACK/sync2_reg_reg is not placed in the same (SLICE) site.
 Related violations: <none>
 
 PDRC-190#2 Warning
 Suboptimally placed synchronized register chain  
-The FDCE cell m3_for_arty_a7_i/Cortex_M3_0/inst/u_CORTEXM3INTEGRATION/uDAPSWJDP/uDAPSwDpSync/uCSYSPWRUPACK/sync_reg_reg in site SLICE_X30Y69 is part of a synchronized register chain that is suboptimally placed as the load FDCE cell m3_for_arty_a7_i/Cortex_M3_0/inst/u_CORTEXM3INTEGRATION/uDAPSWJDP/uDAPSwDpSync/uCSYSPWRUPACK/sync2_reg_reg is not placed in the same (SLICE) site.
+The FDCE cell m3_for_arty_a7_i/Cortex_M3_0/inst/u_CORTEXM3INTEGRATION/uDAPSWJDP/uDAPSwDpSync/uCSYSPWRUPACK/sync_reg_reg in site SLICE_X7Y83 is part of a synchronized register chain that is suboptimally placed as the load FDCE cell m3_for_arty_a7_i/Cortex_M3_0/inst/u_CORTEXM3INTEGRATION/uDAPSWJDP/uDAPSwDpSync/uCSYSPWRUPACK/sync2_reg_reg is not placed in the same (SLICE) site.
 Related violations: <none>
 
 PDRC-190#3 Warning
 Suboptimally placed synchronized register chain  
-The FDCE cell m3_for_arty_a7_i/Cortex_M3_0/inst/u_CORTEXM3INTEGRATION/uDAPSWJDP/uDAPSwDpSync/uSyncBusAck/sync_reg_reg in site SLICE_X8Y75 is part of a synchronized register chain that is suboptimally placed as the load FDCE cell m3_for_arty_a7_i/Cortex_M3_0/inst/u_CORTEXM3INTEGRATION/uDAPSWJDP/uDAPSwDpSync/uSyncBusAck/sync2_reg_reg is not placed in the same (SLICE) site.
+The FDCE cell m3_for_arty_a7_i/Cortex_M3_0/inst/u_CORTEXM3INTEGRATION/uDAPSWJDP/uDAPSwDpSync/uSyncBusAck/sync_reg_reg in site SLICE_X14Y82 is part of a synchronized register chain that is suboptimally placed as the load FDCE cell m3_for_arty_a7_i/Cortex_M3_0/inst/u_CORTEXM3INTEGRATION/uDAPSWJDP/uDAPSwDpSync/uSyncBusAck/sync2_reg_reg is not placed in the same (SLICE) site.
+Related violations: <none>
+
+PDRC-190#4 Warning
+Suboptimally placed synchronized register chain  
+The FDRE cell m3_for_arty_a7_i/axi_single_spi_1/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.CLK_CROSS_I/LOGIC_GENERATION_CDC.RX_FIFO_RST_AX2S_1/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_IN_cdc_to in site SLICE_X75Y149 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell m3_for_arty_a7_i/axi_single_spi_1/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.CLK_CROSS_I/LOGIC_GENERATION_CDC.RX_FIFO_RST_AX2S_1_CDC_1 is not placed in the same (SLICE) site.
 Related violations: <none>
 
 TIMING-9#1 Warning
@@ -135,20 +140,32 @@ Related violations: <none>
 
 XDCB-5#1 Warning
 Runtime inefficient way to find pin objects  
-The option '-source : [get_pins -hierarchical -filter {NAME =~ *axi_single_spi_0/sck_o}]' of constraint 'create_generated_clock' uses inefficient query to find pin objects (see constraint position '17' in the Timing Constraint window in Vivado IDE). To reduce runtime, it is recommended to get the pins through the cell objects. Please refer to Using Constraints Guide (Constraints Efficiency). An example of optimal query is: get_pins -filter {REF_PIN_NAME=~yy*} -of_objects [get_cells -hierarchical xx*].
+The option '-source : [get_pins -hierarchical -filter {NAME =~ *axi_single_spi_0/sck_o}]' of constraint 'create_generated_clock' uses inefficient query to find pin objects (see constraint position '20' in the Timing Constraint window in Vivado IDE). To reduce runtime, it is recommended to get the pins through the cell objects. Please refer to Using Constraints Guide (Constraints Efficiency). An example of optimal query is: get_pins -filter {REF_PIN_NAME=~yy*} -of_objects [get_cells -hierarchical xx*].
 Current XDC: V:/hardware/m3_for_arty_a7/constraints/m3_for_arty_a7.xdc (Line: 114)
 Related violations: <none>
 
 XDCB-5#2 Warning
 Runtime inefficient way to find pin objects  
-The option '-source : [get_pins -hierarchical -filter {NAME =~ *axi_xip_quad_spi_0/sck_o}]' of constraint 'create_generated_clock' uses inefficient query to find pin objects (see constraint position '16' in the Timing Constraint window in Vivado IDE). To reduce runtime, it is recommended to get the pins through the cell objects. Please refer to Using Constraints Guide (Constraints Efficiency). An example of optimal query is: get_pins -filter {REF_PIN_NAME=~yy*} -of_objects [get_cells -hierarchical xx*].
+The option '-source : [get_pins -hierarchical -filter {NAME =~ *axi_xip_quad_spi_0/sck_o}]' of constraint 'create_generated_clock' uses inefficient query to find pin objects (see constraint position '19' in the Timing Constraint window in Vivado IDE). To reduce runtime, it is recommended to get the pins through the cell objects. Please refer to Using Constraints Guide (Constraints Efficiency). An example of optimal query is: get_pins -filter {REF_PIN_NAME=~yy*} -of_objects [get_cells -hierarchical xx*].
 Current XDC: V:/hardware/m3_for_arty_a7/constraints/m3_for_arty_a7.xdc (Line: 111)
 Related violations: <none>
 
 XDCB-5#3 Warning
 Runtime inefficient way to find pin objects  
-The option '-source : [get_pins -hierarchical -filter {NAME =~ m3_for_arty_a7_i/axi_quad_spi_0/sck_o}]' of constraint 'create_generated_clock' uses inefficient query to find pin objects (see constraint position '15' in the Timing Constraint window in Vivado IDE). To reduce runtime, it is recommended to get the pins through the cell objects. Please refer to Using Constraints Guide (Constraints Efficiency). An example of optimal query is: get_pins -filter {REF_PIN_NAME=~yy*} -of_objects [get_cells -hierarchical xx*].
+The option '-source : [get_pins -hierarchical -filter {NAME =~ m3_for_arty_a7_i/axi_quad_spi_0/sck_o}]' of constraint 'create_generated_clock' uses inefficient query to find pin objects (see constraint position '18' in the Timing Constraint window in Vivado IDE). To reduce runtime, it is recommended to get the pins through the cell objects. Please refer to Using Constraints Guide (Constraints Efficiency). An example of optimal query is: get_pins -filter {REF_PIN_NAME=~yy*} -of_objects [get_cells -hierarchical xx*].
 Current XDC: V:/hardware/m3_for_arty_a7/constraints/m3_for_arty_a7.xdc (Line: 108)
+Related violations: <none>
+
+XDCB-5#4 Warning
+Runtime inefficient way to find pin objects  
+The option '-to : [get_pins -hierarchical -filter {NAME =~*QSPI_CORE_INTERFACE_I/FIFO_EXISTS.CLK_CROSS_I/LOGIC_GENERATION_CDC.SPISEL_PULSE_S2AX_1_CDC/D}]' of constraint 'set_false_path' uses inefficient query to find pin objects (see constraint position '14' in the Timing Constraint window in Vivado IDE). To reduce runtime, it is recommended to get the pins through the cell objects. Please refer to Using Constraints Guide (Constraints Efficiency). An example of optimal query is: get_pins -filter {REF_PIN_NAME=~yy*} -of_objects [get_cells -hierarchical xx*].
+Current XDC: v:/hardware/m3_for_arty_a7/block_diagram/ip/m3_for_arty_a7_axi_quad_spi_1_1/m3_for_arty_a7_axi_quad_spi_1_1.xdc (Line: 49)
+Related violations: <none>
+
+XDCB-5#5 Warning
+Runtime inefficient way to find pin objects  
+The option '-to : [get_pins -hierarchical -filter {NAME =~*RESET_SYNC_AXI_SPI_CLK_INST/RESET_SYNC_AX2S_1/D}]' of constraint 'set_false_path' uses inefficient query to find pin objects (see constraint position '13' in the Timing Constraint window in Vivado IDE). To reduce runtime, it is recommended to get the pins through the cell objects. Please refer to Using Constraints Guide (Constraints Efficiency). An example of optimal query is: get_pins -filter {REF_PIN_NAME=~yy*} -of_objects [get_cells -hierarchical xx*].
+Current XDC: v:/hardware/m3_for_arty_a7/block_diagram/ip/m3_for_arty_a7_axi_quad_spi_1_1/m3_for_arty_a7_axi_quad_spi_1_1.xdc (Line: 48)
 Related violations: <none>
 
 XDCH-2#1 Warning
