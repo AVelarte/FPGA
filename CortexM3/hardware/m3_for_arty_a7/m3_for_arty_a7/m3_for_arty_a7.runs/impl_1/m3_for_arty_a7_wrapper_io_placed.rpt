@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
 | Tool Version              : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date                      : Tue Apr  5 16:03:41 2022
+| Date                      : Wed Apr  6 16:28:53 2022
 | Host                      : DESKTOP-661ESVO running 64-bit major release  (build 9200)
 | Command                   : report_io -file m3_for_arty_a7_wrapper_io_placed.rpt
 | Design                    : m3_for_arty_a7_wrapper

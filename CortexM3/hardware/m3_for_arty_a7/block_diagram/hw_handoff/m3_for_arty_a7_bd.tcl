@@ -585,7 +585,7 @@ proc create_root_design { parentCell } {
   set_property -dict [ list \
    CONFIG.C_FIFO_DEPTH {256} \
    CONFIG.C_NUM_TRANSFER_BITS {16} \
-   CONFIG.C_SCK_RATIO {4} \
+   CONFIG.C_SCK_RATIO {16} \
    CONFIG.C_SPI_MODE {0} \
    CONFIG.C_TYPE_OF_AXI4_INTERFACE {0} \
    CONFIG.C_USE_STARTUP {0} \

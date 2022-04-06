@@ -274,12 +274,12 @@ ARCHITECTURE m3_for_arty_a7_axi_quad_spi_1_1_arch OF m3_for_arty_a7_axi_quad_spi
   ATTRIBUTE X_INTERFACE_INFO OF s_axi_aresetn: SIGNAL IS "xilinx.com:signal:reset:1.0 lite_reset RST";
   ATTRIBUTE X_INTERFACE_PARAMETER OF s_axi_aclk: SIGNAL IS "XIL_INTERFACENAME lite_clk, ASSOCIATED_BUSIF AXI_LITE, ASSOCIATED_RESET s_axi_aresetn, FREQ_HZ 50000000, PHASE 0.0, CLK_DOMAIN /Clocks_and_Resets/clk_wiz_0_clk_out1";
   ATTRIBUTE X_INTERFACE_INFO OF s_axi_aclk: SIGNAL IS "xilinx.com:signal:clock:1.0 lite_clk CLK";
-  ATTRIBUTE X_INTERFACE_PARAMETER OF ext_spi_clk: SIGNAL IS "XIL_INTERFACENAME spi_clk, ASSOCIATED_BUSIF SPI_0, FREQ_HZ 50000000, PHASE 0.0, CLK_DOMAIN /Clocks_and_Resets/clk_wiz_0_clk_out1";
+  ATTRIBUTE X_INTERFACE_PARAMETER OF ext_spi_clk: SIGNAL IS "XIL_INTERFACENAME spi_clk, ASSOCIATED_BUSIF SPI_0, FREQ_HZ 80000000, PHASE 0.0, CLK_DOMAIN /Clocks_and_Resets/clk_wiz_0_clk_out1";
   ATTRIBUTE X_INTERFACE_INFO OF ext_spi_clk: SIGNAL IS "xilinx.com:signal:clock:1.0 spi_clk CLK";
 BEGIN
   U0 : axi_quad_spi
     GENERIC MAP (
-      Async_Clk => 0,
+      Async_Clk => 1,
       C_FAMILY => "artix7",
       C_SELECT_XPM => 1,
       C_SUB_FAMILY => "artix7",
@@ -289,10 +289,10 @@ BEGIN
       C_XIP_MODE => 0,
       C_UC_FAMILY => 0,
       C_FIFO_DEPTH => 256,
-      C_SCK_RATIO => 2,
+      C_SCK_RATIO => 16,
       C_DUAL_QUAD_MODE => 0,
       C_NUM_SS_BITS => 1,
-      C_NUM_TRANSFER_BITS => 8,
+      C_NUM_TRANSFER_BITS => 16,
       C_SPI_MODE => 0,
       C_USE_STARTUP => 0,
       C_USE_STARTUP_EXT => 0,

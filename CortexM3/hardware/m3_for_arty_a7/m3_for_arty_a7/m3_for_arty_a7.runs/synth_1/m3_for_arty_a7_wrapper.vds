@@ -2,8 +2,8 @@
 # Vivado v2018.2 (64-bit)
 # SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
 # IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
-# Start of session at: Tue Apr  5 15:51:07 2022
-# Process ID: 24248
+# Start of session at: Wed Apr  6 16:16:10 2022
+# Process ID: 14452
 # Current directory: V:/hardware/m3_for_arty_a7/m3_for_arty_a7/m3_for_arty_a7.runs/synth_1
 # Command line: vivado.exe -log m3_for_arty_a7_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source m3_for_arty_a7_wrapper.tcl
 # Log file: V:/hardware/m3_for_arty_a7/m3_for_arty_a7/m3_for_arty_a7.runs/synth_1/m3_for_arty_a7_wrapper.vds
@@ -13,15 +13,15 @@ source m3_for_arty_a7_wrapper.tcl -notrace
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'v:/vivado/Arm_ipi_repository'.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Programas/Xilinx/Vivado/2018.2/data/ip'.
-add_files: Time (s): cpu = 00:00:06 ; elapsed = 00:00:11 . Memory (MB): peak = 403.930 ; gain = 83.918
+add_files: Time (s): cpu = 00:00:06 ; elapsed = 00:00:11 . Memory (MB): peak = 404.789 ; gain = 84.777
 Command: synth_design -top m3_for_arty_a7_wrapper -part xc7a100tcsg324-1 -fanout_limit 400 -fsm_extraction one_hot -keep_equivalent_registers -resource_sharing off -no_lc -shreg_min_size 5
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 5932 
+INFO: Helper process launched with PID 11292 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 541.164 ; gain = 130.332
+Starting RTL Elaboration : Time (s): cpu = 00:00:19 ; elapsed = 00:00:22 . Memory (MB): peak = 541.648 ; gain = 129.980
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'm3_for_arty_a7_wrapper' [V:/hardware/m3_for_arty_a7/block_diagram/hdl/m3_for_arty_a7_wrapper.v:12]
 INFO: [Synth 8-6157] synthesizing module 'm3_for_arty_a7' [V:/hardware/m3_for_arty_a7/block_diagram/synth/m3_for_arty_a7.v:2648]
@@ -2928,7 +2928,7 @@ INFO: [Synth 8-638] synthesizing module 'm3_for_arty_a7_axi_quad_spi_1_1' [v:/ha
 	Parameter C_XIP_MODE bound to: 0 - type: integer 
 	Parameter C_UC_FAMILY bound to: 0 - type: integer 
 	Parameter C_FIFO_DEPTH bound to: 256 - type: integer 
-	Parameter C_SCK_RATIO bound to: 4 - type: integer 
+	Parameter C_SCK_RATIO bound to: 16 - type: integer 
 	Parameter C_DUAL_QUAD_MODE bound to: 0 - type: integer 
 	Parameter C_NUM_SS_BITS bound to: 1 - type: integer 
 	Parameter C_NUM_TRANSFER_BITS bound to: 16 - type: integer 
@@ -2957,7 +2957,7 @@ INFO: [Synth 8-638] synthesizing module 'axi_quad_spi__parameterized1' [v:/hardw
 	Parameter C_XIP_MODE bound to: 0 - type: integer 
 	Parameter C_UC_FAMILY bound to: 0 - type: integer 
 	Parameter C_FIFO_DEPTH bound to: 256 - type: integer 
-	Parameter C_SCK_RATIO bound to: 4 - type: integer 
+	Parameter C_SCK_RATIO bound to: 16 - type: integer 
 	Parameter C_DUAL_QUAD_MODE bound to: 0 - type: integer 
 	Parameter C_NUM_SS_BITS bound to: 1 - type: integer 
 	Parameter C_NUM_TRANSFER_BITS bound to: 16 - type: integer 
@@ -2985,7 +2985,7 @@ INFO: [Synth 8-638] synthesizing module 'axi_quad_spi_top__parameterized0' [v:/h
 	Parameter C_XIP_MODE bound to: 0 - type: integer 
 	Parameter C_UC_FAMILY bound to: 0 - type: integer 
 	Parameter C_FIFO_DEPTH bound to: 256 - type: integer 
-	Parameter C_SCK_RATIO bound to: 4 - type: integer 
+	Parameter C_SCK_RATIO bound to: 16 - type: integer 
 	Parameter C_NUM_SS_BITS bound to: 1 - type: integer 
 	Parameter C_NUM_TRANSFER_BITS bound to: 16 - type: integer 
 	Parameter C_SPI_MODE bound to: 0 - type: integer 
@@ -3015,7 +3015,7 @@ INFO: [Synth 8-638] synthesizing module 'qspi_core_interface__parameterized0' [v
 	Parameter Async_Clk bound to: 1 - type: integer 
 	Parameter C_NUM_CE_SIGNALS bound to: 32 - type: integer 
 	Parameter C_FIFO_DEPTH bound to: 256 - type: integer 
-	Parameter C_SCK_RATIO bound to: 4 - type: integer 
+	Parameter C_SCK_RATIO bound to: 16 - type: integer 
 	Parameter C_NUM_SS_BITS bound to: 1 - type: integer 
 	Parameter C_NUM_TRANSFER_BITS bound to: 16 - type: integer 
 	Parameter C_SPI_MODE bound to: 0 - type: integer 
@@ -3306,7 +3306,7 @@ INFO: [Synth 8-638] synthesizing module 'qspi_fifo_ifmodule__parameterized0' [v:
 	Parameter C_NUM_TRANSFER_BITS bound to: 16 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'qspi_fifo_ifmodule__parameterized0' (224#1) [v:/hardware/m3_for_arty_a7/block_diagram/ipshared/92ac/hdl/axi_quad_spi_v3_2_rfs.vhd:12134]
 INFO: [Synth 8-638] synthesizing module 'qspi_mode_0_module' [v:/hardware/m3_for_arty_a7/block_diagram/ipshared/92ac/hdl/axi_quad_spi_v3_2_rfs.vhd:7855]
-	Parameter C_SCK_RATIO bound to: 4 - type: integer 
+	Parameter C_SCK_RATIO bound to: 16 - type: integer 
 	Parameter C_NUM_SS_BITS bound to: 1 - type: integer 
 	Parameter C_NUM_TRANSFER_BITS bound to: 16 - type: integer 
 	Parameter C_USE_STARTUP bound to: 0 - type: integer 
@@ -5723,7 +5723,7 @@ WARNING: [Synth 8-3331] design xpm_memory_base__parameterized3 has unconnected p
 WARNING: [Synth 8-3331] design xpm_memory_base__parameterized3 has unconnected port dinb[13]
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:02:28 ; elapsed = 00:02:34 . Memory (MB): peak = 1235.238 ; gain = 824.406
+Finished RTL Elaboration : Time (s): cpu = 00:02:29 ; elapsed = 00:02:36 . Memory (MB): peak = 1237.770 ; gain = 826.102
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -5742,10 +5742,10 @@ INFO: [Synth 8-3295] tying undriven pin FIFO_EXISTS.CLK_CROSS_I:Mst_N_Slv_mode_c
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:02:31 ; elapsed = 00:02:38 . Memory (MB): peak = 1235.238 ; gain = 824.406
+Finished Handling Custom Attributes : Time (s): cpu = 00:02:33 ; elapsed = 00:02:39 . Memory (MB): peak = 1237.770 ; gain = 826.102
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:02:31 ; elapsed = 00:02:38 . Memory (MB): peak = 1235.238 ; gain = 824.406
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:02:33 ; elapsed = 00:02:39 . Memory (MB): peak = 1237.770 ; gain = 826.102
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 1232 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -5989,9 +5989,9 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   IOBUF => IOBUF (IBUF, OBUFT): 7 instances
   SRL16 => SRL16E: 2 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.171 . Memory (MB): peak = 1400.945 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.163 . Memory (MB): peak = 1411.457 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:03:04 ; elapsed = 00:03:11 . Memory (MB): peak = 1400.945 ; gain = 990.113
+Finished Constraint Validation : Time (s): cpu = 00:03:04 ; elapsed = 00:03:12 . Memory (MB): peak = 1411.457 ; gain = 999.789
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5580] Multithreading enabled for synth_design using a maximum of 2 processes.
 ---------------------------------------------------------------------------------
@@ -5999,7 +5999,7 @@ Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:03:04 ; elapsed = 00:03:11 . Memory (MB): peak = 1400.945 ; gain = 990.113
+Finished Loading Part and Timing Information : Time (s): cpu = 00:03:04 ; elapsed = 00:03:12 . Memory (MB): peak = 1411.457 ; gain = 999.789
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -6150,7 +6150,7 @@ Applied set_property DONT_TOUCH = true for m3_for_arty_a7_i/daplink_if_0/axi_sin
 Applied set_property DONT_TOUCH = true for m3_for_arty_a7_i/daplink_if_0/axi_single_spi_0/U0/\NO_DUAL_QUAD_MODE.QSPI_NORMAL /\QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I /\FIFO_EXISTS.TX_FIFO_II /\xpm_fifo_instance.xpm_fifo_async_inst /\gnuram_async_fifo.xpm_fifo_base_inst . (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for m3_for_arty_a7_i/daplink_if_0/axi_xip_quad_spi_0/U0/\NO_DUAL_QUAD_MODE.QSPI_NORMAL /\XIP_MODE_GEN.AXI_QSPI_XIP_I /XIP_RECEIVE_FIFO_II/\xpm_fifo_instance.xpm_fifo_async_inst /\gnuram_async_fifo.xpm_fifo_base_inst . (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:03:04 ; elapsed = 00:03:12 . Memory (MB): peak = 1400.945 ; gain = 990.113
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:03:05 ; elapsed = 00:03:13 . Memory (MB): peak = 1411.457 ; gain = 999.789
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5544] ROM "ABurstNxt" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "ALOCK2" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
@@ -6841,7 +6841,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'gen_fwft.curr_fwft_state_r
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'RATIO_OF_2_GENERATE.XIP_QUAD_MODE_SP_MEM_GEN.qspi_cntrl_ps_reg' using encoding 'one-hot' in module 'axi_qspi_xip_if'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:03:28 ; elapsed = 00:03:37 . Memory (MB): peak = 1400.945 ; gain = 990.113
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:03:29 ; elapsed = 00:03:38 . Memory (MB): peak = 1411.457 ; gain = 999.789
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -6854,7 +6854,7 @@ Report RTL Partitions:
 |4     |CORTEXM3__GB1                           |           1|     41109|
 |5     |CORTEXM3INTEGRATION__GC0                |           1|     10911|
 |6     |CortexM3DbgAXI__GC0                     |           1|      2184|
-|7     |m3_for_arty_a7__GC0                     |           1|     30873|
+|7     |m3_for_arty_a7__GC0                     |           1|     30880|
 +------+----------------------------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -6890,11 +6890,10 @@ Detailed RTL Component Info :
 	   2 Input      4 Bit       Adders := 23    
 	   3 Input      4 Bit       Adders := 1     
 	   5 Input      3 Bit       Adders := 1     
-	   2 Input      3 Bit       Adders := 18    
+	   2 Input      3 Bit       Adders := 19    
 	   2 Input      2 Bit       Adders := 22    
 	   3 Input      2 Bit       Adders := 1     
 	   4 Input      2 Bit       Adders := 9     
-	   2 Input      1 Bit       Adders := 1     
 +---XORs : 
 	   2 Input     32 Bit         XORs := 12    
 	   2 Input     27 Bit         XORs := 16    
@@ -6943,9 +6942,9 @@ Detailed RTL Component Info :
 	                6 Bit    Registers := 35    
 	                5 Bit    Registers := 38    
 	                4 Bit    Registers := 100   
-	                3 Bit    Registers := 96    
+	                3 Bit    Registers := 97    
 	                2 Bit    Registers := 173   
-	                1 Bit    Registers := 1932  
+	                1 Bit    Registers := 1930  
 +---RAMs : 
 	             256K Bit         RAMs := 2     
 	               4K Bit         RAMs := 2     
@@ -12566,13 +12565,14 @@ Module qspi_mode_0_module
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input      6 Bit       Adders := 1     
-	   2 Input      1 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 1     
 +---XORs : 
 	   2 Input      1 Bit         XORs := 2     
 +---Registers : 
 	               16 Bit    Registers := 5     
 	                6 Bit    Registers := 1     
-	                1 Bit    Registers := 30    
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 28    
 +---Muxes : 
 	   2 Input     16 Bit        Muxes := 9     
 	   2 Input      6 Bit        Muxes := 1     
@@ -14544,7 +14544,7 @@ INFO: [Synth 8-3333] propagating constant 0 across sequential element (m3_for_ar
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (m3_for_arty_a7_i/i_0/axi_single_spi_1/U0/\NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/INTERRUPT_CONTROL_I/GEN_IP_IRPT_STATUS_REG[10].GEN_REG_STATUS.ip_irpt_status_reg_reg[10] )
 INFO: [Common 17-14] Message 'Synth 8-3333' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:08:14 ; elapsed = 00:08:25 . Memory (MB): peak = 2341.402 ; gain = 1930.570
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:08:20 ; elapsed = 00:08:31 . Memory (MB): peak = 2346.422 ; gain = 1934.754
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -14624,7 +14624,7 @@ Report RTL Partitions:
 |4     |CORTEXM3__GB1                           |           1|     29451|
 |5     |CORTEXM3INTEGRATION__GC0                |           1|      7638|
 |6     |CortexM3DbgAXI__GC0                     |           1|      1183|
-|7     |m3_for_arty_a7__GC0                     |           1|     21467|
+|7     |m3_for_arty_a7__GC0                     |           1|     21557|
 +------+----------------------------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
@@ -14634,13 +14634,13 @@ INFO: [Synth 8-5783] Moving clock source from hierarchical pin 'daplink_if_0/axi
 INFO: [Synth 8-5783] Moving clock source from hierarchical pin 'daplink_if_0/axi_single_spi_0/sck_o' to 'm3_for_arty_a7_i/i_0/DAPLink_tri_o[3]'
 INFO: [Synth 8-5819] Moved 3 constraints on hierarchical pins to their respective driving/loading pins
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:08:27 ; elapsed = 00:08:39 . Memory (MB): peak = 2341.402 ; gain = 1930.570
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:08:33 ; elapsed = 00:08:46 . Memory (MB): peak = 2346.422 ; gain = 1934.754
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:08:55 ; elapsed = 00:09:07 . Memory (MB): peak = 2341.402 ; gain = 1930.570
+Finished Timing Optimization : Time (s): cpu = 00:09:03 ; elapsed = 00:09:15 . Memory (MB): peak = 2346.422 ; gain = 1934.754
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -14675,7 +14675,7 @@ Report RTL Partitions:
 |2     |Clocks_and_Resets_imp_1WLR2TP__GC0      |           1|       195|
 |3     |CORTEXM3INTEGRATION__GC0                |           1|      7638|
 |4     |CortexM3DbgAXI__GC0                     |           1|      1183|
-|5     |m3_for_arty_a7__GC0                     |           1|     21467|
+|5     |m3_for_arty_a7__GC0                     |           1|     21557|
 |6     |CortexM3DbgAXI_GT0                      |           1|     46015|
 +------+----------------------------------------+------------+----------+
 ---------------------------------------------------------------------------------
@@ -14700,7 +14700,7 @@ INFO: [Synth 8-4480] The timing for the instance m3_for_arty_a7_i/Cortex_M3_0/in
 INFO: [Synth 8-4480] The timing for the instance m3_for_arty_a7_i/axi_quad_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/LOGIC_FOR_MD_12_GEN.SPI_MODE_1_LUT_LOGIC_I/QSPI_LOOK_UP_MODE_2_MEMORY_2.xpm_mem_gen_QSPI_LOOK_UP_MODE_2_MEMORY_2.xpm_memory_inst/xpm_memory_base_inst/gen_rd_a.douta_reg_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Synth 8-4480] The timing for the instance m3_for_arty_a7_i/daplink_if_0/axi_quad_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/LOGIC_FOR_MD_12_GEN.SPI_MODE_1_LUT_LOGIC_I/QSPI_LOOK_UP_MODE_2_MEMORY_1.xpm_mem_gen_QSPI_LOOK_UP_MODE_2_MEMORY_1.xpm_memory_inst/xpm_memory_base_inst/gen_rd_a.douta_reg_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:09:14 ; elapsed = 00:09:27 . Memory (MB): peak = 2341.402 ; gain = 1930.570
+Finished Technology Mapping : Time (s): cpu = 00:09:22 ; elapsed = 00:09:34 . Memory (MB): peak = 2346.422 ; gain = 1934.754
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -14735,7 +14735,7 @@ INFO: [Synth 8-4618] Found max_fanout attribute set to 20 on net \inst/gen_axili
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:09:17 ; elapsed = 00:09:29 . Memory (MB): peak = 2341.402 ; gain = 1930.570
+Finished IO Insertion : Time (s): cpu = 00:09:24 ; elapsed = 00:09:37 . Memory (MB): peak = 2346.422 ; gain = 1934.754
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -14748,7 +14748,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:09:17 ; elapsed = 00:09:30 . Memory (MB): peak = 2341.402 ; gain = 1930.570
+Finished Renaming Generated Instances : Time (s): cpu = 00:09:25 ; elapsed = 00:09:37 . Memory (MB): peak = 2346.422 ; gain = 1934.754
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -14760,25 +14760,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:09:20 ; elapsed = 00:09:32 . Memory (MB): peak = 2341.402 ; gain = 1930.570
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:09:27 ; elapsed = 00:09:40 . Memory (MB): peak = 2346.422 ; gain = 1934.754
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:09:20 ; elapsed = 00:09:32 . Memory (MB): peak = 2341.402 ; gain = 1930.570
+Finished Renaming Generated Ports : Time (s): cpu = 00:09:28 ; elapsed = 00:09:40 . Memory (MB): peak = 2346.422 ; gain = 1934.754
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:09:20 ; elapsed = 00:09:33 . Memory (MB): peak = 2341.402 ; gain = 1930.570
+Finished Handling Custom Attributes : Time (s): cpu = 00:09:28 ; elapsed = 00:09:40 . Memory (MB): peak = 2346.422 ; gain = 1934.754
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:09:20 ; elapsed = 00:09:33 . Memory (MB): peak = 2341.402 ; gain = 1930.570
+Finished Renaming Generated Nets : Time (s): cpu = 00:09:28 ; elapsed = 00:09:41 . Memory (MB): peak = 2346.422 ; gain = 1934.754
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -14825,12 +14825,12 @@ Report Cell Usage:
 |3     |BUFH       |     3|
 |4     |CARRY4     |   423|
 |5     |DSP48E1    |     3|
-|6     |LUT1       |   278|
-|7     |LUT2       |  2417|
-|8     |LUT3       |  2481|
+|6     |LUT1       |   277|
+|7     |LUT2       |  2419|
+|8     |LUT3       |  2483|
 |9     |LUT4       |  2916|
-|10    |LUT5       |  4621|
-|11    |LUT6       |  8577|
+|10    |LUT5       |  4617|
+|11    |LUT6       |  8581|
 |12    |MMCME2_ADV |     1|
 |13    |MUXCY      |    64|
 |14    |MUXF7      |   195|
@@ -14856,7 +14856,7 @@ Report Cell Usage:
 |34    |FDCE       |  2964|
 |35    |FDPE       |   100|
 |36    |FDR        |   599|
-|37    |FDRE       |  7862|
+|37    |FDRE       |  7863|
 |38    |FDSE       |   331|
 |39    |IBUF       |    23|
 |40    |IOBUF      |    12|
@@ -14867,8 +14867,8 @@ Report Instance Areas:
 +------+--------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+------+
 |      |Instance                                                                                                |Module                                                             |Cells |
 +------+--------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+------+
-|1     |top                                                                                                     |                                                                   | 34045|
-|2     |  m3_for_arty_a7_i                                                                                      |m3_for_arty_a7                                                     | 33986|
+|1     |top                                                                                                     |                                                                   | 34049|
+|2     |  m3_for_arty_a7_i                                                                                      |m3_for_arty_a7                                                     | 33990|
 |3     |    Cortex_M3_0                                                                                         |m3_for_arty_a7_Cortex_M3_0_0                                       | 21190|
 |4     |      inst                                                                                              |CortexM3DbgAXI                                                     | 21190|
 |5     |        u_CORTEXM3INTEGRATION                                                                           |CORTEXM3INTEGRATION                                                | 20649|
@@ -15202,9 +15202,9 @@ Report Instance Areas:
 |333   |            RESET_SYNC_AXI_SPI_CLK_INST                                                                 |reset_sync_module_179                                              |     3|
 |334   |            SOFT_RESET_I                                                                                |soft_reset_180                                                     |    38|
 |335   |            \STATUS_REG_MODE_12_GEN.STATUS_SLAVE_SEL_REG_I                                              |qspi_status_slave_sel_reg_181                                      |     3|
-|336   |    axi_single_spi_1                                                                                    |m3_for_arty_a7_axi_quad_spi_1_1                                    |  1818|
-|337   |      U0                                                                                                |axi_quad_spi__parameterized1                                       |  1818|
-|338   |        \NO_DUAL_QUAD_MODE.QSPI_NORMAL                                                                  |axi_quad_spi_top__parameterized0                                   |  1818|
+|336   |    axi_single_spi_1                                                                                    |m3_for_arty_a7_axi_quad_spi_1_1                                    |  1822|
+|337   |      U0                                                                                                |axi_quad_spi__parameterized1                                       |  1822|
+|338   |        \NO_DUAL_QUAD_MODE.QSPI_NORMAL                                                                  |axi_quad_spi_top__parameterized0                                   |  1822|
 |339   |          \QSPI_LEGACY_MD_GEN.AXI_LITE_IPIF_I                                                           |axi_lite_ipif__parameterized0_100                                  |   201|
 |340   |            I_SLAVE_ATTACHMENT                                                                          |slave_attachment__parameterized0_150                               |   201|
 |341   |              I_DECODER                                                                                 |address_decoder__parameterized0_151                                |   127|
@@ -15227,27 +15227,27 @@ Report Instance Areas:
 |358   |                \MEM_DECODE_GEN[1].PER_CE_GEN[6].MULTIPLE_CES_THIS_CS_GEN.CE_I                          |axi_lite_ipif_v3_0_4_pselect_f__parameterized29_168                |     1|
 |359   |                \MEM_DECODE_GEN[2].PER_CE_GEN[2].MULTIPLE_CES_THIS_CS_GEN.CE_I                          |axi_lite_ipif_v3_0_4_pselect_f__parameterized25_169                |     1|
 |360   |                \MEM_DECODE_GEN[2].PER_CE_GEN[6].MULTIPLE_CES_THIS_CS_GEN.CE_I                          |axi_lite_ipif_v3_0_4_pselect_f__parameterized29_170                |     1|
-|361   |          \QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I                                                     |qspi_core_interface__parameterized0                                |  1614|
+|361   |          \QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I                                                     |qspi_core_interface__parameterized0                                |  1618|
 |362   |            CONTROL_REG_I                                                                               |qspi_cntrl_reg__parameterized0_101                                 |    15|
-|363   |            \FIFO_EXISTS.CLK_CROSS_I                                                                    |cross_clk_sync_fifo_1__parameterized0                              |   113|
+|363   |            \FIFO_EXISTS.CLK_CROSS_I                                                                    |cross_clk_sync_fifo_1__parameterized0                              |   117|
 |364   |              \LOGIC_GENERATION_CDC.DRR_OVERRUN_S2AX_1                                                  |cdc_sync__parameterized3                                           |     5|
 |365   |              \LOGIC_GENERATION_CDC.DTR_UNDERRUN_S2AX_1                                                 |cdc_sync__parameterized3_133                                       |     4|
 |366   |              \LOGIC_GENERATION_CDC.MODF_STROBE_S2AX_1                                                  |cdc_sync__parameterized3_134                                       |     6|
 |367   |              \LOGIC_GENERATION_CDC.RX_FIFO_RST_AX2S_1                                                  |cdc_sync__parameterized5                                           |     1|
 |368   |              \LOGIC_GENERATION_CDC.SLV_MODF_STRB_S2AX_1                                                |cdc_sync__parameterized3_135                                       |     5|
-|369   |              \LOGIC_GENERATION_CDC.SPICR_0_LOOP_AX2S_1                                                 |cdc_sync__parameterized4                                           |     4|
-|370   |              \LOGIC_GENERATION_CDC.SPICR_1_SPE_AX2S_1                                                  |cdc_sync__parameterized4_136                                       |     3|
-|371   |              \LOGIC_GENERATION_CDC.SPICR_2_MST_N_SLV_AX2S_1                                            |cdc_sync__parameterized4_137                                       |     5|
-|372   |              \LOGIC_GENERATION_CDC.SPICR_3_CPOL_AX2S_1                                                 |cdc_sync__parameterized4_138                                       |     4|
-|373   |              \LOGIC_GENERATION_CDC.SPICR_4_CPHA_AX2S_1                                                 |cdc_sync__parameterized4_139                                       |     3|
+|369   |              \LOGIC_GENERATION_CDC.SPICR_0_LOOP_AX2S_1                                                 |cdc_sync__parameterized4                                           |     3|
+|370   |              \LOGIC_GENERATION_CDC.SPICR_1_SPE_AX2S_1                                                  |cdc_sync__parameterized4_136                                       |     6|
+|371   |              \LOGIC_GENERATION_CDC.SPICR_2_MST_N_SLV_AX2S_1                                            |cdc_sync__parameterized4_137                                       |     8|
+|372   |              \LOGIC_GENERATION_CDC.SPICR_3_CPOL_AX2S_1                                                 |cdc_sync__parameterized4_138                                       |     3|
+|373   |              \LOGIC_GENERATION_CDC.SPICR_4_CPHA_AX2S_1                                                 |cdc_sync__parameterized4_139                                       |     4|
 |374   |              \LOGIC_GENERATION_CDC.SPICR_7_SS_AX2S_1                                                   |cdc_sync__parameterized4_140                                       |     3|
 |375   |              \LOGIC_GENERATION_CDC.SPICR_8_TR_INHIBIT_AX2S_1                                           |cdc_sync__parameterized4_141                                       |     3|
 |376   |              \LOGIC_GENERATION_CDC.SPICR_9_LSB_AX2S_1                                                  |cdc_sync__parameterized4_142                                       |     3|
-|377   |              \LOGIC_GENERATION_CDC.SPICR_BITS_7_8_SYNC_GEN_CDC[0].SPICR_BITS_7_8_AX2S_1_CDC            |cdc_sync__parameterized4_143                                       |     5|
-|378   |              \LOGIC_GENERATION_CDC.SPICR_BITS_7_8_SYNC_GEN_CDC[1].SPICR_BITS_7_8_AX2S_1_CDC            |cdc_sync__parameterized4_144                                       |     3|
+|377   |              \LOGIC_GENERATION_CDC.SPICR_BITS_7_8_SYNC_GEN_CDC[0].SPICR_BITS_7_8_AX2S_1_CDC            |cdc_sync__parameterized4_143                                       |     4|
+|378   |              \LOGIC_GENERATION_CDC.SPICR_BITS_7_8_SYNC_GEN_CDC[1].SPICR_BITS_7_8_AX2S_1_CDC            |cdc_sync__parameterized4_144                                       |     4|
 |379   |              \LOGIC_GENERATION_CDC.SPISEL_D1_REG_S2AX_1                                                |cdc_sync__parameterized3_145                                       |     7|
-|380   |              \LOGIC_GENERATION_CDC.SPISSR_SYNC_GEN_CDC[0].SPISSR_AX2S_1_CDC                            |cdc_sync__parameterized4_146                                       |     4|
-|381   |              \LOGIC_GENERATION_CDC.SR_3_MODF_AX2S_1                                                    |cdc_sync__parameterized4_147                                       |     5|
+|380   |              \LOGIC_GENERATION_CDC.SPISSR_SYNC_GEN_CDC[0].SPISSR_AX2S_1_CDC                            |cdc_sync__parameterized4_146                                       |     3|
+|381   |              \LOGIC_GENERATION_CDC.SR_3_MODF_AX2S_1                                                    |cdc_sync__parameterized4_147                                       |     3|
 |382   |              \LOGIC_GENERATION_CDC.SYNC_SPIXFER_DONE_S2AX_1                                            |cdc_sync__parameterized3_148                                       |    10|
 |383   |              \LOGIC_GENERATION_CDC.TX_EMPT_4_SPISR_S2AX_1                                              |cdc_sync__parameterized3_149                                       |     9|
 |384   |            \FIFO_EXISTS.FIFO_IF_MODULE_I                                                               |qspi_fifo_ifmodule__parameterized0                                 |     6|
@@ -15277,8 +15277,8 @@ Report Instance Areas:
 |408   |                    \gen_rst_ic.wrst_rd_inst                                                            |xpm_cdc_sync_rst__21                                               |     2|
 |409   |                    \gen_rst_ic.rrst_wr_inst                                                            |xpm_cdc_sync_rst__22                                               |     2|
 |410   |            \FIFO_EXISTS.TX_FIFO_EMPTY_CNTR_I                                                           |axi_quad_spi_v3_2_16_counter_f_104                                 |    25|
-|411   |            \FIFO_EXISTS.TX_FIFO_II                                                                     |async_fifo_fg__parameterized0                                      |   540|
-|412   |              \xpm_fifo_instance.xpm_fifo_async_inst                                                    |xpm_fifo_async__parameterized1                                     |   540|
+|411   |            \FIFO_EXISTS.TX_FIFO_II                                                                     |async_fifo_fg__parameterized0                                      |   556|
+|412   |              \xpm_fifo_instance.xpm_fifo_async_inst                                                    |xpm_fifo_async__parameterized1                                     |   556|
 |413   |                \gnuram_async_fifo.xpm_fifo_base_inst                                                   |xpm_fifo_base__parameterized0                                      |   520|
 |414   |                  \gen_sdpram.xpm_memory_base_inst                                                      |xpm_memory_base__parameterized1__2                                 |     1|
 |415   |                  \gen_cdc_pntr.wr_pntr_cdc_inst                                                        |xpm_cdc_gray__15                                                   |    38|
@@ -15301,8 +15301,8 @@ Report Instance Areas:
 |432   |                    \gen_rst_ic.wrst_rd_inst                                                            |xpm_cdc_sync_rst__19                                               |     2|
 |433   |                    \gen_rst_ic.rrst_wr_inst                                                            |xpm_cdc_sync_rst__20                                               |     2|
 |434   |            INTERRUPT_CONTROL_I                                                                         |interrupt_control__parameterized0_105                              |    29|
-|435   |            \LOGIC_FOR_MD_0_GEN.SPI_MODULE_I                                                            |qspi_mode_0_module                                                 |   230|
-|436   |            RESET_SYNC_AXI_SPI_CLK_INST                                                                 |reset_sync_module_106                                              |     3|
+|435   |            \LOGIC_FOR_MD_0_GEN.SPI_MODULE_I                                                            |qspi_mode_0_module                                                 |   213|
+|436   |            RESET_SYNC_AXI_SPI_CLK_INST                                                                 |reset_sync_module_106                                              |     4|
 |437   |            SOFT_RESET_I                                                                                |soft_reset_107                                                     |    38|
 |438   |            \STATUS_REG_MODE_0_GEN.STATUS_SLAVE_SEL_REG_I                                               |qspi_status_slave_sel_reg_108                                      |     3|
 |439   |    axi_timer_0                                                                                         |m3_for_arty_a7_axi_timer_0_0                                       |   681|
@@ -15609,14 +15609,14 @@ Report Instance Areas:
 |740   |            \XIP_MODE_GEN.XIP_SR_I                                                                      |xip_status_reg                                                     |     6|
 +------+--------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:09:20 ; elapsed = 00:09:33 . Memory (MB): peak = 2341.402 ; gain = 1930.570
+Finished Writing Synthesis Report : Time (s): cpu = 00:09:28 ; elapsed = 00:09:41 . Memory (MB): peak = 2346.422 ; gain = 1934.754
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 206 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:06:21 ; elapsed = 00:09:05 . Memory (MB): peak = 2341.402 ; gain = 1764.863
-Synthesis Optimization Complete : Time (s): cpu = 00:09:21 ; elapsed = 00:09:34 . Memory (MB): peak = 2341.402 ; gain = 1930.570
+Synthesis Optimization Runtime : Time (s): cpu = 00:06:27 ; elapsed = 00:09:12 . Memory (MB): peak = 2346.422 ; gain = 1761.066
+Synthesis Optimization Complete : Time (s): cpu = 00:09:28 ; elapsed = 00:09:41 . Memory (MB): peak = 2346.422 ; gain = 1934.754
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 1406 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
 INFO: [Project 1-111] Unisim Transformation Summary:
@@ -15631,10 +15631,10 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 INFO: [Common 17-83] Releasing license: Synthesis
 1285 Infos, 468 Warnings, 4 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:09:31 ; elapsed = 00:09:44 . Memory (MB): peak = 2341.402 ; gain = 1937.473
+synth_design: Time (s): cpu = 00:09:38 ; elapsed = 00:09:52 . Memory (MB): peak = 2346.422 ; gain = 1941.633
 WARNING: [Constraints 18-5210] No constraint will be written out.
 INFO: [Common 17-1381] The checkpoint 'V:/hardware/m3_for_arty_a7/m3_for_arty_a7/m3_for_arty_a7.runs/synth_1/m3_for_arty_a7_wrapper.dcp' has been generated.
-write_checkpoint: Time (s): cpu = 00:00:07 ; elapsed = 00:00:05 . Memory (MB): peak = 2341.402 ; gain = 0.000
+write_checkpoint: Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 2346.422 ; gain = 0.000
 INFO: [runtcl-4] Executing : report_utilization -file m3_for_arty_a7_wrapper_utilization_synth.rpt -pb m3_for_arty_a7_wrapper_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.224 . Memory (MB): peak = 2341.402 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Tue Apr  5 16:01:15 2022...
+report_utilization: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.230 . Memory (MB): peak = 2346.422 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Wed Apr  6 16:26:24 2022...

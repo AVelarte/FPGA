@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date             : Tue Apr  5 16:06:14 2022
+| Date             : Wed Apr  6 16:32:29 2022
 | Host             : DESKTOP-661ESVO running 64-bit major release  (build 9200)
 | Command          : report_power -file m3_for_arty_a7_wrapper_power_routed.rpt -pb m3_for_arty_a7_wrapper_power_summary_routed.pb -rpx m3_for_arty_a7_wrapper_power_routed.rpx
 | Design           : m3_for_arty_a7_wrapper
@@ -33,7 +33,7 @@ Table of Contents
 | Total On-Chip Power (W)  | 0.280        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.182        |
+| Dynamic (W)              | 0.181        |
 | Device Static (W)        | 0.099        |
 | Effective TJA (C/W)      | 4.6          |
 | Max Ambient (C)          | 83.7         |
@@ -52,15 +52,15 @@ Table of Contents
 +-------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
 +-------------------------+-----------+----------+-----------+-----------------+
-| Clocks                  |     0.025 |       12 |       --- |             --- |
-| Slice Logic             |     0.017 |    30374 |       --- |             --- |
-|   LUT as Logic          |     0.016 |    18844 |     63400 |           29.72 |
+| Clocks                  |     0.023 |       12 |       --- |             --- |
+| Slice Logic             |     0.017 |    30379 |       --- |             --- |
+|   LUT as Logic          |     0.016 |    18835 |     63400 |           29.71 |
 |   CARRY4                |    <0.001 |      367 |     15850 |            2.32 |
-|   Register              |    <0.001 |     9868 |    126800 |            7.78 |
+|   Register              |    <0.001 |     9869 |    126800 |            7.78 |
 |   F7/F8 Muxes           |    <0.001 |      190 |     63400 |            0.30 |
 |   LUT as Shift Register |    <0.001 |       50 |     19000 |            0.26 |
 |   Others                |     0.000 |      723 |       --- |             --- |
-| Signals                 |     0.025 |    24798 |       --- |             --- |
+| Signals                 |     0.026 |    24803 |       --- |             --- |
 | Block RAM               |     0.010 |       22 |       135 |           16.30 |
 | MMCM                    |     0.096 |        1 |         6 |           16.67 |
 | DSPs                    |     0.001 |        3 |       240 |            1.25 |
@@ -76,7 +76,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.094 |       0.078 |      0.016 |
+| Vccint    |       1.000 |     0.093 |       0.077 |      0.016 |
 | Vccaux    |       1.800 |     0.071 |       0.053 |      0.018 |
 | Vcco33    |       3.300 |     0.006 |       0.002 |      0.004 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -153,7 +153,7 @@ Table of Contents
 +-----------------------------------------------------------------------------------------------------+-----------+
 | Name                                                                                                | Power (W) |
 +-----------------------------------------------------------------------------------------------------+-----------+
-| m3_for_arty_a7_wrapper                                                                              |     0.182 |
+| m3_for_arty_a7_wrapper                                                                              |     0.181 |
 |   m3_for_arty_a7_i                                                                                  |     0.173 |
 |     Clocks_and_Resets                                                                               |     0.097 |
 |       clk_wiz_0                                                                                     |     0.097 |
@@ -177,8 +177,8 @@ Table of Contents
 |             ACTIVE_LOW_EXT.ACT_LO_EXT                                                               |    <0.001 |
 |           SEQ                                                                                       |    <0.001 |
 |             SEQ_COUNTER                                                                             |    <0.001 |
-|     Cortex_M3_0                                                                                     |     0.060 |
-|       inst                                                                                          |     0.060 |
+|     Cortex_M3_0                                                                                     |     0.061 |
+|       inst                                                                                          |     0.061 |
 |         u_CORTEXM3INTEGRATION                                                                       |     0.050 |
 |           uCM3ETM                                                                                   |     0.003 |
 |             u_etm_apb_if                                                                            |    <0.001 |
@@ -213,17 +213,17 @@ Table of Contents
 |               u_cm3_dap_ahb_ap_sync_idle                                                            |    <0.001 |
 |               u_cm3_dap_ahb_ap_sync_tra                                                             |    <0.001 |
 |               u_cm3_dap_ahb_ap_sync_trans_rtn                                                       |    <0.001 |
-|             u_cm3_dpu                                                                               |     0.030 |
+|             u_cm3_dpu                                                                               |     0.031 |
 |               u_cm3_dpu_alu                                                                         |     0.007 |
 |                 u_cm3_dpu_alu_ctl                                                                   |     0.004 |
-|                 u_cm3_dpu_alu_dp                                                                    |     0.003 |
+|                 u_cm3_dpu_alu_dp                                                                    |     0.004 |
 |               u_cm3_dpu_dec                                                                         |    <0.001 |
 |                 u_cm3_dpu_br_dec                                                                    |    <0.001 |
 |               u_cm3_dpu_etmintf                                                                     |    <0.001 |
 |               u_cm3_dpu_exec                                                                        |    <0.001 |
-|               u_cm3_dpu_fetch                                                                       |     0.005 |
+|               u_cm3_dpu_fetch                                                                       |     0.006 |
 |                 u_cm3_dpu_fetch_ahbintf                                                             |     0.003 |
-|                 u_cm3_dpu_fetch_ctl                                                                 |     0.002 |
+|                 u_cm3_dpu_fetch_ctl                                                                 |     0.003 |
 |               u_cm3_dpu_lsu                                                                         |     0.011 |
 |                 u_cm3_dpu_lsu_ahbintf                                                               |     0.004 |
 |                 u_cm3_dpu_lsu_ctl                                                                   |     0.008 |
@@ -243,7 +243,7 @@ Table of Contents
 |                 u_dwt_state_pc_sample                                                               |    <0.001 |
 |               u_dwt_apb_if                                                                          |     0.001 |
 |             u_cm3_fpb                                                                               |    <0.001 |
-|             u_cm3_itm                                                                               |     0.002 |
+|             u_cm3_itm                                                                               |     0.001 |
 |               u_itm_arb                                                                             |    <0.001 |
 |               u_itm_emit                                                                            |    <0.001 |
 |               u_itm_fifo                                                                            |    <0.001 |
@@ -421,9 +421,9 @@ Table of Contents
 |             reg_slice_r                                                                             |    <0.001 |
 |             splitter_ar                                                                             |    <0.001 |
 |             splitter_aw                                                                             |    <0.001 |
-|     axi_quad_spi_0                                                                                  |     0.004 |
-|       U0                                                                                            |     0.004 |
-|         NO_DUAL_QUAD_MODE.QSPI_NORMAL                                                               |     0.004 |
+|     axi_quad_spi_0                                                                                  |     0.003 |
+|       U0                                                                                            |     0.003 |
+|         NO_DUAL_QUAD_MODE.QSPI_NORMAL                                                               |     0.003 |
 |           QSPI_LEGACY_MD_GEN.AXI_LITE_IPIF_I                                                        |    <0.001 |
 |             I_SLAVE_ATTACHMENT                                                                      |    <0.001 |
 |               I_DECODER                                                                             |    <0.001 |
@@ -503,9 +503,9 @@ Table of Contents
 |             RESET_SYNC_AXI_SPI_CLK_INST                                                             |    <0.001 |
 |             SOFT_RESET_I                                                                            |    <0.001 |
 |             STATUS_REG_MODE_12_GEN.STATUS_SLAVE_SEL_REG_I                                           |    <0.001 |
-|     axi_single_spi_1                                                                                |     0.004 |
-|       U0                                                                                            |     0.004 |
-|         NO_DUAL_QUAD_MODE.QSPI_NORMAL                                                               |     0.004 |
+|     axi_single_spi_1                                                                                |     0.003 |
+|       U0                                                                                            |     0.003 |
+|         NO_DUAL_QUAD_MODE.QSPI_NORMAL                                                               |     0.003 |
 |           QSPI_LEGACY_MD_GEN.AXI_LITE_IPIF_I                                                        |    <0.001 |
 |             I_SLAVE_ATTACHMENT                                                                      |    <0.001 |
 |               I_DECODER                                                                             |    <0.001 |
@@ -528,7 +528,7 @@ Table of Contents
 |                 MEM_DECODE_GEN[1].PER_CE_GEN[6].MULTIPLE_CES_THIS_CS_GEN.CE_I                       |     0.000 |
 |                 MEM_DECODE_GEN[2].PER_CE_GEN[2].MULTIPLE_CES_THIS_CS_GEN.CE_I                       |     0.000 |
 |                 MEM_DECODE_GEN[2].PER_CE_GEN[6].MULTIPLE_CES_THIS_CS_GEN.CE_I                       |     0.000 |
-|           QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I                                                  |     0.004 |
+|           QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I                                                  |     0.003 |
 |             CONTROL_REG_I                                                                           |    <0.001 |
 |             FIFO_EXISTS.CLK_CROSS_I                                                                 |    <0.001 |
 |               LOGIC_GENERATION_CDC.DRR_OVERRUN_S2AX_1                                               |    <0.001 |
@@ -552,9 +552,9 @@ Table of Contents
 |             FIFO_EXISTS.FIFO_IF_MODULE_I                                                            |    <0.001 |
 |             FIFO_EXISTS.RX_FIFO_EMPTY_SYNC_AXI_2_SPI_CDC                                            |    <0.001 |
 |             FIFO_EXISTS.RX_FIFO_FULL_SYNCED_SPI_2_AXI_CDC                                           |    <0.001 |
-|             FIFO_EXISTS.RX_FIFO_II                                                                  |     0.001 |
-|               xpm_fifo_instance.xpm_fifo_async_inst                                                 |     0.001 |
-|                 gnuram_async_fifo.xpm_fifo_base_inst                                                |     0.001 |
+|             FIFO_EXISTS.RX_FIFO_II                                                                  |    <0.001 |
+|               xpm_fifo_instance.xpm_fifo_async_inst                                                 |    <0.001 |
+|                 gnuram_async_fifo.xpm_fifo_base_inst                                                |    <0.001 |
 |                   gaf_wptr_p3.wrpp3_inst                                                            |    <0.001 |
 |                   gen_cdc_pntr.rd_pntr_cdc_inst                                                     |    <0.001 |
 |                   gen_cdc_pntr.rpw_gray_reg                                                         |    <0.001 |
@@ -576,7 +576,7 @@ Table of Contents
 |             FIFO_EXISTS.TX_FIFO_EMPTY_CNTR_I                                                        |    <0.001 |
 |             FIFO_EXISTS.TX_FIFO_II                                                                  |     0.001 |
 |               xpm_fifo_instance.xpm_fifo_async_inst                                                 |     0.001 |
-|                 gnuram_async_fifo.xpm_fifo_base_inst                                                |     0.001 |
+|                 gnuram_async_fifo.xpm_fifo_base_inst                                                |    <0.001 |
 |                   gaf_wptr_p3.wrpp3_inst                                                            |    <0.001 |
 |                   gen_cdc_pntr.rd_pntr_cdc_dc_inst                                                  |    <0.001 |
 |                   gen_cdc_pntr.rd_pntr_cdc_inst                                                     |    <0.001 |

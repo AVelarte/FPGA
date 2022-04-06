@@ -119,10 +119,6 @@
       <TargetDriverDllRegistry>
         <SetRegEntry>
           <Number>0</Number>
-          <Key>DLGUARM</Key>
-        </SetRegEntry>
-        <SetRegEntry>
-          <Number>0</Number>
           <Key>ARMRTXEVENTFLAGS</Key>
           <Name>-L70 -Z18 -C0 -M0 -T1</Name>
         </SetRegEntry>
@@ -151,6 +147,22 @@
         <Bp>
           <Number>0</Number>
           <Type>0</Type>
+          <LineNumber>256</LineNumber>
+          <EnabledFlag>0</EnabledFlag>
+          <Address>2438</Address>
+          <ByteObject>0</ByteObject>
+          <HtxType>0</HtxType>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>1</BreakIfRCount>
+          <Filename>..\gpio\gpio.c</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression>\\m3_for_arty_a7\../gpio/gpio.c\256</Expression>
+        </Bp>
+        <Bp>
+          <Number>1</Number>
+          <Type>0</Type>
           <LineNumber>195</LineNumber>
           <EnabledFlag>0</EnabledFlag>
           <Address>1034</Address>
@@ -165,7 +177,7 @@
           <Expression>\\m3_for_arty_a7\../main/main.c\195</Expression>
         </Bp>
         <Bp>
-          <Number>1</Number>
+          <Number>2</Number>
           <Type>0</Type>
           <LineNumber>216</LineNumber>
           <EnabledFlag>0</EnabledFlag>
@@ -181,27 +193,11 @@
           <Expression>\\m3_for_arty_a7\../main/main.c\216</Expression>
         </Bp>
         <Bp>
-          <Number>2</Number>
-          <Type>0</Type>
-          <LineNumber>255</LineNumber>
-          <EnabledFlag>0</EnabledFlag>
-          <Address>2426</Address>
-          <ByteObject>0</ByteObject>
-          <HtxType>0</HtxType>
-          <ManyObjects>0</ManyObjects>
-          <SizeOfObject>0</SizeOfObject>
-          <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>1</BreakIfRCount>
-          <Filename>..\gpio\gpio.c</Filename>
-          <ExecCommand></ExecCommand>
-          <Expression>\\m3_for_arty_a7\../gpio/gpio.c\255</Expression>
-        </Bp>
-        <Bp>
           <Number>3</Number>
           <Type>0</Type>
           <LineNumber>559</LineNumber>
           <EnabledFlag>0</EnabledFlag>
-          <Address>6434</Address>
+          <Address>6446</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
@@ -217,7 +213,7 @@
           <Type>0</Type>
           <LineNumber>88</LineNumber>
           <EnabledFlag>0</EnabledFlag>
-          <Address>2622</Address>
+          <Address>2634</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
@@ -233,7 +229,7 @@
           <Type>0</Type>
           <LineNumber>118</LineNumber>
           <EnabledFlag>0</EnabledFlag>
-          <Address>2674</Address>
+          <Address>2686</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
@@ -249,7 +245,7 @@
           <Type>0</Type>
           <LineNumber>119</LineNumber>
           <EnabledFlag>0</EnabledFlag>
-          <Address>2688</Address>
+          <Address>2700</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
@@ -265,7 +261,7 @@
           <Type>0</Type>
           <LineNumber>706</LineNumber>
           <EnabledFlag>0</EnabledFlag>
-          <Address>6774</Address>
+          <Address>6786</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
@@ -281,7 +277,7 @@
           <Type>0</Type>
           <LineNumber>147</LineNumber>
           <EnabledFlag>0</EnabledFlag>
-          <Address>2766</Address>
+          <Address>2778</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
@@ -294,22 +290,6 @@
         </Bp>
         <Bp>
           <Number>9</Number>
-          <Type>0</Type>
-          <LineNumber>256</LineNumber>
-          <EnabledFlag>0</EnabledFlag>
-          <Address>0</Address>
-          <ByteObject>0</ByteObject>
-          <HtxType>0</HtxType>
-          <ManyObjects>0</ManyObjects>
-          <SizeOfObject>0</SizeOfObject>
-          <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>0</BreakIfRCount>
-          <Filename>..\gpio\gpio.c</Filename>
-          <ExecCommand></ExecCommand>
-          <Expression></Expression>
-        </Bp>
-        <Bp>
-          <Number>10</Number>
           <Type>0</Type>
           <LineNumber>194</LineNumber>
           <EnabledFlag>0</EnabledFlag>
@@ -325,7 +305,7 @@
           <Expression></Expression>
         </Bp>
         <Bp>
-          <Number>11</Number>
+          <Number>10</Number>
           <Type>0</Type>
           <LineNumber>215</LineNumber>
           <EnabledFlag>0</EnabledFlag>
